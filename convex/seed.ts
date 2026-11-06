@@ -93,16 +93,17 @@ export const upsertSkills = internalMutation({
         authorIds.set(skill.sourceKey, authorId)
       }
 
-      const row = {
-        ...skill,
-        authorId,
-        status: 'approved' as const,
-        searchText: skillSearchText(skill),
-      }
       const existing = await ctx.db
         .query('skills')
         .withIndex('by_rawUrl', (q) => q.eq('rawUrl', skill.rawUrl))
         .unique()
+      const row = {
+        ...skill,
+        authorId,
+        // Re-seeding must not re-list a skill the scan hid; the scan restores it when the file is back.
+        status: existing?.status === 'missing' ? ('missing' as const) : ('approved' as const),
+        searchText: skillSearchText(skill),
+      }
 
       if (!existing) {
         await ctx.db.insert('skills', { ...row, updatedAt: Date.now() })

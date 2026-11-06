@@ -8,8 +8,12 @@
  * @module
  */
 
+import type * as crons from "../crons.js";
 import type * as directory from "../directory.js";
+import type * as githubUrls from "../githubUrls.js";
 import type * as seed from "../seed.js";
+import type * as skillScan from "../skillScan.js";
+import type * as skillScanNode from "../skillScanNode.js";
 import type * as validators from "../validators.js";
 
 import type {
@@ -19,8 +23,12 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  crons: typeof crons;
   directory: typeof directory;
+  githubUrls: typeof githubUrls;
   seed: typeof seed;
+  skillScan: typeof skillScan;
+  skillScanNode: typeof skillScanNode;
   validators: typeof validators;
 }>;
 
