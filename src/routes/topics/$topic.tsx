@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { GridColumnsToggle, useGridColumns } from '#/components/grid-columns.tsx'
+import { PageWithAside } from '#/components/page-with-aside.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSortTabs, sortSkills, validateSortSearch } from '#/components/skill-sort.tsx'
@@ -29,11 +29,10 @@ function TopicPage() {
   const { skillsByTopic } = useDirectory()
   const { sort = 'recent' } = Route.useSearch()
   const navigate = Route.useNavigate()
-  const [columns, setColumns] = useGridColumns()
   const skills = sortSkills(skillsByTopic.get(topic.slug) ?? [], sort)
 
   return (
-    <>
+    <PageWithAside>
       <PageIntro title={topic.label} description={topic.description} />
       <section className="flex flex-col gap-4">
         <div className="flex items-center justify-end gap-2">
@@ -47,10 +46,9 @@ function TopicPage() {
               })
             }
           />
-          <GridColumnsToggle value={columns} onChange={setColumns} />
         </div>
-        <SkillGrid skills={skills} columns={columns} />
+        <SkillGrid skills={skills} columns={1} />
       </section>
-    </>
+    </PageWithAside>
   )
 }
