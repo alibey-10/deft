@@ -1,8 +1,10 @@
 import type { QueryClient } from '@tanstack/react-query'
-import { HeadContent, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
+import { HeadContent, Link, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
+import { DirectorySidebar } from '#/components/directory-sidebar.tsx'
+import { SiteHeader } from '#/components/site-header.tsx'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRouteWithContext<{
@@ -18,7 +20,11 @@ export const Route = createRootRouteWithContext<{
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Skilly · UI skills directory',
+      },
+      {
+        name: 'description',
+        content: 'Browse UI skills for coding agents by topic or by author.',
       },
     ],
     links: [
@@ -29,7 +35,20 @@ export const Route = createRootRouteWithContext<{
     ],
   }),
   shellComponent: RootDocument,
+  notFoundComponent: NotFound,
 })
+
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center gap-3 py-24 text-center">
+      <h1 className="text-2xl font-semibold">Not found</h1>
+      <p className="text-muted-foreground">That topic, author, or page doesn't exist.</p>
+      <Link to="/" className="text-sm underline underline-offset-4">
+        Back to all skills
+      </Link>
+    </div>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -38,7 +57,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <SiteHeader />
+        <div className="mx-auto flex max-w-7xl gap-8 px-4">
+          <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-64 shrink-0 py-6 lg:block">
+            <DirectorySidebar />
+          </aside>
+          <main className="min-w-0 flex-1 py-10">{children}</main>
+        </div>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
