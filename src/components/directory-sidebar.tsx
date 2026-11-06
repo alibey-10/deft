@@ -5,17 +5,12 @@ import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { SkillSearch } from '#/components/skill-search.tsx'
 import { ScrollArea } from '#/components/ui/scroll-area.tsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/ui/tabs.tsx'
-import { authors, topicsWithSkills } from '#/lib/directory.ts'
+import { useDirectory } from '#/lib/directory.ts'
 
 type SidebarTab = 'topics' | 'authors'
 
 const itemClass =
   'flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground data-[status=active]:bg-muted data-[status=active]:font-medium data-[status=active]:text-foreground'
-
-const topicGroups = [
-  { title: 'Design engineering', items: topicsWithSkills.filter((t) => t.isDesignCore) },
-  { title: 'Frontend & frameworks', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
-]
 
 function Count({ value }: { value: number }) {
   return (
@@ -28,6 +23,11 @@ export function DirectorySidebar() {
   const routeTab: SidebarTab = pathname.startsWith('/authors') ? 'authors' : 'topics'
   const [tab, setTab] = useState<SidebarTab>(routeTab)
   const [query, setQuery] = useState('')
+  const { authors, topicsWithSkills } = useDirectory()
+  const topicGroups = [
+    { title: 'Design engineering', items: topicsWithSkills.filter((t) => t.isDesignCore) },
+    { title: 'Frontend & frameworks', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
+  ]
 
   // Follow the route when navigating between topic and author pages.
   useEffect(() => {
