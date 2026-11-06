@@ -1,11 +1,9 @@
-import { createFileRoute, Link, notFound } from '@tanstack/react-router'
+import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import { Badge } from '#/components/ui/badge.tsx'
-import { filterSkills, getTopic, topicLabel, useDirectory } from '#/lib/directory.ts'
-import { relatedTopicSlugs } from '#/data/topics.ts'
+import { filterSkills, getTopic, useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/topics/$topic')({
   validateSearch: validateSkillSearch,
@@ -32,26 +30,10 @@ function TopicPage() {
   const { skillsByTopic } = useDirectory()
   const skills = skillsByTopic.get(topic.slug) ?? []
   const results = filterSkills(skills, q)
-  const related = relatedTopicSlugs[topic.slug].filter((slug) => skillsByTopic.has(slug))
 
   return (
     <>
-      <PageIntro title={topic.label} description={topic.description}>
-        {related.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            Related:
-            {related.map((slug) => (
-              <Badge
-                key={slug}
-                variant="secondary"
-                render={<Link to="/topics/$topic" params={{ topic: slug }} />}
-              >
-                {topicLabel(slug)}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </PageIntro>
+      <PageIntro title={topic.label} description={topic.description} />
 
       <section className="flex flex-col gap-4">
         <div className="flex justify-end">

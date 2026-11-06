@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound, type ErrorComponentProps } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { GithubIcon } from '@hugeicons/core-free-icons'
+import { cn } from 'cn'
 
 import { InstallCommand } from '#/components/install-command.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
@@ -86,11 +87,10 @@ function SkillPage() {
         </div>
       </article>
 
-      {toc.length > 1 && (
-        <aside className="sticky top-14 hidden max-h-[calc(100svh-3.5rem)] w-56 shrink-0 self-start overflow-y-auto py-2 xl:block">
-          <TableOfContents entries={toc} />
-        </aside>
-      )}
+      <aside className="sticky top-14 hidden max-h-[calc(100svh-3.5rem)] w-56 shrink-0 self-start overflow-y-auto py-2 xl:flex xl:flex-col xl:gap-6">
+        {toc.length > 1 && <TableOfContents entries={toc} />}
+        <ViewSourceButton href={skill.githubUrl} className="self-start" />
+      </aside>
     </div>
   )
 }
@@ -114,15 +114,7 @@ function SkillHeader({ skill }: { skill: RegistrySkill }) {
       description={skill.description}
     >
       <div className="flex flex-wrap items-center gap-2">
-        <a
-          href={skill.githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants({ variant: 'outline', size: 'sm' })}
-        >
-          <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" aria-hidden />
-          View source
-        </a>
+        <ViewSourceButton href={skill.githubUrl} className="xl:hidden" />
         {skill.topics.map((topic) => (
           <Badge
             key={topic}
@@ -134,6 +126,20 @@ function SkillHeader({ skill }: { skill: RegistrySkill }) {
         ))}
       </div>
     </PageIntro>
+  )
+}
+
+function ViewSourceButton({ href, className }: { href: string; className?: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), className)}
+    >
+      <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" aria-hidden />
+      View source
+    </a>
   )
 }
 

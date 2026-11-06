@@ -40,7 +40,7 @@ export function TableOfContents({ entries }: { entries: TocEntry[] }) {
 
   return (
     <nav aria-label="Table of contents" className="flex flex-col gap-2">
-      <h2 className="text-xs font-medium text-muted-foreground">On this page</h2>
+      <h2 className="text-xs font-medium text-muted-foreground">On this skill</h2>
       <ol className="flex flex-col border-l">
         {entries.map((entry, index) => (
           <li key={`${entry.id}-${index}`}>
