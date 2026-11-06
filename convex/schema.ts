@@ -56,9 +56,12 @@ export default defineSchema({
     rejectionReason: v.optional(v.string()),
     reviewedAt: v.optional(v.number()),
     updatedAt: v.number(),
+    /** Name, description, owner, repo and topics joined, for `search_text`. Set by the seed. */
+    searchText: v.optional(v.string()),
   })
     .index('by_status', ['status'])
     .index('by_status_and_sourceKey', ['status', 'sourceKey'])
     .index('by_pathSlug', ['pathSlug'])
-    .index('by_rawUrl', ['rawUrl']),
+    .index('by_rawUrl', ['rawUrl'])
+    .searchIndex('search_text', { searchField: 'searchText', filterFields: ['status'] }),
 })

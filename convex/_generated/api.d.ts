@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as aggregates from "../aggregates.js";
 import type * as directory from "../directory.js";
 import type * as seed from "../seed.js";
 import type * as validators from "../validators.js";
@@ -19,6 +20,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  aggregates: typeof aggregates;
   directory: typeof directory;
   seed: typeof seed;
   validators: typeof validators;
@@ -50,4 +52,6 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {};
+export declare const components: {
+  skillsByName: import("@convex-dev/aggregate/_generated/component.js").ComponentApi<"skillsByName">;
+};

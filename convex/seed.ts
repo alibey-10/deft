@@ -3,9 +3,11 @@
  * Authors are keyed on `key`, skills on `rawUrl`. Re-running only patches rows whose data changed.
  */
 import { v } from 'convex/values'
+import { internal } from './_generated/api'
 import { internalMutation } from './_generated/server'
 import type { Id } from './_generated/dataModel'
 import { vTopicSlug } from './validators'
+import { skillSearchText, skillsByName } from './aggregates'
 
 const vSeedAuthor = v.object({
   key: v.string(),
@@ -83,19 +85,26 @@ export const upsertSkills = internalMutation({
         authorIds.set(skill.sourceKey, authorId)
       }
 
-      const row = { ...skill, authorId, status: 'approved' as const }
+      const row = {
+        ...skill,
+        authorId,
+        status: 'approved' as const,
+        searchText: skillSearchText(skill),
+      }
       const existing = await ctx.db
         .query('skills')
         .withIndex('by_rawUrl', (q) => q.eq('rawUrl', skill.rawUrl))
         .unique()
 
       if (!existing) {
-        await ctx.db.insert('skills', { ...row, updatedAt: Date.now() })
+        const id = await ctx.db.insert('skills', { ...row, updatedAt: Date.now() })
+        await skillsByName.insert(ctx, (await ctx.db.get(id))!)
         counts.inserted++
       } else if (sameFields(existing, row)) {
         counts.unchanged++
       } else {
         await ctx.db.patch(existing._id, { ...row, updatedAt: Date.now() })
+        await skillsByName.replaceOrInsert(ctx, existing, (await ctx.db.get(existing._id))!)
         counts.updated++
       }
     }
@@ -123,5 +132,26 @@ export const upsertRepos = internalMutation({
       }
     }
     return counts
+  },
+})
+
+/**
+ * One-off backfill for rows that predate `skillsByName` and `searchText`. Safe to re-run.
+ * Run: npx convex run seed:backfillSkills
+ */
+export const backfillSkills = internalMutation({
+  args: { cursor: v.optional(v.union(v.string(), v.null())) },
+  handler: async (ctx, { cursor }) => {
+    const { page, isDone, continueCursor } = await ctx.db
+      .query('skills')
+      .paginate({ cursor: cursor ?? null, numItems: 100 })
+    for (const skill of page) {
+      const searchText = skillSearchText(skill)
+      if (skill.searchText !== searchText) await ctx.db.patch(skill._id, { searchText })
+      await skillsByName.insertIfDoesNotExist(ctx, skill)
+    }
+    if (!isDone) {
+      await ctx.scheduler.runAfter(0, internal.seed.backfillSkills, { cursor: continueCursor })
+    }
   },
 })
