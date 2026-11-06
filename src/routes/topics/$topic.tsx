@@ -35,15 +35,7 @@ function TopicPage() {
 
   return (
     <>
-      <PageIntro
-        eyebrow={
-          <Link to="/topics" className="hover:text-foreground">
-            Topics
-          </Link>
-        }
-        title={topic.label}
-        description={topic.description}
-      >
+      <PageIntro title={topic.label} description={topic.description}>
         {related.length > 0 && (
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             Related:
@@ -61,10 +53,7 @@ function TopicPage() {
       </PageIntro>
 
       <section className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-sm font-medium">
-            Skills <span className="text-muted-foreground tabular-nums">{results.length}</span>
-          </h2>
+        <div className="flex justify-end">
           <SkillSearch
             value={q}
             placeholder={`Search ${topic.label} skills…`}
@@ -73,7 +62,7 @@ function TopicPage() {
             }
           />
         </div>
-        <SkillGrid skills={results} />
+        <SkillGrid skills={results} maxColumns={2} />
       </section>
     </>
   )
