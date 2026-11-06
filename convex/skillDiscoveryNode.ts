@@ -202,7 +202,11 @@ async function discoverInto(ctx: ActionCtx, record: Omit<RecordArgs, 'runId'>) {
   const topRank = (ranks: Map<string, Listing>) =>
     Math.min(...[...ranks.values()].map((l) => l.rank))
   const repos = [...byKey.values()].sort((a, b) => topRank(a.ranks) - topRank(b.ranks))
-  record.repos = [...byKey].map(([key, { info }]) => ({ key, stars: info.stargazers_count }))
+  record.repos = [...byKey].map(([key, { info }]) => ({
+    key,
+    stars: info.stargazers_count,
+    description: info.description?.trim() || undefined,
+  }))
 
   const {
     known: knownList,

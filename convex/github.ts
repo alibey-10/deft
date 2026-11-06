@@ -16,6 +16,7 @@ export type GithubRepo = {
   archived: boolean
   size: number
   stargazers_count: number
+  description: string | null
 }
 
 export type GithubUser = {

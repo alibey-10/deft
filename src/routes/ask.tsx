@@ -5,9 +5,11 @@ import { HugeiconsIcon } from '@hugeicons/react'
 import {
   Alert02Icon,
   ArrowUp02Icon,
+  Copy01Icon,
   PencilEdit02Icon,
   SparklesIcon,
   StopIcon,
+  Tick02Icon,
 } from '@hugeicons/core-free-icons'
 
 import {
@@ -35,7 +37,7 @@ import {
   InputGroupButton,
   InputGroupTextarea,
 } from '#/components/ui/input-group.tsx'
-import { Message, MessageContent } from '#/components/ui/message.tsx'
+import { Message, MessageContent, MessageFooter } from '#/components/ui/message.tsx'
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -44,6 +46,7 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
 } from '#/components/ui/message-scroller.tsx'
+import { useCopyToClipboard } from '#/hooks/use-copy-to-clipboard.ts'
 import { getIsAdminServerFn } from '#/lib/admin.ts'
 import { toBlocks, type MessageBlock } from '#/lib/assistant/blocks.ts'
 import { DEFAULT_MODEL, isPresetModel, MODEL_ID_PATTERN } from '#/lib/assistant/models.ts'
@@ -304,12 +307,27 @@ async function readErrorMessage(response: Response) {
 }
 
 function UserMessage({ message }: { message: UIMessage }) {
+  const text = textOf(message)
+  const { copied, copy } = useCopyToClipboard()
   return (
     <Message align="end">
       <MessageContent>
         <Bubble align="end" variant="secondary">
-          <BubbleContent className="whitespace-pre-wrap">{textOf(message)}</BubbleContent>
+          <BubbleContent className="whitespace-pre-wrap">{text}</BubbleContent>
         </Bubble>
+        <MessageFooter reveal data-pinned={copied || undefined}>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            onClick={() => copy(text)}
+            aria-label={copied ? 'Message copied' : 'Copy message'}
+          >
+            <HugeiconsIcon icon={copied ? Tick02Icon : Copy01Icon} aria-hidden />
+          </Button>
+          <span className="sr-only" aria-live="polite">
+            {copied ? 'Copied to clipboard' : ''}
+          </span>
+        </MessageFooter>
       </MessageContent>
     </Message>
   )
