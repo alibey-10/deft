@@ -100,7 +100,7 @@ export function DirectorySidebar() {
                   params={{ author: author.key }}
                   className={itemClass}
                 >
-                  <AuthorAvatar author={author} size="sm" />
+                  <AuthorAvatar author={author} size="base" />
                   <span className="truncate">{author.name}</span>
                   <Count value={author.skills.length} />
                 </Link>
