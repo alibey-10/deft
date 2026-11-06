@@ -12,6 +12,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandShortcut,
   CommandList,
 } from '#/components/ui/command.tsx'
 import { allSkills, authors, topicLabel, topicsWithSkills } from '#/lib/directory.ts'
@@ -75,9 +76,7 @@ export function CommandPalette() {
                 >
                   <HugeiconsIcon icon={Tag01Icon} aria-hidden />
                   {topic.label}
-                  <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                    {topic.count}
-                  </span>
+                  <CommandShortcut variant="meta">{topic.count}</CommandShortcut>
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -94,9 +93,7 @@ export function CommandPalette() {
                 >
                   <AuthorAvatar author={author} size="sm" />
                   {author.name}
-                  <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                    {author.skills.length}
-                  </span>
+                  <CommandShortcut variant="meta">{author.skills.length}</CommandShortcut>
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -113,9 +110,7 @@ export function CommandPalette() {
                 >
                   <HugeiconsIcon icon={SparklesIcon} aria-hidden />
                   <span className="truncate">{skill.name}</span>
-                  <span className="ml-auto shrink-0 truncate text-xs text-muted-foreground">
-                    {skill.user}
-                  </span>
+                  <CommandShortcut variant="meta">{skill.user}</CommandShortcut>
                 </CommandItem>
               ))}
             </CommandGroup>

@@ -1,3 +1,4 @@
+import { cn } from 'cn'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { Search01Icon } from '@hugeicons/core-free-icons'
 
@@ -7,13 +8,15 @@ export function SkillSearch({
   value,
   onChange,
   placeholder = 'Search skills…',
+  className,
 }: {
   value: string
   onChange: (value: string) => void
   placeholder?: string
+  className?: string
 }) {
   return (
-    <InputGroup className="max-w-md">
+    <InputGroup className={cn('max-w-md', className)}>
       <InputGroupAddon>
         <HugeiconsIcon icon={Search01Icon} aria-hidden />
       </InputGroupAddon>

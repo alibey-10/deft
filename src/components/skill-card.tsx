@@ -1,3 +1,4 @@
+import { cn } from 'cn'
 import { Link } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
@@ -49,12 +50,18 @@ export function SkillCard({ skill }: { skill: RegistrySkill }) {
   )
 }
 
-export function SkillGrid({ skills }: { skills: RegistrySkill[] }) {
+export function SkillGrid({
+  skills,
+  maxColumns = 3,
+}: {
+  skills: RegistrySkill[]
+  maxColumns?: 2 | 3
+}) {
   if (skills.length === 0) {
     return <p className="py-12 text-center text-muted-foreground">No skills match your search.</p>
   }
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    <ul className={cn('grid gap-4 sm:grid-cols-2', maxColumns === 3 && 'xl:grid-cols-3')}>
       {skills.map((skill) => (
         <li key={skill.pathSlug}>
           <SkillCard skill={skill} />

@@ -158,12 +158,24 @@ function CommandItem({
   )
 }
 
-function CommandShortcut({ className, ...props }: React.ComponentProps<'span'>) {
+const commandShortcutVariants = {
+  /** Keyboard shortcut, e.g. ⌘K. */
+  keys: 'tracking-widest',
+  /** Trailing metadata such as a count or owner name. */
+  meta: 'max-w-40 shrink-0 truncate tabular-nums',
+}
+
+function CommandShortcut({
+  className,
+  variant = 'keys',
+  ...props
+}: React.ComponentProps<'span'> & { variant?: keyof typeof commandShortcutVariants }) {
   return (
     <span
       data-slot="command-shortcut"
       className={cn(
-        'ml-auto text-xs tracking-widest text-muted-foreground group-data-selected/command-item:text-foreground',
+        'ml-auto text-xs text-muted-foreground group-data-selected/command-item:text-foreground',
+        commandShortcutVariants[variant],
         className,
       )}
       {...props}

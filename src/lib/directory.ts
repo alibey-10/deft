@@ -23,6 +23,7 @@ export type AuthorProfile = {
   bio: string | null
   website: string | null
   location: string | null
+  followers: number
 }
 
 const profiles: Record<string, AuthorProfile> = authorProfiles.profiles

@@ -66,10 +66,10 @@ export function DirectorySidebar() {
 
         <TabsContent value="topics" className="min-h-0">
           <ScrollArea className="h-full">
-            <div className="flex flex-col gap-4 pr-3 pb-4">
+            <div className="flex flex-col gap-6 pr-3 pb-4">
               {filteredGroups.map((group) => (
                 <div key={group.title} className="flex flex-col gap-0.5">
-                  <h3 className="px-2 pb-1 text-xs font-medium text-muted-foreground">
+                  <h3 className="px-2 pb-2 text-xs font-semibold tracking-wider text-foreground uppercase">
                     {group.title}
                   </h3>
                   {group.items.map((topic) => (
