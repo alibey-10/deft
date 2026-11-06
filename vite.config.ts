@@ -15,6 +15,7 @@ const config = defineConfig({
   fmt: {
     singleQuote: true,
     semi: false,
+    ignorePatterns: ['convex/_generated/**'],
   },
   lint: {
     jsPlugins: [{ name: 'vite-plus', specifier: 'vite-plus/oxlint-plugin' }, '@shadcn/lint'],
