@@ -10,7 +10,8 @@ import { execFileSync } from 'node:child_process'
 import authorProfiles from '../src/data/author-profiles.json' with { type: 'json' }
 import { registry } from '../src/data/registry.ts'
 
-const extraArgs = process.argv.slice(2)
+// `vp run seed-convex -- --prod` forwards the `--` separator too; drop it.
+const extraArgs = process.argv.slice(2).filter((arg) => arg !== '--')
 const BATCH_SIZE = 100
 
 type Counts = { inserted: number; updated: number; unchanged: number }
