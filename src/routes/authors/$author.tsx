@@ -1,4 +1,6 @@
-import { createFileRoute, Link, notFound } from '@tanstack/react-router'
+import { createFileRoute, notFound } from '@tanstack/react-router'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Link01Icon, Location01Icon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
@@ -27,6 +29,9 @@ function AuthorPage() {
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
   const results = filterSkills(author.skills, q)
+  const profile = author.profile
+  const login = profile?.login ?? author.skills[0].user
+  const displayName = profile?.name ?? author.name
   // One badge per repo, skipping skills hosted outside GitHub.
   const githubRepos = author.repos.flatMap((repo) => {
     const skill = author.skills.find(
@@ -38,19 +43,45 @@ function AuthorPage() {
   return (
     <>
       <PageIntro
-        eyebrow={
-          <Link to="/authors" className="hover:text-foreground">
-            Authors
-          </Link>
-        }
         title={
           <span className="flex items-center gap-3">
             <AuthorAvatar author={author} size="lg" />
-            {author.name}
+            {displayName}
           </span>
         }
-        description={`${author.skills.length} ${author.skills.length === 1 ? 'skill' : 'skills'} across ${author.repos.join(', ')}.`}
+        description={profile?.bio ?? undefined}
       >
+        <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+          <li>
+            <a
+              href={`https://github.com/${login}`}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground"
+            >
+              @{login}
+            </a>
+          </li>
+          {profile?.location && (
+            <li className="flex items-center gap-1.5">
+              <HugeiconsIcon icon={Location01Icon} className="size-4" aria-hidden />
+              {profile.location}
+            </li>
+          )}
+          {profile?.website && (
+            <li className="flex min-w-0 items-center gap-1.5">
+              <HugeiconsIcon icon={Link01Icon} className="size-4 shrink-0" aria-hidden />
+              <a
+                href={profile.website}
+                target="_blank"
+                rel="noreferrer"
+                className="truncate hover:text-foreground"
+              >
+                {profile.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+              </a>
+            </li>
+          )}
+        </ul>
         <div className="flex flex-wrap items-center gap-2">
           {githubRepos.map(({ user, repo }) => (
             <GithubRepoBadges key={repo} user={user} repo={repo} />

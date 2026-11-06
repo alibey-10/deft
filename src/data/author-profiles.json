@@ -1,0 +1,859 @@
+{
+  "generatedAt": "2026-11-06T13:42:15.538Z",
+  "profiles": {
+    "0xdesign": {
+      "login": "0xdesign",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "antfu": {
+      "login": "antfu",
+      "name": "Anthony Fu",
+      "bio": "A ship in harbor is safe, but that is not what ships are built for.",
+      "website": "https://antfu.me",
+      "location": "Gifu, Japan"
+    },
+    "1weiho": {
+      "login": "1weiho",
+      "name": "Yiwei Ho",
+      "bio": "Finding calm in the details. ambassador @raycast",
+      "website": "https://1wei.dev",
+      "location": "Taiwan"
+    },
+    "addyosmani": {
+      "login": "addyosmani",
+      "name": "Addy Osmani",
+      "bio": "Member of Technical Staff, Anthropic",
+      "website": "https://www.addyosmani.com",
+      "location": "Sunnyvale, California"
+    },
+    "aminblg": {
+      "login": "AminBlg",
+      "name": "Amin Boulegroun",
+      "bio": "Greatest Computer Engineer of all time",
+      "website": null,
+      "location": null
+    },
+    "aashaexo": {
+      "login": "aashaexo",
+      "name": "aasha",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "aboudjem": {
+      "login": "Aboudjem",
+      "name": "Adam Boudj",
+      "bio": "Web3 x AI. Named author (1 of 5) of ERC-3643, first author of ERC-6960, co-author of ERC-7410, and co-author of ERC-8203, which is still a draft.",
+      "website": "https://adam-boudjemaa.com",
+      "location": "Dubai, UAE"
+    },
+    "accesslint": {
+      "login": "AccessLint",
+      "name": "AccessLint",
+      "bio": "Continuous, automated web accessibility testing.",
+      "website": "https://accesslint.com",
+      "location": "United States of America"
+    },
+    "bencium": {
+      "login": "bencium",
+      "name": "Bence Csernak",
+      "bio": "AI Product Strategist, Agentic Engineer and AI-First Designer",
+      "website": "https://www.bencium.io",
+      "location": "London"
+    },
+    "ayghri": {
+      "login": "ayghri",
+      "name": "Ayoub Ghriss",
+      "bio": "CLIMB research group. ML",
+      "website": "https://ayghri.me",
+      "location": "Boulder, CO"
+    },
+    "benjitaylor": {
+      "login": "benjitaylor",
+      "name": "Benji Taylor",
+      "bio": null,
+      "website": null,
+      "location": "Los Angeles"
+    },
+    "arifszn": {
+      "login": "arifszn",
+      "name": "Ariful Alam",
+      "bio": "Sr. Software Engineer | Distributed Systems Specialist | Microservices Architecture",
+      "website": "https://www.arifszn.com",
+      "location": "Bangladesh"
+    },
+    "atharvsinh-codez": {
+      "login": "Atharvsinh-codez",
+      "name": "Atharvsinh Jadav",
+      "bio": "Ambassador @Factory-AI",
+      "website": "https://athrix.me",
+      "location": null
+    },
+    "arla6ka": {
+      "login": "arla6ka",
+      "name": "Arlan Marat",
+      "bio": "beep boop",
+      "website": "https://x.com/arlanmarat",
+      "location": "San Francisco, CA"
+    },
+    "appllama": {
+      "login": "Appllama",
+      "name": "Appllama",
+      "bio": "Discover screens, flows and paywall from top-grossing iOS apps, then build from what wins.",
+      "website": "https://appllama.io",
+      "location": null
+    },
+    "anthropics": {
+      "login": "anthropics",
+      "name": "Anthropic",
+      "bio": null,
+      "website": "https://anthropic.com",
+      "location": "United States of America"
+    },
+    "cloudai-x": {
+      "login": "CloudAI-X",
+      "name": "CloudAI-X",
+      "bio": "Agents/Workflows/Docs",
+      "website": null,
+      "location": null
+    },
+    "blader": {
+      "login": "blader",
+      "name": "Siqi Chen",
+      "bio": null,
+      "website": "http://twitter.com/blader",
+      "location": "San Francisco"
+    },
+    "chunkithwang": {
+      "login": "chunkithwang",
+      "name": "Sean",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "dammyjay93": {
+      "login": "Dammyjay93",
+      "name": "Oyindamola Akinleye",
+      "bio": "Tinkering with AI.",
+      "website": null,
+      "location": null
+    },
+    "calicastle": {
+      "login": "CaliCastle",
+      "name": "Cali Castle",
+      "bio": "Founder & CEO at @zolplay-labs",
+      "website": "https://cali.so",
+      "location": "localhost:3000"
+    },
+    "callstackincubator": {
+      "login": "callstackincubator",
+      "name": "Callstack Incubator",
+      "bio": "We don't follow best practices, we set them. This is where it happens.",
+      "website": "https://callstack.com",
+      "location": "Worldwide"
+    },
+    "coldteadotai": {
+      "login": "coldteadotai",
+      "name": "Coldtea AI",
+      "bio": "Ship at agent speed. Break nothing.",
+      "website": "https://www.coldtea.ai?utm_source=ct_org&utm_medium=github",
+      "location": null
+    },
+    "cursor": {
+      "login": "cursor",
+      "name": "Cursor",
+      "bio": null,
+      "website": "https://cursor.com/",
+      "location": null
+    },
+    "danny": {
+      "login": "danny",
+      "name": "Danny Gagne",
+      "bio": null,
+      "website": "http://www.dannygagne.com",
+      "location": "New York"
+    },
+    "diip3sh": {
+      "login": "diip3sh",
+      "name": "Dipesh",
+      "bio": "Developer @Originkit",
+      "website": "https://diip3sh.xyz",
+      "location": "Bangalore, India"
+    },
+    "dietrichgebert": {
+      "login": "DietrichGebert",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "dimillian": {
+      "login": "Dimillian",
+      "name": "Thomas Ricouard",
+      "bio": "Developer Experience, Codex @openai Previously: @medium, @glose, @google, Co-Founded @MySeeen (Share movies !) @RobinBrowser (The smart Browser).",
+      "website": "https://dimillian.app",
+      "location": "France"
+    },
+    "dickwu": {
+      "login": "dickwu",
+      "name": "farmerwu",
+      "bio": null,
+      "website": null,
+      "location": "Winnipeg"
+    },
+    "diffusionstudio": {
+      "login": "diffusionstudio",
+      "name": "Diffusion Studio",
+      "bio": "Challenging the status quo of in-browser media processing.",
+      "website": "https://www.diffusion.studio",
+      "location": "United States of America"
+    },
+    "edenspiekermann": {
+      "login": "edenspiekermann",
+      "name": "Edenspiekermann",
+      "bio": null,
+      "website": "http://www.edenspiekermann.com/",
+      "location": "Berlin"
+    },
+    "ehmo": {
+      "login": "ehmo",
+      "name": "Rasty Turek",
+      "bio": "Engineer. Founder. Occasional investor.",
+      "website": "https://turek.co",
+      "location": "San Diego"
+    },
+    "enesozturk": {
+      "login": "enesozturk",
+      "name": "Enes",
+      "bio": "software engineer, React & React Native enthusiast, paragliding pilot",
+      "website": "https://ozturkenes.com",
+      "location": null
+    },
+    "elithrar": {
+      "login": "elithrar",
+      "name": "Matt Silverlock",
+      "bio": "Practicing README Driven Development • now: @openai • priors: VP @cloudflare, maintained the @gorilla web toolkit.",
+      "website": "https://blog.questionable.services",
+      "location": "New York City, United States"
+    },
+    "elayadesign": {
+      "login": "elayadesign",
+      "name": "Elaya",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "fatihaydost": {
+      "login": "fatihaydost",
+      "name": "Fatih Aydost",
+      "bio": "KBU | Software Engineering MSc KTU | MIS graduate",
+      "website": null,
+      "location": "Turkey Karabük"
+    },
+    "ericzakariasson": {
+      "login": "ericzakariasson",
+      "name": "Eric Zakariasson",
+      "bio": null,
+      "website": "https://anyblockers.com",
+      "location": "San Francisco"
+    },
+    "emilkowalski": {
+      "login": "emilkowalski",
+      "name": "Emil Kowalski",
+      "bio": null,
+      "website": "https://emilkowal.ski",
+      "location": null
+    },
+    "egonex-ai": {
+      "login": "Egonex-AI",
+      "name": "EgonexAI",
+      "bio": "Understand anything. Understand anyone.",
+      "website": "https://egonex.ai",
+      "location": null
+    },
+    "flornkm": {
+      "login": "flornkm",
+      "name": "Florian Kiem",
+      "bio": "Design, Code",
+      "website": "https://floriankiem.com/",
+      "location": null
+    },
+    "filipwojda": {
+      "login": "filipwojda",
+      "name": "Filip Wojda",
+      "bio": "i like visual things prev krea, flora, others",
+      "website": "https://filipwojda.com/",
+      "location": "new york city"
+    },
+    "greensock": {
+      "login": "greensock",
+      "name": "GreenSock",
+      "bio": null,
+      "website": "http://gsap.com",
+      "location": "Chicago"
+    },
+    "google-gemini": {
+      "login": "google-gemini",
+      "name": "google-gemini",
+      "bio": "Get started building with the Gemini API",
+      "website": "https://ai.google.dev/gemini-api/docs",
+      "location": "United States of America"
+    },
+    "firebenders": {
+      "login": "firebenders",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "github": {
+      "login": "github",
+      "name": "GitHub",
+      "bio": "How people build software.",
+      "website": "https://github.com/about",
+      "location": "United States of America"
+    },
+    "graphify-labs": {
+      "login": "Graphify-Labs",
+      "name": "Graphify Labs",
+      "bio": null,
+      "website": "https://www.graphify.com",
+      "location": "United States of America"
+    },
+    "figma": {
+      "login": "figma",
+      "name": "Figma",
+      "bio": "The full-stack creative canvas",
+      "website": "https://www.figma.com",
+      "location": "San Francisco, CA"
+    },
+    "hardikpandya": {
+      "login": "hardikpandya",
+      "name": "Hardik Pandya",
+      "bio": "Head of Design, Atlassian",
+      "website": "https://hvpandya.com",
+      "location": "Bangalore, India"
+    },
+    "ibelick": {
+      "login": "ibelick",
+      "name": "Julien Thibeaut",
+      "bio": null,
+      "website": "https://ibelick.com",
+      "location": "Paris"
+    },
+    "iannuttall": {
+      "login": "iannuttall",
+      "name": "ian nuttall",
+      "bio": null,
+      "website": "https://ian.is",
+      "location": "Nottingham"
+    },
+    "jakubantalik": {
+      "login": "Jakubantalik",
+      "name": "Jakub Antalik",
+      "bio": "Product designer / engineer",
+      "website": "https://jakubantalik.com",
+      "location": null
+    },
+    "insane0777": {
+      "login": "INSANE0777",
+      "name": "Afjal Hussein",
+      "bio": "7",
+      "website": null,
+      "location": null
+    },
+    "iart-ai": {
+      "login": "iart-ai",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "humanlayer": {
+      "login": "humanlayer",
+      "name": "HumanLayer",
+      "bio": null,
+      "website": "https://humanlayer.dev",
+      "location": null
+    },
+    "heygen-com": {
+      "login": "heygen-com",
+      "name": "HeyGen",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "kemiljk": {
+      "login": "kemiljk",
+      "name": "Karl",
+      "bio": "Product Designer. Maker of Figma Plugins, Raycast Extensions, React-based web tools and native apps in SwiftUI. Design Engineer at DuckDuckGo.",
+      "website": "https://www.karlkoch.me",
+      "location": "Remote"
+    },
+    "jdhruv14": {
+      "login": "JDhruv14",
+      "name": "Dhruv Jaradi",
+      "bio": "Engineer | 22 | Geek",
+      "website": "https://jdhruv.dev",
+      "location": "Vadodara, Gujarat, India"
+    },
+    "joe-bell": {
+      "login": "joe-bell",
+      "name": "Joe Bell",
+      "bio": "button polisher",
+      "website": "https://joebell.studio",
+      "location": "Tallinn, Estonia"
+    },
+    "jakubkrehel": {
+      "login": "jakubkrehel",
+      "name": "Jakub Krehel",
+      "bio": null,
+      "website": "https://jakub.kr",
+      "location": null
+    },
+    "jalaalrd": {
+      "login": "jalaalrd",
+      "name": "Rolling dollars",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "kelvinkn17": {
+      "login": "kelvinkn17",
+      "name": "Kelvin Adithya",
+      "bio": "dev mfer",
+      "website": "https://klvn.dev",
+      "location": null
+    },
+    "jane-xiaoer": {
+      "login": "Jane-xiaoer",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "justinwetch": {
+      "login": "justinwetch",
+      "name": "Justin Wetch",
+      "bio": "Bestselling poet, product designer, artist, photographer, designer (10+ years), AI builder. Creator of the game “Upekkha” and the app “Natural Photo\"",
+      "website": "https://portfolio.justinwetch.com/",
+      "location": "anchorage"
+    },
+    "lucasmarkes": {
+      "login": "lucasmarkes",
+      "name": "Lucas",
+      "bio": "Design Engineer & Open Source Contributor",
+      "website": "https://lucasmarkes.com",
+      "location": null
+    },
+    "leonxlnx": {
+      "login": "Leonxlnx",
+      "name": "Leon Lin",
+      "bio": null,
+      "website": null,
+      "location": "Munich"
+    },
+    "liamgvchi": {
+      "login": "LiamGvchi",
+      "name": "LiamGvchi",
+      "bio": "🍠@AesthAI",
+      "website": "https://liamgvchi.com/",
+      "location": "Hangzhou"
+    },
+    "larashero3-dotcom": {
+      "login": "larashero3-dotcom",
+      "name": "lieflat",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "luchasarie": {
+      "login": "luchasarie",
+      "name": "LuchasArie",
+      "bio": "Web web web web",
+      "website": "https://Reverbs.com.br",
+      "location": "São Paulo"
+    },
+    "kosta4a": {
+      "login": "kosta4a",
+      "name": "Kosta",
+      "bio": "founding designer @ Steel Computer",
+      "website": "https://kosta.fyi",
+      "location": "Serbia"
+    },
+    "kitlangton": {
+      "login": "kitlangton",
+      "name": "Kit Langton",
+      "bio": "Program writer for a respectable software company.",
+      "website": "https://kitlangton.com",
+      "location": "San Francisco, CA"
+    },
+    "latent-spaces": {
+      "login": "latent-spaces",
+      "name": "Latent Spaces",
+      "bio": "A home for side quests, prototypes, and useful oddities.",
+      "website": null,
+      "location": null
+    },
+    "moguzbulbul": {
+      "login": "moguzbulbul",
+      "name": "Oğuz Bülbül",
+      "bio": "Product designer ✺ ex: Interfacer, Forte, Pudgy Penguins, Fyxer ai, Nansen, Flott, Nexus, UXtools, Flott, Qoves",
+      "website": "https://oguz.design",
+      "location": null
+    },
+    "mengto": {
+      "login": "MengTo",
+      "name": "Meng To",
+      "bio": null,
+      "website": "https://mengto.com",
+      "location": null
+    },
+    "mattpocock": {
+      "login": "mattpocock",
+      "name": "Matt Pocock",
+      "bio": "TypeScript wizard. Building Total TypeScript - a comprehensive, production-grade TypeScript course. Ex-Vercel, Stately.",
+      "website": "https://aihero.dev",
+      "location": "Oxfordshire"
+    },
+    "mickadesign": {
+      "login": "mickadesign",
+      "name": "Micka.design",
+      "bio": null,
+      "website": "https://micka.design/",
+      "location": "San Francisco"
+    },
+    "mrstev3n": {
+      "login": "mrstev3n",
+      "name": "Steven H-A",
+      "bio": "Product Designer 🇧🇯",
+      "website": null,
+      "location": "Cotonou, Benin"
+    },
+    "millionco": {
+      "login": "millionco",
+      "name": "Million Software, Inc.",
+      "bio": null,
+      "website": "https://million.dev",
+      "location": "United States of America"
+    },
+    "microsoft": {
+      "login": "microsoft",
+      "name": "Microsoft",
+      "bio": "Open source projects and samples from Microsoft",
+      "website": "https://opensource.microsoft.com",
+      "location": "Redmond, WA"
+    },
+    "memex-lab": {
+      "login": "memex-lab",
+      "name": null,
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "nutlope": {
+      "login": "Nutlope",
+      "name": "Hassan El Mghari",
+      "bio": "Building.",
+      "website": "http://nutlope.com",
+      "location": "New York City, NY"
+    },
+    "nvillapiano": {
+      "login": "nvillapiano",
+      "name": "Nick Villapiano",
+      "bio": "Director, Front End Development @ One North",
+      "website": "http://www.illapiano.com",
+      "location": "Brooklyn, NY // Minneapolis, MN"
+    },
+    "oso95": {
+      "login": "oso95",
+      "name": "cyw",
+      "bio": "Building Physical AI",
+      "website": "https://hermai.ai",
+      "location": "San Francisco"
+    },
+    "oil-oil": {
+      "login": "oil-oil",
+      "name": "Zhihuang Lin",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "nolanperk": {
+      "login": "nolanperk",
+      "name": "Nolan Perkins",
+      "bio": "UX Designer, Front-End Developer, creator",
+      "website": "https://radnolan.com",
+      "location": "Tampa, Fl"
+    },
+    "niazmorshed2007": {
+      "login": "NiazMorshed2007",
+      "name": "Niaz Morshed",
+      "bio": "building.....",
+      "website": "https://www.niazmorshed.dev/",
+      "location": "Planet"
+    },
+    "nextlevelbuilder": {
+      "login": "nextlevelbuilder",
+      "name": "Next Level Builder",
+      "bio": "From Zero to One Is Always the Hardest Part. We Can Take You There.",
+      "website": "https://nextlevelbuilder.io",
+      "location": "Vietnam"
+    },
+    "openai": {
+      "login": "openai",
+      "name": "OpenAI",
+      "bio": null,
+      "website": "https://openai.com/",
+      "location": null
+    },
+    "redongreen": {
+      "login": "redongreen",
+      "name": "Ian Guisard",
+      "bio": "Design systems @ Uber",
+      "website": null,
+      "location": null
+    },
+    "pbakaus": {
+      "login": "pbakaus",
+      "name": "Paul Bakaus",
+      "bio": "Creative Technologist ☕️ Entrepreneur • 🗝 Gate opener • 🗺 Adventurer • 🎬 Geek • Created jQuery UI, Google for Creators, Spotter Studio • he/him",
+      "website": "https://paulbakaus.com",
+      "location": "San Francisco"
+    },
+    "raphaelsalaja": {
+      "login": "raphaelsalaja",
+      "name": "Raphael Salaja",
+      "bio": "Design Engineer",
+      "website": "https://www.raphaelsalaja.com",
+      "location": null
+    },
+    "petergyang": {
+      "login": "petergyang",
+      "name": "Peter Yang",
+      "bio": "10+ years as a product leader on a journey to become an AI builder.",
+      "website": "https://creatoreconomy.so/",
+      "location": "Bay Area, CA"
+    },
+    "prototyperai": {
+      "login": "PrototyperAI",
+      "name": "Prototyper",
+      "bio": "Create your ideas",
+      "website": "https://www.prototyper.co",
+      "location": "United States of America"
+    },
+    "rams-design": {
+      "login": "rams-design",
+      "name": "Rams",
+      "bio": "Automated Design Review",
+      "website": "https://rams.ai",
+      "location": "United States of America"
+    },
+    "remix-run": {
+      "login": "remix-run",
+      "name": "Remix",
+      "bio": null,
+      "website": "https://remix.run",
+      "location": null
+    },
+    "remotion-dev": {
+      "login": "remotion-dev",
+      "name": "Remotion",
+      "bio": "Make videos programmatically",
+      "website": "https://remotion.dev",
+      "location": null
+    },
+    "shadcn": {
+      "login": "shadcn",
+      "name": "shadcn",
+      "bio": "I own a computer.",
+      "website": null,
+      "location": null
+    },
+    "saadeghi": {
+      "login": "saadeghi",
+      "name": "Pouya Saadeghi",
+      "bio": "freelance web developer",
+      "website": "https://saadeghi.com",
+      "location": "Istanbul"
+    },
+    "rossark0": {
+      "login": "rossark0",
+      "name": "Ross",
+      "bio": "Indie hacker",
+      "website": "https://thisross.com",
+      "location": "World"
+    },
+    "s0xdk": {
+      "login": "s0xDk",
+      "name": "s13k",
+      "bio": null,
+      "website": "https://s13k.dev",
+      "location": null
+    },
+    "samyost1": {
+      "login": "samyost1",
+      "name": "Sam Yost",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "rieranthony": {
+      "login": "Rieranthony",
+      "name": "Anthony Riera",
+      "bio": "I code and make videos on Youtube",
+      "website": "https://antho.ooo",
+      "location": "London, UK"
+    },
+    "rolldown": {
+      "login": "rolldown",
+      "name": "Rolldown",
+      "bio": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API",
+      "website": "https://rolldown.rs",
+      "location": null
+    },
+    "shadcn-ui": {
+      "login": "shadcn-ui",
+      "name": null,
+      "bio": "The Foundation for your Design System",
+      "website": "https://ui.shadcn.com",
+      "location": null
+    },
+    "superfuture": {
+      "login": "Superfuture",
+      "name": "Superfuture",
+      "bio": null,
+      "website": null,
+      "location": null
+    },
+    "sidkh": {
+      "login": "sidkh",
+      "name": "Alex Sidorenko",
+      "bio": "I make videos for devs",
+      "website": "https://www.offautopilot.dev/",
+      "location": null
+    },
+    "stephenturner": {
+      "login": "stephenturner",
+      "name": "Stephen Turner",
+      "bio": "Associate Professor at the University of Virginia School of Data Science.",
+      "website": "http://StephenTurner.us",
+      "location": "Charlottesville, VA"
+    },
+    "superdesigndev": {
+      "login": "superdesigndev",
+      "name": "Superdesign",
+      "bio": "Building tools for agents",
+      "website": null,
+      "location": null
+    },
+    "sveltejs": {
+      "login": "sveltejs",
+      "name": "Svelte",
+      "bio": "Web development for the rest of us",
+      "website": "https://svelte.dev",
+      "location": "pkg.devDependencies"
+    },
+    "stewdioai": {
+      "login": "StewdioAI",
+      "name": "Stewdio AI",
+      "bio": null,
+      "website": "https://www.stewdio.ai",
+      "location": "United States of America"
+    },
+    "slidevjs": {
+      "login": "slidevjs",
+      "name": "Slidev",
+      "bio": "Presentation slides for developers",
+      "website": "https://sli.dev",
+      "location": null
+    },
+    "tjcages": {
+      "login": "tjcages",
+      "name": "tylerj",
+      "bio": null,
+      "website": "https://tylerj.me",
+      "location": "NYC"
+    },
+    "vincentwei1021": {
+      "login": "Vincentwei1021",
+      "name": "Yihao",
+      "bio": "Machine Learning, Computer Science, Mathematics, Music",
+      "website": null,
+      "location": null
+    },
+    "teddarific": {
+      "login": "Teddarific",
+      "name": "Teddy Ni",
+      "bio": "prev @robinhood @instagram",
+      "website": "https://teddyni.com",
+      "location": "San Francisco"
+    },
+    "tt-a1i": {
+      "login": "tt-a1i",
+      "name": null,
+      "bio": null,
+      "website": "https://archify.si",
+      "location": null
+    },
+    "vueuse": {
+      "login": "vueuse",
+      "name": "VueUse",
+      "bio": "Collection of Vue Composition Utilities",
+      "website": "https://vueuse.org",
+      "location": null
+    },
+    "vuejs-ai": {
+      "login": "vuejs-ai",
+      "name": "Vue AI",
+      "bio": "(Unofficial) Building AI tools for Vue",
+      "website": null,
+      "location": null
+    },
+    "vercel": {
+      "login": "vercel",
+      "name": "Vercel",
+      "bio": "Agentic infrastructure for every app and agent.",
+      "website": "https://vercel.com",
+      "location": null
+    },
+    "vercel-labs": {
+      "login": "vercel-labs",
+      "name": "Vercel Labs",
+      "bio": "Develop. Preview. Ship. Creators of Next.js.",
+      "website": "https://vercel.com",
+      "location": null
+    },
+    "wshobson": {
+      "login": "wshobson",
+      "name": "Seth Hobson",
+      "bio": "Senior Applied AI Engineer @UnitedDataTechnologies | Founder @major7apps",
+      "website": "https://major7apps.com",
+      "location": "NC, USA"
+    },
+    "zarazhangrui": {
+      "login": "zarazhangrui",
+      "name": "Zara Zhang",
+      "bio": "AI tinkerer",
+      "website": "http://www.zarazhang.com/",
+      "location": "San Jose, California"
+    },
+    "wheresryan22": {
+      "login": "wheresryan22",
+      "name": "Ryan",
+      "bio": "self-proclaimed misfit",
+      "website": null,
+      "location": null
+    },
+    "zeke": {
+      "login": "zeke",
+      "name": "Zeke Sikelianos",
+      "bio": "\"Zeek\". Open-source AI engineer at @cloudflare. Previously @replicate, @github, @electron, @npm, @heroku.",
+      "website": "http://zeke.sikelianos.com",
+      "location": "Berkeley, CA"
+    }
+  }
+}

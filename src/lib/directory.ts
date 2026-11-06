@@ -1,5 +1,6 @@
 import { registry, type RegistrySkill, type TopicSlug } from '#/data/registry.ts'
 import { topicBySlug, topics, type Topic } from '#/data/topics.ts'
+import authorProfiles from '#/data/author-profiles.json'
 
 export type { RegistrySkill, Topic, TopicSlug }
 
@@ -12,7 +13,19 @@ export type Author = {
   profileUrl: string
   repos: string[]
   skills: RegistrySkill[]
+  /** GitHub profile snapshot from scripts/update-author-profiles.ts, if the account exists. */
+  profile?: AuthorProfile
 }
+
+export type AuthorProfile = {
+  login: string
+  name: string | null
+  bio: string | null
+  website: string | null
+  location: string | null
+}
+
+const profiles: Record<string, AuthorProfile> = authorProfiles.profiles
 
 const byName = (a: RegistrySkill, b: RegistrySkill) => a.name.localeCompare(b.name)
 
@@ -45,6 +58,7 @@ for (const skill of allSkills) {
       profileUrl: `https://github.com/${skill.user}`,
       repos: [],
       skills: [],
+      profile: profiles[key],
     }
     authorMap.set(key, author)
   }
