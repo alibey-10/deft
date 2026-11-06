@@ -135,14 +135,3 @@ export async function loadDirectory(queryClient: QueryClient): Promise<Directory
 export const getTopic = (slug: string) => topicBySlug.get(slug as TopicSlug)
 
 export const topicLabel = (slug: TopicSlug) => topicBySlug.get(slug)?.label ?? slug
-
-export function filterSkills(skills: RegistrySkill[], query: string) {
-  const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
-  if (terms.length === 0) return skills
-  return skills.filter((skill) => {
-    const haystack = [skill.name, skill.description, skill.user, skill.repo, ...skill.topics]
-      .join(' ')
-      .toLowerCase()
-    return terms.every((term) => haystack.includes(term))
-  })
-}

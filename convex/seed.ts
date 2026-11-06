@@ -3,6 +3,7 @@
  * Authors are keyed on `key`, skills on `rawUrl`. Re-running only patches rows whose data changed.
  */
 import { v } from 'convex/values'
+import { internal } from './_generated/api'
 import { internalMutation } from './_generated/server'
 import type { Id } from './_generated/dataModel'
 import { vTopicSlug } from './validators'
@@ -33,6 +34,15 @@ const vSeedSkill = v.object({
   sourceKey: v.string(),
   pathSlug: v.string(),
 })
+
+/** Text the `search_text` index matches against: everything the home page search covers. */
+const skillSearchText = (skill: {
+  name: string
+  description: string
+  user: string
+  repo: string
+  topics: string[]
+}) => [skill.name, skill.description, skill.user, skill.repo, ...skill.topics].join(' ')
 
 type Counts = { inserted: number; updated: number; unchanged: number }
 
@@ -83,7 +93,12 @@ export const upsertSkills = internalMutation({
         authorIds.set(skill.sourceKey, authorId)
       }
 
-      const row = { ...skill, authorId, status: 'approved' as const }
+      const row = {
+        ...skill,
+        authorId,
+        status: 'approved' as const,
+        searchText: skillSearchText(skill),
+      }
       const existing = await ctx.db
         .query('skills')
         .withIndex('by_rawUrl', (q) => q.eq('rawUrl', skill.rawUrl))
@@ -123,5 +138,25 @@ export const upsertRepos = internalMutation({
       }
     }
     return counts
+  },
+})
+
+/**
+ * One-off backfill of `searchText` for rows seeded before it existed. Safe to re-run.
+ * Run: npx convex run seed:backfillSkills
+ */
+export const backfillSkills = internalMutation({
+  args: { cursor: v.optional(v.union(v.string(), v.null())) },
+  handler: async (ctx, { cursor }) => {
+    const { page, isDone, continueCursor } = await ctx.db
+      .query('skills')
+      .paginate({ cursor: cursor ?? null, numItems: 100 })
+    for (const skill of page) {
+      const searchText = skillSearchText(skill)
+      if (skill.searchText !== searchText) await ctx.db.patch(skill._id, { searchText })
+    }
+    if (!isDone) {
+      await ctx.scheduler.runAfter(0, internal.seed.backfillSkills, { cursor: continueCursor })
+    }
   },
 })
