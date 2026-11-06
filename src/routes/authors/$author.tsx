@@ -3,14 +3,13 @@ import { HugeiconsIcon } from '@hugeicons/react'
 import { GithubIcon, Link01Icon, Location01Icon, UserGroupIcon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
+import { GridColumnsToggle, useGridColumns } from '#/components/grid-columns.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
-import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
 import { GithubRepoBadges } from '#/components/github-repo-badges.tsx'
-import { filterSkills, loadDirectory, useDirectory } from '#/lib/directory.ts'
+import { loadDirectory, useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/authors/$author')({
-  validateSearch: validateSkillSearch,
   loader: async ({ params, context }) => {
     const author = (await loadDirectory(context.queryClient)).getAuthor(params.author)
     if (!author) throw notFound()
@@ -29,9 +28,7 @@ function AuthorPage() {
   const { authorKey } = Route.useLoaderData()
   const author = useDirectory().getAuthor(authorKey)
   if (!author) throw notFound()
-  const { q = '' } = Route.useSearch()
-  const navigate = Route.useNavigate()
-  const results = filterSkills(author.skills, q)
+  const [columns, setColumns] = useGridColumns()
   const profile = author.profile
   const displayName = profile?.name ?? author.name
   const repos = author.repos.map((repo) => {
@@ -123,17 +120,10 @@ function AuthorPage() {
       </aside>
 
       <section aria-label="Skills" className="flex flex-col gap-4 xl:col-start-1">
-        {author.skills.length > 6 && (
-          <SkillSearch
-            className="max-w-none"
-            value={q}
-            placeholder={`Search ${author.name}'s skills…`}
-            onChange={(value) =>
-              navigate({ search: value ? { q: value } : {}, replace: true, resetScroll: false })
-            }
-          />
-        )}
-        <SkillGrid skills={results} maxColumns={2} />
+        <div className="flex justify-end">
+          <GridColumnsToggle value={columns} onChange={setColumns} />
+        </div>
+        <SkillGrid skills={author.skills} columns={columns} meta="topics" />
       </section>
     </div>
   )

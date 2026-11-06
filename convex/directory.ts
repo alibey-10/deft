@@ -13,6 +13,10 @@ export const get = query({
       .withIndex('by_status', (q) => q.eq('status', 'approved'))
       .collect()
 
+    const stars = new Map(
+      (await ctx.db.query('repos').collect()).map((r) => [r.key, r.stars] as const),
+    )
+
     const skills = rows.flatMap((s) =>
       // Approval always assigns a pathSlug; skip any row that somehow lacks one.
       s.pathSlug
@@ -29,6 +33,9 @@ export const get = query({
               description: s.description,
               topics: s.topics,
               files: s.files,
+              /** When the skill joined the directory: approval time, else row creation. */
+              addedAt: s.reviewedAt ?? s._creationTime,
+              stars: stars.get(`${s.user}/${s.repo}`.toLowerCase()),
             },
           ]
         : [],

@@ -21,6 +21,14 @@ export default defineSchema({
     profileFetchedAt: v.optional(v.number()),
   }).index('by_key', ['key']),
 
+  /** GitHub repo stats, refreshed by `scripts/update-repo-stars.ts`. */
+  repos: defineTable({
+    /** `<user>/<repo>` lowercased. */
+    key: v.string(),
+    stars: v.number(),
+    fetchedAt: v.number(),
+  }).index('by_key', ['key']),
+
   skills: defineTable({
     slug: v.string(),
     /** Owner as written; resolves to an author on approval. */

@@ -102,3 +102,26 @@ export const upsertSkills = internalMutation({
     return counts
   },
 })
+
+export const upsertRepos = internalMutation({
+  args: { repos: v.array(v.object({ key: v.string(), stars: v.number(), fetchedAt: v.number() })) },
+  handler: async (ctx, { repos }): Promise<Counts> => {
+    const counts: Counts = { inserted: 0, updated: 0, unchanged: 0 }
+    for (const repo of repos) {
+      const existing = await ctx.db
+        .query('repos')
+        .withIndex('by_key', (q) => q.eq('key', repo.key))
+        .unique()
+      if (!existing) {
+        await ctx.db.insert('repos', repo)
+        counts.inserted++
+      } else if (existing.stars === repo.stars) {
+        counts.unchanged++
+      } else {
+        await ctx.db.patch(existing._id, repo)
+        counts.updated++
+      }
+    }
+    return counts
+  },
+})

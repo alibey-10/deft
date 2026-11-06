@@ -1,6 +1,9 @@
 import { Link } from '@tanstack/react-router'
 
 import { CommandPalette } from '#/components/command-palette.tsx'
+import { buttonVariants } from '#/components/ui/button.tsx'
+import { ThemeToggle } from '#/components/ui/theme-toggle.tsx'
+import { useTheme } from '#/hooks/use-theme.ts'
 
 const nav = [
   { to: '/', label: 'Skills' },
@@ -9,6 +12,9 @@ const nav = [
 ] as const
 
 export function SiteHeader() {
+  const { theme, toggleTheme } = useTheme()
+  const themeLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+
   return (
     <header className="sticky top-0 z-20 border-b bg-background">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
@@ -29,6 +35,12 @@ export function SiteHeader() {
             ))}
           </nav>
           <CommandPalette />
+          <ThemeToggle
+            aria-label={themeLabel}
+            title={themeLabel}
+            onClick={toggleTheme}
+            className={buttonVariants({ variant: 'ghost', size: 'icon' })}
+          />
         </div>
       </div>
     </header>
