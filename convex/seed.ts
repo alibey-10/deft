@@ -120,7 +120,16 @@ export const upsertSkills = internalMutation({
 })
 
 export const upsertRepos = internalMutation({
-  args: { repos: v.array(v.object({ key: v.string(), stars: v.number(), fetchedAt: v.number() })) },
+  args: {
+    repos: v.array(
+      v.object({
+        key: v.string(),
+        stars: v.number(),
+        description: v.optional(v.string()),
+        fetchedAt: v.number(),
+      }),
+    ),
+  },
   handler: async (ctx, { repos }): Promise<Counts> => {
     const counts: Counts = { inserted: 0, updated: 0, unchanged: 0 }
     for (const repo of repos) {
@@ -131,10 +140,11 @@ export const upsertRepos = internalMutation({
       if (!existing) {
         await ctx.db.insert('repos', repo)
         counts.inserted++
-      } else if (existing.stars === repo.stars) {
+      } else if (existing.stars === repo.stars && existing.description === repo.description) {
         counts.unchanged++
       } else {
-        await ctx.db.patch(existing._id, repo)
+        // `description: undefined` clears a description removed on GitHub.
+        await ctx.db.patch(existing._id, { description: undefined, ...repo })
         counts.updated++
       }
     }

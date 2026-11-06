@@ -205,7 +205,9 @@ export const recordRun = internalMutation({
     belowThreshold: v.number(),
     results: v.array(vResult),
     authors: v.array(vAuthor),
-    repos: v.array(v.object({ key: v.string(), stars: v.number() })),
+    repos: v.array(
+      v.object({ key: v.string(), stars: v.number(), description: v.optional(v.string()) }),
+    ),
     errors: v.array(v.object({ target: v.string(), message: v.string() })),
   },
   handler: async (ctx, args) => {
@@ -219,7 +221,8 @@ export const recordRun = internalMutation({
         .withIndex('by_key', (q) => q.eq('key', repo.key))
         .unique()
       const row = { ...repo, fetchedAt: now }
-      if (existing) await ctx.db.patch(existing._id, row)
+      // `description: undefined` clears a description removed on GitHub.
+      if (existing) await ctx.db.patch(existing._id, { description: undefined, ...row })
       else await ctx.db.insert('repos', row)
     }
 

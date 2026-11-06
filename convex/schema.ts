@@ -28,6 +28,8 @@ export default defineSchema({
     /** `<user>/<repo>` lowercased. */
     key: v.string(),
     stars: v.number(),
+    /** The repo's GitHub "About" text; unset when it has none. */
+    description: v.optional(v.string()),
     fetchedAt: v.number(),
   }).index('by_key', ['key']),
 

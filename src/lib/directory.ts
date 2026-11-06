@@ -19,6 +19,8 @@ export type Author = {
   avatarUrl: string
   profileUrl: string
   repos: string[]
+  /** GitHub "About" text by repo name, for repos that have one. */
+  repoDescriptions: Map<string, string>
   skills: RegistrySkill[]
   /** GitHub profile snapshot, if the account exists. */
   profile?: AuthorProfile
@@ -73,6 +75,8 @@ export function buildDirectory(data: DirectoryData): Directory {
     .sort((a, b) => b.count - a.count)
 
   const authorRows = new Map(data.authors.map((a) => [a.key, a]))
+  // `repos` is missing while the Convex deployment predates it (see `convex/directory.ts`).
+  const repoDescriptions = new Map((data.repos ?? []).map((r) => [r.key, r.description]))
   const authorMap = new Map<string, Author>()
   for (const skill of allSkills) {
     const key = skill.sourceKey
@@ -85,6 +89,7 @@ export function buildDirectory(data: DirectoryData): Directory {
         avatarUrl: row?.avatarUrl ?? `https://github.com/${skill.user}.png?size=80`,
         profileUrl: row?.profileUrl ?? `https://github.com/${skill.user}`,
         repos: [],
+        repoDescriptions: new Map(),
         skills: [],
         profile:
           row?.profileFetchedAt !== undefined
@@ -101,7 +106,11 @@ export function buildDirectory(data: DirectoryData): Directory {
       authorMap.set(key, author)
     }
     author.skills.push(skill)
-    if (!author.repos.includes(skill.repo)) author.repos.push(skill.repo)
+    if (!author.repos.includes(skill.repo)) {
+      author.repos.push(skill.repo)
+      const description = repoDescriptions.get(`${skill.user}/${skill.repo}`.toLowerCase())
+      if (description) author.repoDescriptions.set(skill.repo, description)
+    }
   }
 
   const authors = [...authorMap.values()].sort((a, b) =>

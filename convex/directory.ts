@@ -80,9 +80,8 @@ export const get = query({
       .withIndex('by_status', (q) => q.eq('status', 'approved'))
       .collect()
 
-    const stars = new Map(
-      (await ctx.db.query('repos').collect()).map((r) => [r.key, r.stars] as const),
-    )
+    const repoRows = await ctx.db.query('repos').collect()
+    const stars = new Map(repoRows.map((r) => [r.key, r.stars] as const))
 
     const skills = rows.flatMap((s) => {
       const skill = toListedSkill(s, stars.get(repoKey(s)))
@@ -105,7 +104,12 @@ export const get = query({
         profileFetchedAt: a.profileFetchedAt,
       }))
 
-    return { skills, authors }
+    const skillRepoKeys = new Set(rows.map(repoKey))
+    const repos = repoRows.flatMap((r) =>
+      r.description && skillRepoKeys.has(r.key) ? [{ key: r.key, description: r.description }] : [],
+    )
+
+    return { skills, authors, repos }
   },
 })
 

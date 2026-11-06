@@ -1,5 +1,5 @@
 /**
- * Fetch the GitHub star count for every registry repo and write it to Convex (`repos` table).
+ * Fetch the GitHub star count and "About" description for every registry repo and write it to Convex (`repos` table).
  *
  * Auth: uses $GITHUB_TOKEN, falling back to `gh auth token`.
  * Run: vp run update-repo-stars            (dev deployment from .env.local)
@@ -24,7 +24,10 @@ const token =
     }
   })()
 
-async function fetchStars(user: string, repo: string): Promise<number | null> {
+async function fetchRepo(
+  user: string,
+  repo: string,
+): Promise<{ stars: number; description?: string } | null> {
   const response = await fetch(`https://api.github.com/repos/${user}/${repo}`, {
     headers: {
       Accept: 'application/vnd.github+json',
@@ -34,7 +37,8 @@ async function fetchStars(user: string, repo: string): Promise<number | null> {
   })
   if (response.status === 404) return null
   if (!response.ok) throw new Error(`${user}/${repo}: ${response.status} ${await response.text()}`)
-  return ((await response.json()) as { stargazers_count: number }).stargazers_count
+  const body = (await response.json()) as { stargazers_count: number; description: string | null }
+  return { stars: body.stargazers_count, description: body.description?.trim() || undefined }
 }
 
 // One entry per GitHub repo, keyed like `convex/directory.ts` looks them up.
@@ -44,15 +48,15 @@ for (const skill of registry) {
   repos.set(`${skill.user}/${skill.repo}`.toLowerCase(), { user: skill.user, repo: skill.repo })
 }
 
-const rows: Array<{ key: string; stars: number; fetchedAt: number }> = []
+const rows: Array<{ key: string; stars: number; description?: string; fetchedAt: number }> = []
 const missing: string[] = []
 const entries = [...repos.entries()]
 for (let i = 0; i < entries.length; i += CONCURRENCY) {
   await Promise.all(
     entries.slice(i, i + CONCURRENCY).map(async ([key, { user, repo }]) => {
-      const stars = await fetchStars(user, repo)
-      if (stars === null) missing.push(key)
-      else rows.push({ key, stars, fetchedAt: Date.now() })
+      const info = await fetchRepo(user, repo)
+      if (info === null) missing.push(key)
+      else rows.push({ key, ...info, fetchedAt: Date.now() })
     }),
   )
 }
@@ -66,6 +70,6 @@ for (let i = 0; i < rows.length; i += BATCH_SIZE) {
   console.log(out.trim())
 }
 console.log(
-  `Wrote stars for ${rows.length} repos` +
+  `Wrote stars and descriptions for ${rows.length} repos` +
     (missing.length ? `; not found on GitHub: ${missing.join(', ')}` : ''),
 )
