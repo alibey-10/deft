@@ -145,7 +145,9 @@ function AskPage() {
     <div className="flex h-[calc(100svh-3.5rem-5rem)] min-h-96 flex-col gap-4">
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-semibold tracking-tight">Ask Skilly</h1>
+          <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] [font-stretch:90%]">
+            Ask Skilly
+          </h1>
           <p className="text-sm text-muted-foreground">
             Describe what you're building and get matching UI skills from the directory.
           </p>

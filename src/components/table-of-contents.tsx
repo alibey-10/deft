@@ -40,7 +40,7 @@ export function TableOfContents({ entries }: { entries: TocEntry[] }) {
 
   return (
     <nav aria-label="Table of contents" className="flex flex-col gap-2">
-      <h2 className="text-xs font-medium text-muted-foreground">On this skill</h2>
+      <h2 className="text-[0.8125rem] font-semibold">On this skill</h2>
       <ol className="flex flex-col border-l">
         {entries.map((entry, index) => (
           <li key={`${entry.id}-${index}`}>
@@ -49,8 +49,8 @@ export function TableOfContents({ entries }: { entries: TocEntry[] }) {
               aria-current={active === entry.id ? 'location' : undefined}
               style={{ paddingLeft: `${(entry.depth - minDepth) * 0.75 + 0.75}rem` }}
               className={cn(
-                '-ml-px block border-l border-transparent py-1 pr-2 text-sm text-muted-foreground hover:text-foreground',
-                'aria-[current=location]:border-foreground aria-[current=location]:font-medium aria-[current=location]:text-foreground',
+                '-ml-px block border-l border-transparent py-1 pr-2 text-sm text-muted-foreground transition-colors hover:text-foreground',
+                'aria-[current=location]:border-redline aria-[current=location]:font-medium aria-[current=location]:text-foreground',
               )}
             >
               <span className="line-clamp-2">{entry.text}</span>
