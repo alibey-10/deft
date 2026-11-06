@@ -8,7 +8,7 @@ import { api } from '../../convex/_generated/api'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import { useDirectory, type RegistrySkill } from '#/lib/directory.ts'
+import type { RegistrySkill } from '#/lib/directory.ts'
 
 const PAGE_SIZE = 20
 
@@ -33,7 +33,6 @@ export const Route = createFileRoute('/')({
 function Home() {
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
-  const { allSkills, authors } = useDirectory()
   const { results, status, loadMore } = usePaginatedQuery(
     api.directory.list,
     { q: q || undefined },
@@ -62,8 +61,8 @@ function Home() {
   return (
     <>
       <PageIntro
-        title="A directory of UI skills for coding agents"
-        description={`${allSkills.length} skills from ${authors.length} authors, organized by topic and author. Install them into Claude Code, Cursor, Codex, and other agents.`}
+        title="Give your agent better taste"
+        description="Skills that teach coding agents to ship polished interfaces, from typography and motion to accessibility and design systems. Works with Claude Code, Cursor, Codex, and more."
       />
 
       <section aria-label="All skills" className="flex flex-col gap-4">
