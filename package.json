@@ -15,7 +15,7 @@
     "build": "vp build",
     "preview": "vp preview",
     "deploy": "bun run build && wrangler deploy",
-    "prepare": "vp config"
+    "prepare": "vp config && vpx ./scripts/link-env-local.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
