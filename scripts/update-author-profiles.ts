@@ -1,5 +1,5 @@
 /**
- * Fetch GitHub profile info (name, bio, website, location) for every registry author
+ * Fetch GitHub profile info (name, bio, website, location, followers) for every registry author
  * and write it to src/data/author-profiles.json.
  *
  * Auth: uses $GITHUB_TOKEN, falling back to `gh auth token`.
@@ -19,6 +19,7 @@ type GithubAccount = {
   blog: string | null
   location: string | null
   company: string | null
+  followers: number
 }
 
 export type AuthorProfile = {
@@ -27,6 +28,7 @@ export type AuthorProfile = {
   bio: string | null
   website: string | null
   location: string | null
+  followers: number
 }
 
 const token =
@@ -74,6 +76,7 @@ async function fetchProfile(login: string): Promise<AuthorProfile | null> {
     bio: clean(org?.description ?? account.bio),
     website: normalizeWebsite(account.blog),
     location: clean(account.location),
+    followers: account.followers,
   }
 }
 
@@ -97,7 +100,15 @@ for (let i = 0; i < logins.length; i += CONCURRENCY) {
 const out = fileURLToPath(new URL('../src/data/author-profiles.json', import.meta.url))
 writeFileSync(
   out,
-  `${JSON.stringify({ generatedAt: new Date().toISOString(), profiles }, null, 2)}\n`,
+  `${JSON.stringify(
+    {
+      generatedAt: new Date().toISOString(),
+      // Sorted so regenerating only diffs on real changes, not fetch order.
+      profiles: Object.fromEntries(Object.entries(profiles).sort(([x], [y]) => x.localeCompare(y))),
+    },
+    null,
+    2,
+  )}\n`,
 )
 console.log(
   `Wrote ${Object.keys(profiles).length} profiles` +

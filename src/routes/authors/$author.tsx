@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { Link01Icon, Location01Icon } from '@hugeicons/core-free-icons'
+import { GithubIcon, Link01Icon, Location01Icon, UserGroupIcon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
@@ -23,6 +23,9 @@ export const Route = createFileRoute('/authors/$author')({
   component: AuthorPage,
 })
 
+const formatCount = (n: number) =>
+  new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(n)
+
 function AuthorPage() {
   const { authorKey } = Route.useLoaderData()
   const author = getAuthor(authorKey)!
@@ -32,80 +35,117 @@ function AuthorPage() {
   const profile = author.profile
   const login = profile?.login ?? author.skills[0].user
   const displayName = profile?.name ?? author.name
-  // One badge per repo, skipping skills hosted outside GitHub.
-  const githubRepos = author.repos.flatMap((repo) => {
-    const skill = author.skills.find(
-      (s) => s.repo === repo && s.githubUrl.startsWith('https://github.com/'),
-    )
-    return skill ? [{ user: skill.user, repo }] : []
+  const repos = author.repos.map((repo) => {
+    const skills = author.skills.filter((s) => s.repo === repo)
+    // Badges only make sense for repos hosted on GitHub.
+    const github = skills.find((s) => s.githubUrl.startsWith('https://github.com/'))
+    return { repo, user: skills[0].user, onGithub: !!github }
   })
 
   return (
-    <>
-      <PageIntro
-        title={
-          <span className="flex items-center gap-3">
-            <AuthorAvatar author={author} size="lg" />
-            {displayName}
-          </span>
-        }
-        description={profile?.bio ?? undefined}
-      >
-        <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-          <li>
-            <a
-              href={`https://github.com/${login}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-foreground"
-            >
-              @{login}
-            </a>
-          </li>
-          {profile?.location && (
-            <li className="flex items-center gap-1.5">
-              <HugeiconsIcon icon={Location01Icon} className="size-4" aria-hidden />
-              {profile.location}
-            </li>
-          )}
-          {profile?.website && (
-            <li className="flex min-w-0 items-center gap-1.5">
-              <HugeiconsIcon icon={Link01Icon} className="size-4 shrink-0" aria-hidden />
+    <div className="grid gap-x-10 xl:grid-cols-[minmax(0,1fr)_16rem]">
+      <div className="xl:col-start-1">
+        <PageIntro
+          title={
+            <span className="flex items-center gap-3">
+              <AuthorAvatar author={author} size="lg" />
+              {displayName}
+            </span>
+          }
+          description={profile?.bio ?? undefined}
+        >
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <li>
               <a
-                href={profile.website}
+                href={`https://github.com/${login}`}
                 target="_blank"
                 rel="noreferrer"
-                className="truncate hover:text-foreground"
+                className="hover:text-foreground"
               >
-                {profile.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                @{login}
               </a>
             </li>
-          )}
-        </ul>
-        <div className="flex flex-wrap items-center gap-2">
-          {githubRepos.map(({ user, repo }) => (
-            <GithubRepoBadges key={repo} user={user} repo={repo} />
-          ))}
-        </div>
-      </PageIntro>
+            {profile && (
+              <li className="flex items-center gap-1.5">
+                <HugeiconsIcon icon={UserGroupIcon} className="size-4" aria-hidden />
+                <span>
+                  <span className="font-medium text-foreground tabular-nums">
+                    {formatCount(profile.followers)}
+                  </span>{' '}
+                  {profile.followers === 1 ? 'follower' : 'followers'}
+                </span>
+              </li>
+            )}
+            {profile?.location && (
+              <li className="flex items-center gap-1.5">
+                <HugeiconsIcon icon={Location01Icon} className="size-4" aria-hidden />
+                {profile.location}
+              </li>
+            )}
+            {profile?.website && (
+              <li className="flex min-w-0 items-center gap-1.5">
+                <HugeiconsIcon icon={Link01Icon} className="size-4 shrink-0" aria-hidden />
+                <a
+                  href={profile.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="truncate hover:text-foreground"
+                >
+                  {profile.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                </a>
+              </li>
+            )}
+          </ul>
+        </PageIntro>
+      </div>
 
-      <section className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-sm font-medium">
-            Skills <span className="text-muted-foreground tabular-nums">{results.length}</span>
-          </h2>
-          {author.skills.length > 6 && (
-            <SkillSearch
-              value={q}
-              placeholder={`Search ${author.name}'s skills…`}
-              onChange={(value) =>
-                navigate({ search: value ? { q: value } : {}, replace: true, resetScroll: false })
-              }
-            />
-          )}
-        </div>
-        <SkillGrid skills={results} />
+      <aside
+        aria-label={repos.length === 1 ? 'Repository' : 'Repositories'}
+        className="mb-8 flex flex-col gap-3 self-start xl:sticky xl:top-14 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:mb-0 xl:py-2"
+      >
+        <ul className="flex flex-col gap-8">
+          {repos.map(({ repo, user, onGithub }) => (
+            <li key={repo} className="flex flex-col items-start gap-4">
+              {onGithub ? (
+                <a
+                  href={`https://github.com/${user}/${repo}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex max-w-full min-w-0 items-center gap-2 text-base font-medium hover:underline hover:underline-offset-4"
+                >
+                  <HugeiconsIcon icon={GithubIcon} className="size-5 shrink-0" aria-hidden />
+                  <span className="truncate">
+                    {user}/{repo}
+                  </span>
+                </a>
+              ) : (
+                <span className="max-w-full truncate text-base font-medium">
+                  {user}/{repo}
+                </span>
+              )}
+              {onGithub && (
+                <div className="flex flex-col items-start gap-3">
+                  <GithubRepoBadges user={user} repo={repo} />
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      <section aria-label="Skills" className="flex flex-col gap-4 xl:col-start-1">
+        {author.skills.length > 6 && (
+          <SkillSearch
+            className="max-w-none"
+            value={q}
+            placeholder={`Search ${author.name}'s skills…`}
+            onChange={(value) =>
+              navigate({ search: value ? { q: value } : {}, replace: true, resetScroll: false })
+            }
+          />
+        )}
+        <SkillGrid skills={results} maxColumns={2} />
       </section>
-    </>
+    </div>
   )
 }
