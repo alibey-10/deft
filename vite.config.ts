@@ -76,14 +76,20 @@ const config = defineConfig({
       '@streamdown/code',
     ],
   },
-  plugins: lazyPlugins(() => [
-    devtools(),
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
-    tailwindcss(),
-    tanstackStart(),
-    viteReact(),
-    babel({ presets: [reactCompilerPreset()] }),
-  ]),
+  // Tests are plain unit tests: the Workers runtime and app plugins only get in the way (the
+  // Cloudflare plugin can't start inside Vitest).
+  plugins: lazyPlugins(() =>
+    process.env.VITEST
+      ? []
+      : [
+          devtools(),
+          cloudflare({ viteEnvironment: { name: 'ssr' } }),
+          tailwindcss(),
+          tanstackStart(),
+          viteReact(),
+          babel({ presets: [reactCompilerPreset()] }),
+        ],
+  ),
 })
 
 export default config

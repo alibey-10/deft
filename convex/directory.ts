@@ -44,7 +44,8 @@ async function toListedSkills(ctx: QueryCtx, rows: Doc<'skills'>[]) {
 }
 
 /**
- * Approved skills a page at a time, for infinite scroll: by name, or by relevance when `q` is set.
+ * Approved skills a page at a time, for infinite scroll: newest first, or by relevance when `q` is
+ * set. "Newest" is approval time; seeded skills have none and follow, newest row first.
  */
 export const list = query({
   args: { paginationOpts: paginationOptsValidator, q: v.optional(v.string()) },
@@ -60,7 +61,8 @@ export const list = query({
           .paginate(opts)
       : await ctx.db
           .query('skills')
-          .withIndex('by_status_and_name', (s) => s.eq('status', 'approved'))
+          .withIndex('by_status_and_reviewedAt', (s) => s.eq('status', 'approved'))
+          .order('desc')
           .paginate(opts)
     return { ...result, page: await toListedSkills(ctx, result.page) }
   },

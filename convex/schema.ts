@@ -70,6 +70,8 @@ export default defineSchema({
   })
     .index('by_status', ['status'])
     .index('by_status_and_name', ['status', 'name'])
+    /** Newest first when read in descending order; rows without `reviewedAt` sort by creation. */
+    .index('by_status_and_reviewedAt', ['status', 'reviewedAt'])
     .index('by_status_and_sourceKey', ['status', 'sourceKey'])
     .index('by_pathSlug', ['pathSlug'])
     .index('by_rawUrl', ['rawUrl'])
@@ -135,4 +137,62 @@ export default defineSchema({
   })
     .index('by_runId_and_kind', ['runId', 'kind'])
     .index('by_kind', ['kind']),
+
+  /** One row per skills.sh discovery run (see `convex/skillDiscovery.ts`). */
+  discoveryRuns: defineTable({
+    trigger: v.union(v.literal('cron'), v.literal('manual')),
+    status: v.union(v.literal('running'), v.literal('done'), v.literal('failed')),
+    startedAt: v.number(),
+    finishedAt: v.optional(v.number()),
+    /** Pages crawled with Firecrawl. */
+    pages: v.array(v.string()),
+    /** GitHub-hosted skills in the page's leaderboard data. */
+    listed: v.number(),
+    reposRead: v.number(),
+    /** SKILL.md files already in the directory (any status) or evaluated by an earlier run. */
+    alreadyKnown: v.number(),
+    /** New SKILL.md files skipped unread: repo under 50 stars and skill under 100 installs. */
+    belowThreshold: v.number(),
+    /** SKILL.md files read and classified for the first time in this run. */
+    evaluated: v.number(),
+    added: v.number(),
+    notUi: v.number(),
+    /** Same name and description as a skill already known; optional for runs before the check. */
+    duplicates: v.optional(v.number()),
+    authorsAdded: v.number(),
+    /** Capped; see `MAX_RUN_ERRORS`. */
+    errors: v.array(v.object({ target: v.string(), message: v.string() })),
+  }).index('by_startedAt', ['startedAt']),
+
+  /**
+   * Every SKILL.md a discovery run has classified, so later runs skip it. `added` rows point at the
+   * directory skill they created.
+   */
+  discoveryCandidates: defineTable({
+    runId: v.id('discoveryRuns'),
+    verdict: v.union(v.literal('added'), v.literal('not-ui'), v.literal('duplicate')),
+    rawUrl: v.string(),
+    githubUrl: v.string(),
+    /** `<owner>/<repo>` lowercased. */
+    repoKey: v.string(),
+    /** `<owner>/<repo>` as written. */
+    repo: v.string(),
+    path: v.string(),
+    name: v.optional(v.string()),
+    description: v.optional(v.string()),
+    topics: v.array(vTopicSlug),
+    /** Position on the trending page; unset for repo siblings not listed. */
+    trendingRank: v.optional(v.number()),
+    /** skills.sh installs when listed; repo stars when classified. */
+    installs: v.optional(v.number()),
+    stars: v.optional(v.number()),
+    skillId: v.optional(v.id('skills')),
+    /** The classifier's one-line reason; unset for rows judged before the classifier. */
+    reason: v.optional(v.string()),
+    /** For `duplicate` rows: the skill this one copies. */
+    duplicateOf: v.optional(v.string()),
+  })
+    .index('by_rawUrl', ['rawUrl'])
+    .index('by_repoKey', ['repoKey'])
+    .index('by_runId_and_verdict', ['runId', 'verdict']),
 })

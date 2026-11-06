@@ -8,4 +8,9 @@ crons.interval('scan author repos for skills', { hours: 72 }, internal.skillScan
   trigger: 'cron',
 })
 
+// Every 2 days: crawl skills.sh trending and add new UI skills (see `convex/skillDiscovery.ts`).
+crons.interval('discover UI skills on skills.sh', { hours: 48 }, internal.skillDiscovery.start, {
+  trigger: 'cron',
+})
+
 export default crons

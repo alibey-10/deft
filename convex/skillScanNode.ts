@@ -10,10 +10,24 @@ import type { FunctionArgs, FunctionReturnType } from 'convex/server'
 import { internal } from './_generated/api'
 import type { Id } from './_generated/dataModel'
 import { internalAction } from './_generated/server'
+import {
+  API,
+  RateLimited,
+  describe,
+  eachLimited,
+  encodePath,
+  getRepo,
+  getTree,
+  githubFetch,
+  isSkillFile,
+  readFrontmatter,
+  type GithubRepo,
+  type ScanError,
+  type Tree,
+} from './github'
 import { githubUrlFor, parseRawUrl, rawUrlFor, repoKey, type RawUrlParts } from './githubUrls'
 import type { MissingReason } from './validators'
 
-const API = 'https://api.github.com'
 const TREE_CONCURRENCY = 6
 /** Repo trees read per author per scan; caps very active orgs. Repos over the cap are reported. */
 const MAX_TREES_PER_AUTHOR = 150
@@ -23,51 +37,6 @@ const NEW_REPO_LOOKBACK_MS = 14 * 24 * 60 * 60 * 1000
 const MAX_DETAIL_FETCHES = 40
 /** Commit-history lookups per author for SKILL.md files in repos never read before. */
 const MAX_HISTORY_CHECKS = 30
-
-type GithubRepo = {
-  name: string
-  owner: { login: string }
-  default_branch: string
-  pushed_at: string | null
-  created_at: string
-  fork: boolean
-  archived: boolean
-  size: number
-}
-
-type Tree =
-  | { kind: 'ok'; blobs: Set<string>; truncated: boolean }
-  | { kind: 'not-found' }
-  | { kind: 'error'; message: string }
-
-type ScanError = { target: string; message: string }
-
-class RateLimited extends Error {}
-
-function githubFetch(url: string, token: string, init?: RequestInit) {
-  return fetch(url, {
-    ...init,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      'User-Agent': 'skilly-skill-scan',
-      Authorization: `Bearer ${token}`,
-    },
-  }).then((response) => {
-    const limited =
-      response.status === 429 ||
-      (response.status === 403 && response.headers.get('x-ratelimit-remaining') === '0')
-    if (limited) {
-      const reset = Number(response.headers.get('x-ratelimit-reset')) * 1000
-      throw new RateLimited(
-        `GitHub rate limit hit${reset ? `; resets ${new Date(reset).toISOString()}` : ''}`,
-      )
-    }
-    return response
-  })
-}
-
-const describe = async (response: Response) =>
-  `${response.status} ${(await response.text()).slice(0, 200)}`
 
 /** Owned repos, most recently pushed first. With `since`, stops paging once repos get older. */
 async function listRepos(login: string, token: string, since: number | undefined) {
@@ -88,13 +57,6 @@ async function listRepos(login: string, token: string, since: number | undefined
   return repos
 }
 
-async function getRepo(owner: string, repo: string, token: string) {
-  const response = await githubFetch(`${API}/repos/${owner}/${repo}`, token)
-  if (response.status === 404) return null
-  if (!response.ok) throw new Error(await describe(response))
-  return (await response.json()) as GithubRepo
-}
-
 /** Whether any commit on `branch` touched `path` before `until`, i.e. the file is not new. */
 async function existedBefore(job: Job, path: string, until: number, token: string) {
   const params = new URLSearchParams({
@@ -109,79 +71,6 @@ async function existedBefore(job: Job, path: string, until: number, token: strin
   )
   if (!response.ok) throw new Error(`Commit history for ${path}: ${await describe(response)}`)
   return ((await response.json()) as unknown[]).length > 0
-}
-
-async function getTree(owner: string, repo: string, branch: string, token: string): Promise<Tree> {
-  const response = await githubFetch(
-    `${API}/repos/${owner}/${repo}/git/trees/${encodeURIComponent(branch)}?recursive=1`,
-    token,
-  )
-  if (response.status === 404) return { kind: 'not-found' }
-  // 409: the repository is empty.
-  if (response.status === 409) return { kind: 'ok', blobs: new Set(), truncated: false }
-  if (!response.ok) return { kind: 'error', message: await describe(response) }
-  const tree = (await response.json()) as {
-    truncated: boolean
-    tree: Array<{ path: string; type: string }>
-  }
-  return {
-    kind: 'ok',
-    truncated: tree.truncated,
-    blobs: new Set(tree.tree.filter((e) => e.type === 'blob').map((e) => e.path)),
-  }
-}
-
-/** Encoded form for URLs; stored paths stay decoded. */
-const encodePath = (parts: RawUrlParts) => ({
-  ...parts,
-  path: parts.path.split('/').map(encodeURIComponent).join('/'),
-})
-
-const isSkillFile = (path: string) =>
-  (path === 'SKILL.md' || path.endsWith('/SKILL.md')) && !path.includes('node_modules/')
-
-/** `name` and `description` from SKILL.md frontmatter, including folded (`>`) values. */
-function readFrontmatter(markdown: string) {
-  const block = /^---\r?\n([\s\S]*?)\r?\n---/.exec(markdown)?.[1]
-  if (!block) return {}
-  const fields: Record<string, string> = {}
-  let current: string | null = null
-  for (const line of block.split(/\r?\n/)) {
-    const pair = /^([A-Za-z][\w-]*):\s*(.*)$/.exec(line)
-    if (pair) {
-      current = pair[1]
-      fields[current] = pair[2].replace(/^[>|][-+]?$/, '').replace(/^(['"])(.*)\1$/, '$2')
-    } else if (current && /^\s+\S/.test(line)) {
-      fields[current] = `${fields[current]} ${line.trim()}`.trim()
-    } else {
-      current = null
-    }
-  }
-  return {
-    name: fields.name || undefined,
-    description: fields.description?.slice(0, 500) || undefined,
-  }
-}
-
-/**
- * Run `fn` over `items`, at most `limit` at a time. On the first failure, stops taking new items,
- * lets in-flight ones finish, then rethrows, so results gathered so far are complete.
- */
-async function eachLimited<T>(items: T[], limit: number, fn: (item: T) => Promise<void>) {
-  const queue = [...items]
-  let failure: { error: unknown } | undefined
-  await Promise.all(
-    Array.from({ length: Math.min(limit, queue.length) }, async () => {
-      for (let item = queue.shift(); item !== undefined && !failure; item = queue.shift()) {
-        try {
-          await fn(item)
-        } catch (error) {
-          failure ??= { error }
-        }
-      }
-    }),
-  )
-  if (failure) throw failure.error
 }
 
 type Result = Omit<FunctionArgs<typeof internal.skillScan.recordAuthorResult>, 'runId' | 'authorId'>
