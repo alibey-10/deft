@@ -141,3 +141,127 @@
     @apply font-sans;
   }
 }
+
+/*
+ * Assistant answers on /ask: the Modern Minimalist theme (charcoal, slate and light gray),
+ * scoped to the answer. Streamdown's defaults are sized for full documents (3xl headings,
+ * list-inside bullets); these tune them for a chat column. Unlayered so they win over its
+ * utility classes.
+ */
+:root {
+  --answer-heading: #36454f; /* charcoal */
+  --answer-accent: #708090; /* slate gray */
+  --answer-rule: #d3d3d3; /* light gray */
+  --answer-surface: color-mix(in oklab, #d3d3d3 30%, transparent);
+}
+
+.dark {
+  /* Same hues, reversed in lightness so they keep their contrast on the dark background. */
+  --answer-heading: #ffffff; /* white */
+  --answer-accent: #93a1ae;
+  --answer-rule: #36454f;
+  --answer-surface: color-mix(in oklab, #36454f 45%, transparent);
+}
+
+[data-slot='assistant-answer'] {
+  & > * > :first-child {
+    margin-top: 0;
+  }
+
+  & :is([data-streamdown^='heading-']) {
+    color: var(--answer-heading);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin: 1.5rem 0 0.5rem;
+  }
+  & [data-streamdown='heading-1'] {
+    font-size: 1.125rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--answer-rule);
+  }
+  & [data-streamdown='heading-2'] {
+    font-size: 1rem;
+  }
+  & [data-streamdown='heading-3'] {
+    font-size: 0.875rem;
+  }
+  &
+    :is(
+      [data-streamdown='heading-4'],
+      [data-streamdown='heading-5'],
+      [data-streamdown='heading-6']
+    ) {
+    color: var(--answer-accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  & [data-streamdown='strong'] {
+    color: var(--answer-heading);
+    font-weight: 600;
+  }
+
+  /* Hanging bullets: wrapped lines line up with the text, not the marker. */
+  & :is([data-streamdown='unordered-list'], [data-streamdown='ordered-list']) {
+    list-style-position: outside;
+    padding-left: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  & [data-streamdown='list-item'] {
+    padding: 0.1875rem 0 0.1875rem 0.125rem;
+  }
+  & [data-streamdown='list-item']::marker {
+    color: var(--answer-accent);
+  }
+  & [data-streamdown='ordered-list'] > [data-streamdown='list-item']::marker {
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  & [data-streamdown='inline-code'] {
+    background: var(--answer-surface);
+    border: 1px solid var(--answer-rule);
+    border-radius: 0.375rem;
+    color: var(--answer-heading);
+    font-size: 0.875em;
+    padding: 0.0625rem 0.3125rem;
+  }
+
+  & [data-streamdown='blockquote'] {
+    border-left: 2px solid var(--answer-accent);
+    color: var(--muted-foreground);
+    font-style: normal;
+    margin: 1rem 0;
+    padding-left: 0.875rem;
+  }
+
+  & [data-streamdown='horizontal-rule'] {
+    border-color: var(--answer-rule);
+    margin: 1.5rem 0;
+  }
+
+  & [data-streamdown='code-block'] {
+    border-color: var(--answer-rule);
+  }
+
+  & [data-streamdown='table-wrapper'] :is(table, th, td, tr) {
+    border-color: var(--answer-rule);
+  }
+  & [data-streamdown='table-header-cell'] {
+    background: var(--answer-surface);
+    color: var(--answer-heading);
+  }
+
+  & a {
+    text-decoration-color: var(--answer-rule);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 150ms ease-out;
+  }
+  & a:hover {
+    text-decoration-color: var(--answer-accent);
+  }
+}
