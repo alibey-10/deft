@@ -188,3 +188,34 @@ function ToolRow({
     </TraceLine>
   )
 }
+
+/** "1m 9s", "42s": how long a reply took. */
+export function formatDuration(ms: number) {
+  const seconds = Math.max(1, Math.round(ms / 1000))
+  const minutes = Math.floor(seconds / 60)
+  return minutes ? `${minutes}m ${seconds % 60}s` : `${seconds}s`
+}
+
+/** A finished reply's work (thinking, tool calls, notes along the way) folded behind one toggle. */
+export function AssistantWork({
+  duration,
+  children,
+}: {
+  duration?: number
+  children: React.ReactNode
+}) {
+  return (
+    <TraceCollapsible>
+      <TraceCollapsibleTrigger>
+        <TraceLine>
+          <TraceTitle>
+            {duration === undefined ? 'Worked' : `Worked for ${formatDuration(duration)}`}
+          </TraceTitle>
+        </TraceLine>
+      </TraceCollapsibleTrigger>
+      <TraceCollapsibleContent>
+        <div className="flex flex-col gap-4">{children}</div>
+      </TraceCollapsibleContent>
+    </TraceCollapsible>
+  )
+}
