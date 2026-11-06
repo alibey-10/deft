@@ -36,7 +36,7 @@ const vSeedSkill = v.object({
 })
 
 /** Text the `search_text` index matches against: everything the home page search covers. */
-const skillSearchText = (skill: {
+export const skillSearchText = (skill: {
   name: string
   description: string
   user: string
