@@ -2,24 +2,24 @@ import { Link } from '@tanstack/react-router'
 import { defaultComponents, Streamdown, type Components } from 'streamdown'
 
 import { SkillAvatar, skillPathFromHref } from '#/components/assistant/skill-avatar.tsx'
+import { SkillLink } from '#/components/assistant/skill-hover-card.tsx'
 
 const linkClass = 'font-medium text-primary underline underline-offset-4'
 
 const components: Components = {
   a: (props) => {
     const href = typeof props.href === 'string' ? props.href : ''
-    // Skill links get the author's avatar, like a mention.
+    // Skill links get the author's avatar, like a mention, and preview the skill on hover.
     const pathSlug = skillPathFromHref(href)
     if (pathSlug) {
       return (
-        <Link
-          to="/skills/$"
-          params={{ _splat: pathSlug }}
+        <SkillLink
+          pathSlug={pathSlug}
           className="inline-flex items-center gap-1 align-bottom font-medium text-primary underline underline-offset-4"
         >
           <SkillAvatar pathSlug={pathSlug} />
           {props.children}
-        </Link>
+        </SkillLink>
       )
     }
     // Other site paths stay in the SPA.
@@ -37,15 +37,18 @@ const components: Components = {
 
 /** The assistant's answer, rendered as it streams. */
 export function AssistantMarkdown({ text, streaming }: { text: string; streaming: boolean }) {
+  // `data-slot` scopes the answer's theme in styles.css.
   return (
-    <Streamdown
-      mode={streaming ? 'streaming' : 'static'}
-      isAnimating={streaming}
-      components={components}
-      linkSafety={{ enabled: false }}
-      className="text-sm leading-relaxed"
-    >
-      {text}
-    </Streamdown>
+    <div data-slot="assistant-answer">
+      <Streamdown
+        mode={streaming ? 'streaming' : 'static'}
+        isAnimating={streaming}
+        components={components}
+        linkSafety={{ enabled: false }}
+        className="text-sm leading-relaxed"
+      >
+        {text}
+      </Streamdown>
+    </div>
   )
 }
