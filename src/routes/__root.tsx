@@ -1,16 +1,28 @@
 import type { QueryClient } from '@tanstack/react-query'
-import { HeadContent, Link, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
+import {
+  HeadContent,
+  Link,
+  Scripts,
+  createRootRouteWithContext,
+  useRouteContext,
+} from '@tanstack/react-router'
+import { cn } from 'cn'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import { DirectorySidebar } from '#/components/directory-sidebar.tsx'
 import { SiteHeader } from '#/components/site-header.tsx'
+import { ThemeHotkey } from '#/hooks/use-theme.ts'
 import { directoryQuery } from '#/lib/directory.ts'
+import { getThemeServerFn, type Theme } from '#/lib/theme.ts'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
 }>()({
+  beforeLoad: async (): Promise<{ theme: Theme }> => {
+    return { theme: await getThemeServerFn() }
+  },
   // Every page and the sidebar read the directory, so load it once here (also during SSR).
   loader: async ({ context }) => {
     await context.queryClient.ensureQueryData(directoryQuery)
@@ -56,14 +68,21 @@ function NotFound() {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const { theme } = useRouteContext({ from: '__root__' })
+
   return (
-    <html lang="en" className="scroll-smooth antialiased">
+    <html
+      lang="en"
+      className={cn(theme === 'dark' && 'dark', 'scroll-smooth antialiased')}
+      suppressHydrationWarning
+    >
       <head>
         <HeadContent />
       </head>
       <body>
+        <ThemeHotkey />
         <SiteHeader />
-        <div className="mx-auto flex max-w-5xl gap-8 px-4">
+        <div className="mx-auto flex max-w-7xl gap-8 px-4">
           <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-64 shrink-0 py-6 lg:block">
             <DirectorySidebar />
           </aside>
