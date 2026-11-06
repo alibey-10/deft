@@ -56,6 +56,7 @@ const config = defineConfig({
       '@tanstack/react-router-devtools',
       '@tanstack/react-devtools',
       '@base-ui/react/button',
+      '@base-ui/react/dialog',
       '@base-ui/react/scroll-area',
       '@base-ui/react/tabs',
       '@base-ui/react/input',
@@ -65,6 +66,9 @@ const config = defineConfig({
       '@hugeicons/core-free-icons',
       'class-variance-authority',
       'cn',
+      'cmdk',
+      'streamdown',
+      '@streamdown/code',
     ],
   },
   plugins: lazyPlugins(() => [

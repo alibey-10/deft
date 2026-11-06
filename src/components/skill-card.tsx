@@ -1,48 +1,32 @@
 import { Link } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { ArrowUpRight01Icon } from '@hugeicons/core-free-icons'
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons'
 
 import { Badge } from '#/components/ui/badge.tsx'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '#/components/ui/card.tsx'
+import { Card, CardContent, CardHeader, CardTitle } from '#/components/ui/card.tsx'
 import { topicLabel, type RegistrySkill } from '#/lib/directory.ts'
 
-export function SkillCard({ skill, hideAuthor }: { skill: RegistrySkill; hideAuthor?: boolean }) {
+/** The title link stretches over the card; inner links sit above it via z-index. */
+export function SkillCard({ skill }: { skill: RegistrySkill }) {
   return (
-    <Card size="sm" className="h-full">
+    <Card size="sm" className="relative h-full">
       <CardHeader>
         <CardTitle>
           <div className="flex items-start justify-between gap-3">
-            <a
-              href={skill.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="min-w-0 break-words hover:underline"
+            <Link
+              to="/skills/$"
+              params={{ _splat: skill.pathSlug }}
+              className="min-w-0 break-words after:absolute after:inset-0"
             >
               {skill.name}
-            </a>
+            </Link>
             <HugeiconsIcon
-              icon={ArrowUpRight01Icon}
-              className="size-4 shrink-0 text-muted-foreground"
+              icon={ArrowRight01Icon}
               aria-hidden
+              className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-hover/card:translate-x-0.5 group-hover/card:text-foreground motion-reduce:transition-none"
             />
           </div>
         </CardTitle>
-        <CardDescription>
-          {hideAuthor ? (
-            <span>{skill.repo}</span>
-          ) : (
-            <>
-              <Link
-                to="/authors/$author"
-                params={{ author: skill.sourceKey }}
-                className="font-medium text-foreground hover:underline"
-              >
-                {skill.user}
-              </Link>
-              <span> / {skill.repo}</span>
-            </>
-          )}
-        </CardDescription>
       </CardHeader>
       <CardContent className="flex-1">
         <div className="flex h-full flex-col gap-3">
@@ -52,6 +36,7 @@ export function SkillCard({ skill, hideAuthor }: { skill: RegistrySkill; hideAut
               <Badge
                 key={topic}
                 variant="outline"
+                className="relative z-10"
                 render={<Link to="/topics/$topic" params={{ topic }} />}
               >
                 {topicLabel(topic)}
@@ -64,13 +49,7 @@ export function SkillCard({ skill, hideAuthor }: { skill: RegistrySkill; hideAut
   )
 }
 
-export function SkillGrid({
-  skills,
-  hideAuthor,
-}: {
-  skills: RegistrySkill[]
-  hideAuthor?: boolean
-}) {
+export function SkillGrid({ skills }: { skills: RegistrySkill[] }) {
   if (skills.length === 0) {
     return <p className="py-12 text-center text-muted-foreground">No skills match your search.</p>
   }
@@ -78,7 +57,7 @@ export function SkillGrid({
     <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
       {skills.map((skill) => (
         <li key={skill.pathSlug}>
-          <SkillCard skill={skill} hideAuthor={hideAuthor} />
+          <SkillCard skill={skill} />
         </li>
       ))}
     </ul>

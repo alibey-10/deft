@@ -52,9 +52,9 @@ for (const skill of allSkills) {
   if (!author.repos.includes(skill.repo)) author.repos.push(skill.repo)
 }
 
-/** Authors with the most skills first, ties broken by name. */
-export const authors: Author[] = [...authorMap.values()].sort(
-  (a, b) => b.skills.length - a.skills.length || a.name.localeCompare(b.name),
+/** Authors sorted alphabetically, ignoring case. */
+export const authors: Author[] = [...authorMap.values()].sort((a, b) =>
+  a.name.localeCompare(b.name, 'en', { sensitivity: 'base', numeric: true }),
 )
 
 export const getAuthor = (key: string) => authorMap.get(key.toLowerCase())
@@ -79,3 +79,7 @@ export function filterSkills(skills: RegistrySkill[], query: string) {
     return terms.every((term) => haystack.includes(term))
   })
 }
+
+const skillByPath = new Map(allSkills.map((skill) => [skill.pathSlug.toLowerCase(), skill]))
+
+export const getSkill = (pathSlug: string) => skillByPath.get(pathSlug.toLowerCase())

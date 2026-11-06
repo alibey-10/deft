@@ -5,7 +5,7 @@ import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { SkillSearch } from '#/components/skill-search.tsx'
 import { ScrollArea } from '#/components/ui/scroll-area.tsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/ui/tabs.tsx'
-import { allSkills, authors, topicsWithSkills } from '#/lib/directory.ts'
+import { authors, topicsWithSkills } from '#/lib/directory.ts'
 
 type SidebarTab = 'topics' | 'authors'
 
@@ -48,11 +48,6 @@ export function DirectorySidebar() {
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3">
-      <Link to="/" activeOptions={{ exact: true, includeSearch: false }} className={itemClass}>
-        All skills
-        <Count value={allSkills.length} />
-      </Link>
-
       <Tabs
         value={tab}
         onValueChange={(value) => setTab(value as SidebarTab)}

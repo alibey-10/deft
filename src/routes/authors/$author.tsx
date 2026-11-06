@@ -1,13 +1,11 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { HugeiconsIcon } from '@hugeicons/react'
-import { GithubIcon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import { Badge } from '#/components/ui/badge.tsx'
-import { filterSkills, getAuthor, topicLabel, type TopicSlug } from '#/lib/directory.ts'
+import { GithubRepoBadges } from '#/components/github-repo-badges.tsx'
+import { filterSkills, getAuthor } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/authors/$author')({
   validateSearch: validateSkillSearch,
@@ -29,12 +27,13 @@ function AuthorPage() {
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
   const results = filterSkills(author.skills, q)
-
-  const topicCounts = new Map<TopicSlug, number>()
-  for (const skill of author.skills) {
-    for (const t of skill.topics ?? []) topicCounts.set(t, (topicCounts.get(t) ?? 0) + 1)
-  }
-  const topTopics = [...topicCounts].sort((a, b) => b[1] - a[1]).slice(0, 8)
+  // One badge per repo, skipping skills hosted outside GitHub.
+  const githubRepos = author.repos.flatMap((repo) => {
+    const skill = author.skills.find(
+      (s) => s.repo === repo && s.githubUrl.startsWith('https://github.com/'),
+    )
+    return skill ? [{ user: skill.user, repo }] : []
+  })
 
   return (
     <>
@@ -53,22 +52,8 @@ function AuthorPage() {
         description={`${author.skills.length} ${author.skills.length === 1 ? 'skill' : 'skills'} across ${author.repos.join(', ')}.`}
       >
         <div className="flex flex-wrap items-center gap-2">
-          <Badge
-            variant="outline"
-            render={<a href={author.profileUrl} target="_blank" rel="noreferrer" />}
-          >
-            <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" aria-hidden />
-            GitHub
-          </Badge>
-          {topTopics.map(([slug, count]) => (
-            <Badge
-              key={slug}
-              variant="secondary"
-              render={<Link to="/topics/$topic" params={{ topic: slug }} />}
-            >
-              {topicLabel(slug)}
-              <span className="text-muted-foreground tabular-nums">{count}</span>
-            </Badge>
+          {githubRepos.map(({ user, repo }) => (
+            <GithubRepoBadges key={repo} user={user} repo={repo} />
           ))}
         </div>
       </PageIntro>
@@ -88,7 +73,7 @@ function AuthorPage() {
             />
           )}
         </div>
-        <SkillGrid skills={results} hideAuthor />
+        <SkillGrid skills={results} />
       </section>
     </>
   )

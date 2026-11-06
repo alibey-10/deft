@@ -1,5 +1,7 @@
 import { Link } from '@tanstack/react-router'
 
+import { CommandPalette } from '#/components/command-palette.tsx'
+
 const nav = [
   { to: '/', label: 'Skills' },
   { to: '/topics', label: 'Topics' },
@@ -13,18 +15,21 @@ export function SiteHeader() {
         <Link to="/" className="font-semibold tracking-tight">
           Skilly
         </Link>
-        <nav className="flex items-center gap-1 text-sm lg:hidden">
-          {nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeOptions={{ exact: item.to === '/' }}
-              className="rounded-md px-2.5 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground data-[status=active]:text-foreground data-[status=active]:font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-2">
+          <nav className="flex items-center gap-1 text-sm lg:hidden">
+            {nav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                activeOptions={{ exact: item.to === '/' }}
+                className="rounded-md px-2.5 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground data-[status=active]:text-foreground data-[status=active]:font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <CommandPalette />
+        </div>
       </div>
     </header>
   )
