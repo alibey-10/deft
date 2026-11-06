@@ -1,4 +1,6 @@
 import { Link } from '@tanstack/react-router'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { SparklesIcon } from '@hugeicons/core-free-icons'
 
 import { CommandPalette } from '#/components/command-palette.tsx'
 import { buttonVariants } from '#/components/ui/button.tsx'
@@ -34,6 +36,10 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <Link to="/ask" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
+            <HugeiconsIcon icon={SparklesIcon} data-icon="inline-start" />
+            Ask AI
+          </Link>
           <CommandPalette />
           <ThemeToggle
             aria-label={themeLabel}

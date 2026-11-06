@@ -2,8 +2,8 @@ import { cn } from 'cn'
 
 import type { Author } from '#/lib/directory.ts'
 
-const px = { sm: 20, base: 24, md: 32, lg: 40 }
-const sizeClass = { sm: 'size-5', base: 'size-6', md: 'size-8', lg: 'size-10' }
+const px = { xs: 16, sm: 20, base: 24, md: 32, lg: 40 }
+const sizeClass = { xs: 'size-4', sm: 'size-5', base: 'size-6', md: 'size-8', lg: 'size-10' }
 
 export function AuthorAvatar({ author, size = 'md' }: { author: Author; size?: keyof typeof px }) {
   return (
