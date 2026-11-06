@@ -22,11 +22,8 @@ function Home() {
         description={`${allSkills.length} skills from ${authors.length} authors, organized by topic and author. Install them into Claude Code, Cursor, Codex, and other agents.`}
       />
 
-      <section aria-labelledby="skills-heading" className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="skills-heading" className="text-sm font-medium">
-            All skills <span className="text-muted-foreground tabular-nums">{results.length}</span>
-          </h2>
+      <section aria-label="All skills" className="flex flex-col gap-4">
+        <div className="flex justify-end">
           <SkillSearch
             value={q}
             onChange={(value) =>
@@ -34,7 +31,7 @@ function Home() {
             }
           />
         </div>
-        <SkillGrid skills={results} />
+        <SkillGrid skills={results} maxColumns={2} />
       </section>
     </>
   )
