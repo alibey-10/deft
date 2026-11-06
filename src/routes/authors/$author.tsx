@@ -7,19 +7,18 @@ import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
 import { GithubRepoBadges } from '#/components/github-repo-badges.tsx'
-import { filterSkills, getAuthor } from '#/lib/directory.ts'
+import { filterSkills, loadDirectory, useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/authors/$author')({
   validateSearch: validateSkillSearch,
-  loader: ({ params }) => {
-    const author = getAuthor(params.author)
+  loader: async ({ params, context }) => {
+    const author = (await loadDirectory(context.queryClient)).getAuthor(params.author)
     if (!author) throw notFound()
-    return { authorKey: author.key }
+    return { authorKey: author.key, authorName: author.name }
   },
-  head: ({ loaderData }) => {
-    const author = loaderData && getAuthor(loaderData.authorKey)
-    return { meta: author ? [{ title: `UI skills by ${author.name} · Skilly` }] : [] }
-  },
+  head: ({ loaderData }) => ({
+    meta: loaderData ? [{ title: `UI skills by ${loaderData.authorName} · Skilly` }] : [],
+  }),
   component: AuthorPage,
 })
 
@@ -28,7 +27,8 @@ const formatCount = (n: number) =>
 
 function AuthorPage() {
   const { authorKey } = Route.useLoaderData()
-  const author = getAuthor(authorKey)!
+  const author = useDirectory().getAuthor(authorKey)
+  if (!author) throw notFound()
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
   const results = filterSkills(author.skills, q)

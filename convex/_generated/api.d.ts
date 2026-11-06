@@ -8,13 +8,21 @@
  * @module
  */
 
+import type * as directory from "../directory.js";
+import type * as seed from "../seed.js";
+import type * as validators from "../validators.js";
+
 import type {
   ApiFromModules,
   FilterApi,
   FunctionReference,
 } from "convex/server";
 
-declare const fullApi: ApiFromModules<{}>;
+declare const fullApi: ApiFromModules<{
+  directory: typeof directory;
+  seed: typeof seed;
+  validators: typeof validators;
+}>;
 
 /**
  * A utility for referencing Convex functions in your app's public API.

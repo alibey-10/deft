@@ -4,7 +4,7 @@ import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
 import { Badge } from '#/components/ui/badge.tsx'
-import { filterSkills, getTopic, skillsByTopic, topicLabel } from '#/lib/directory.ts'
+import { filterSkills, getTopic, topicLabel, useDirectory } from '#/lib/directory.ts'
 import { relatedTopicSlugs } from '#/data/topics.ts'
 
 export const Route = createFileRoute('/topics/$topic')({
@@ -29,6 +29,7 @@ function TopicPage() {
   const { topic } = Route.useLoaderData()
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
+  const { skillsByTopic } = useDirectory()
   const skills = skillsByTopic.get(topic.slug) ?? []
   const results = filterSkills(skills, q)
   const related = relatedTopicSlugs[topic.slug].filter((slug) => skillsByTopic.has(slug))

@@ -1,3 +1,5 @@
+import type { TopicSlug } from '../../convex/validators.ts'
+
 export type RegistrySkill = {
   slug: string
   pathSlug: string
@@ -14,37 +16,7 @@ export type RegistrySkill = {
   files?: string[]
 }
 
-export type TopicSlug =
-  // Design engineering core
-  | 'accessibility'
-  | 'motion'
-  | 'systems'
-  | 'visual'
-  | 'interaction'
-  | 'performance'
-  | 'craft'
-  | 'taste'
-  | 'typography'
-  | 'color'
-  | '3d'
-  // Broader frontend
-  | 'frontend'
-  | 'architecture'
-  | 'frameworks'
-  | 'shadcn-ui-development'
-  | 'testing'
-  | 'debugging'
-  | 'code-quality'
-  | 'tooling'
-  | 'video'
-  // Framework-specific topics
-  | 'nextjs'
-  | 'nuxt'
-  | 'vue'
-  | 'react-native'
-  | 'threejs'
-  | 'remotion'
-  | 'swiftui'
+export type { TopicSlug }
 
 type RegistrySourceSkill = Omit<RegistrySkill, 'pathSlug' | 'sourceKey' | 'sourceLabel'>
 
@@ -1219,30 +1191,17 @@ const registrySource: RegistrySourceSkill[] = [
       'Accessibility auditing and remediation workflow that combines detection, prioritization, and practical fixes for WCAG issues.',
   },
   {
-    slug: 'contrast-checker',
+    slug: 'accessibility-inspect',
     user: 'AccessLint',
     repo: 'claude-marketplace',
     rawUrl:
       'https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
     githubUrl:
       'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
-    name: 'contrast-checker',
-    topics: ['accessibility', 'testing', 'color'],
+    name: 'accessibility-inspect',
+    topics: ['accessibility', 'testing', 'interaction', 'color'],
     description:
-      "Compatibility listing for contrast-checker installs from AccessLint's marketplace skill set.",
-  },
-  {
-    slug: 'link-purpose',
-    user: 'AccessLint',
-    repo: 'claude-marketplace',
-    rawUrl:
-      'https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
-    githubUrl:
-      'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
-    name: 'link-purpose',
-    topics: ['accessibility', 'testing', 'interaction'],
-    description:
-      "Compatibility listing for link-purpose installs from AccessLint's marketplace skill set.",
+      "Manual accessibility pass on a live page: keyboard operation and focus order, screen-reader names and roles, reflow and zoom, reduced motion, form errors, and target size. Use for the checks a rule engine can't decide; it grades findings by evidence and severity but does not fix them.",
   },
   {
     slug: 'refactor',
@@ -1256,19 +1215,6 @@ const registrySource: RegistrySourceSkill[] = [
     topics: ['accessibility', 'testing', 'frontend'],
     description:
       "Compatibility listing for refactor installs from AccessLint's marketplace skill set.",
-  },
-  {
-    slug: 'use-of-color',
-    user: 'AccessLint',
-    repo: 'claude-marketplace',
-    rawUrl:
-      'https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
-    githubUrl:
-      'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-inspect/SKILL.md',
-    name: 'use-of-color',
-    topics: ['accessibility', 'color', 'testing'],
-    description:
-      "Compatibility listing for use-of-color installs from AccessLint's marketplace skill set.",
   },
   {
     slug: 'emil-design-eng',

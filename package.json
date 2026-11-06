@@ -10,6 +10,7 @@
     "dev": "vp dev --port 3000",
     "generate-routes": "tsr generate",
     "update-author-profiles": "vpx ./scripts/update-author-profiles.ts",
+    "seed-convex": "vpx ./scripts/seed-convex.ts",
     "build": "vp build",
     "preview": "vp preview",
     "deploy": "bun run build && wrangler deploy",

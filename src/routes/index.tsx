@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import { allSkills, authors, filterSkills } from '#/lib/directory.ts'
+import { filterSkills, useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/')({
   validateSearch: validateSkillSearch,
@@ -13,6 +13,7 @@ export const Route = createFileRoute('/')({
 function Home() {
   const { q = '' } = Route.useSearch()
   const navigate = Route.useNavigate()
+  const { allSkills, authors } = useDirectory()
   const results = filterSkills(allSkills, q)
 
   return (

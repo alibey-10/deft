@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { PageIntro } from '#/components/site-header.tsx'
 import { SkillSearch } from '#/components/skill-search.tsx'
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
-import { authors } from '#/lib/directory.ts'
+import { useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/authors/')({
   head: () => ({ meta: [{ title: 'Authors · Skilly' }] }),
@@ -12,6 +12,7 @@ export const Route = createFileRoute('/authors/')({
 })
 
 function AuthorsPage() {
+  const { authors } = useDirectory()
   const [query, setQuery] = useState('')
   const needle = query.trim().toLowerCase()
   const results = needle

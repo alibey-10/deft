@@ -8,7 +8,7 @@ import { SkillMarkdown } from '#/components/skill-markdown.tsx'
 import { TableOfContents } from '#/components/table-of-contents.tsx'
 import { Badge } from '#/components/ui/badge.tsx'
 import { buttonVariants } from '#/components/ui/button.tsx'
-import { getSkill, topicLabel, type RegistrySkill } from '#/lib/directory.ts'
+import { loadDirectory, topicLabel, useDirectory, type RegistrySkill } from '#/lib/directory.ts'
 import { fetchSkillMarkdown } from '#/lib/fetch-skill.ts'
 import { buildInstallCommand } from '#/lib/install-command.ts'
 import { parseSkill } from '#/lib/skill-content.ts'
@@ -19,22 +19,28 @@ export const Route = createFileRoute('/skills/$')({
   validateSearch: (search: Record<string, unknown>): { file?: string } =>
     typeof search.file === 'string' && search.file ? { file: search.file } : {},
   loaderDeps: ({ search }) => ({ file: search.file }),
-  loader: async ({ params, deps }) => {
-    const skill = getSkill(params._splat ?? '')
+  loader: async ({ params, deps, context }) => {
+    const skill = (await loadDirectory(context.queryClient)).getSkill(params._splat ?? '')
     if (!skill) throw notFound()
     if (deps.file && !skill.files?.includes(deps.file)) throw notFound()
     const { url, text } = await fetchSkillMarkdown({
       data: { pathSlug: skill.pathSlug, file: deps.file },
     })
-    return { pathSlug: skill.pathSlug, file: deps.file, url, ...parseSkill(text) }
+    return {
+      pathSlug: skill.pathSlug,
+      file: deps.file,
+      url,
+      meta: { name: skill.name, user: skill.user, description: skill.description },
+      ...parseSkill(text),
+    }
   },
   head: ({ loaderData }) => {
-    const skill = loaderData && getSkill(loaderData.pathSlug)
-    if (!skill) return {}
+    if (!loaderData) return {}
+    const { name, user, description } = loaderData.meta
     return {
       meta: [
-        { title: `${skill.name} by ${skill.user} · Skilly` },
-        { name: 'description', content: skill.description },
+        { title: `${name} by ${user} · Skilly` },
+        { name: 'description', content: description },
       ],
     }
   },
@@ -44,7 +50,8 @@ export const Route = createFileRoute('/skills/$')({
 
 function SkillPage() {
   const { pathSlug, file, url, frontmatter, body, toc } = Route.useLoaderData()
-  const skill = getSkill(pathSlug)!
+  const skill = useDirectory().getSkill(pathSlug)
+  if (!skill) throw notFound()
   const extraMeta = Object.entries(frontmatter).filter(
     ([key, value]) => value && !HIDDEN_FRONTMATTER.has(key),
   )
@@ -116,7 +123,7 @@ function SkillHeader({ skill }: { skill: RegistrySkill }) {
           <HugeiconsIcon icon={GithubIcon} data-icon="inline-start" aria-hidden />
           View source
         </a>
-        {skill.topics?.map((topic) => (
+        {skill.topics.map((topic) => (
           <Badge
             key={topic}
             variant="secondary"
@@ -156,7 +163,7 @@ function FileTabs({ skill, active }: { skill: RegistrySkill; active?: string }) 
 
 function SkillError({ error }: ErrorComponentProps) {
   const { _splat } = Route.useParams()
-  const skill = getSkill(_splat ?? '')
+  const skill = useDirectory().getSkill(_splat ?? '')
   return (
     <div className="flex flex-col gap-6">
       {skill && <SkillHeader skill={skill} />}

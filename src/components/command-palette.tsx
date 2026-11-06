@@ -15,12 +15,13 @@ import {
   CommandShortcut,
   CommandList,
 } from '#/components/ui/command.tsx'
-import { allSkills, authors, topicLabel, topicsWithSkills } from '#/lib/directory.ts'
+import { topicLabel, useDirectory } from '#/lib/directory.ts'
 
 /** ⌘K / Ctrl+K palette for jumping to any skill, topic or author. */
 export function CommandPalette() {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
+  const { allSkills, authors, topicsWithSkills } = useDirectory()
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -103,7 +104,7 @@ export function CommandPalette() {
                 <CommandItem
                   key={skill.pathSlug}
                   value={`skill ${skill.name} ${skill.pathSlug}`}
-                  keywords={[skill.user, skill.repo, ...(skill.topics ?? []).map(topicLabel)]}
+                  keywords={[skill.user, skill.repo, ...skill.topics.map(topicLabel)]}
                   onSelect={() =>
                     go(() => navigate({ to: '/skills/$', params: { _splat: skill.pathSlug } }))
                   }

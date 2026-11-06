@@ -5,11 +5,16 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import { DirectorySidebar } from '#/components/directory-sidebar.tsx'
 import { SiteHeader } from '#/components/site-header.tsx'
+import { directoryQuery } from '#/lib/directory.ts'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
 }>()({
+  // Every page and the sidebar read the directory, so load it once here (also during SSR).
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(directoryQuery)
+  },
   head: () => ({
     meta: [
       {

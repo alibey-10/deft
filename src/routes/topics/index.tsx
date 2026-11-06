@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 
 import { PageIntro } from '#/components/site-header.tsx'
 import { Card, CardDescription, CardHeader, CardTitle } from '#/components/ui/card.tsx'
-import { topicsWithSkills } from '#/lib/directory.ts'
+import { useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/topics/')({
   head: () => ({ meta: [{ title: 'Topics · Skilly' }] }),
@@ -10,6 +10,7 @@ export const Route = createFileRoute('/topics/')({
 })
 
 function TopicsPage() {
+  const { topicsWithSkills } = useDirectory()
   const groups = [
     { title: 'Design engineering', items: topicsWithSkills.filter((t) => t.isDesignCore) },
     { title: 'Frontend & frameworks', items: topicsWithSkills.filter((t) => !t.isDesignCore) },

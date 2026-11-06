@@ -33,7 +33,7 @@ export function SkillCard({ skill }: { skill: RegistrySkill }) {
         <div className="flex h-full flex-col gap-3">
           <p className="line-clamp-3 text-muted-foreground">{skill.description}</p>
           <div className="mt-auto flex flex-wrap gap-1.5">
-            {skill.topics?.map((topic) => (
+            {skill.topics.map((topic) => (
               <Badge
                 key={topic}
                 variant="outline"
