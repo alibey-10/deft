@@ -55,10 +55,10 @@ export const Route = createFileRoute('/ask')({
 })
 
 const suggestions = [
-  'What are the top skills for building beautiful landing pages?',
-  'What are skills for adding micro animations?',
-  'Want to build UI components with composition style?',
-  'What are the top skills for tasteful UI?',
+  'What skills matter most for building beautiful landing pages?',
+  'Add micro-animations only where they serve a purpose',
+  'Help me build UI components using composition patterns',
+  'What skills matter most for tasteful UI design?',
 ]
 
 const MODEL_STORAGE_KEY = 'skilly-assistant-model'
