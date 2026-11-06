@@ -9,8 +9,9 @@ import { useDirectory } from '#/lib/directory.ts'
 
 type SidebarTab = 'topics' | 'authors'
 
+// The active item gets a redline tick on its left edge rather than a filled pill.
 const itemClass =
-  'flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground data-[status=active]:bg-muted data-[status=active]:font-medium data-[status=active]:text-foreground'
+  'relative flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground before:absolute before:inset-y-1.5 before:left-0 before:w-0.5 before:rounded-full before:bg-redline before:opacity-0 data-[status=active]:font-medium data-[status=active]:text-foreground data-[status=active]:before:opacity-100'
 
 function Count({ value }: { value: number }) {
   return (
@@ -66,10 +67,10 @@ export function DirectorySidebar() {
 
         <TabsContent value="topics" className="min-h-0">
           <ScrollArea className="h-full">
-            <div className="flex flex-col gap-6 pr-3 pb-4">
+            <div className="flex flex-col gap-7 pt-2 pr-3 pb-4">
               {filteredGroups.map((group) => (
                 <div key={group.title} className="flex flex-col gap-0.5">
-                  <h3 className="px-2 pb-2 text-xs font-semibold tracking-wider text-foreground uppercase">
+                  <h3 className="px-2.5 pb-1.5 text-[0.8125rem] font-semibold text-foreground">
                     {group.title}
                   </h3>
                   {group.items.map((topic) => (
@@ -92,7 +93,7 @@ export function DirectorySidebar() {
 
         <TabsContent value="authors" className="min-h-0">
           <ScrollArea className="h-full">
-            <div className="flex flex-col gap-0.5 pr-3 pb-4">
+            <div className="flex flex-col gap-0.5 pt-2 pr-3 pb-4">
               {filteredAuthors.map((author) => (
                 <Link
                   key={author.key}

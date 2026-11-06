@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/inter';
 @import 'streamdown/styles.css';
 
 @source '../node_modules/streamdown/dist/*.js';
@@ -12,78 +11,88 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Redline: Skilly's palette borrows from design-spec markup. Blue-slate ink on cool paper, with
+ * the magenta-red of a designer's redlines reserved for annotation, focus and active states.
+ */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
-  --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
-  --accent-foreground: oklch(0.216 0.006 56.043);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.923 0.003 48.717);
-  --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
-  --chart-1: oklch(0.845 0.143 164.978);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.596 0.145 163.225);
-  --chart-4: oklch(0.508 0.118 165.612);
-  --chart-5: oklch(0.432 0.095 166.913);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
+  --paper: #f9fafb;
+  --ink: #1c2030;
+  --graphite: #5b6273;
+  --rule: #e1e4ea;
+  --redline: #e0245e;
+  /* Redline dark enough to read as small text on paper (4.5:1+). */
+  --redline-ink: #c01d50;
+  /* The install command's surface: ink in both themes, so the one thing to copy always stands out. */
+  --slab: var(--ink);
+  --slab-foreground: var(--paper);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: #eef0f4;
+  --secondary-foreground: var(--ink);
+  --muted: #eef0f4;
+  --muted-foreground: var(--graphite);
+  --accent: #eef0f4;
+  --accent-foreground: var(--ink);
+  --destructive: #c8321f;
+  --border: var(--rule);
+  --input: #d6dae2;
+  --ring: var(--redline);
+  --chart-1: #e0245e;
+  --chart-2: #1c2030;
+  --chart-3: #5b6273;
+  --chart-4: #9aa1b2;
+  --chart-5: #d6dae2;
+  --radius: 0.5rem;
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: #eef0f4;
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--redline);
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.25);
-  --foreground: oklch(0.985 0.001 106.423);
-  --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
-  --primary: oklch(0.923 0.003 48.717);
-  --primary-foreground: oklch(0.216 0.006 56.043);
-  --secondary: oklch(0.268 0.007 34.298);
-  --secondary-foreground: oklch(0.985 0.001 106.423);
-  --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.268 0.007 34.298);
-  --accent-foreground: oklch(0.985 0.001 106.423);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.553 0.013 58.071);
-  --chart-1: oklch(0.845 0.143 164.978);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.596 0.145 163.225);
-  --chart-4: oklch(0.508 0.118 165.612);
-  --chart-5: oklch(0.432 0.095 166.913);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
+  --paper: #13151c;
+  --ink: #e6e8ee;
+  --graphite: #9ba2b3;
+  --rule: #2a2f3b;
+  --redline: #ff5a8c;
+  --redline-ink: #ff7aa2;
+  --slab: #0b0d12;
+  --slab-foreground: #e6e8ee;
+
+  --card: #1a1d26;
+  --popover: #1a1d26;
+  --secondary: #232733;
+  --muted: #232733;
+  --accent: #232733;
+  --destructive: #ff6b57;
+  --input: #343a48;
+  --chart-2: #e6e8ee;
+  --chart-3: #9ba2b3;
+  --chart-4: #5b6273;
+  --chart-5: #343a48;
+  --sidebar-accent: #232733;
 }
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Inter Variable', sans-serif;
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Fragment Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --color-redline: var(--redline);
+  --color-redline-ink: var(--redline-ink);
+  --color-slab: var(--slab);
+  --color-slab-foreground: var(--slab-foreground);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -139,6 +148,64 @@
   }
   html {
     @apply font-sans;
+    font-feature-settings: 'ss01';
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--redline) 22%, transparent);
+  }
+}
+
+/*
+ * A spec dimension line: end ticks, a rule between them and a label sitting on the rule.
+ * Drawn once on load, outward from the label.
+ */
+.redline-dimension {
+  color: var(--redline);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 0.75rem;
+}
+.redline-dimension::before,
+.redline-dimension::after {
+  content: '';
+  flex: 1;
+  height: 0.75rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) left / 1px 100% no-repeat;
+  animation: redline-draw 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms both;
+}
+.redline-dimension::before {
+  transform-origin: right center;
+}
+.redline-dimension::after {
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) right / 1px 100% no-repeat;
+  transform-origin: left center;
+}
+.redline-dimension > span {
+  color: var(--redline-ink);
+  animation: redline-label 400ms ease-out both;
+}
+
+@keyframes redline-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes redline-label {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .redline-dimension::before,
+  .redline-dimension::after,
+  .redline-dimension > span {
+    animation: none;
   }
 }
 

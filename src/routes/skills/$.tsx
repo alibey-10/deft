@@ -62,15 +62,15 @@ function SkillPage() {
       <article className="min-w-0 flex-1">
         <SkillHeader skill={skill} />
 
-        <section aria-labelledby="install-heading" className="mb-8 flex flex-col gap-2">
-          <h2 id="install-heading" className="text-sm font-medium">
+        <section aria-labelledby="install-heading" className="mb-10 flex flex-col gap-2.5">
+          <h2 id="install-heading" className="text-sm font-semibold">
             Install
           </h2>
           <InstallCommand command={buildInstallCommand(skill)} />
         </section>
 
         {extraMeta.length > 0 && (
-          <dl className="mb-6 grid gap-x-4 gap-y-1 text-sm sm:grid-cols-[max-content_1fr]">
+          <dl className="mb-8 grid max-w-[72ch] gap-x-6 gap-y-1.5 text-sm leading-relaxed sm:grid-cols-[max-content_1fr]">
             {extraMeta.map(([key, value]) => (
               <div key={key} className="contents">
                 <dt className="text-muted-foreground">{key}</dt>
@@ -118,7 +118,7 @@ function SkillHeader({ skill }: { skill: RegistrySkill }) {
         {skill.topics.map((topic) => (
           <Badge
             key={topic}
-            variant="secondary"
+            variant="outline"
             render={<Link to="/topics/$topic" params={{ topic }} />}
           >
             {topicLabel(topic)}
@@ -146,7 +146,7 @@ function ViewSourceButton({ href, className }: { href: string; className?: strin
 function FileTabs({ skill, active }: { skill: RegistrySkill; active?: string }) {
   const files = ['SKILL.md', ...(skill.files ?? [])]
   return (
-    <nav aria-label="Skill files" className="mb-6 flex flex-wrap gap-1 border-b pb-2">
+    <nav aria-label="Skill files" className="mb-8 flex flex-wrap gap-1 border-b pb-3">
       {files.map((name) => {
         const isMain = name === 'SKILL.md'
         const current = isMain ? !active : active === name
@@ -157,7 +157,7 @@ function FileTabs({ skill, active }: { skill: RegistrySkill; active?: string }) 
             params={{ _splat: skill.pathSlug }}
             search={isMain ? {} : { file: name }}
             aria-current={current ? 'page' : undefined}
-            className="rounded-md px-2.5 py-1 font-mono text-xs text-muted-foreground hover:bg-muted hover:text-foreground aria-[current=page]:bg-muted aria-[current=page]:text-foreground"
+            className="rounded-md px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground aria-[current=page]:bg-muted aria-[current=page]:text-foreground aria-[current=page]:shadow-[inset_0_-1.5px_0_var(--redline)]"
           >
             {name}
           </Link>

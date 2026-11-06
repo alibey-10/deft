@@ -5,12 +5,12 @@ import { createFileRoute } from '@tanstack/react-router'
 import { usePaginatedQuery } from 'convex/react'
 
 import { api } from '../../convex/_generated/api'
-import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import type { RegistrySkill } from '#/lib/directory.ts'
+import { useDirectory, type RegistrySkill } from '#/lib/directory.ts'
 
 const PAGE_SIZE = 20
+const count = new Intl.NumberFormat('en')
 
 /** The first page, fetched in the loader so the server can render it. */
 const firstPageQuery = (q: string) =>
@@ -60,20 +60,16 @@ function Home() {
 
   return (
     <>
-      <PageIntro
-        title="Give your agent better taste"
-        description="Skills that teach coding agents to ship polished interfaces, from typography and motion to accessibility and design systems. Works with Claude Code, Cursor, Codex, and more."
-      />
+      <Hero />
 
-      <section aria-label="All skills" className="flex flex-col gap-4">
-        <div className="flex justify-end">
-          <SkillSearch
-            value={q}
-            onChange={(value) =>
-              navigate({ search: value ? { q: value } : {}, replace: true, resetScroll: false })
-            }
-          />
-        </div>
+      <section aria-label="All skills" className="flex flex-col gap-6">
+        <SkillSearch
+          value={q}
+          className="max-w-sm"
+          onChange={(value) =>
+            navigate({ search: value ? { q: value } : {}, replace: true, resetScroll: false })
+          }
+        />
         <div aria-busy={loading || status === 'LoadingMore'} className="flex flex-col gap-4">
           <SkillGrid skills={shown ?? []} />
           <div ref={sentinel} aria-hidden />
@@ -83,6 +79,32 @@ function Home() {
         </div>
       </section>
     </>
+  )
+}
+
+/**
+ * The headline carries a spec redline, the way a designer marks up a handoff file. Its label is
+ * the measurement that matters here: how much taste the directory holds.
+ */
+function Hero() {
+  const { allSkills, authors } = useDirectory()
+  return (
+    <header className="flex flex-col gap-6 pt-2 pb-12">
+      <div className="w-fit max-w-full">
+        <div className="redline-dimension mb-3 text-xs font-medium tabular-nums">
+          <span>
+            {count.format(allSkills.length)} skills from {count.format(authors.length)} authors
+          </span>
+        </div>
+        <h1 className="text-[clamp(2.75rem,6.5vw,4.5rem)] leading-[1] font-semibold tracking-[-0.022em] text-balance [font-stretch:88%]">
+          Give your agent better taste
+        </h1>
+      </div>
+      <p className="max-w-[58ch] text-[1.0625rem] leading-relaxed text-pretty text-muted-foreground">
+        Skills that teach coding agents to ship polished interfaces, from typography and motion to
+        accessibility and design systems. Works with Claude Code, Cursor, Codex, and more.
+      </p>
+    </header>
   )
 }
 

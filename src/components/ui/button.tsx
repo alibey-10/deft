@@ -17,6 +17,8 @@ const buttonVariants = cva(
         destructive:
           'bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
         link: 'text-primary underline-offset-4 hover:underline',
+        /** A quiet icon button on the ink slab behind the install command, in both themes. */
+        slab: 'text-slab-foreground/70 hover:bg-slab-foreground/10 hover:text-slab-foreground focus-visible:border-transparent focus-visible:ring-redline/60',
       },
       size: {
         default:
