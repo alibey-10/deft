@@ -1,7 +1,7 @@
+import { paginationOptsValidator } from 'convex/server'
 import { v } from 'convex/values'
 import { query, type QueryCtx } from './_generated/server'
 import type { Doc } from './_generated/dataModel'
-import { skillsByName } from './aggregates'
 
 const repoKey = (s: Doc<'skills'>) => `${s.user}/${s.repo}`.toLowerCase()
 
@@ -43,54 +43,26 @@ async function toListedSkills(ctx: QueryCtx, rows: Doc<'skills'>[]) {
   })
 }
 
-/** Approved skills a full-text search can return; Convex caps search results at 1024. */
-const SEARCH_LIMIT = 1024
-
 /**
- * One numbered page of approved skills: by name, or by relevance when `q` is set.
- * Pages past the end clamp to the last page.
+ * Approved skills a page at a time, for infinite scroll: by name, or by relevance when `q` is set.
  */
-export const listPage = query({
-  args: { page: v.number(), pageSize: v.number(), q: v.optional(v.string()) },
-  handler: async (ctx, { page, pageSize, q }) => {
-    const size = Math.min(Math.max(1, Math.floor(pageSize)), 100)
+export const list = query({
+  args: { paginationOpts: paginationOptsValidator, q: v.optional(v.string()) },
+  handler: async (ctx, { paginationOpts, q }) => {
     const search = q?.trim()
-
-    if (search) {
-      const matches = await ctx.db
-        .query('skills')
-        .withSearchIndex('search_text', (s) =>
-          s.search('searchText', search).eq('status', 'approved'),
-        )
-        .take(SEARCH_LIMIT)
-      const pageCount = Math.max(1, Math.ceil(matches.length / size))
-      const current = Math.min(Math.max(1, Math.floor(page)), pageCount)
-      const rows = matches.slice((current - 1) * size, current * size)
-      return {
-        skills: await toListedSkills(ctx, rows),
-        total: matches.length,
-        page: current,
-        pageCount,
-      }
-    }
-
-    const namespace = 'approved' as const
-    const total = await skillsByName.count(ctx, { namespace })
-    const pageCount = Math.max(1, Math.ceil(total / size))
-    const current = Math.min(Math.max(1, Math.floor(page)), pageCount)
-    if (total === 0) return { skills: [], total, page: current, pageCount }
-
-    // Jump to the first item of the page, then read the page's ids from the aggregate.
-    const first = await skillsByName.at(ctx, (current - 1) * size, { namespace })
-    const { page: items } = await skillsByName.paginate(ctx, {
-      namespace,
-      bounds: { lower: { key: first.key, id: first.id, inclusive: true } },
-      pageSize: size,
-    })
-    const rows = (await Promise.all(items.map((item) => ctx.db.get(item.id)))).filter(
-      (row): row is Doc<'skills'> => row !== null,
-    )
-    return { skills: await toListedSkills(ctx, rows), total, page: current, pageCount }
+    const opts = { ...paginationOpts, numItems: Math.min(paginationOpts.numItems, 100) }
+    const result = search
+      ? await ctx.db
+          .query('skills')
+          .withSearchIndex('search_text', (s) =>
+            s.search('searchText', search).eq('status', 'approved'),
+          )
+          .paginate(opts)
+      : await ctx.db
+          .query('skills')
+          .withIndex('by_status_and_name', (s) => s.eq('status', 'approved'))
+          .paginate(opts)
+    return { ...result, page: await toListedSkills(ctx, result.page) }
   },
 })
 

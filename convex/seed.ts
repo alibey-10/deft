@@ -7,7 +7,6 @@ import { internal } from './_generated/api'
 import { internalMutation } from './_generated/server'
 import type { Id } from './_generated/dataModel'
 import { vTopicSlug } from './validators'
-import { skillSearchText, skillsByName } from './aggregates'
 
 const vSeedAuthor = v.object({
   key: v.string(),
@@ -35,6 +34,15 @@ const vSeedSkill = v.object({
   sourceKey: v.string(),
   pathSlug: v.string(),
 })
+
+/** Text the `search_text` index matches against: everything the home page search covers. */
+const skillSearchText = (skill: {
+  name: string
+  description: string
+  user: string
+  repo: string
+  topics: string[]
+}) => [skill.name, skill.description, skill.user, skill.repo, ...skill.topics].join(' ')
 
 type Counts = { inserted: number; updated: number; unchanged: number }
 
@@ -97,14 +105,12 @@ export const upsertSkills = internalMutation({
         .unique()
 
       if (!existing) {
-        const id = await ctx.db.insert('skills', { ...row, updatedAt: Date.now() })
-        await skillsByName.insert(ctx, (await ctx.db.get(id))!)
+        await ctx.db.insert('skills', { ...row, updatedAt: Date.now() })
         counts.inserted++
       } else if (sameFields(existing, row)) {
         counts.unchanged++
       } else {
         await ctx.db.patch(existing._id, { ...row, updatedAt: Date.now() })
-        await skillsByName.replaceOrInsert(ctx, existing, (await ctx.db.get(existing._id))!)
         counts.updated++
       }
     }
@@ -136,7 +142,7 @@ export const upsertRepos = internalMutation({
 })
 
 /**
- * One-off backfill for rows that predate `skillsByName` and `searchText`. Safe to re-run.
+ * One-off backfill of `searchText` for rows seeded before it existed. Safe to re-run.
  * Run: npx convex run seed:backfillSkills
  */
 export const backfillSkills = internalMutation({
@@ -148,7 +154,6 @@ export const backfillSkills = internalMutation({
     for (const skill of page) {
       const searchText = skillSearchText(skill)
       if (skill.searchText !== searchText) await ctx.db.patch(skill._id, { searchText })
-      await skillsByName.insertIfDoesNotExist(ctx, skill)
     }
     if (!isDone) {
       await ctx.scheduler.runAfter(0, internal.seed.backfillSkills, { cursor: continueCursor })

@@ -60,6 +60,7 @@ export default defineSchema({
     searchText: v.optional(v.string()),
   })
     .index('by_status', ['status'])
+    .index('by_status_and_name', ['status', 'name'])
     .index('by_status_and_sourceKey', ['status', 'sourceKey'])
     .index('by_pathSlug', ['pathSlug'])
     .index('by_rawUrl', ['rawUrl'])
