@@ -32,7 +32,7 @@ function Home() {
             }
           />
         </div>
-        <SkillGrid skills={results} maxColumns={2} />
+        <SkillGrid skills={results} />
       </section>
     </>
   )

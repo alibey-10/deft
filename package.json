@@ -11,6 +11,7 @@
     "generate-routes": "tsr generate",
     "update-author-profiles": "vpx ./scripts/update-author-profiles.ts",
     "seed-convex": "vpx ./scripts/seed-convex.ts",
+    "update-repo-stars": "vpx ./scripts/update-repo-stars.ts",
     "build": "vp build",
     "preview": "vp preview",
     "deploy": "bun run build && wrangler deploy",

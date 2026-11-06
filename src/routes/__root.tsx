@@ -63,7 +63,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <SiteHeader />
-        <div className="mx-auto flex max-w-7xl gap-8 px-4">
+        <div className="mx-auto flex max-w-5xl gap-8 px-4">
           <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-64 shrink-0 py-6 lg:block">
             <DirectorySidebar />
           </aside>
