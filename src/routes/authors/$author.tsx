@@ -33,7 +33,6 @@ function AuthorPage() {
   const navigate = Route.useNavigate()
   const results = filterSkills(author.skills, q)
   const profile = author.profile
-  const login = profile?.login ?? author.skills[0].user
   const displayName = profile?.name ?? author.name
   const repos = author.repos.map((repo) => {
     const skills = author.skills.filter((s) => s.repo === repo)
@@ -55,16 +54,6 @@ function AuthorPage() {
           description={profile?.bio ?? undefined}
         >
           <ul className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-            <li>
-              <a
-                href={`https://github.com/${login}`}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-foreground"
-              >
-                @{login}
-              </a>
-            </li>
             {profile && (
               <li className="flex items-center gap-1.5">
                 <HugeiconsIcon icon={UserGroupIcon} className="size-4" aria-hidden />
