@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { fetchServerSentEvents, useChat, type UIMessage } from '@tanstack/ai-react'
+import {
+  fetchServerSentEvents,
+  localStoragePersistence,
+  useChat,
+  type ChatClientPersistence,
+  type UIMessage,
+} from '@tanstack/ai-react'
 import { HugeiconsIcon } from '@hugeicons/react'
 import {
   Alert02Icon,
@@ -94,6 +100,20 @@ function useModel(isAdmin: boolean) {
   return [isAdmin || isPresetModel(model) ? model : DEFAULT_MODEL, update] as const
 }
 
+const CHAT_STORAGE_KEY = 'skilly-assistant-chat'
+
+/**
+ * Only one chat is kept in this browser: every thread reads and writes the same key, so a new
+ * chat (whose `clear()` removes the stored one) overwrites the last. Only the transcript is
+ * stored: a run cut off by a reload can't be rejoined over plain SSE, so no resume pointer.
+ */
+const chatStorage = localStoragePersistence({ keyPrefix: '' })
+const chatPersistence: ChatClientPersistence = {
+  getItem: () => chatStorage.getItem(CHAT_STORAGE_KEY),
+  setItem: (_id, state) => chatStorage.setItem(CHAT_STORAGE_KEY, { messages: state.messages }),
+  removeItem: () => chatStorage.removeItem(CHAT_STORAGE_KEY),
+}
+
 function AskPage() {
   const { isAdmin } = Route.useLoaderData()
   const [model, setModel] = useModel(isAdmin)
@@ -105,7 +125,7 @@ function AskPage() {
   const [durations, setDurations] = useState<Record<string, number>>({})
   const turnStart = useRef(0)
 
-  const { messages, sendMessage, isLoading, error, stop, reload, clear } = useChat({
+  const { messages, sendMessage, isLoading, isHydrating, error, stop, reload, clear } = useChat({
     connection: fetchServerSentEvents('/api/chat', {
       fetchClient: async (input, init) => {
         setServerError(undefined)
@@ -115,6 +135,7 @@ function AskPage() {
       },
     }),
     threadId,
+    persistence: chatPersistence,
     onFinish: (message) => {
       const elapsed = Date.now() - turnStart.current
       setDurations((current) => ({ ...current, [message.id]: elapsed }))
@@ -163,7 +184,10 @@ function AskPage() {
         )}
       </div>
 
-      {messages.length === 0 ? (
+      {isHydrating ? (
+        // Restoring the saved chat: hold the space rather than flash the empty state.
+        <div className="flex-1" />
+      ) : messages.length === 0 ? (
         <Empty className="flex-1">
           <EmptyHeader>
             <EmptyMedia variant="icon">
