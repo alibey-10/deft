@@ -305,6 +305,14 @@
       "location": "San Francisco",
       "followers": 660
     },
+    "expo": {
+      "login": "expo",
+      "name": "Expo",
+      "bio": "Expo is a free and open-source platform for making universal native apps with React that run on Android, iOS, and the web.",
+      "website": "https://expo.dev",
+      "location": "United States of America",
+      "followers": 4952
+    },
     "fatihaydost": {
       "login": "fatihaydost",
       "name": "Fatih Aydost",

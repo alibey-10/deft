@@ -171,3 +171,34 @@ export const backfillSkills = internalMutation({
     }
   },
 })
+
+/**
+ * Replace the topics of skills that aren't in the static registry (discovered ones), keyed on
+ * `rawUrl`. Registry skills get their topics from the seed instead.
+ * Run: npx convex run seed:setSkillTopics '{"skills":[{"rawUrl":"…","topics":["react"]}]}'
+ */
+export const setSkillTopics = internalMutation({
+  args: { skills: v.array(v.object({ rawUrl: v.string(), topics: v.array(vTopicSlug) })) },
+  handler: async (ctx, { skills }): Promise<Counts> => {
+    const counts: Counts = { inserted: 0, updated: 0, unchanged: 0 }
+    for (const { rawUrl, topics } of skills) {
+      if (topics.length === 0) throw new Error(`Skill ${rawUrl} has no topics`)
+      const skill = await ctx.db
+        .query('skills')
+        .withIndex('by_rawUrl', (q) => q.eq('rawUrl', rawUrl))
+        .unique()
+      if (!skill) throw new Error(`No skill with rawUrl ${rawUrl}`)
+      if (JSON.stringify(skill.topics) === JSON.stringify(topics)) {
+        counts.unchanged++
+        continue
+      }
+      await ctx.db.patch('skills', skill._id, {
+        topics,
+        searchText: skillSearchText({ ...skill, topics }),
+        updatedAt: Date.now(),
+      })
+      counts.updated++
+    }
+    return counts
+  },
+})
