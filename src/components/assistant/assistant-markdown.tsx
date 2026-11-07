@@ -45,7 +45,7 @@ export function AssistantMarkdown({ text, streaming }: { text: string; streaming
         isAnimating={streaming}
         components={components}
         linkSafety={{ enabled: false }}
-        className="text-sm leading-relaxed"
+        className="text-[0.9375rem] leading-[1.65]"
       >
         {text}
       </Streamdown>
