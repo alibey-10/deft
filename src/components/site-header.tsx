@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { SparklesIcon } from '@hugeicons/core-free-icons'
+import { NewTwitterIcon, SparklesIcon } from '@hugeicons/core-free-icons'
 
 import { CommandPalette } from '#/components/command-palette.tsx'
 import { buttonVariants } from '#/components/ui/button.tsx'
@@ -49,6 +49,16 @@ export function SiteHeader() {
             <span className="max-sm:hidden">Ask AI</span>
           </Link>
           <CommandPalette />
+          <a
+            href="https://x.com/alibey_10"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Ali on X"
+            title="Ali on X"
+            className={buttonVariants({ variant: 'ghost', size: 'icon' })}
+          >
+            <HugeiconsIcon icon={NewTwitterIcon} aria-hidden />
+          </a>
           <ThemeToggle
             aria-label={themeLabel}
             title={themeLabel}
