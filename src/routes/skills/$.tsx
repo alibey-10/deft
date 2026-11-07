@@ -157,7 +157,7 @@ function FileTabs({ skill, active }: { skill: RegistrySkill; active?: string }) 
             params={{ _splat: skill.pathSlug }}
             search={isMain ? {} : { file: name }}
             aria-current={current ? 'page' : undefined}
-            className="rounded-md px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground aria-[current=page]:bg-muted aria-[current=page]:text-foreground aria-[current=page]:shadow-[inset_0_-1.5px_0_var(--redline)]"
+            className="rounded-md px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground aria-[current=page]:bg-muted aria-[current=page]:text-foreground"
           >
             {name}
           </Link>
