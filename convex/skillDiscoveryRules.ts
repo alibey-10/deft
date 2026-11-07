@@ -82,7 +82,6 @@ const TOPIC_GUIDE: Record<TopicSlug, string> = {
   typography: 'type in interfaces: fonts, scales, readability',
   color: 'colour in interfaces: palettes, contrast, theming',
   '3d': '3D on the web or in apps: WebGL, WebGPU, shaders',
-  frontend: 'general frontend/UI engineering: HTML, CSS, components',
   architecture: 'frontend app architecture, state, routing',
   frameworks: 'UI frameworks without their own topic, such as Svelte, Solid, Angular',
   'shadcn-ui-development': 'shadcn/ui components',

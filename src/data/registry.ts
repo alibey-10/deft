@@ -77,7 +77,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/ui/design-first-ui-prompting/SKILL.md',
     files: ['ARTICLE.md', 'REFERENCES.md'],
     name: 'design-first-ui-prompting',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Use when you want to turn a product goal into a design-first UI prompt with clear layout, type, color, and constraint choices.',
   },
@@ -91,7 +91,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/landing-page/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'landing-page',
-    topics: ['visual', 'frontend', 'interaction'],
+    topics: ['visual', 'interaction'],
     description:
       'Use when designing or implementing a landing page with strong hierarchy, conversion flow, and visual pacing.',
   },
@@ -105,7 +105,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/pricing-page/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'pricing-page',
-    topics: ['visual', 'frontend', 'interaction'],
+    topics: ['visual', 'interaction'],
     description:
       'Use when building a pricing page with clear plan comparison, emphasis, and conversion-oriented layout.',
   },
@@ -119,7 +119,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/tailwindcss/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'tailwindcss',
-    topics: ['frontend', 'systems', 'tooling'],
+    topics: ['systems', 'tooling'],
     description:
       'Use when you are implementing UI with Tailwind and want reusable, practical utility-first patterns.',
   },
@@ -132,7 +132,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/animation-systems/SKILL.md',
     name: 'animation-systems',
-    topics: ['motion', 'systems', 'frontend'],
+    topics: ['motion', 'systems'],
     description: 'Use when building a coherent animation system instead of one-off motion tweaks.',
   },
   {
@@ -144,7 +144,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/animation-on-scroll/SKILL.md',
     name: 'animation-on-scroll',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Use when you need scroll-driven motion that feels intentional instead of noisy or overdone.',
   },
@@ -157,7 +157,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/gsap/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'gsap',
-    topics: ['motion', 'frontend', 'interaction'],
+    topics: ['motion', 'interaction'],
     description:
       'Use when implementing motion with GSAP and you want practical animation structure and sequencing guidance.',
   },
@@ -170,7 +170,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/gsap-scrolltrigger-storytelling/SKILL.md',
     name: 'gsap-scrolltrigger-storytelling',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description: 'Use when building scroll-based storytelling sections with GSAP ScrollTrigger.',
   },
   {
@@ -183,7 +183,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'threejs',
-    topics: ['threejs', 'motion', 'frontend'],
+    topics: ['threejs', 'motion'],
     description:
       'Use when building 3D scenes, interactions, or WebGL-backed interface moments in Three.js.',
   },
@@ -196,7 +196,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/cobejs/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'cobejs',
-    topics: ['3d', 'visual', 'frontend'],
+    topics: ['3d', 'visual'],
     description: 'Use when building lightweight animated globe or orb visuals with Cobe.',
   },
   {
@@ -208,7 +208,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/matterjs/SKILL.md',
     name: 'matterjs',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Use when building physics-driven interactions and layout behaviors with Matter.js.',
   },
@@ -221,7 +221,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/progressive-blur/SKILL.md',
     name: 'progressive-blur',
-    topics: ['visual', 'motion', 'frontend'],
+    topics: ['visual', 'motion'],
     description:
       'Use when applying blur transitions or layered depth effects that need to feel smooth and controlled.',
   },
@@ -234,7 +234,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/beautiful-shadows/SKILL.md',
     name: 'beautiful-shadows',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Use when a UI needs better depth, elevation, and shadow treatment without looking muddy.',
   },
@@ -247,7 +247,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/company-logos/SKILL.md',
     name: 'company-logos',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       'Use when laying out logos, trust rows, or brand collections in a clean and balanced way.',
   },
@@ -260,7 +260,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/container-lines/SKILL.md',
     name: 'container-lines',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description: 'Use when using borders and container structure as part of the visual system.',
   },
   {
@@ -272,7 +272,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/masked-reveal/SKILL.md',
     name: 'masked-reveal',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description:
       'Use when revealing content with masked motion, clipped transitions, or layered entrances.',
   },
@@ -285,7 +285,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/marquee-loop/SKILL.md',
     name: 'marquee-loop',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Use when building looping marquees that need steady rhythm, spacing, and performance awareness.',
   },
@@ -299,7 +299,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/webgl-landing-steering/SKILL.md',
     files: ['REFERENCES.md'],
     name: 'webgl-landing-steering',
-    topics: ['threejs', 'visual', 'frontend'],
+    topics: ['threejs', 'visual'],
     description: 'Use when steering a landing page around a WebGL centerpiece or hero experience.',
   },
   {
@@ -311,7 +311,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/ibelick/ui-skills/blob/main/skills/fixing-accessibility/SKILL.md',
     name: 'fixing-accessibility',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       'Audit and fix HTML accessibility issues including ARIA labels, keyboard navigation, focus management, color contrast, and form errors. Use when adding interactive controls, forms, dialogs, or reviewing WCAG compliance.',
   },
@@ -323,7 +323,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/ibelick/ui-skills/main/skills/fixing-metadata/SKILL.md',
     githubUrl: 'https://github.com/ibelick/ui-skills/blob/main/skills/fixing-metadata/SKILL.md',
     name: 'fixing-metadata',
-    topics: ['architecture', 'frontend', 'tooling'],
+    topics: ['architecture', 'tooling'],
     description:
       'Audit and fix page metadata including titles, meta descriptions, Open Graph, Twitter cards, canonical URLs, and JSON-LD structured data. Use when shipping new pages or fixing SEO and social preview issues.',
   },
@@ -336,7 +336,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/ibelick/ui-skills/blob/main/skills/fixing-motion-performance/SKILL.md',
     name: 'fixing-motion-performance',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       'Audit and fix animation performance issues including layout thrashing, compositor properties, scroll-linked motion, and blur effects. Use when animations stutter, transitions jank, or reviewing CSS/JS animation performance.',
   },
@@ -348,7 +348,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md',
     githubUrl: 'https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md',
     name: 'frontend-design',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code and UI design that avoids generic AI aesthetics.',
   },
@@ -373,7 +373,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/create-adaptable-composable/SKILL.md',
     name: 'create-adaptable-composable',
-    topics: ['vue', 'frontend', 'tooling'],
+    topics: ['vue', 'tooling'],
     description:
       'Create library-grade Vue composables that support plain values, refs, and getters with predictable reactivity.',
   },
@@ -385,7 +385,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/vuejs-ai/skills/main/skills/vue-best-practices/SKILL.md',
     githubUrl: 'https://github.com/vuejs-ai/skills/blob/main/skills/vue-best-practices/SKILL.md',
     name: 'vue-best-practices',
-    topics: ['vue', 'frontend', 'performance'],
+    topics: ['vue', 'performance'],
     description:
       'Core Vue development best practices for component architecture, reactivity, and maintainable code.',
   },
@@ -410,7 +410,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/vue-jsx-best-practices/SKILL.md',
     name: 'vue-jsx-best-practices',
-    topics: ['vue', 'frontend', 'tooling'],
+    topics: ['vue', 'tooling'],
     description: 'Guidance for writing robust, type-safe, and readable Vue components using JSX.',
   },
   {
@@ -422,7 +422,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/vue-options-api-best-practices/SKILL.md',
     name: 'vue-options-api-best-practices',
-    topics: ['vue', 'frontend', 'tooling'],
+    topics: ['vue', 'tooling'],
     description:
       'Best practices for structuring and scaling Vue applications built with the Options API.',
   },
@@ -435,7 +435,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/vue-pinia-best-practices/SKILL.md',
     name: 'vue-pinia-best-practices',
-    topics: ['vue', 'systems', 'frontend'],
+    topics: ['vue', 'systems'],
     description: 'Patterns for clean, scalable state management in Vue apps using Pinia stores.',
   },
   {
@@ -447,7 +447,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/vue-router-best-practices/SKILL.md',
     name: 'vue-router-best-practices',
-    topics: ['vue', 'interaction', 'frontend'],
+    topics: ['vue', 'interaction'],
     description:
       'Routing architecture and navigation patterns for maintainable Vue Router applications.',
   },
@@ -460,7 +460,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vuejs-ai/skills/blob/main/skills/vue-testing-best-practices/SKILL.md',
     name: 'vue-testing-best-practices',
-    topics: ['vue', 'testing', 'frontend'],
+    topics: ['vue', 'testing'],
     description:
       'Testing strategies for Vue applications, including component tests, integration tests, and reliability patterns.',
   },
@@ -473,7 +473,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md',
     name: 'web-design-guidelines',
-    topics: ['visual', 'accessibility', 'frontend'],
+    topics: ['visual', 'accessibility'],
     description:
       "Review UI code for Web Interface Guidelines compliance. Audit design, accessibility, and UX against Vercel's best practices.",
   },
@@ -486,7 +486,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vercel/next.js/blob/canary/skills/next-cache-components-adoption/SKILL.md',
     name: 'next-cache-components',
-    topics: ['nextjs', 'performance', 'frontend', 'frameworks'],
+    topics: ['nextjs', 'performance'],
     description:
       'Enable Cache Components in a Next.js app and resolve blocking routes surfaced during adoption.',
   },
@@ -500,7 +500,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/vercel/next.js/blob/canary/skills/next-cache-components-optimizer/SKILL.md',
     files: ['rig-template.md', 'test-template.md'],
     name: 'next-cache-components-optimizer',
-    topics: ['nextjs', 'performance', 'testing', 'frameworks'],
+    topics: ['nextjs', 'performance', 'testing'],
     description:
       'Drive a Next.js route to instant navigation under Cache Components using a failing Playwright test and an agentic fix loop.',
   },
@@ -513,7 +513,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md',
     name: 'agent-browser',
-    topics: ['testing', 'tooling', 'frontend'],
+    topics: ['testing', 'tooling'],
     description:
       'Browser automation CLI for AI agents for navigation, form actions, extraction, screenshots, QA, and app testing.',
   },
@@ -526,7 +526,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/agent-skills/blob/main/skills/frontend-ui-engineering/SKILL.md',
     name: 'frontend-ui-engineering',
-    topics: ['frontend', 'systems', 'accessibility'],
+    topics: ['systems', 'accessibility'],
     description:
       'Frontend UI engineering guidance covering component architecture, responsive design, accessibility, and maintainable implementation patterns.',
   },
@@ -540,7 +540,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md',
     files: ['AGENTS.md'],
     name: 'vercel-react-best-practices',
-    topics: ['react', 'nextjs', 'frontend', 'performance', 'systems', 'frameworks'],
+    topics: ['react', 'nextjs', 'performance', 'systems'],
     description:
       'Vercel React best practices for rendering performance, bundle efficiency, and scalable component architecture.',
   },
@@ -553,7 +553,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-framework-mode/SKILL.md',
     name: 'react-router-framework-mode',
-    topics: ['react', 'frontend', 'architecture', 'interaction', 'frameworks'],
+    topics: ['react', 'architecture', 'interaction'],
     description:
       'React Router framework-mode patterns for loaders, actions, middleware, route modules, and full-stack rendering flows.',
   },
@@ -566,7 +566,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/sveltejs/ai-tools/blob/main/plugins/claude/svelte/skills/svelte-code-writer/SKILL.md',
     name: 'svelte-code-writer',
-    topics: ['frameworks', 'frontend', 'tooling'],
+    topics: ['frameworks', 'tooling'],
     description:
       'Official Svelte code-writing skill focused on modern Svelte patterns, component composition, and production-ready implementations.',
   },
@@ -579,7 +579,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/microsoft/playwright-cli/blob/main/skills/playwright-cli/SKILL.md',
     name: 'playwright-cli',
-    topics: ['testing', 'tooling', 'frontend'],
+    topics: ['testing', 'tooling'],
     description:
       'Official Playwright CLI skill for browser automation, test generation, tracing, and session-driven end-to-end testing workflows.',
   },
@@ -617,7 +617,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/callstackincubator/agent-skills/blob/main/skills/react-native-best-practices/SKILL.md',
     files: ['POWER.md'],
     name: 'react-native-best-practices',
-    topics: ['react-native', 'performance', 'frontend'],
+    topics: ['react-native', 'performance'],
     description:
       'React Native performance optimization guidelines for FPS, TTI, bundle size, memory leaks, re-renders, and animations.',
   },
@@ -630,7 +630,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-animation/SKILL.md',
     name: 'threejs-animation',
-    topics: ['threejs', 'motion', 'frontend'],
+    topics: ['threejs', 'motion'],
     description:
       'Three.js animation guidance for keyframes, skeletal animation, morph targets, and animation blending.',
   },
@@ -643,7 +643,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-fundamentals/SKILL.md',
     name: 'threejs-fundamentals',
-    topics: ['threejs', 'interaction', 'frontend'],
+    topics: ['threejs', 'interaction'],
     description:
       'Three.js scene setup guidance for cameras, renderer configuration, object hierarchy, and transforms.',
   },
@@ -656,7 +656,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-geometry/SKILL.md',
     name: 'threejs-geometry',
-    topics: ['threejs', 'performance', 'frontend'],
+    topics: ['threejs', 'performance'],
     description:
       'Three.js geometry patterns for built-in shapes, BufferGeometry, custom meshes, and instancing.',
   },
@@ -669,7 +669,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-interaction/SKILL.md',
     name: 'threejs-interaction',
-    topics: ['threejs', 'interaction', 'frontend'],
+    topics: ['threejs', 'interaction'],
     description:
       'Three.js interaction patterns for raycasting, controls, pointer input, and object selection.',
   },
@@ -682,7 +682,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-lighting/SKILL.md',
     name: 'threejs-lighting',
-    topics: ['threejs', 'visual', 'frontend'],
+    topics: ['threejs', 'visual'],
     description:
       'Three.js lighting guidance for light types, shadows, environment lighting, and performance tuning.',
   },
@@ -708,7 +708,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-materials/SKILL.md',
     name: 'threejs-materials',
-    topics: ['threejs', 'visual', 'frontend'],
+    topics: ['threejs', 'visual'],
     description:
       'Three.js material guidance for PBR, classic materials, shader materials, and material optimization.',
   },
@@ -734,7 +734,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-shaders/SKILL.md',
     name: 'threejs-shaders',
-    topics: ['threejs', 'visual', 'frontend'],
+    topics: ['threejs', 'visual'],
     description:
       'Three.js shader guidance for GLSL, ShaderMaterial, uniforms, and custom vertex and fragment effects.',
   },
@@ -747,7 +747,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-textures/SKILL.md',
     name: 'threejs-textures',
-    topics: ['threejs', 'visual', 'frontend'],
+    topics: ['threejs', 'visual'],
     description:
       'Three.js texture workflows for maps, UV mapping, environment maps, and texture configuration.',
   },
@@ -760,7 +760,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md',
     name: 'ui-ux-pro-max',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Comprehensive UI/UX design intelligence with 50+ styles, 97 palettes, and 9 technology stacks for building professional interfaces.',
   },
@@ -810,7 +810,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/wshobson/agents/blob/main/plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md',
     name: 'wcag-audit-patterns',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       'Conduct WCAG 2.2 accessibility audits with automated testing, manual verification, and remediation guidance. Use when auditing websites for accessibility, fixing WCAG violations, or implementing accessible design patterns.',
   },
@@ -822,7 +822,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/anthropics/skills/main/skills/canvas-design/SKILL.md',
     githubUrl: 'https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md',
     name: 'canvas-design',
-    topics: ['visual', 'interaction', 'frontend'],
+    topics: ['visual', 'interaction'],
     description:
       'Create original visual designs and art on digital canvases using design philosophy, focusing on form, space, and color.',
   },
@@ -845,7 +845,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/antfu/skills/main/skills/antfu/SKILL.md',
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/antfu/SKILL.md',
     name: 'antfu',
-    topics: ['tooling', 'frontend', 'performance'],
+    topics: ['tooling', 'performance'],
     description:
       "Anthony Fu's opinionated tooling and conventions for JavaScript/TypeScript projects.",
   },
@@ -857,7 +857,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/nuxt/SKILL.md',
     files: ['GENERATION.md'],
     name: 'nuxt',
-    topics: ['nuxt', 'frontend', 'performance', 'frameworks'],
+    topics: ['nuxt', 'performance'],
     description:
       'Nuxt full-stack Vue framework guidance for SSR, auto-imports, file-based routing, and server routes.',
   },
@@ -869,7 +869,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/pinia/SKILL.md',
     files: ['GENERATION.md'],
     name: 'pinia',
-    topics: ['vue', 'systems', 'frontend'],
+    topics: ['vue', 'systems'],
     description:
       'Pinia state management best practices for type-safe Vue stores, getters, and actions.',
   },
@@ -881,7 +881,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/pnpm/SKILL.md',
     files: ['GENERATION.md'],
     name: 'pnpm',
-    topics: ['tooling', 'frontend', 'performance'],
+    topics: ['tooling', 'performance'],
     description:
       'pnpm package manager guidance for strict dependency resolution, workspaces, catalogs, patches, and overrides.',
   },
@@ -892,7 +892,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/slidevjs/slidev/main/skills/slidev/SKILL.md',
     githubUrl: 'https://github.com/slidevjs/slidev/blob/main/skills/slidev/SKILL.md',
     name: 'slidev',
-    topics: ['vue', 'video', 'visual', 'frontend'],
+    topics: ['vue', 'video', 'visual'],
     description:
       'Create developer slide decks with Slidev using Markdown, Vue components, code highlighting, and animations.',
   },
@@ -903,7 +903,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/rolldown/tsdown/main/skills/tsdown/SKILL.md',
     githubUrl: 'https://github.com/rolldown/tsdown/blob/main/skills/tsdown/SKILL.md',
     name: 'tsdown',
-    topics: ['tooling', 'performance', 'frontend'],
+    topics: ['tooling', 'performance'],
     description:
       'Bundle TypeScript and JavaScript libraries with tsdown, including declarations and multi-format builds.',
   },
@@ -914,7 +914,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/vercel/turborepo/main/skills/turborepo/SKILL.md',
     githubUrl: 'https://github.com/vercel/turborepo/blob/main/skills/turborepo/SKILL.md',
     name: 'turborepo',
-    topics: ['tooling', 'performance', 'frontend'],
+    topics: ['tooling', 'performance'],
     description:
       'Turborepo monorepo build system guidance for pipelines, caching, filtering, CI, and package boundaries.',
   },
@@ -926,7 +926,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/unocss/SKILL.md',
     files: ['GENERATION.md'],
     name: 'unocss',
-    topics: ['tooling', 'visual', 'frontend'],
+    topics: ['tooling', 'visual'],
     description:
       'UnoCSS atomic CSS engine guidance for rules, shortcuts, and presets like Wind, Icons, and Attributify.',
   },
@@ -938,7 +938,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/vite/SKILL.md',
     files: ['GENERATION.md'],
     name: 'vite',
-    topics: ['tooling', 'performance', 'frontend'],
+    topics: ['tooling', 'performance'],
     description:
       'Vite configuration and plugin guidance, including SSR and Vite 8 Rolldown migration patterns.',
   },
@@ -950,7 +950,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/vitepress/SKILL.md',
     files: ['GENERATION.md'],
     name: 'vitepress',
-    topics: ['vue', 'tooling', 'frontend'],
+    topics: ['vue', 'tooling'],
     description:
       'VitePress documentation site guidance for configuration, theming, and Markdown plus Vue content.',
   },
@@ -962,7 +962,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/vitest/SKILL.md',
     files: ['GENERATION.md'],
     name: 'vitest',
-    topics: ['testing', 'tooling', 'frontend'],
+    topics: ['testing', 'tooling'],
     description:
       'Vitest testing best practices for unit tests, mocking, coverage, fixtures, and test filtering.',
   },
@@ -974,7 +974,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/vue/SKILL.md',
     files: ['GENERATION.md'],
     name: 'vue',
-    topics: ['vue', 'interaction', 'frontend'],
+    topics: ['vue', 'interaction'],
     description:
       'Vue 3 Composition API and reactivity guidance for SFCs, script setup macros, and built-in components.',
   },
@@ -985,7 +985,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/vueuse/vueuse/main/skills/vueuse-functions/SKILL.md',
     githubUrl: 'https://github.com/vueuse/vueuse/blob/main/skills/vueuse-functions/SKILL.md',
     name: 'vueuse-functions',
-    topics: ['vue', 'tooling', 'frontend'],
+    topics: ['vue', 'tooling'],
     description: 'Apply VueUse composables to build concise, maintainable Vue and Nuxt features.',
   },
   {
@@ -1113,7 +1113,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/millionco/skills/main/skills/budge/SKILL.md',
     githubUrl: 'https://github.com/millionco/skills/blob/main/skills/budge/SKILL.md',
     name: 'budge',
-    topics: ['nextjs', 'visual', 'tooling', 'frontend'],
+    topics: ['nextjs', 'visual', 'tooling'],
     description:
       'Use when making single-property CSS or Tailwind visual changes in Next.js App Router projects. Presents a floating control widget for live tuning before persisting.',
   },
@@ -1125,7 +1125,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/millionco/react-doctor/main/skills/react-doctor/SKILL.md',
     githubUrl: 'https://github.com/millionco/react-doctor/blob/main/skills/react-doctor/SKILL.md',
     name: 'react-doctor',
-    topics: ['react', 'testing', 'performance', 'frontend'],
+    topics: ['react', 'testing', 'performance'],
     description:
       'Run React Doctor to detect regressions in security, performance, correctness, and architecture, with score-based quality checks.',
   },
@@ -1138,7 +1138,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/millionco/react-doctor/blob/main/skills/improve-react/SKILL.md',
     files: ['AUDIT.md', 'PLAN-TEMPLATE.md'],
     name: 'improve-react',
-    topics: ['react', 'code-quality', 'performance', 'architecture', 'frontend'],
+    topics: ['react', 'code-quality', 'performance', 'architecture'],
     description:
       "Survey a React codebase using React Doctor's findings, then produce prioritized audits and self-contained implementation plans without modifying source code.",
   },
@@ -1149,7 +1149,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/ibelick/ui-skills/main/skills/improve-ui/SKILL.md',
     githubUrl: 'https://github.com/ibelick/ui-skills/blob/main/skills/improve-ui/SKILL.md',
     name: 'improve-ui',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Audit an existing product surface against its own design evidence, identify verified UI problems, and write self-contained implementation plans for another agent without modifying product source.',
   },
@@ -1173,7 +1173,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/bencium/bencium-marketplace/blob/main/bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md',
     name: 'bencium-innovative-ux-designer',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.',
   },
@@ -1186,7 +1186,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-audit/SKILL.md',
     name: 'audit-and-fix',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       'Accessibility auditing and remediation workflow that combines detection, prioritization, and practical fixes for WCAG issues.',
   },
@@ -1212,7 +1212,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-fix/SKILL.md',
     name: 'refactor',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       "Compatibility listing for refactor installs from AccessLint's marketplace skill set.",
   },
@@ -1275,7 +1275,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/animate-expo/SKILL.md',
     files: ['RECIPES.md'],
     name: 'animate-expo',
-    topics: ['expo', 'react-native', 'motion', 'interaction', 'frontend'],
+    topics: ['expo', 'react-native', 'motion', 'interaction'],
     description:
       'Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use animate.',
   },
@@ -1287,7 +1287,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/ask-sonner/SKILL.md',
     files: ['API.md'],
     name: 'ask-sonner',
-    topics: ['react', 'frontend', 'interaction', 'tooling'],
+    topics: ['react', 'interaction', 'tooling'],
     description:
       "Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and icons, positioning and multiple toasters. Use when working with Sonner or troubleshooting it — toasts that don't appear, appear twice, lose their styles, ignore Tailwind classes, sit behind a modal, or don't follow dark mode.",
   },
@@ -1299,7 +1299,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/emilkowalski/skills/main/skills/write-swift/SKILL.md',
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/write-swift/SKILL.md',
     name: 'write-swift',
-    topics: ['swiftui', 'frontend', 'code-quality', 'architecture'],
+    topics: ['swiftui', 'code-quality', 'architecture'],
     description:
       "How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (some vs any), API design, performance and ARC, Swift Testing, macros, and the modern language features agents don't know about yet. Use when writing, reviewing, or migrating Swift, or when a concurrency error, a hang, a data race, a retain cycle, or a performance problem needs fixing.",
   },
@@ -1310,7 +1310,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/Jane-xiaoer/claude-skill-web-clone/main/SKILL.md',
     githubUrl: 'https://github.com/Jane-xiaoer/claude-skill-web-clone/blob/main/SKILL.md',
     name: 'web-clone',
-    topics: ['frontend', 'architecture', 'tooling'],
+    topics: ['architecture', 'tooling'],
     description:
       '网站复刻 / 克隆方法论。Use when the user says to clone, reproduce, or recreate a website or WebGL/Canvas/Three.js effect. Covers source-first reconstruction, repo scaffolding, reverse engineering, implementation paths, and verification for static sites, content sites, and heavy front-end experiences.',
   },
@@ -1323,7 +1323,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/raphaelsalaja/skill/blob/main/skills/generating-sounds-with-ai/SKILL.md',
     name: 'generating-sounds-with-ai',
-    topics: ['interaction', 'testing', 'frontend'],
+    topics: ['interaction', 'testing'],
     description:
       'Audit Web Audio API code for procedural sound synthesis quality, UX decisions, and parameter best practices.',
   },
@@ -1336,7 +1336,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/raphaelsalaja/skill/blob/main/skills/mastering-animate-presence/SKILL.md',
     name: 'mastering-animate-presence',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Audit Motion and Framer Motion exit/presence patterns with practical fixes for AnimatePresence usage.',
   },
@@ -1348,7 +1348,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/raphaelsalaja/skill/main/skills/morphing-icons/SKILL.md',
     githubUrl: 'https://github.com/raphaelsalaja/skill/blob/main/skills/morphing-icons/SKILL.md',
     name: 'morphing-icons',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description:
       'Build icon components that morph between SVG shapes with smooth, line-based transformation.',
   },
@@ -1360,7 +1360,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/raphaelsalaja/skill/main/skills/pseudo-elements/SKILL.md',
     githubUrl: 'https://github.com/raphaelsalaja/skill/blob/main/skills/pseudo-elements/SKILL.md',
     name: 'pseudo-elements',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description:
       'Audit CSS pseudo-elements and View Transitions usage for hover effects, decorative layers, and transitions.',
   },
@@ -1372,7 +1372,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/raphaelsalaja/skill/main/skills/sounds-on-the-web/SKILL.md',
     githubUrl: 'https://github.com/raphaelsalaja/skill/blob/main/skills/sounds-on-the-web/SKILL.md',
     name: 'sounds-on-the-web',
-    topics: ['interaction', 'accessibility', 'frontend'],
+    topics: ['interaction', 'accessibility'],
     description:
       'Audit interface sound feedback for UX quality, accessibility, and practical implementation patterns.',
   },
@@ -1385,7 +1385,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/raphaelsalaja/skill/blob/main/skills/to-spring-or-not-to-spring/SKILL.md',
     name: 'to-spring-or-not-to-spring',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       'Audit animation timing choices to decide when springs versus easing curves produce better motion.',
   },
@@ -1396,7 +1396,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/zarazhangrui/frontend-slides/main/SKILL.md',
     githubUrl: 'https://github.com/zarazhangrui/frontend-slides/blob/main/SKILL.md',
     name: 'frontend-slides',
-    topics: ['video', 'visual', 'frontend'],
+    topics: ['video', 'visual'],
     description:
       'Create animation-rich HTML presentations from scratch or convert PPT/PPTX files into polished web slides.',
   },
@@ -1426,7 +1426,7 @@ const registrySource: RegistrySourceSkill[] = [
       'registry.md',
     ],
     name: 'shadcn',
-    topics: ['systems', 'tooling', 'frontend', 'shadcn-ui-development'],
+    topics: ['systems', 'tooling', 'shadcn-ui-development'],
     description:
       'Project-aware shadcn/ui workflow for searching, adding, composing, and fixing components with correct patterns.',
   },
@@ -1450,7 +1450,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/gpt-tasteskill/SKILL.md',
     githubUrl: 'https://github.com/Leonxlnx/taste-skill/blob/main/skills/gpt-tasteskill/SKILL.md',
     name: 'gpt-taste',
-    topics: ['taste', 'systems', 'frontend'],
+    topics: ['taste', 'systems'],
     description:
       'High-agency UX/UI skill with strict layout variance, typography, and GSAP motion engineering constraints.',
   },
@@ -1474,7 +1474,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/output-skill/SKILL.md',
     githubUrl: 'https://github.com/Leonxlnx/taste-skill/blob/main/skills/output-skill/SKILL.md',
     name: 'full-output-enforcement',
-    topics: ['tooling', 'testing', 'frontend'],
+    topics: ['tooling', 'testing'],
     description:
       'Enforces complete, non-truncated code output and blocks placeholder or half-finished responses.',
   },
@@ -1523,7 +1523,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/SKILL.md',
     githubUrl: 'https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md',
     name: 'design-taste-frontend',
-    topics: ['taste', 'visual', 'frontend'],
+    topics: ['taste', 'visual'],
     description:
       'Senior UI/UX frontend skill that enforces anti-slop design decisions, motion quality, and architecture discipline.',
   },
@@ -1534,7 +1534,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/pbakaus/impeccable/main/skill/reference/adapt.md',
     githubUrl: 'https://github.com/pbakaus/impeccable/blob/main/skill/reference/adapt.md',
     name: 'adapt',
-    topics: ['interaction', 'systems', 'frontend'],
+    topics: ['interaction', 'systems'],
     description:
       'Adapt designs across breakpoints, device contexts, and platform constraints with responsive interaction quality.',
   },
@@ -1545,7 +1545,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/pbakaus/impeccable/main/skill/reference/animate.md',
     githubUrl: 'https://github.com/pbakaus/impeccable/blob/main/skill/reference/animate.md',
     name: 'animate',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Enhance UX with purposeful animation and micro-interactions that support usability and delight.',
   },
@@ -1578,7 +1578,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/pbakaus/impeccable/main/skill/reference/clarify.md',
     githubUrl: 'https://github.com/pbakaus/impeccable/blob/main/skill/reference/clarify.md',
     name: 'clarify',
-    topics: ['interaction', 'systems', 'frontend'],
+    topics: ['interaction', 'systems'],
     description:
       'Improve labels, microcopy, and UX messaging so interface text is clearer and easier to act on.',
   },
@@ -1633,7 +1633,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/pbakaus/impeccable/main/skill/reference/harden.md',
     githubUrl: 'https://github.com/pbakaus/impeccable/blob/main/skill/reference/harden.md',
     name: 'harden',
-    topics: ['testing', 'systems', 'frontend'],
+    topics: ['testing', 'systems'],
     description:
       'Make interfaces production-ready with robust empty states, edge cases, errors, onboarding, and i18n resilience.',
   },
@@ -1666,7 +1666,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/pbakaus/impeccable/main/skill/reference/optimize.md',
     githubUrl: 'https://github.com/pbakaus/impeccable/blob/main/skill/reference/optimize.md',
     name: 'optimize',
-    topics: ['performance', 'frontend', 'testing'],
+    topics: ['performance', 'testing'],
     description:
       'Diagnose and improve interface performance across rendering, motion smoothness, assets, and load speed.',
   },
@@ -1772,7 +1772,7 @@ const registrySource: RegistrySourceSkill[] = [
       '35-donut-chart.md',
     ],
     name: 'transitions-dev',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Production-ready CSS transitions for web apps. Use when implementing notification badges, dropdowns, modals, panel reveals, page transitions, card resizes, number pop-ins, text swaps, icon swaps, success checks, avatar group hovers, error state shakes, search/input clear, skeleton loaders, shimmer text, sliding tabs, tooltips, staggered text reveals, card hover tilt, plus-to-menu morph, accordions, toasts, like buttons, learn-more hovers, checkbox checks, spinning counters, toggles, AI thinking states, reasoning streams, streaming text, matrix dot loaders, or banner stacking. Triggers on "add a transition", "animate the dropdown", "make the modal open smoothly", "swap icon", "page slide", "stagger animation", "open / close transition", "make it animate", "fade between", "success animation", "form error", "shake on invalid", "hover lift", "avatar stack hover", "clear the search", "skeleton loader", "loading shimmer", "shimmer text", "sliding tabs", "segmented control", "tooltip", "reveal text", "tilt card", "3D hover tilt", "cursor glare", "plus to menu", "FAB morph", "accordion", "collapsible", "expand / collapse", "disclosure", "toast", "snackbar", "like button", "heart animation", "learn more arrow", "checkbox", "check animation", "spinning counter", "odometer", "slot machine digits", "toggle", "switch", "thinking states", "AI status line", "agent reasoning", "reasoning stream", "streaming text", "stream words in", "matrix loader", "dot loader", "banner stack", "stacked toasts". Also "motion tokens", "scan for ad-hoc transitions", "replace hardcoded durations with motion tokens", "tokenize my animations", and the commands transitions reveal, transitions review, transitions apply, transitions refine.',
   },
@@ -1783,7 +1783,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/saadeghi/daisyui/master/skills/daisyui/SKILL.md',
     githubUrl: 'https://github.com/saadeghi/daisyui/blob/master/skills/daisyui/SKILL.md',
     name: 'daisyui',
-    topics: ['visual', 'tooling', 'frontend'],
+    topics: ['visual', 'tooling'],
     description:
       'Official daisyUI component library skill, providing docs, class names, examples and code examples to generate better daisyUI code.',
   },
@@ -1796,7 +1796,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Danilaa1/compact-landing-skill/blob/main/skills/compact-landing/SKILL.md',
     name: 'compact-landing',
-    topics: ['visual', 'craft', 'typography', 'frontend'],
+    topics: ['visual', 'craft', 'typography'],
     description:
       'Build compact premium landing pages with clear CTA hierarchy, quiet typography, and minimal visual noise.',
   },
@@ -1808,7 +1808,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/diffusionstudio/lottie/main/skills/text-to-lottie/SKILL.md',
     githubUrl: 'https://github.com/diffusionstudio/lottie/blob/main/skills/text-to-lottie/SKILL.md',
     name: 'text-to-lottie',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description: 'Turn text prompts into polished Lottie animations for motion-heavy UI work.',
   },
   {
@@ -1819,7 +1819,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/latent-spaces/brag/blob/main/skills/brag/SKILL.md',
     files: ['slim.md'],
     name: 'brag',
-    topics: ['video', 'motion', 'frontend'],
+    topics: ['video', 'motion'],
     description:
       'Turn a finished project into a short shareable launch video with motion, music, and copy.',
   },
@@ -1832,7 +1832,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/build-primitive/SKILL.md',
     name: 'build-primitive',
-    topics: ['react', 'accessibility', 'interaction', 'systems', 'testing', 'frontend'],
+    topics: ['react', 'accessibility', 'interaction', 'systems', 'testing'],
     description:
       'Build foundational UI primitives from scratch with strong ARIA, keyboard, focus, and state handling.',
   },
@@ -1870,7 +1870,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Jakubantalik/transitions.dev/blob/main/refine/.agents/skills/refine-live/SKILL.md',
     name: 'refine-live',
-    topics: ['motion', 'visual', 'interaction', 'frontend'],
+    topics: ['motion', 'visual', 'interaction'],
     description:
       'Iteratively refine UI in live sessions with a focus on motion, polish, and interaction detail.',
   },
@@ -1895,7 +1895,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md',
     files: ['PHASE-BOUNDARIES.md'],
     name: 'ask-matt',
-    topics: ['tooling', 'architecture', 'frontend'],
+    topics: ['tooling', 'architecture'],
     description: 'Router that picks the right Matt Pocock engineering flow for the current task.',
   },
   {
@@ -1976,7 +1976,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/to-spec/SKILL.md',
     githubUrl: 'https://github.com/mattpocock/skills/blob/main/skills/engineering/to-spec/SKILL.md',
     name: 'to-prd',
-    topics: ['architecture', 'tooling', 'frontend'],
+    topics: ['architecture', 'tooling'],
     description: 'Turns a conversation into a PRD and publishes it to the issue tracker.',
   },
   {
@@ -1989,7 +1989,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md',
     files: ['LOGIC.md', 'UI.md'],
     name: 'prototype',
-    topics: ['frontend', 'interaction', 'systems'],
+    topics: ['interaction', 'systems'],
     description: 'Builds throwaway prototypes to answer design or logic questions quickly.',
   },
   {
@@ -2001,7 +2001,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md',
     name: 'diagnosing-bugs',
-    topics: ['debugging', 'testing', 'frontend'],
+    topics: ['debugging', 'testing'],
     description:
       'Systematic bug diagnosis through reproduce, minimize, hypothesize, instrument, and fix.',
   },
@@ -2014,7 +2014,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md',
     files: ['mocking.md', 'tests.md'],
     name: 'tdd',
-    topics: ['testing', 'tooling', 'frontend'],
+    topics: ['testing', 'tooling'],
     description: 'Red-green-refactor workflow for building features and fixes one slice at a time.',
   },
   {
@@ -2027,7 +2027,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md',
     files: ['ADR-FORMAT.md', 'GLOSSARY-FORMAT.md'],
     name: 'domain-modeling',
-    topics: ['architecture', 'systems', 'frontend'],
+    topics: ['architecture', 'systems'],
     description: 'Builds and sharpens project domain models and terminology.',
   },
   {
@@ -2085,7 +2085,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-core/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-core/SKILL.md',
     name: 'gsap-core',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Official GSAP core API guidance for gsap.to(), from(), easing, stagger, matchMedia, and responsive or reduced-motion animation patterns.',
   },
@@ -2097,7 +2097,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-frameworks/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-frameworks/SKILL.md',
     name: 'gsap-frameworks',
-    topics: ['vue', 'motion', 'frameworks', 'frontend'],
+    topics: ['vue', 'motion'],
     description:
       'Official GSAP guidance for Vue, Nuxt, Svelte, and SvelteKit lifecycle setup, scoped selectors, and cleanup on unmount.',
   },
@@ -2110,7 +2110,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-performance/SKILL.md',
     name: 'gsap-performance',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       'Official GSAP performance guidance for compositor-friendly transforms, quickTo, stagger batching, and smooth 60fps animation.',
   },
@@ -2122,7 +2122,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-plugins/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-plugins/SKILL.md',
     name: 'gsap-plugins',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Official GSAP plugin guidance for Flip, Draggable, ScrollSmoother, SplitText, SVG tools, CustomEase, and gsap.registerPlugin() usage.',
   },
@@ -2134,7 +2134,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-react/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-react/SKILL.md',
     name: 'gsap-react',
-    topics: ['react', 'motion', 'frameworks', 'frontend'],
+    topics: ['react', 'motion'],
     description:
       'Official GSAP guidance for React and Next.js with useGSAP, refs, gsap.context(), contextSafe callbacks, and SSR-safe cleanup.',
   },
@@ -2147,7 +2147,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-scrolltrigger/SKILL.md',
     name: 'gsap-scrolltrigger',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Official ScrollTrigger guidance for scroll-linked animation, pinning, scrub, batch triggers, and horizontal containerAnimation patterns.',
   },
@@ -2159,7 +2159,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-timeline/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-timeline/SKILL.md',
     name: 'gsap-timeline',
-    topics: ['motion', 'craft', 'frontend'],
+    topics: ['motion', 'craft'],
     description:
       'Official GSAP timeline guidance for sequencing, position parameters, labels, nesting, and playback control with gsap.timeline().',
   },
@@ -2171,7 +2171,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-utils/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-utils/SKILL.md',
     name: 'gsap-utils',
-    topics: ['motion', 'frontend', 'tooling'],
+    topics: ['motion', 'tooling'],
     description:
       'Official gsap.utils guidance for clamp, mapRange, snap, distribute, selector scoping, and other animation math helpers.',
   },
@@ -2183,7 +2183,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/gsap-web/SKILL.md',
     githubUrl: 'https://github.com/iart-ai/web-animation-skills/blob/main/skills/gsap-web/SKILL.md',
     name: 'gsap-web',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'GSAP guidance for code-driven web motion, including timelines, ScrollTrigger, SplitText, Flip, and smooth-scroll synchronization.',
   },
@@ -2196,7 +2196,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/60fps-animation/SKILL.md',
     name: '60fps-animation',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       'Web animation performance guidance for avoiding layout thrashing and reaching smooth 60/120fps motion with compositor-friendly techniques.',
   },
@@ -2209,7 +2209,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/accessible-animation/SKILL.md',
     name: 'accessible-animation',
-    topics: ['accessibility', 'motion', 'frontend'],
+    topics: ['accessibility', 'motion'],
     description:
       'Tiered reduced-motion patterns for CSS, GSAP, Framer Motion, Lenis, and other web animation systems.',
   },
@@ -2222,7 +2222,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/micro-interaction/SKILL.md',
     name: 'micro-interaction',
-    topics: ['react', 'interaction', 'motion', 'frontend'],
+    topics: ['react', 'interaction', 'motion'],
     description:
       'UI motion guidance for hover and press feedback, toggles, toasts, drawers, modals, list transitions, and shared-element interactions.',
   },
@@ -2235,7 +2235,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/page-transition-animation/SKILL.md',
     name: 'page-transition-animation',
-    topics: ['react', 'nextjs', 'motion', 'interaction', 'frontend'],
+    topics: ['react', 'nextjs', 'motion', 'interaction'],
     description:
       'Page and route transition patterns using the View Transitions API and Framer Motion, including reliable Next.js App Router exits.',
   },
@@ -2248,7 +2248,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/svg-animation/SKILL.md',
     name: 'svg-animation',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description:
       'SVG animation techniques for stroke draw-on effects, path morphing, motion paths, animated icons, gradients, and filters.',
   },
@@ -2261,7 +2261,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/lottie-animation/SKILL.md',
     name: 'lottie-animation',
-    topics: ['motion', 'frontend', 'tooling'],
+    topics: ['motion', 'tooling'],
     description:
       'Lottie and dotLottie integration guidance for playback control, interactivity, runtime theming, and cross-platform export workflows.',
   },
@@ -2407,7 +2407,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/elayadesign/ai-design-skills/blob/main/skills/landing-page-design/SKILL.md',
     name: 'landing-page-design',
-    topics: ['visual', 'frontend', 'craft', 'interaction'],
+    topics: ['visual', 'craft', 'interaction'],
     description:
       'Build high-converting landing pages with intake questions, page structure, conversion copy, SEO, and a disciplined visual system.',
   },
@@ -2432,7 +2432,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/emilkowalski/skills/main/skills/pick-ui-library/SKILL.md',
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/pick-ui-library/SKILL.md',
     name: 'pick-ui-library',
-    topics: ['tooling', 'frontend', 'architecture'],
+    topics: ['tooling', 'architecture'],
     description:
       'Choose an opinionated, trusted library for common frontend tasks including components, motion, charts, interaction, state, and styling.',
   },
@@ -2444,7 +2444,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/prototype/SKILL.md',
     files: ['PICKER.md'],
     name: 'prototype',
-    topics: ['frontend', 'interaction', 'visual', 'systems'],
+    topics: ['interaction', 'visual', 'systems'],
     description:
       'Build multiple genuinely different UI variants behind a visual picker so the strongest direction can be evaluated and promoted.',
   },
@@ -2491,7 +2491,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/better-layout/SKILL.md',
     files: ['grouping-and-alignment.md', 'spacing-and-adaptivity.md'],
     name: 'better-layout',
-    topics: ['systems', 'visual', 'frontend', 'architecture'],
+    topics: ['systems', 'visual', 'architecture'],
     description:
       'Improve interface structure through grouping, alignment, reading order, progressive disclosure, and adaptive responsive layouts.',
   },
@@ -2504,7 +2504,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/better-writing/SKILL.md',
     files: ['patterns.md'],
     name: 'better-writing',
-    topics: ['frontend', 'accessibility', 'craft'],
+    topics: ['accessibility', 'craft'],
     description:
       'Improve UX writing for interface labels, errors, empty states, settings, notifications, and product voice consistency.',
   },
@@ -2517,7 +2517,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/explain-interface/SKILL.md',
     files: ['find-the-effect.md', 'from-an-image.md', 'no-browser.md', 'read-the-system.md'],
     name: 'explain-interface',
-    topics: ['craft', 'frontend', 'visual', 'architecture'],
+    topics: ['craft', 'visual', 'architecture'],
     description:
       "Answers how was this built about an interface. Give it a URL and name the thing you're curious about, and it reads the layers that produce the effect. Reads the whole frontend instead when you don't name a thing. From a screenshot it reconstructs rather than reads and says so.",
   },
@@ -2542,7 +2542,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/variant/SKILL.md',
     files: ['picker.md'],
     name: 'variant',
-    topics: ['visual', 'interaction', 'craft', 'frontend'],
+    topics: ['visual', 'interaction', 'craft'],
     description:
       'Answers which of these rather than is this right. Builds several genuinely different versions of one piece of UI behind a picker in the real page, so you can flip between them and promote the one that wins.',
   },
@@ -2577,7 +2577,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/figma/mcp-server-guide/main/skills/figma-use/SKILL.md',
     githubUrl: 'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use/SKILL.md',
     name: 'figma-use',
-    topics: ['systems', 'tooling', 'frontend'],
+    topics: ['systems', 'tooling'],
     description:
       'Mandatory prerequisite before every use_figma call — plugin API rules for creating, editing, and inspecting Figma files through MCP.',
   },
@@ -2590,7 +2590,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generate-design/SKILL.md',
     name: 'figma-generate-design',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       'Translate pages and multi-section layouts into Figma by discovering design system components, variables, and assembling screens section by section.',
   },
@@ -2603,7 +2603,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generate-library/SKILL.md',
     name: 'figma-generate-library',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Build or update a professional design system in Figma from a codebase, including tokens, variant sets, theming, and component libraries.',
   },
@@ -2616,7 +2616,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/edenspiekermann/Skills/blob/main/skills/audit-design-system/SKILL.md',
     name: 'audit-design-system',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Audit a Figma screen or component for design-system drift, including missing shared components, local overrides, and unbound tokens.',
   },
@@ -2629,7 +2629,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/edenspiekermann/Skills/blob/main/skills/apply-design-system/SKILL.md',
     name: 'apply-design-system',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Reconnect an existing Figma design to published design system components instead of detached layers, local wrappers, or one-off assets.',
   },
@@ -2640,7 +2640,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/redongreen/uSpec/main/skills/create-voice/SKILL.md',
     githubUrl: 'https://github.com/redongreen/uSpec/blob/main/skills/create-voice/SKILL.md',
     name: 'create-voice',
-    topics: ['accessibility', 'systems', 'frontend'],
+    topics: ['accessibility', 'systems'],
     description:
       'Generate VoiceOver, TalkBack, and ARIA screen reader specs in Figma with focus order, property tables, and announcements by component state.',
   },
@@ -2652,7 +2652,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/redongreen/uSpec/main/skills/create-anatomy/SKILL.md',
     githubUrl: 'https://github.com/redongreen/uSpec/blob/main/skills/create-anatomy/SKILL.md',
     name: 'create-anatomy',
-    topics: ['systems', 'frontend', 'accessibility'],
+    topics: ['systems', 'accessibility'],
     description:
       "Generate a visual anatomy annotation in Figma showing numbered markers on a component instance with an attribute table. Use when the user mentions anatomy, anatomy annotation, component anatomy, create anatomy, or wants to annotate a component's structural elements.",
   },
@@ -2665,7 +2665,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/mrstev3n/balise-skills/blob/main/skills/balise-ux-writing/SKILL.md',
     name: 'balise-ux-writing',
-    topics: ['craft', 'frontend', 'accessibility'],
+    topics: ['craft', 'accessibility'],
     description:
       'Reviews, rewrites, creates, harmonizes, and implements user-centered interface copy across design files, screenshots, product specifications, source code, localization catalogs, prototypes, and rendered applications. Use for buttons, navigation, forms, errors, empty states, onboarding, confirmations, settings, consent, notifications, help, and system feedback while preserving product behavior, terminology, voice, accessibility, localization, legal meaning, component structure, and implementation constraints.',
   },
@@ -2689,7 +2689,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/firebenders/sync-figma-token-skill/blob/main/skills/sync-figma-token/SKILL.md',
     name: 'sync-figma-token',
-    topics: ['systems', 'color', 'frontend'],
+    topics: ['systems', 'color'],
     description:
       'Sync design tokens between code and Figma variables with drift reporting, approval gates, safe delta apply, and persisted reports.',
   },
@@ -2702,7 +2702,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nvillapiano/component-contracts-figma/blob/main/skills/cc-figma-component/SKILL.md',
     name: 'cc-figma-component',
-    topics: ['systems', 'frontend', 'architecture'],
+    topics: ['systems', 'architecture'],
     description:
       'Generate variable-bound Figma component sets from component-contract definitions after the token collections exist.',
   },
@@ -2715,7 +2715,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nvillapiano/component-contracts-figma/blob/main/skills/cc-figma-tokens/SKILL.md',
     name: 'cc-figma-tokens',
-    topics: ['systems', 'color', 'frontend'],
+    topics: ['systems', 'color'],
     description:
       'Build or update Figma Primitive and Semantic variable collections from component-contracts token files.',
   },
@@ -2726,7 +2726,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/petergyang/human-review/main/src/SKILL.md',
     githubUrl: 'https://github.com/petergyang/human-review/blob/main/src/SKILL.md',
     name: 'human-review',
-    topics: ['tooling', 'craft', 'frontend'],
+    topics: ['tooling', 'craft'],
     description:
       'Open HTML, Markdown, or localhost pages in the browser so the user can edit text directly, leave anchored comments, and send all feedback back in one batch.',
   },
@@ -2880,7 +2880,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/flornkm/shadow-plugin/blob/main/.claude/skills/smooth-shadow-ring/SKILL.md',
     name: 'smooth-shadow-ring',
-    topics: ['visual', 'craft', 'systems', 'frontend'],
+    topics: ['visual', 'craft', 'systems'],
     description:
       'Style elevated surfaces with smooth shadow ring utilities instead of combining borders or rings with shadows and creating double edges.',
   },
@@ -2893,7 +2893,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/flornkm/skills/blob/main/skills/prefer-container-queries/SKILL.md',
     name: 'prefer-container-queries',
-    topics: ['frontend', 'systems', 'visual'],
+    topics: ['systems', 'visual'],
     description:
       'Enforce Tailwind container queries over viewport breakpoints for responsive components. Use when writing or reviewing responsive Tailwind code, when a component needs to adapt to its available space (cards, sidebars, lists, panels, anything reused in different layouts), or when migrating sm:/md:/lg: classes to @container variants.',
   },
@@ -2905,7 +2905,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/flornkm/skills/main/skills/webgl-components/SKILL.md',
     githubUrl: 'https://github.com/flornkm/skills/blob/main/skills/webgl-components/SKILL.md',
     name: 'webgl-components',
-    topics: ['3d', 'performance', 'frontend', 'visual'],
+    topics: ['3d', 'performance', 'visual'],
     description:
       'Build small, always-on WebGL visuals (identity avatars, ambient orbs, glass and iridescent surfaces, animated textures) that ship inside a normal web app UI without wrecking performance, accessibility, SSR, or layout. Use whenever a shader-, GLSL-, or canvas-driven decorative element is added to a product UI, especially one rendered many times per page or per list; when reviewing or optimizing one; or when debugging one that renders blurry, aliased, all-black, or paints over the surrounding UI on machines without hardware acceleration.',
   },
@@ -2956,7 +2956,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/iannuttall/seo/main/skills/seo/SKILL.md',
     githubUrl: 'https://github.com/iannuttall/seo/blob/main/skills/seo/SKILL.md',
     name: 'seo',
-    topics: ['tooling', 'frontend', 'performance'],
+    topics: ['tooling', 'performance'],
     description:
       'Use for SEO audits, rankings, keyword research, indexing, metadata, Search Console, GA4, and AI search visibility. Routes to evidence-backed reports through the local SEO CLI and MCP server.',
   },
@@ -2968,7 +2968,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/oso95/scroll-world/main/skills/scroll-world/SKILL.md',
     githubUrl: 'https://github.com/oso95/scroll-world/blob/main/skills/scroll-world/SKILL.md',
     name: 'scroll-world',
-    topics: ['3d', 'motion', 'visual', 'interaction', 'frontend'],
+    topics: ['3d', 'motion', 'visual', 'interaction'],
     description:
       'Build an immersive scroll-scrubbed 3D world landing page for any brand with Higgsfield-generated scenes, seamless camera clips, and a portable scroll-scrub engine.',
   },
@@ -2981,7 +2981,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-diff/SKILL.md',
     name: 'accessibility-diff',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       "Regression check that diffs a live page's accessibility violations against a baseline from uncommitted changes or a branch.",
   },
@@ -2994,7 +2994,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/accessibility-scan/SKILL.md',
     name: 'accessibility-scan',
-    topics: ['accessibility', 'testing', 'frontend'],
+    topics: ['accessibility', 'testing'],
     description:
       'Run the AccessLint rule engine against a live page and return a worklist of WCAG 2.2 violations grounded to DOM selectors and source locations.',
   },
@@ -3007,7 +3007,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/web-quality-skills/blob/main/skills/accessibility/SKILL.md',
     name: 'accessibility',
-    topics: ['accessibility', 'frontend', 'craft'],
+    topics: ['accessibility', 'craft'],
     description:
       'Audit and improve web accessibility following WCAG 2.2 guidelines. Use when asked to "improve accessibility", "a11y audit", "WCAG compliance", "screen reader support", "keyboard navigation", or "make accessible".',
   },
@@ -3020,7 +3020,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/web-quality-skills/blob/main/skills/best-practices/SKILL.md',
     name: 'best-practices',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['performance', 'craft'],
     description:
       'Apply modern web development best practices for security, compatibility, and code quality. Use when asked to "apply best practices", "security audit", "modernize code", "code quality review", or "check for vulnerabilities".',
   },
@@ -3033,7 +3033,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/web-quality-skills/blob/main/skills/core-web-vitals/SKILL.md',
     name: 'core-web-vitals',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['performance', 'craft'],
     description:
       'Optimize Core Web Vitals (LCP, INP, CLS) for better page experience using field and lab evidence. Use when asked to "improve Core Web Vitals", "fix LCP", "reduce CLS", "optimize INP", "page experience optimization", or "fix layout shifts".',
   },
@@ -3046,7 +3046,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/web-quality-skills/blob/main/skills/performance/SKILL.md',
     name: 'performance',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['performance', 'craft'],
     description:
       'Optimize web performance for faster loading and better user experience. Use when asked to "speed up my site", "optimize performance", "reduce load time", "fix slow loading", "improve page speed", or "performance audit".',
   },
@@ -3058,7 +3058,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/seo/SKILL.md',
     githubUrl: 'https://github.com/addyosmani/web-quality-skills/blob/main/skills/seo/SKILL.md',
     name: 'seo',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['performance', 'craft'],
     description:
       'Optimize for search engine visibility and ranking. Use when asked to "improve SEO", "optimize for search", "fix meta tags", "add structured data", "sitemap optimization", or "search engine optimization".',
   },
@@ -3069,7 +3069,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/antfu/design/main/skills/antfu-design/SKILL.md',
     githubUrl: 'https://github.com/antfu/design/blob/main/skills/antfu-design/SKILL.md',
     name: 'antfu-design',
-    topics: ['vue', 'frontend', 'craft', 'visual'],
+    topics: ['vue', 'craft', 'visual'],
     description:
       'antfu-style design conventions, broadened. UnoCSS-first, class-based semantic tokens with dual light/dark for tooling and devtools UIs, plus design-read, anti-slop, and micro-interaction polish for landing pages and product surfaces. Use when building or refactoring any interface with UnoCSS.',
   },
@@ -3081,7 +3081,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/nitro/SKILL.md',
     files: ['GENERATION.md'],
     name: 'nitro',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Nitro is the framework-agnostic server toolkit (powering Nuxt) for building and deploying web servers anywhere. Use when working with nitro.config, server routes/event handlers, route rules, caching, storage, tasks, websockets, or deploying to Node/Bun/Deno/Cloudflare/Vercel.',
   },
@@ -3094,7 +3094,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-code-connect/SKILL.md',
     name: 'figma-code-connect',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.',
   },
@@ -3107,7 +3107,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-create-new-file/SKILL.md',
     name: 'figma-create-new-file',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       '**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)',
   },
@@ -3120,7 +3120,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-design-to-code/SKILL.md',
     name: 'figma-design-to-code',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE calling the `get_design_context` Figma MCP tool. You MUST trigger this skill whenever the user wants to implement, build, port, or code up a Figma design as code. Example prompts (not exhaustive) are 'implement this Figma design', 'build this screen from Figma', 'turn this Figma into code', 'design to code'. This skill provides critical instructions and steps to the agent on how to correctly implement Figma designs in code and must NOT be skipped.",
   },
@@ -3133,7 +3133,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generate-diagram/SKILL.md',
     name: 'figma-generate-diagram',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).',
   },
@@ -3146,7 +3146,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-implement-motion/SKILL.md',
     name: 'figma-implement-motion',
-    topics: ['motion', 'video', 'frontend'],
+    topics: ['motion', 'video'],
     description:
       'Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions "implement this motion", "add animation from Figma", "animate this component", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.',
   },
@@ -3158,7 +3158,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/figma/mcp-server-guide/main/skills/figma-swiftui/SKILL.md',
     githubUrl: 'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-swiftui/SKILL.md',
     name: 'figma-swiftui',
-    topics: ['swiftui', 'visual', 'systems', 'frontend'],
+    topics: ['swiftui', 'visual', 'systems'],
     description:
       "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like 'implement this Figma design in SwiftUI', 'build this screen in Swift', 'push this SwiftUI view to Figma', 'mirror my Swift code in a Figma file', or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
   },
@@ -3171,7 +3171,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use-figjam/SKILL.md',
     name: 'figma-use-figjam',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       "This skill helps agents use Figma's use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
   },
@@ -3184,7 +3184,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use-motion/SKILL.md',
     name: 'figma-use-motion',
-    topics: ['motion', 'video', 'frontend'],
+    topics: ['motion', 'video'],
     description:
       'Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.',
   },
@@ -3197,7 +3197,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use-slides/SKILL.md',
     name: 'figma-use-slides',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       "This skill helps agents use Figma's use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
   },
@@ -3210,7 +3210,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/workflow-skills/generate-project-plan/SKILL.md',
     name: 'generate-project-plan',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       "Generate a FigJam project plan board from a PRD plus codebase context. Interactive flow: research → propose sections → per-section deep research → per-section content + block-shape proposal → create FigJam → skeleton → fill → diagrams → wrap. Each content block (section, nested section, intro callout, table, multi-column text, sticky column, diagram section, metadata strip) has its own subskill reference file. Use when the user asks for 'project plan in FigJam', 'interactive project plan', '/generate-project-plan', or provides a PRD and wants per-section confirmation on content + rendering.",
   },
@@ -3223,7 +3223,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/workflow-skills/video-interaction-mapper/SKILL.md',
     name: 'video-interaction-mapper',
-    topics: ['motion', 'video', 'frontend'],
+    topics: ['motion', 'video'],
     description:
       'Analyze a UI screen recording and map interaction states into an annotated Figma Design storyboard with extracted before/after frames.',
   },
@@ -3236,7 +3236,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/ascii-animation/SKILL.md',
     name: 'ascii-animation',
-    topics: ['motion', 'video', 'frontend'],
+    topics: ['motion', 'video'],
     description:
       'This skill should be used when the user asks to "make an ASCII animation", "build a terminal/CLI intro or loader", "convert an image or video to ASCII art", "add an ASCII shader/post-effect to a canvas or Three.js scene", "create retro/hacker text-character motion", or "animate text characters with a brightness ramp". Covers generative ASCII fields, image/video/3D-to-ASCII, and animated character art for both web and terminal.',
   },
@@ -3249,7 +3249,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/glassmorphism/SKILL.md',
     name: 'glassmorphism',
-    topics: ['motion', 'video', 'frontend'],
+    topics: ['motion', 'video'],
     description:
       'This skill should be used when the user asks to "add a glassmorphism effect", "frosted glass UI", "Apple liquid glass style", "frosted blur card", "translucent glass panel animation", "make a frosted nav bar", "build a glass modal/dialog", "animate a glass card on hover", or "add a refracting liquid-glass hero". Covers frosted translucent panels with backdrop-filter blur, edge/specular highlights, SVG liquid-glass refraction, motion on hover/scroll/enter, and accessible reduced-transparency fallbacks.',
   },
@@ -3261,7 +3261,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/break/SKILL.md',
     files: ['scenarios.md'],
     name: 'break',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Answers "does this survive?" for one component. Renders it on a page in every state real use can put it in, and hands that page over as a visual report of what broke.',
   },
@@ -3273,7 +3273,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/build-design/SKILL.md',
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/build-design/SKILL.md',
     name: 'build-design',
-    topics: ['craft', 'frontend', 'visual', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description:
       "Builds UI from a Figma file or a design image so it matches the design, using your project's existing tokens and components.",
   },
@@ -3285,7 +3285,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/state-machine/SKILL.md',
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/state-machine/SKILL.md',
     name: 'state-machine',
-    topics: ['frontend', 'craft', 'interaction', 'testing'],
+    topics: ['craft', 'interaction', 'testing'],
     description:
       'Renders every state of a component you choose on a throwaway page, with mock data and a switcher, so you can work on each state.',
   },
@@ -3296,7 +3296,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/brandkit/SKILL.md',
     githubUrl: 'https://github.com/Leonxlnx/taste-skill/blob/main/skills/brandkit/SKILL.md',
     name: 'brandkit',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultural, security, gaming, developer-tool, and consumer-app brand systems. Optimized for intentional logo concepting, refined composition, sparse typography, strong symbolic meaning, premium mockups, art-directed imagery, and flexible grid layouts.',
   },
@@ -3309,7 +3309,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Leonxlnx/taste-skill/blob/main/skills/image-to-code-skill/SKILL.md',
     name: 'image-to-code-skill',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero clean, spacious, readable, and visible on a small laptop.',
   },
@@ -3322,7 +3322,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-mobile/SKILL.md',
     name: 'imagegen-frontend-mobile',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Elite mobile app image-generation skill for creating premium, app-native screen concepts and flows. Designed for iOS, Android, and cross-platform mobile products. Prioritizes clean hierarchy, comfortably readable text, strong multi-screen consistency, controlled color palettes, non-generic creative direction, textured surfaces, image-led composition, tasteful custom iconography, and clean phone mockup framing. By default, screens should be shown inside a subtle premium iPhone or similar phone mockup with a visible frame, while the main focus stays on the app content itself. This skill generates images only. It does not write code.',
   },
@@ -3335,7 +3335,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-web/SKILL.md',
     name: 'imagegen-frontend-web',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Elite frontend image-direction skill for generating premium, conversion-aware website design references. CRITICAL OUTPUT RULE — generate ONE separate horizontal image FOR EVERY section. A landing page with 8 sections produces 8 images. Never compress multiple sections into one image. Enforces composition variety (not always left-text / right-image), background-image freedom, varied CTAs, varied hero scales (giant / mid / mini minimalist), narrative concept spine, second-read moments, and a single consistent palette across all images. Optimized for landing pages, marketing sites, and product comps that developers or coding models can accurately recreate.',
   },
@@ -3347,7 +3347,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill-v1/SKILL.md',
     githubUrl: 'https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill-v1/SKILL.md',
     name: 'taste-skill-v1',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'The original v1 taste-skill, preserved for projects depending on its exact behavior. The current default is `design-taste-frontend` (v2 experimental), which is a substantial rewrite. Use this v1 install name only if you need exact backward compatibility.',
   },
@@ -3360,7 +3360,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md',
     name: 'banner-design',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage. Uses ui-ux-pro-max, frontend-design, ai-artist, ai-multimodal skills.',
   },
@@ -3373,7 +3373,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/brand/SKILL.md',
     name: 'brand',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides.',
   },
@@ -3386,7 +3386,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design/SKILL.md',
     name: 'design',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.',
   },
@@ -3399,7 +3399,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design-system/SKILL.md',
     name: 'design-system',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations.',
   },
@@ -3412,7 +3412,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/slides/SKILL.md',
     name: 'slides',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies.',
   },
@@ -3425,7 +3425,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-styling/SKILL.md',
     name: 'ui-styling',
-    topics: ['visual', 'systems', 'frontend', 'shadcn-ui-development'],
+    topics: ['visual', 'systems', 'shadcn-ui-development'],
     description:
       'Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user interfaces, implementing design systems, creating responsive layouts, adding accessible components (dialogs, dropdowns, forms, tables), customizing themes and colors, implementing dark mode, generating visual designs and posters, or establishing consistent styling patterns across applications.',
   },
@@ -3438,7 +3438,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-generative-plugins/SKILL.md',
     name: 'figma-generative-plugins',
-    topics: ['systems', 'tooling', 'frontend'],
+    topics: ['systems', 'tooling'],
     description:
       'Mandatory prerequisite before create_generative_plugin or update_generative_plugin. Use when creating, authoring, changing, or extending reusable generative Figma plugins with functional UI.',
   },
@@ -3450,7 +3450,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/figma/mcp-server-guide/main/skills/figma-shaders/SKILL.md',
     githubUrl: 'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-shaders/SKILL.md',
     name: 'figma-shaders',
-    topics: ['visual', 'motion', 'frontend'],
+    topics: ['visual', 'motion'],
     description:
       'Mandatory prerequisite before create_shader or update_shader. Use when authoring shader effects, shader fills, custom effects, or procedural shader backgrounds in Figma Design.',
   },
@@ -3463,7 +3463,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/edenspiekermann/Skills/blob/main/skills/fix-design-system-finding/SKILL.md',
     name: 'fix-design-system-finding',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Fix a specific design-system integration finding in a Figma screen or component, including missing shared components, local overrides, and unbound tokens.',
   },
@@ -3487,7 +3487,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/millionco/skills/blob/main/skills/interactive-hit-areas/SKILL.md',
     name: 'interactive-hit-areas',
-    topics: ['interaction', 'frontend', 'accessibility'],
+    topics: ['interaction', 'accessibility'],
     description:
       'Use when interactive elements with visual spacing between them need hover or click to respond across the whole region with no dead zones.',
   },
@@ -3499,7 +3499,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/millionco/skills/blob/main/skills/paper-flex/SKILL.md',
     files: ['SPEC.md'],
     name: 'paper-flex',
-    topics: ['systems', 'frontend', 'visual'],
+    topics: ['systems', 'visual'],
     description:
       'Convert Paper canvas or design nodes from absolute positioning to flex or auto-layout while preserving SVG/image fidelity, z-order, and screenshot-verified visual parity.',
   },
@@ -3512,7 +3512,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/millionco/skills/blob/main/skills/paper-to-code-components/SKILL.md',
     name: 'paper-to-code-components',
-    topics: ['react', 'systems', 'frontend', 'visual', 'shadcn-ui-development'],
+    topics: ['react', 'systems', 'visual', 'shadcn-ui-development'],
     description:
       'Use when implementing Paper MCP, Paper-to-code, design-to-code, Viewfinder, or Paper-exported JSX in React/Next.js apps with component candidates, tokens, and shadcn reuse.',
   },
@@ -3524,7 +3524,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/millionco/skills/main/skills/reconcile-paper-sync/SKILL.md',
     githubUrl: 'https://github.com/millionco/skills/blob/main/skills/reconcile-paper-sync/SKILL.md',
     name: 'reconcile-paper-sync',
-    topics: ['systems', 'frontend', 'craft'],
+    topics: ['systems', 'craft'],
     description:
       'Verify and repair a Paper-to-code implementation against its paper-sync canonical render, including fonts, exact tokens, and screenshot diffing.',
   },
@@ -3537,7 +3537,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/millionco/skills/blob/main/skills/tailwind-token-consolidation/SKILL.md',
     name: 'tailwind-token-consolidation',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       'Consolidate, dedupe, or reduce CSS custom properties and Tailwind v4 design tokens in globals.css while preserving the same visual result.',
   },
@@ -3551,7 +3551,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/Jakubantalik/transitions.dev/blob/main/skills/transitions-polish/SKILL.md',
     files: ['_refine-rules.md'],
     name: 'transitions-polish',
-    topics: ['motion', 'craft', 'frontend'],
+    topics: ['motion', 'craft'],
     description:
       'Polish and refine existing motion against the transitions.dev motion-token scale — duration, distance, scale, blur, easing, and when each token applies.',
   },
@@ -3564,7 +3564,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-data-mode/SKILL.md',
     name: 'react-router-data-mode',
-    topics: ['react', 'frontend', 'frameworks', 'interaction'],
+    topics: ['react', 'interaction'],
     description:
       'Build React applications using React Router data mode with createBrowserRouter, loaders, actions, Form, useFetcher, and pending or optimistic UI.',
   },
@@ -3577,7 +3577,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-declarative-mode/SKILL.md',
     name: 'react-router-declarative-mode',
-    topics: ['react', 'frontend', 'frameworks', 'interaction'],
+    topics: ['react', 'interaction'],
     description:
       'Build React applications using React Router declarative mode with BrowserRouter, Routes, Link, NavLink, and URL or search params without loaders or actions.',
   },
@@ -3613,7 +3613,7 @@ const registrySource: RegistrySourceSkill[] = [
       'wrapper-shapes.md',
     ],
     name: 'migrate-radix-to-base',
-    topics: ['react', 'systems', 'frontend', 'tooling', 'shadcn-ui-development'],
+    topics: ['react', 'systems', 'tooling', 'shadcn-ui-development'],
     description:
       'Migrate React projects and shadcn components from Radix UI to Base UI, handling route objects, consumer props, and progressive wrapper migration.',
   },
@@ -3624,7 +3624,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/joe-bell/skills/main/skills/apple-web-app/SKILL.md',
     githubUrl: 'https://github.com/joe-bell/skills/blob/main/skills/apple-web-app/SKILL.md',
     name: 'apple-web-app',
-    topics: ['frontend', 'systems', 'craft'],
+    topics: ['systems', 'craft'],
     description:
       'Implement, debug, or audit iPhone/iPad Add to Home Screen and macOS Safari Add to Dock web app UI: safe areas, status bar, theme color, manifest, icons, splash screens, and installed navigation.',
   },
@@ -3648,7 +3648,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md',
     name: 'show-me',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Help the user understand the current topic visually with concise diagrams, code-shape sketches, Mermaid flows, diffs, and focused HTML artifacts.',
   },
@@ -3659,7 +3659,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/larashero3-dotcom/lieflat-charts/main/SKILL.md',
     githubUrl: 'https://github.com/larashero3-dotcom/lieflat-charts/blob/main/SKILL.md',
     name: 'lieflat-charts',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['visual', 'systems'],
     description:
       'Template-driven data visualization and standalone HTML report generation using Lupi, Basics, Glance, Maps, and Interactive gallery patterns with Mono or semantic color presets.',
   },
@@ -3681,7 +3681,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/SidKH/term-radar/main/term-radar/SKILL.md',
     githubUrl: 'https://github.com/SidKH/term-radar/blob/main/term-radar/SKILL.md',
     name: 'term-radar',
-    topics: ['tooling', 'craft', 'frontend'],
+    topics: ['tooling', 'craft'],
     description:
       'When a user describes a concept that matches an established term of art, append a concise Term radar link with a Google Images reference for that term.',
   },
@@ -3733,7 +3733,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/humanlayer/skills/blob/main/plugins/narrow-react-prop-types/skills/narrow-react-prop-types/SKILL.md',
     name: 'narrow-react-prop-types',
-    topics: ['react', 'code-quality', 'frontend', 'testing'],
+    topics: ['react', 'code-quality', 'testing'],
     description:
       'Narrow React component prop types to match live code paths instead of widened story, mock, or test contracts.',
   },
@@ -3856,7 +3856,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/emilkowalski/skills/main/skills/mobile-native/SKILL.md',
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/mobile-native/SKILL.md',
     name: 'mobile-native',
-    topics: ['frontend', 'interaction', 'performance'],
+    topics: ['interaction', 'performance'],
     description:
       'Make a web app feel native on a phone with CSS and meta-tag fixes for touch, viewport, scroll, safe areas, inputs, and PWA polish on real hardware.',
   },
@@ -3881,7 +3881,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/elithrar/dotfiles/main/.agents/skills/web-perf/SKILL.md',
     githubUrl: 'https://github.com/elithrar/dotfiles/blob/main/.agents/skills/web-perf/SKILL.md',
     name: 'web-perf',
-    topics: ['performance', 'frontend', 'debugging'],
+    topics: ['performance', 'debugging'],
     description:
       'Diagnose page-load and interaction performance using browser traces, network evidence, and source code for Core Web Vitals and layout-shift investigations.',
   },
@@ -3917,7 +3917,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/latent-spaces/brag/main/skills/brag-slim/SKILL.md',
     githubUrl: 'https://github.com/latent-spaces/brag/blob/main/skills/brag-slim/SKILL.md',
     name: 'brag-slim',
-    topics: ['video', 'motion', 'frontend'],
+    topics: ['video', 'motion'],
     description:
       'Turn a project directory or website URL into a short, shareable launch video with music, motion, and share copy using tools already on the machine.',
   },
@@ -3929,7 +3929,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/PrototyperAI/prototyper-ui/main/apps/docs/skill/SKILL.md',
     githubUrl: 'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/SKILL.md',
     name: 'prototyper-ui',
-    topics: ['react', 'frontend', 'systems', 'visual'],
+    topics: ['react', 'systems', 'visual'],
     description:
       'Prototyper UI component library (Tailwind CSS v4 + Base UI) for installing components, customizing themes, and using component documentation.',
   },
@@ -3942,7 +3942,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/create-component/SKILL.md',
     name: 'create-component',
-    topics: ['react', 'frontend', 'architecture', 'craft'],
+    topics: ['react', 'architecture', 'craft'],
     description:
       'Create new Prototyper UI components from scratch, including Base UI primitives, registry entries, examples, and MDX documentation.',
   },
@@ -3954,7 +3954,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/saadeghi/daisyui/master/skills/daisyui/colors/SKILL.md',
     githubUrl: 'https://github.com/saadeghi/daisyui/blob/master/skills/daisyui/colors/SKILL.md',
     name: 'daisyui-colors',
-    topics: ['color', 'frontend', 'visual'],
+    topics: ['color', 'visual'],
     description: 'Color rules and semantics for daisyUI 5 components and themes.',
   },
   {
@@ -3965,7 +3965,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/saadeghi/daisyui/master/skills/daisyui/config/SKILL.md',
     githubUrl: 'https://github.com/saadeghi/daisyui/blob/master/skills/daisyui/config/SKILL.md',
     name: 'daisyui-config',
-    topics: ['frontend', 'tooling', 'systems'],
+    topics: ['tooling', 'systems'],
     description: 'Configuration options and setup guidance for daisyUI 5.',
   },
   {
@@ -3976,7 +3976,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/saadeghi/daisyui/master/skills/daisyui/install/SKILL.md',
     githubUrl: 'https://github.com/saadeghi/daisyui/blob/master/skills/daisyui/install/SKILL.md',
     name: 'daisyui-install',
-    topics: ['frontend', 'tooling'],
+    topics: ['tooling'],
     description: 'Installation instructions for adding daisyUI 5 to a project.',
   },
   {
@@ -3987,7 +3987,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/saadeghi/daisyui/master/skills/daisyui/usage/SKILL.md',
     githubUrl: 'https://github.com/saadeghi/daisyui/blob/master/skills/daisyui/usage/SKILL.md',
     name: 'daisyui-usage',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['craft', 'visual'],
     description: 'Usage rules and conventions for building interfaces with daisyUI 5.',
   },
   {
@@ -4010,7 +4010,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://www.danny.md/skills/motion-ad/raw',
     githubUrl: 'https://www.danny.md/skills/motion-ad',
     name: 'motion-ad',
-    topics: ['video', 'motion', 'frontend'],
+    topics: ['video', 'motion'],
     description:
       'Produce short motion-graphics video ads for any product as rendered MP4s, with GSAP-driven HTML beats and frame-by-frame capture.',
   },
@@ -4021,7 +4021,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://www.danny.md/skills/explore-design/raw',
     githubUrl: 'https://www.danny.md/skills/explore-design',
     name: 'explore-design',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Generate a single self-contained HTML file with several distinct visual directions side by side so the user can pick a direction.',
   },
@@ -4032,7 +4032,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://www.danny.md/skills/screenshot/raw',
     githubUrl: 'https://www.danny.md/skills/screenshot',
     name: 'screenshot',
-    topics: ['tooling', 'frontend', 'visual'],
+    topics: ['tooling', 'visual'],
     description:
       'Capture a screenshot of any rendered web page in headless Chrome — full page, viewport, section, or element — for review and motion pipelines.',
   },
@@ -4055,7 +4055,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/hyperframes/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes/SKILL.md',
     name: 'hyperframes',
-    topics: ['video', 'motion', 'frontend'],
+    topics: ['video', 'motion'],
     description:
       'Entry point for creating, editing, animating, or rendering video and motion graphics with HyperFrames HTML compositions.',
   },
@@ -4068,7 +4068,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-core/SKILL.md',
     name: 'hyperframes-core',
-    topics: ['video', 'systems', 'frontend'],
+    topics: ['video', 'systems'],
     description:
       'HyperFrames composition contract: timing attributes, tracks, sub-compositions, variables, and deterministic render rules.',
   },
@@ -4080,7 +4080,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/general-video/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/general-video/SKILL.md',
     name: 'general-video',
-    topics: ['video', 'motion', 'frontend'],
+    topics: ['video', 'motion'],
     description:
       'Author custom HyperFrames compositions for multi-scene pieces, reels, montages, and freeform product or brand videos.',
   },
@@ -4191,7 +4191,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/break-ui/SKILL.md',
     files: ['CATALOG.md'],
     name: 'break-ui',
-    topics: ['frontend', 'testing', 'craft'],
+    topics: ['testing', 'craft'],
     description:
       'Stress-test UI with worst-case data behind a demo toggle, then report what broke and how to fix each edge case.',
   },
@@ -4286,7 +4286,7 @@ const registrySource: RegistrySourceSkill[] = [
       'voiceover.md',
     ],
     name: 'remotion-markup',
-    topics: ['video', 'remotion', 'frontend'],
+    topics: ['video', 'remotion'],
     description:
       'Structure Remotion scenes with markup patterns for layout, typography, and reusable video UI.',
   },
@@ -4345,7 +4345,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/lucasmarkes/hairline/main/skills/hairline-create/SKILL.md',
     githubUrl: 'https://github.com/lucasmarkes/hairline/blob/main/skills/hairline-create/SKILL.md',
     name: 'hairline-create',
-    topics: ['visual', 'interaction', 'frontend'],
+    topics: ['visual', 'interaction'],
     description:
       'Create a new isometric Hairline line figure that answers the pointer, in the style of @lucasmarkes/hairline, as a self-contained HTML file.',
   },
@@ -4358,7 +4358,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/mickadesign/fluid-functionalism/blob/main/skills/fluid-functionalism/SKILL.md',
     name: 'fluid-functionalism',
-    topics: ['react', 'shadcn-ui-development', 'motion', 'interaction', 'frontend', 'visual'],
+    topics: ['react', 'shadcn-ui-development', 'motion', 'interaction', 'visual'],
     description:
       'Build React UIs with the Fluid Functionalism @fluid registry: animated components, shared spring motion, and hover highlights that glide between items without layout shift.',
   },
@@ -4404,7 +4404,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/webgl.md',
     ],
     name: 'anatomy',
-    topics: ['visual', 'craft', 'motion', 'frontend'],
+    topics: ['visual', 'craft', 'motion'],
     description:
       "Build crafted, highly detailed, interactive isometric SVG figures that explain a technical idea as a real physical object, with precise solid parts, four-tone shading, painter's order, a framed card with live readout, and calm eased motion—for docs, landing pages, and interactive explainers (framework-free or React/Next.js, with optional in-perspective WebGL).",
   },
@@ -4428,7 +4428,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/android-native-ui/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/android-native-ui/SKILL.md',
     name: 'android-native-ui',
-    topics: ['frontend', 'interaction', 'visual'],
+    topics: ['interaction', 'visual'],
     description:
       'Build or review Android interfaces in Compose or Views, including Material conventions, accessibility, adaptive layout, and state.',
   },
@@ -4439,7 +4439,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/kemiljk/skills/main/skills/apple-native-ui/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/apple-native-ui/SKILL.md',
     name: 'apple-native-ui',
-    topics: ['frontend', 'interaction', 'visual'],
+    topics: ['interaction', 'visual'],
     description:
       'Build or review native Apple interfaces, including platform controls, accessibility, state, navigation, and macOS window behavior.',
   },
@@ -4451,7 +4451,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/design-engineering/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/design-engineering/SKILL.md',
     name: 'design-engineering',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Translate design intent into production components or improve collaboration between design and engineering.',
   },
@@ -4463,7 +4463,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/design-for-repetition/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/design-for-repetition/SKILL.md',
     name: 'design-for-repetition',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Improve workflows used repeatedly by examining recurring effort, waiting, setup, interruption, context retention, and expert paths. Use when an experience works once but may become tiring or inefficient in regular use.',
   },
@@ -4476,7 +4476,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/kemiljk/skills/blob/main/skills/design-system-evolution/SKILL.md',
     name: 'design-system-evolution',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Decide how an existing design system should evolve: reuse a component, add a variant, change its API, or introduce a new pattern. Use when real design or code consumers expose a mismatch and a bounded compatibility or migration decision is needed.',
   },
@@ -4487,7 +4487,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/kemiljk/skills/main/skills/dxe/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/dxe/SKILL.md',
     name: 'dxe',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Review a repository or UI surface for design engineering quality. Use for a DXE pass or broad interface review; fix only when requested and load specialist guidance from evidence.',
   },
@@ -4498,7 +4498,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/kemiljk/skills/main/skills/fluid-design/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/fluid-design/SKILL.md',
     name: 'fluid-design',
-    topics: ['motion', 'visual', 'frontend'],
+    topics: ['motion', 'visual'],
     description:
       'Design or refine springs, gestures, and interruptible motion when physical continuity or direct manipulation matters.',
   },
@@ -4546,7 +4546,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/interaction-contracts/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/interaction-contracts/SKILL.md',
     name: 'interaction-contracts',
-    topics: ['interaction', 'craft', 'frontend'],
+    topics: ['interaction', 'craft'],
     description:
       'Define or review the behaviour promised by an interaction before or during implementation: triggers, state changes, persistence, interruption, recovery, and acceptance checks. Use when a mockup or component leaves consequential behaviour unresolved.',
   },
@@ -4558,7 +4558,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/interface-affordances/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/interface-affordances/SKILL.md',
     name: 'interface-affordances',
-    topics: ['interaction', 'craft', 'frontend'],
+    topics: ['interaction', 'craft'],
     description:
       'Fix unclear interaction cues, hidden actions, weak hit targets, or mismatches between a control’s appearance and behavior.',
   },
@@ -4569,7 +4569,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/kemiljk/skills/main/skills/modern-css-html/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/modern-css-html/SKILL.md',
     name: 'modern-css-html',
-    topics: ['frontend', 'accessibility', 'craft'],
+    topics: ['accessibility', 'craft'],
     description:
       'Choose native CSS and HTML features, assess browser support, or replace legacy workarounds with progressive enhancement.',
   },
@@ -4593,7 +4593,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/kemiljk/skills/blob/main/skills/prototype-to-production/SKILL.md',
     name: 'prototype-to-production',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Harden an existing prototype for real use, including failure states, accessibility, security boundaries, and maintainability.',
   },
@@ -4605,7 +4605,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/real-content-design/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/real-content-design/SKILL.md',
     name: 'real-content-design',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Shape interface structure using representative content before layout decisions settle. Use when placeholders, uniform examples, incomplete records, or mixed content types may hide problems in hierarchy, comparison, navigation, or component design.',
   },
@@ -4617,7 +4617,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/semantic-html-first/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/semantic-html-first/SKILL.md',
     name: 'semantic-html-first',
-    topics: ['frontend', 'accessibility', 'craft'],
+    topics: ['accessibility', 'craft'],
     description:
       'Choose HTML semantics and accessible behavior for controls, forms, and custom interaction primitives.',
   },
@@ -4629,7 +4629,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/subtractive-design/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/subtractive-design/SKILL.md',
     name: 'subtractive-design',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Simplify noisy interfaces and evaluate whether proposed UI additions serve a concrete user need.',
   },
@@ -4641,7 +4641,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/kemiljk/skills/main/skills/write-first-design/SKILL.md',
     githubUrl: 'https://github.com/kemiljk/skills/blob/main/skills/write-first-design/SKILL.md',
     name: 'write-first-design',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Clarify uncertain product decisions in a short written brief before substantial design or implementation work.',
   },
@@ -4653,7 +4653,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/arla6ka/skills/main/skills/build-design-system/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/build-design-system/SKILL.md',
     name: 'build-design-system',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Use when an ask names one phase of design system work, such as "extract tokens from the app" or "add states and specs to our Button", or for an empty repo, such as "start a design system from scratch". A whole-app ask on a shipped app ("we need a design system") goes to design-system-boss when it is installed. Moving an app onto an existing system is migrate-design-system.',
   },
@@ -4664,7 +4664,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/skills/component-docs/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/component-docs/SKILL.md',
     name: 'component-docs',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Writes one component\'s documentation entry from its code, stories and real call sites, in a Geist-style page order. Use for "document the button", "write docs for Select", "what states does Toast have", usage rules for a component, or a new or changed component. Skip foundations, overview pages and multi-component patterns. Docs for a whole design system go to design-system-boss.',
   },
@@ -4676,7 +4676,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/arla6ka/skills/main/skills/design-system-boss/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/design-system-boss/SKILL.md',
     name: 'design-system-boss',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Use for vague whole-app design system asks on an app that already ships UI, like "our UI is a mess, fix it", "we need a design system", "we hardcode colors everywhere", "make the buttons consistent for an upstream PR", "document our whole design system" or "check the app before I ship". Triages the app, then runs the design.how skills in order. One named screen goes to ui-review, one component to component-docs, an empty repo to build-design-system.',
   },
@@ -4688,7 +4688,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/arla6ka/skills/main/skills/migrate-design-system/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/migrate-design-system/SKILL.md',
     name: 'migrate-design-system',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'Use when an app has to move onto a design system that already exists, such as "migrate the app to our design system", "move every screen onto the new components", a rollout, or an adoption audit. When design-system-boss is installed and nobody has checked the system\'s specs, the boss triages first, since a migration copies a weak system\'s gaps everywhere. Not for making the system.',
   },
@@ -4699,7 +4699,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/skills/token-mapping/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/token-mapping/SKILL.md',
     name: 'token-mapping',
-    topics: ['systems', 'color', 'frontend'],
+    topics: ['systems', 'color'],
     description:
       'Reports how hardcoded style values on a page, file or diff map onto a project\'s existing design tokens, purpose first, then value. Use for "are we using our tokens here", "which hardcoded colors map to which tokens", a token audit or planning a token migration. It never edits and never creates or renames tokens. Fixes and whole-app consistency go to design-system-boss.',
   },
@@ -4710,7 +4710,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/skills/ui-review/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/skills/ui-review/SKILL.md',
     name: 'ui-review',
-    topics: ['craft', 'visual', 'frontend'],
+    topics: ['craft', 'visual'],
     description:
       'Critiques a screen, flow, prototype or running build against agreed criteria, accessibility included, and ranks findings by severity. Use for "check this page before I ship", "is this flow ready", "is it accessible", keyboard or screen-reader checks, "it feels off on my phone", "it feels janky", or a second read on UI. A whole-app ship check goes to design-system-boss, token compliance to token-mapping.',
   },
@@ -4722,7 +4722,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/DietrichGebert/ponytail/main/skills/ponytail/SKILL.md',
     githubUrl: 'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail/SKILL.md',
     name: 'ponytail',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4734,7 +4734,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail-audit/SKILL.md',
     name: 'ponytail-audit',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4745,7 +4745,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/DietrichGebert/ponytail/main/skills/ponytail-debt/SKILL.md',
     githubUrl: 'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail-debt/SKILL.md',
     name: 'ponytail-debt',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4756,7 +4756,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/DietrichGebert/ponytail/main/skills/ponytail-gain/SKILL.md',
     githubUrl: 'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail-gain/SKILL.md',
     name: 'ponytail-gain',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4767,7 +4767,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/DietrichGebert/ponytail/main/skills/ponytail-help/SKILL.md',
     githubUrl: 'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail-help/SKILL.md',
     name: 'ponytail-help',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4779,7 +4779,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail-review/SKILL.md',
     name: 'ponytail-review',
-    topics: ['craft', 'visual', 'frontend', 'systems'],
+    topics: ['craft', 'visual', 'systems'],
     description: '>',
   },
   {
@@ -4790,7 +4790,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Graphify-Labs/graphify/main/skills/graphify/skill.md',
     githubUrl: 'https://github.com/Graphify-Labs/graphify/blob/main/skills/graphify/skill.md',
     name: 'graphify',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'any input (code, docs, papers, images) → knowledge graph → clustered communities → HTML + JSON + audit report',
   },
@@ -4803,7 +4803,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/agent-skills/blob/main/skills/api-and-interface-design/SKILL.md',
     name: 'api-and-interface-design',
-    topics: ['frontend', 'systems', 'architecture'],
+    topics: ['systems', 'architecture'],
     description:
       'Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.',
   },
@@ -4816,7 +4816,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/addyosmani/agent-skills/blob/main/skills/browser-testing-with-devtools/SKILL.md',
     name: 'browser-testing-with-devtools',
-    topics: ['testing', 'frontend', 'tooling'],
+    topics: ['testing', 'tooling'],
     description:
       'Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured.',
   },
@@ -4829,7 +4829,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand/SKILL.md',
     name: 'understand',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Analyze a codebase to produce an interactive knowledge graph for understanding architecture, components, and relationships',
   },
@@ -4842,7 +4842,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-chat/SKILL.md',
     name: 'understand-chat',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Use when you need to ask questions about a codebase or understand code using a knowledge graph',
   },
@@ -4855,7 +4855,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-dashboard/SKILL.md',
     name: 'understand-dashboard',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description: "Launch the interactive web dashboard to visualize a codebase's knowledge graph",
   },
   {
@@ -4867,7 +4867,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-diff/SKILL.md',
     name: 'understand-diff',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Use when you need to analyze git diffs or pull requests to understand what changed, affected components, and risks',
   },
@@ -4880,7 +4880,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-domain/SKILL.md',
     name: 'understand-domain',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Extract business domain knowledge from a codebase and generate an interactive domain flow graph. Works standalone (lightweight scan) or derives from an existing /understand knowledge graph.',
   },
@@ -4893,7 +4893,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-explain/SKILL.md',
     name: 'understand-explain',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Use when you need a deep-dive explanation of a specific file, function, or module in the codebase',
   },
@@ -4906,7 +4906,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-figma/SKILL.md',
     name: 'understand-figma',
-    topics: ['systems', 'frontend', 'tooling'],
+    topics: ['systems', 'tooling'],
     description:
       'Analyze a Figma file via the Figma REST API and generate an interactive design knowledge graph (pages, screens, components, component sets, instances, design tokens) with a kind:"design" dashboard.',
   },
@@ -4919,7 +4919,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-knowledge/SKILL.md',
     name: 'understand-knowledge',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Analyze a Karpathy-pattern LLM wiki knowledge base and generate an interactive knowledge graph with entity extraction, implicit relationships, and topic clustering.',
   },
@@ -4932,7 +4932,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-onboard/SKILL.md',
     name: 'understand-onboard',
-    topics: ['craft', 'frontend', 'tooling'],
+    topics: ['craft', 'tooling'],
     description:
       'Use when you need to generate an onboarding guide for new team members joining a project',
   },
@@ -4943,7 +4943,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/tt-a1i/archify/main/archify/SKILL.md',
     githubUrl: 'https://github.com/tt-a1i/archify/blob/main/archify/SKILL.md',
     name: 'archify',
-    topics: ['architecture', 'craft', 'frontend'],
+    topics: ['architecture', 'craft'],
     description:
       'Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. Use when the user asks to visualize system architecture, infrastructure, cloud/security/network topology, technical workflows, API call sequences, request lifecycles, data pipelines, ETL/ELT, data lineage, state machines, or to convert/beautify Mermaid. Also use for everyday subjects with steps, parts, relationships, or states: a leave or travel plan, an application or approval process, a back-and-forth such as renting, where money or documents go, or where an application or order stands. Not for numeric charts or dashboards.',
   },
@@ -4955,7 +4955,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/tt-a1i/archify/main/.agents/skills/archify-review/SKILL.md',
     githubUrl: 'https://github.com/tt-a1i/archify/blob/main/.agents/skills/archify-review/SKILL.md',
     name: 'archify-review',
-    topics: ['architecture', 'craft', 'frontend'],
+    topics: ['architecture', 'craft'],
     description:
       'Review Archify issues, PRs, or code through value, cost, and impact to support evidence-based maintenance decisions. Use for issue triage, change reviews, and code quality assessments.',
   },
@@ -4967,7 +4967,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/ibelick/ui-skills/main/skills/component-canvas/SKILL.md',
     githubUrl: 'https://github.com/ibelick/ui-skills/blob/main/skills/component-canvas/SKILL.md',
     name: 'component-canvas',
-    topics: ['systems', 'interaction', 'frontend'],
+    topics: ['systems', 'interaction'],
     description:
       'Build a full-screen, interactive canvas to explore existing UI components and their variants with pan and zoom.',
   },
@@ -4979,7 +4979,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/lucasmarkes/hairline/main/skills/hairline-adopt/SKILL.md',
     githubUrl: 'https://github.com/lucasmarkes/hairline/blob/main/skills/hairline-adopt/SKILL.md',
     name: 'hairline-adopt',
-    topics: ['visual', 'interaction', 'craft', 'frontend'],
+    topics: ['visual', 'interaction', 'craft'],
     description:
       'Use when someone has an SVG (an icon, a logo, an illustration) and wants it as a Hairline figure, or runs /hairline-adopt with a file. Reads the drawing, rebuilds its object as an isometric line figure on the engine of @lucasmarkes/hairline, and gives it a gesture that answers the pointer.',
   },
@@ -5003,7 +5003,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/diip3sh/feel/main/SKILL.md',
     githubUrl: 'https://github.com/diip3sh/feel/blob/main/SKILL.md',
     name: 'feel',
-    topics: ['motion', 'interaction', 'frontend', 'craft'],
+    topics: ['motion', 'interaction', 'craft'],
     description:
       'Build UI interactions whose motion comes from a physical model instead of durations and easing curves. Turn a feel described in words ("a toggle that feels heavy", "a drawer with a magnetic snap", "a card you throw into a corner", "a knob with heavy detents", "a sticky slider") into a production component driven by mass, stiffness, damping and force fields (magnets, friction, walls), on a line, in a plane or around a dial, plus a test rig that plots position, velocity and the force field, overlays the model\'s prediction on the measured motion, and exports the same spring to Framer Motion, react-spring, SwiftUI, Compose or CSS linear(). Use this whenever someone asks for an animation, transition, spring, gesture, drag, flick, snap points, bottom sheet, toggle, slider, carousel or any micro-interaction that should "feel" a certain way, or wants to tune or explain a spring, even if they never say "physics".',
   },
@@ -5014,7 +5014,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/diip3sh/playthrou/main/skills/playthru/SKILL.md',
     githubUrl: 'https://github.com/diip3sh/playthrou/blob/main/skills/playthru/SKILL.md',
     name: 'playthru',
-    topics: ['interaction', 'motion', 'frontend', 'craft'],
+    topics: ['interaction', 'motion', 'craft'],
     description:
       'Add a scripted, looping product demo to a website using the playthru library. A fake cursor glides over the real UI, clicks, types and zooms the camera in, with no video file. Use when the user wants a hero demo, product walkthrough, animated "how it works" section, or a self-playing demo of their app on a landing page, or mentions playthru.',
   },
@@ -5027,7 +5027,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/filipwojda/regards-skill/blob/main/skills/regards-art-direction/SKILL.md',
     name: 'regards-art-direction',
-    topics: ['taste', 'visual', 'craft', 'frontend'],
+    topics: ['taste', 'visual', 'craft'],
     description:
       'Art direction for websites from live research on regards.design, a hand-picked index of real website sections searchable by look. A fork of tasteskill v2 (MIT, Leonxlnx) that keeps its inventory, idea test, open-collection pictures, real-browser inspector and look-and-fix loop, and replaces the deal of 20 fixed directions with a search of real sections for this one brief. Use it whenever you design, redesign, restyle, polish or review a landing page, marketing site, portfolio, product page, one-pager, hero or any public-facing web page, in any stack, and when the user says a page looks generic, templated, "AI-made" or like every other site. Needs the regards.design MCP server for the research step. Not for dashboards or app screens.',
   },
@@ -5051,7 +5051,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/react.md',
     ],
     name: 'anatomy-asset',
-    topics: ['visual', 'craft', 'motion', 'frontend'],
+    topics: ['visual', 'craft', 'motion'],
     description:
       'Make crafted, highly detailed isometric SVG assets for landing pages, product sites, launch posts, social cards and decks — a hero object, a set of spot illustrations, a feature-tile scene — drawn as real, well-made physical things with many small precise solid parts, four-tone shading, correct painter\'s order and calm CSS-only ambient motion, mostly monochrome with brand accents. Use this when someone wants a nice-looking illustration, hero image, product visual, spot illustration, icon set, isometric artwork, "Linear-style" or "premium" drawing, or a visual for a section of a site, where the goal is a striking, on-brand picture rather than a diagram that explains how something works. Ships a standalone .svg that works as <img>, inline or in design tools, plus a preview page; can add WebGL shaders or the 3D mode when asked. For interactive figures that explain a technical concept with a live readout, use the anatomy skill instead.',
   },
@@ -5076,7 +5076,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/emilkowalski/skills/blob/main/skills/animation-performance/SKILL.md',
     name: 'animation-performance',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       "Keep web animations inside the frame budget — animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
   },
@@ -5087,7 +5087,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/systems/quartz/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/systems/quartz/SKILL.md',
     name: 'quartz',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       "Quartz design system rules for this project's UI. Use when building or changing any screen, component, form or style, when porting an existing screen onto Quartz, or when checking UI against Quartz.",
   },
@@ -5098,7 +5098,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/systems/lime/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/systems/lime/SKILL.md',
     name: 'lime',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       "Lime design system rules for this project's UI. Use when building or changing any screen, component, form or style, when porting an existing screen onto Lime, or when checking UI against Lime.",
   },
@@ -5111,7 +5111,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-code-workflows/SKILL.md',
     name: 'figma-code-workflows',
-    topics: ['tooling', 'frontend', 'systems'],
+    topics: ['tooling', 'systems'],
     description:
       'Import or upload local HTML or project files into Figma, choose editable Design frames, runnable Code Layers or standalone Code (also known as Make), and repair imported previews. Use only when the user explicitly names editable Design layers, a runnable Code Layer, or a standalone Code/Make file, or supplies a Figma file key/link as the import destination. Generic code or code-component requests need output clarification before using this workflow.',
   },
@@ -5123,7 +5123,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/figma/mcp-server-guide/main/skills/figma-spec/SKILL.md',
     githubUrl: 'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-spec/SKILL.md',
     name: 'figma-spec',
-    topics: ['systems', 'craft', 'frontend'],
+    topics: ['systems', 'craft'],
     description:
       'This skill is required to create, read, edit, review, or comment on Figma specs. You must read it when working on a PRD, brief, RFC or any kind of document in either a standalone Figma spec or a Figma spec embedded in a Figma Design or Figjam file.',
   },
@@ -5136,7 +5136,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/Jakubantalik/transitions.dev/blob/main/skills/transitions-ui-generation/SKILL.md',
     name: 'transitions-ui-generation',
-    topics: ['motion', 'visual', 'interaction', 'frontend'],
+    topics: ['motion', 'visual', 'interaction'],
     description:
       'Make any UI appear as if an AI agent is generating it. A dotted wireframe is drawn from the element\'s own structure (outline, boxes, text lines, icon paths, with guides, corner handles and size labels), then the real UI is revealed behind a scan line with a fade on a smooth ease-out. Two modes, skeleton and skeleton + generation texts (an agent log, the motion CSS being written, and a step line). One dependency-free runtime that works with any framework (vanilla, React, Next.js, Vue, Svelte). Use when the user asks for a "generation animation", "AI generating the UI", "agent building the component", "build-in animation", "wireframe to UI reveal", "skeleton generation", "dotted wireframe", "matrix dots", "make it look generated", "futuristic reveal", "generative UI loading", or for an AI product that should show its output being built. Also the commands transitions generate, transitions generate texts and transitions generate preview.',
   },
@@ -5350,7 +5350,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/ibelick/ui-skills/main/skills/create-canvas/SKILL.md',
     githubUrl: 'https://github.com/ibelick/ui-skills/blob/main/skills/create-canvas/SKILL.md',
     name: 'create-canvas',
-    topics: ['systems', 'interaction', 'frontend'],
+    topics: ['systems', 'interaction'],
     description: 'Build a freeform canvas to explore, compare, and iterate on anything.',
   },
   {
@@ -5360,7 +5360,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/teardown/SKILL.md',
     githubUrl: 'https://github.com/jakubkrehel/skills/blob/main/skills/teardown/SKILL.md',
     name: 'teardown',
-    topics: ['craft', 'frontend', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Creates technical illustrations of physical objects and of how things work, such as display pixels or interface layers, with coherent views, fine linework and part fills.',
   },
@@ -5371,7 +5371,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/systems/glaze/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/systems/glaze/SKILL.md',
     name: 'glaze',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       "Glaze design system rules for this project's UI. Use when building or changing any screen, component, form or style, when porting an existing screen onto Glaze, or when checking UI against Glaze.",
   },
@@ -5384,7 +5384,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/cloudai-x/threejs-skills/blob/main/skills/threejs-asset-pipeline/SKILL.md',
     name: 'threejs-asset-pipeline',
-    topics: ['threejs', '3d', 'frontend', 'performance'],
+    topics: ['threejs', '3d', 'performance'],
     description:
       'Shrinking glTF assets for three.js with gltf-transform: inspect, validate and optimize commands, Draco, meshopt and quantization, KTX2, WebP and AVIF textures, the loader setup each output needs, and gltfjsx for React. Use when compressing, optimizing or validating 3D models before loading them.',
   },
@@ -5397,7 +5397,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/cloudai-x/threejs-skills/blob/main/skills/threejs-performance/SKILL.md',
     name: 'threejs-performance',
-    topics: ['threejs', '3d', 'frontend', 'performance'],
+    topics: ['threejs', '3d', 'performance'],
     description:
       'Measuring and optimizing three.js speed: render statistics, memory counters, fewer draw calls via merging, instancing, batching and LOD, fill rate, shadows, CPU work per frame, shader stalls and GPU compute for particles, WebGL or WebGPU with TSL. Use when a scene is slow, janks or exceeds memory.',
   },
@@ -5410,7 +5410,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/cloudai-x/threejs-skills/blob/main/skills/threejs-react-three-fiber/SKILL.md',
     name: 'threejs-react-three-fiber',
-    topics: ['react', 'threejs', '3d', 'frontend', 'performance'],
+    topics: ['react', 'threejs', '3d', 'performance'],
     description:
       'Building three.js scenes from React with React Three Fiber and drei: renderer setup, the scene graph as JSX, frame-loop, state and loading hooks, pointer events, and adaptive performance, on WebGL or with WebGPU and TSL. Use when writing React components that render three.js.',
   },
@@ -5592,7 +5592,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/enesozturk/dimensional-drawing/blob/main/skills/dimensional-drawing/SKILL.md',
     name: 'dimensional-drawing',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Make an Apple-style monochrome dimensional drawing of a UI component or physical product — title-block summary plus one dense drawing sheet with variable-based dimensions. Use when asked for an anatomy, spec sheet, redline or dimensional drawing of a component.',
   },
@@ -5618,7 +5618,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/rossark0/rossark-motion-skill/blob/main/SKILL.md',
     files: ['MOTION.md'],
     name: 'rossark-motion-skill',
-    topics: ['react-native', 'swiftui', 'motion', 'craft', 'visual', 'frontend'],
+    topics: ['react-native', 'swiftui', 'motion', 'craft', 'visual'],
     description:
       'Bring anything drawn to life with calm, believable motion. It covers characters and creatures (gliding pupils, blinks, breathing, head tilts), full-body acting (landing, waving, leaning, levitating, kicking a ball), plants, fabric, fire, smoke, water, weather, lights, machines, vehicles, icons, logos, charts and whole scenes. Use it whenever someone asks to animate an illustration, an icon, a mascot or a scene, to make something "feel alive", to add idle motion, to turn a static drawing into a living one, or to recreate the motion of a reference video. Comes with a small motion engine and templates for React Native (react-native-svg + Reanimated) and SwiftUI (TimelineView + Canvas), tools that measure a reference video frame by frame, and offline rendering to video, in a phone frame too. The method also works on the web.',
   },
@@ -5629,7 +5629,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/nutlope/hallmark/main/skills/hallmark/SKILL.md',
     githubUrl: 'https://github.com/nutlope/hallmark/blob/main/skills/hallmark/SKILL.md',
     name: 'hallmark',
-    topics: ['taste', 'visual', 'craft', 'frontend'],
+    topics: ['taste', 'visual', 'craft'],
     description:
       'Design skill for websites and new pages that look designed, not generated. Use when the user asks to build or design something new, or names Hallmark. Never use it on an existing design unless the user names Hallmark, as in `/hallmark redesign <path>`.',
   },
@@ -5641,7 +5641,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/1weiho/cinematic-shot/main/skills/clean-ui-shot/SKILL.md',
     githubUrl: 'https://github.com/1weiho/cinematic-shot/blob/main/skills/clean-ui-shot/SKILL.md',
     name: 'clean-ui-shot',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Shoot polished, framed screenshots of a web app\'s real UI as cropped images, the app as a rounded, shadowed window on a stage, with padding where the window edge shows and bleed where the crop cuts through. Two styles, asked up front, clean (a soft gray stage) or glass (a gradient coloured from the UI itself, with a frosted white bezel). A house style for docs pages, changelogs, landing pages, and READMEs. Use whenever the user asks for UI screenshots, docs or changelog images, "nice", "framed", "clean", or "cropped" screenshots of their app, or wants existing product screenshots refreshed because the UI changed, even if they don\'t name this skill or describe the style.',
   },
@@ -5652,7 +5652,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/arla6ka/skills/main/systems/sodium/SKILL.md',
     githubUrl: 'https://github.com/arla6ka/skills/blob/main/systems/sodium/SKILL.md',
     name: 'sodium',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       "Sodium design system rules for this project's UI. Use when building or changing any screen, component, form or style, when porting an existing screen onto Sodium, or when checking UI against Sodium.",
   },
@@ -5727,7 +5727,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/react-component-performance/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/react-component-performance/SKILL.md',
     name: 'react-component-performance',
-    topics: ['react', 'performance', 'frontend', 'craft'],
+    topics: ['react', 'performance', 'craft'],
     description:
       'Analyze and optimize React component performance issues (slow renders, re-render thrash, laggy lists, expensive computations). Use when asked to profile or improve a React component, reduce re-renders, or speed up UI updates in React apps.',
   },
@@ -5738,7 +5738,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-liquid-glass/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-liquid-glass/SKILL.md',
     name: 'swiftui-liquid-glass',
-    topics: ['swiftui', 'performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'craft'],
     description:
       'Implement, review, or improve SwiftUI features using the iOS 26+ Liquid Glass API. Use when asked to adopt Liquid Glass in new SwiftUI UI, refactor an existing feature to Liquid Glass, or review Liquid Glass usage for correctness, performance, and design alignment.',
   },
@@ -5750,7 +5750,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-performance-audit/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-performance-audit/SKILL.md',
     name: 'swiftui-performance-audit',
-    topics: ['swiftui', 'performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'craft'],
     description:
       'Audit and improve SwiftUI runtime performance from code review and architecture. Use for requests to diagnose slow rendering, janky scrolling, high CPU/memory usage, excessive view updates, or layout thrash in SwiftUI apps, and to provide guidance for user-run Instruments profiling when code review alone is insufficient.',
   },
@@ -5762,7 +5762,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-view-refactor/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-view-refactor/SKILL.md',
     name: 'swiftui-view-refactor',
-    topics: ['swiftui', 'performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'craft'],
     description:
       'Refactor and review SwiftUI view files with strong defaults for small dedicated subviews, MV-over-MVVM data flow, stable view trees, explicit dependency injection, and correct Observation usage. Use when cleaning up a SwiftUI view, splitting long bodies, removing inline actions or side effects, reducing computed `some View` helpers, or standardizing `@Observable` and view model initialization patterns.',
   },
@@ -5774,7 +5774,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/emilkowalski/skills/main/skills/remove-animations/SKILL.md',
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/remove-animations/SKILL.md',
     name: 'remove-animations',
-    topics: ['motion', 'performance', 'frontend'],
+    topics: ['motion', 'performance'],
     description:
       'Find the animations an interface doesn\'t need and remove them — motion on keyboard actions, high-frequency surfaces, functional data, and decoration with no purpose — then clean up what they leave behind. Edits code, but only to subtract; it never adds or retunes motion. Use when the user says the app "feels slow", "has too much animation", "feels over-animated", wants to "tone down the motion", or asks what animations to remove. For finding places that should animate, use find-animation-opportunities; for fixing animations that should stay, use improve-animations or review-animations.',
   },
@@ -5799,7 +5799,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/Jakubantalik/transitions.dev/main/agent/skill/SKILL.md',
     githubUrl: 'https://github.com/Jakubantalik/transitions.dev/blob/main/agent/skill/SKILL.md',
     name: 'transitions-agent',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['motion', 'interaction'],
     description:
       'Scan a codebase for missing, janky, or inconsistent UI motion and fix it with transitions.dev recipes. ALWAYS use this skill when the user\'s message is or contains a transitions-agent command (npx transitions-agent, npx transitions-agent fix, any variant) - the command is a request for the full guided flow, not just command execution. Also use when the user asks about UI transitions, animations, motion quality, a motion score, janky or missing transitions, "polish the motion", "fix the animations", or whether the motion is good after UI changes.',
   },
@@ -6019,7 +6019,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/add-mouse-driven-orbit/SKILL.md',
     name: 'add-mouse-driven-orbit',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Add restrained mouse-driven orbit and parallax depth to a Three.js hero by damping one pointer target and splitting it across camera translation, look-at, and small object rotations. Use for passive cinematic 3D heroes, pointer-responsive scenes, organic model parallax, and interactive depth where OrbitControls would feel like a product viewer.',
   },
@@ -6032,7 +6032,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/add-shader-cursor-trail/SKILL.md',
     name: 'add-shader-cursor-trail',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Add the Shaders WebGPU mouse effect used for the Tidal Commons hero: a white twinkling halftone cursor trail driven by ChromaFlow, masked through a DotGrid, finished with chromatic ripples and film grain, and protected by static, touch, accessibility, SSR, and performance fallbacks. Use when a user asks for this shader mouse effect, a halftone cursor trail, an interactive WebGPU hero/contact background, or a reusable cursor-following shader layer in React, Next.js, Vue, Svelte, Solid, or plain web projects.',
   },
@@ -6045,7 +6045,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/agency-grid-layout-minimal/SKILL.md',
     name: 'agency-grid-layout-minimal',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a minimal agency design system with a disciplined editorial grid, oversized typography, quiet uppercase utility labels, restrained image blocks, and subtle structural detail.',
   },
@@ -6058,7 +6058,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/ambient-section-particles/SKILL.md',
     name: 'ambient-section-particles',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       "Add a restrained particle atmosphere inside one section with configurable shapes, density, gravity, wind, sway, rotation, recycling or settling, pointer disturbance, visibility pausing, responsive limits, and reduced-motion fallbacks. Use for petals, leaves, snow, sparks, confetti, dots, paper, icons, or brand fragments that support a section's mood without obscuring content.",
   },
@@ -6071,7 +6071,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/article-prompts-to-skills/SKILL.md',
     name: 'article-prompts-to-skills',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       "Convert an article, tutorial, or prompt pack into focused reusable AgentSkills, one independent capability per skill, with portable instructions, example prompts, working demos, preview screenshots, validation, gallery updates, and a narrow commit. Use when the user asks to turn an article's prompts, tutorial sections, design patterns, interactions, or workflow ideas into complete skills rather than leaving them as prose.",
   },
@@ -6084,7 +6084,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/atmosphere-background/SKILL.md',
     name: 'atmosphere-background',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark atmospheric background with drifting vertical light folds, screen-blended glow, and a concentrated luminous corner or lower-edge bloom.',
   },
@@ -6097,7 +6097,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/ui/audit-ai-design-slop/SKILL.md',
     name: 'audit-ai-design-slop',
-    topics: ['visual', 'frontend', 'systems'],
+    topics: ['visual', 'systems'],
     description:
       'Audit websites, apps, screenshots, mockups, and design code for harmful AI-design clichés, generic generated defaults, and established UI defects. Use when the user wants evidence-backed design feedback, an anti-slop review, or a removal-first cleanup plan without a speculative redesign.',
   },
@@ -6110,7 +6110,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/audit-reference-originality/SKILL.md',
     name: 'audit-reference-originality',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Audit a website or digital experience against its supplied source references for originality and plagiarism risk. Use when Codex must compare current or historical site output with reference pages, capture packs, screenshots, copy, brands, numbers, images, assets, videos, layouts, motion, or code; raise evidence-backed red flags; distinguish common visual grammar from distinctive copying; and propose concrete fixes without making unsupported legal claims.',
   },
@@ -6123,7 +6123,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/audit-verify-explain-grade-5/SKILL.md',
     name: 'audit-verify-explain-grade-5',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Audit work, verify claims with concrete evidence, and explain the result in simple grade-5 language. Use when the user asks to review, audit, check, verify, explain a change, explain a fix, summarize test results, validate whether something works, or translate technical findings into plain language for non-technical readers.',
   },
@@ -6162,7 +6162,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/background-grid-webgl/SKILL.md',
     name: 'background-grid-webgl',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a perspective WebGL background grid with fading lines, subtle particle haze, slow forward drift, and gentle camera parallax.',
   },
@@ -6175,7 +6175,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/beam-glow-states/SKILL.md',
     name: 'beam-glow-states',
-    topics: ['react', 'visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'craft'],
     description:
       "Create React loading, processing, selected, current, focus, and pressed states with the border-beam package's animated edge glow. Use when a card, button, input, tab, option, task panel, or agent surface needs a restrained traveling or breathing beam; includes installation, imports, prop selection, state wiring, reduced motion, accessibility, and performance and layout guardrails.",
   },
@@ -6188,7 +6188,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/blue-cloudy-clean-modern/SKILL.md',
     name: 'blue-cloudy-clean-modern',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a clean modern design system with a luminous blue sky atmosphere, soft drifting cloud light, minimal white framing, and serene premium typography.',
   },
@@ -6201,7 +6201,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/blue-laser-clean-glass-layout/SKILL.md',
     name: 'blue-laser-clean-glass-layout',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a clean dark glass layout system with a thin blue laser atmosphere, frosted premium shells, and polished dashboard structure.',
   },
@@ -6214,7 +6214,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/book-serif-index/SKILL.md',
     name: 'book-serif-index',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create an archival book-reader design system with serif-led pages, mono index navigation, aged paper surfaces, margin notes, and a premium catalog frame.',
   },
@@ -6227,7 +6227,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/bright-green-tech-system-webgl/SKILL.md',
     name: 'bright-green-tech-system-webgl',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a bright-green technical design system with structured split layouts, hard-framed dark surfaces, mono utility labels, and a prominent WebGL visualization zone.',
   },
@@ -6240,7 +6240,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/browser-video-recording/SKILL.md',
     name: 'browser-video-recording',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Create polished 60 fps 4:3 4K browser screen-recording style videos from Codex in-app browser captures, with browser-only crop, natural macOS cursor styling, deliberate click choreography, zoom-follow framing, ffprobe/thumbnail verification, and optional native recording compatibility checks. Use when the user asks to record or re-record browser actions, show cursor clicks and zooms, make Dribbble/UI inspiration or product demo recordings, or asks whether Codex, Playwright, or an MCP can produce a natural browser demo video.',
   },
@@ -6253,7 +6253,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-awwwards-quality-sites/SKILL.md',
     name: 'build-awwwards-quality-sites',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Art-direct and implement distinctive, motion-rich marketing, editorial, portfolio, and landing websites with original reference-inspired imagery, standout heroes, GSAP choreography, one smooth-scroll engine, optional Three.js shaders, honest icon and logo sourcing, photo avatars, accessibility, and performance safeguards. Use when a user asks for an Awwwards-quality, premium, cinematic, interactive, high-concept, or motion-led website, or explicitly requests this visual and motion system.',
   },
@@ -6266,7 +6266,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/build-daily-inspiration-sites/SKILL.md',
     name: 'build-daily-inspiration-sites',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Turn a completed daily UI inspiration capture into exactly five original landing-page builds, one per separate Codex task, using Sites. Use when the user asks to turn the daily inspiration references, a five-item UI prompt pack, or a dated `*-ui-inspiration-capture` article into distinct HTML landing pages while changing the source brands, names, copy, people, numbers, pricing, claims, and imagery.',
   },
@@ -6370,7 +6370,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-interactive-particle-trail/SKILL.md',
     name: 'build-interactive-particle-trail',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build a cursor or touch particle interaction that emits by distance along the traveled segment into a recycled GPU point pool, with optional keyboard-triggered bursts. Use for interactive particle trails, pollen lifted from a surface, dust disturbed by a pointer, hover particle bursts, and discrete motes whose spacing must stay consistent at different gesture speeds.',
   },
@@ -6435,7 +6435,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-threejs-scroll-worlds/SKILL.md',
     name: 'build-threejs-scroll-worlds',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Build rich, scroll-controlled real-time Three.js experiences as one persistent 3D world whose camera, lighting, atmosphere, materials, objects, DOM story, and interactions evolve across authored chapters. Use for 3D scrollytelling, scroll-driven WebGL worlds, camera journeys, interactive portfolios, product stories, exhibitions, explainers, game or film microsites, spatial narratives, and multi-scene websites where native scroll should travel through one continuous place. Not limited to landing pages.',
   },
@@ -6461,7 +6461,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-wireframe-scan-reveal/SKILL.md',
     name: 'build-wireframe-scan-reveal',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Reveal Three.js geometry with an expanding world-space scan whose wire cage leads the solid surface, then burns away. Use for wireframe scanning, radial mesh reveals, survey pulses, holographic assembly, topology intros, and 3D model entrances where a plain opacity wipe does not explain the form.',
   },
@@ -6474,7 +6474,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/cinematic-gsap-lenis-motion-system/SKILL.md',
     name: 'cinematic-gsap-lenis-motion-system',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create premium cinematic web motion systems with GSAP, ScrollTrigger, and Lenis. Use for luxury editorial websites, creative studio portfolios, Awwwards-style interactions, smooth scroll reveals, staggered text, parallax, pinned sections, magnetic hover states, custom cursors, and mouse-reactive layered movement.',
   },
@@ -6487,7 +6487,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/cinematic-scroll-storytelling/SKILL.md',
     name: 'cinematic-scroll-storytelling',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create cinematic scroll-driven landing pages with Lenis smooth scrolling, GSAP ScrollTrigger, scroll-linked progression, staggered text reveals, sticky card stacks, parallax backgrounds, scroll-scrubbed transitions, footer reveals, and immersive preloaders. Use when analyzing or building premium editorial scroll experiences, sticky project stacks, kinetic typography, or section-by-section storytelling.',
   },
@@ -6500,7 +6500,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/clean-minimal-beige-light-mode/SKILL.md',
     name: 'clean-minimal-beige-light-mode',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a clean minimal beige light-mode design system with warm neutral shells, quiet process grids, restrained accent color, and elegant low-contrast structure.',
   },
@@ -6513,7 +6513,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/codex-gpt-image-2-5-flare/SKILL.md',
     name: 'codex-gpt-image-2-5-flare',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Generate or edit artwork with built-in Codex image gen, especially transparent PNG ornaments, game sprites, emblems, and UI graphics. Use when the user requests GPT 2.5 Flare, /codex-gpt-image-2-5-flare, or this built-in transparent-asset workflow. Includes alpha verification, prompt preservation, and optional project integration.',
   },
@@ -6526,7 +6526,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/corner-diagonals/SKILL.md',
     name: 'corner-diagonals',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Apply diagonal-cut corners and chamfered edges to buttons, cards, panels, and container shells. Use when a design needs precise geometric framing, sci-fi UI surfaces, clipped-corner controls, or engineered sharp containers instead of rounded pills or plain rectangles.',
   },
@@ -6539,7 +6539,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/corner-lasers/SKILL.md',
     name: 'corner-lasers',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a corner-anchored laser composition with thin beams, a bright emitter node, bloom, and atmospheric glow or fog.',
   },
@@ -6565,7 +6565,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/css-alpha-masking/SKILL.md',
     name: 'css-alpha-masking',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Apply CSS alpha masking with linear-gradient for horizontal or vertical edge fades (mask-image and -webkit-mask-image). Use when asked for alpha masks, fade edges, or CSS mask gradients.',
   },
@@ -6578,7 +6578,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/css-border-gradient/SKILL.md',
     name: 'css-border-gradient',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Apply subtle gradient-border treatments for premium web surfaces. Use when cards, pricing panels, nav bars, modals, buttons, or hero surfaces need a refined edge highlight without a loud glow.',
   },
@@ -6591,7 +6591,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/daily-ui-inspiration-capture/SKILL.md',
     name: 'daily-ui-inspiration-capture',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Create a recurring daily UI inspiration capture. Use when the user asks to run, refresh, package, or validate dated UI inspiration bundles, especially for `articles/YYYY-MM-DD-ui-inspiration-capture/` outputs, Framer/Dribbble landing-page inspiration, motion-study screenshots/videos, AI-builder prompts, duplicate checking, or converting a project runbook into repeatable workflow.',
   },
@@ -6604,7 +6604,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/dark-blue-contrasting-clean/SKILL.md',
     name: 'dark-blue-contrasting-clean',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark-blue clean design system with strong contrast, cobalt gradient feature blocks, crisp framed structure, and restrained premium glow.',
   },
@@ -6617,7 +6617,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/dark-glass-clean-layout/SKILL.md',
     name: 'dark-glass-clean-layout',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark glass layout system with frosted premium shells, clean multi-column workspace structure, floating data cards, and restrained atmospheric depth.',
   },
@@ -6656,7 +6656,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/dither-background/SKILL.md',
     name: 'dither-background',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark monochrome procedural background with enlarged square pixels and visible Bayer-style ordered dithering. Use when a page needs an atmospheric near-black dither field, broad organic waves or cloud masses, and restrained gray-white highlights behind framed UI, hero content, or data overlays.',
   },
@@ -6669,7 +6669,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/dither-laser-dark-mode/SKILL.md',
     name: 'dither-laser-dark-mode',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark premium design system that combines near-black surfaces, subtle ordered-dither texture, and a thin accent-colored laser atmosphere.',
   },
@@ -6682,7 +6682,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/documentary-brutalist-agency/SKILL.md',
     name: 'documentary-brutalist-agency',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create or redesign creative agency, production studio, architecture, culture, and portfolio websites with billboard typography, hard black-and-white chapters, exposed grids, documentary imagery, irregular collages, restrained parallax, brutalist navigation, and accessible FAQ controls.',
   },
@@ -6695,7 +6695,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-portfolio-chapters/SKILL.md',
     name: 'editorial-portfolio-chapters',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create or redesign creative-studio, agency, photographer, artist, and portfolio websites where project work leads the story. Use for dark editorial shells, full-bleed campaign media, color-coded case-study chapters, oversized service typography, restrained project reveals, and a decisive contact finale.',
   },
@@ -6708,7 +6708,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-service-booking/SKILL.md',
     name: 'editorial-service-booking',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create or redesign appointment-based service websites for salons, barbers, spas, wellness studios, clinics, and hospitality brands. Use for warm editorial layouts, serif-led identity, documentary portrait crops, calm treatment selectors, location-aware booking, and operational states that remain elegant and trustworthy.',
   },
@@ -6721,7 +6721,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md',
     name: 'editorial-tech',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Blend editorial magazine composition with precision product-tech detailing using asymmetrical grids, cinematic media bands, mono utility labels, and restrained accent color.',
   },
@@ -6734,7 +6734,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/elevenlabs-tts/SKILL.md',
     name: 'elevenlabs-tts',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Generate ElevenLabs text-to-speech audio from scripts or inline text using local voice profiles. Use when the user asks for ElevenLabs, text-to-speech, TTS, narration, voiceover, speech audio, or voice generation; load voice names, voice ids, emails, owners, and account-specific defaults only from local config outside the skill.',
   },
@@ -6747,7 +6747,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/falling-leaves/SKILL.md',
     name: 'falling-leaves',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build falling leaves that read as leaves, with each one tumbling on its own axis so it presents a face, thins to an edge, and opens out again, and with its sideways slip driven by that same tumble. Covers the 2-D canvas build and the instanced-3-D variant, where leaves are recycled from, density-versus-count maths, depth layering, colour under a tone-mapped composite, reduced motion, and visibility pausing. Use for autumn maple, sakura petals, blossom, ash, snowfall shapes, or any drifting foliage where a generic particle field reads as confetti.',
   },
@@ -6760,7 +6760,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/fire-paper-loader/SKILL.md',
     name: 'fire-paper-loader',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build a burning-paper ring loader whose GLSL flame is drawn by a Worker on an OffscreenCanvas started from the head, so a main thread blocked by the page build cannot freeze it, with a progress count, an even-paced run into the hand-off, and a clean fade to the page. Covers the ember thread and ember gradient, porous char, worker start-up, parallel shader compile with a waited 1-px warm-up draw, hand-off without a stall, reduced motion and hidden-tab behaviour. Use for a loading screen, preloader, page loader, splash, "kindling", burn loader, ember ring, burning paper hole, fire loader, or a loader that must keep moving while heavy JavaScript, three.js or shader builds hold the main thread.',
   },
@@ -6786,7 +6786,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/framed-grid-layout/SKILL.md',
     name: 'framed-grid-layout',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create minimal framed grid layouts with thin visible boundary lines, L-shaped corner brackets, subtle diagonal line texture, and strict section alignment. Use when asked for clean, neutral, precise, structured, editorial, technical, or guide-border web layouts.',
   },
@@ -6799,7 +6799,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/framed-tech-dark-border-gradient/SKILL.md',
     name: 'framed-tech-dark-border-gradient',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a framed dark technical design system with border-gradient shells, asymmetrical grid panels, mono utility labeling, and restrained monochrome atmosphere.',
   },
@@ -6812,7 +6812,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/funky-purple-container-tech/SKILL.md',
     name: 'funky-purple-container-tech',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark container-led technical design system with fuchsia-purple accents, layered rounded shells, crisp frame lines, and playful futuristic focal objects.',
   },
@@ -6851,7 +6851,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/generate-reference-inspired-brand-worlds/SKILL.md',
     name: 'generate-reference-inspired-brand-worlds',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Generate multiple original brand campaign worlds from a supplied visual reference while controlling how close the new work feels without copying protected signature elements. Use when a user provides a brand identity image, poster, editorial campaign, moodboard, or generated concept and asks for inspired alternatives, several distinct brands in one visual family, a closer-to-reference V2, exact wordmarks inside images, or originality-safe image-generation prompts and outputs.',
   },
@@ -6864,7 +6864,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/glass-dark-mode-clock/SKILL.md',
     name: 'glass-dark-mode-clock',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a dark glass design system with frosted shells, soft beam grids, circular clock-like calibration dials, and precise sci-fi instrument framing.',
   },
@@ -6877,7 +6877,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/glass-dark-ui/SKILL.md',
     name: 'glass-dark-ui',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build dark-mode glassmorphism interfaces with readable contrast, frosted surfaces, and gradient borders using a pseudo-element mask. Use when asked for glass cards, frosted dark hero sections, blur panels, or dark UI systems with gradient/glow borders.',
   },
@@ -6890,7 +6890,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/globe-gl/SKILL.md',
     name: 'globe-gl',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Use when implementing globe.gl (Globe.GL) for 3D globe data visualization with WebGL/ThreeJS, including setup, data layers (points, arcs, polygons, labels), and integration patterns in plain HTML or React.',
   },
@@ -6903,7 +6903,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/globe-particles/SKILL.md',
     name: 'globe-particles',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Create a globe-like 3D particle visualization with a dense luminous spherical core and thinner orbital ring or flattened disc. Use when a design needs a premium planetary, orbital, synthesized data-globe effect rendered with real WebGL/Three.js particles, not generic starfields or full page layout changes.',
   },
@@ -6916,7 +6916,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/gooey-blob-system/SKILL.md',
     name: 'gooey-blob-system',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a gooey blob system using SVG filters where multiple shapes merge into a single fluid form. Use overlapping circles combined with a Gaussian blur and color matrix filter to produce a continuous, organic mass. The forms should visually fuse and separate based on proximity. Focus on filter-driven merging (blur + threshold effect), soft organic boundaries with no hard edges, multiple independent shapes behaving as one system, and smooth continuous motion that feels fluid and cohesive.',
   },
@@ -6929,7 +6929,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/high-contrast-skeuomorphic-clean/SKILL.md',
     name: 'high-contrast-skeuomorphic-clean',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a high-contrast clean skeuomorphic design system with molded dark surfaces, crisp light separation, tactile inset depth, and restrained signal accents.',
   },
@@ -6942,7 +6942,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/horizontal-scroll-scenes/SKILL.md',
     name: 'horizontal-scroll-scenes',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build scene-by-scene chapters that advance left to right on one fixed stage while the user scrolls vertically, with native scroll as the only input. One pure function turns scrollY into scene, dwell and move, so forward, reverse, scrollbar drags, fast skips and reload at depth all land on the right frame. Covers dwell versus transition budgets, a burn-wipe or pan between scenes, chapter index and progress UI, glide-to-scene links that skip intermediate scenes, keyboard and reduced-motion behaviour. Use for horizontal scrollytelling, multi-scene product tours, "scroll down to travel sideways", chapter carousels driven by the wheel, or any piece where a wheel-jacked slider keeps breaking on touch, keys, refresh or back.',
   },
@@ -6955,7 +6955,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/html-demo/SKILL.md',
     name: 'html-demo',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Show an app working on a web page by drawing it live in HTML instead of recording it. A Mac-style window plays the app step by step, and every frame is a pure function of one clock, View(t), drawn on a fixed 1200 × 750 stage that one CSS scale fits to any width. The pointer is scripted, labels and pictures come from the real app, a steps bar sits under the window, it plays only while on screen, and reduced motion gets designed end frames. Use when someone wants a product demo, an animated app window or hero, a feature walkthrough, "the UI animated and simulated in HTML", "like a screen recording but HTML", an interactive product tour on a landing or download page, or wants to replace screen recordings, GIFs or MP4s of their UI with crisp live HTML. Also use to build many such windows at once with helper agents, or to scrub, freeze and screenshot them.',
   },
@@ -6980,7 +6980,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/html-to-interaction-prompts/SKILL.md',
     name: 'html-to-interaction-prompts',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Convert a supplied HTML page or generated HTML reference into a screenshot-backed article containing multiple reusable interaction prompts. Use when the user provides an HTML file, exported page, generated-page.html, or local/live reference and asks to extract animation/interactions, create prompts, capture screenshots for each prompt, add them to an article, or commit the resulting article/assets.',
   },
@@ -7188,7 +7188,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/image-first-grid-layout/SKILL.md',
     name: 'image-first-grid-layout',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create an image-led grid design system with full-bleed photography, structural guide lines, anchored content blocks, and restrained technical overlays.',
   },
@@ -7201,7 +7201,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/implement-fog-of-war/SKILL.md',
     name: 'implement-fog-of-war',
-    topics: ['threejs', 'visual', 'craft', 'frontend'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Implement, tune, debug, or validate soft wall-aware fog of war and gameplay perception in Three.js action games. Use for orthographic or isometric visibility masks, obstacle-aware line of sight, player and enemy vision ranges, hidden-enemy targeting rules, fog shader artifacts such as spokes or seams, mobile ray budgets, lifecycle and menu-state integration, and deterministic fog-of-war tests.',
   },
@@ -7214,7 +7214,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/iterate-until-verified/SKILL.md',
     name: 'iterate-until-verified',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Apply a prompt-agnostic execution and verification loop to any substantial task while preserving the original request. Use when the user asks to fan out work, use subagents or independent reviewers, loop until done, benchmark against references, apply a harsh critic, compare candidates blind, improve an existing prompt with verification, or continue until explicit quality gates pass.',
   },
@@ -7227,7 +7227,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/light-mode-paper-technical/SKILL.md',
     name: 'light-mode-paper-technical',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a light-mode technical design system with warm paper surfaces, dark outer framing, subtle diagonal texture, precise bracketed geometry, and restrained accent signals.',
   },
@@ -7253,7 +7253,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/liquid-metal-border/SKILL.md',
     name: 'liquid-metal-border',
-    topics: ['react', 'visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'craft'],
     description:
       'Add and tune animated liquid-metal WebGL borders with the React `metal-fx` package. Use when buttons, icon controls, chips, tabs, cards, or selected surfaces need a metallic active, selected, hover, focus, or premium border; when implementing the MetalFx component from metal.jakubantalik.com; or when troubleshooting its presets, themes, strength, glow, reflections, sizing, radius, animation, accessibility, SSR, or performance.',
   },
@@ -7266,7 +7266,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/mesh-gradient-dark-blue-clean/SKILL.md',
     name: 'mesh-gradient-dark-blue-clean',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a futuristic, premium, clean dark-blue mesh-gradient design system across background rendering, hero shell, navigation, floating nodes, framed sections, CTAs, and motion. Use when the interface needs a near-black navy foundation, procedural blue mesh atmosphere, disciplined minimal structure, and infrastructural or planetary depth.',
   },
@@ -7279,7 +7279,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/nested-container-clean-agency/SKILL.md',
     name: 'nested-container-clean-agency',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a clean agency design system built from nested containers, with an outer editorial shell, inset dark feature blocks, rounded premium cards, and restrained accent color.',
   },
@@ -7292,7 +7292,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/nested-container-frames/SKILL.md',
     name: 'nested-container-frames',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a container-in-container layout system using nested frames. Use an outer centered container with visible vertical boundary lines and corner markers. Inside, place inner containers inset from the edges, each with its own background and rounded frame. Technique: outer container defines global bounds, inner containers use padding to create inset spacing, layered frames (border + background) to separate levels, and consistent spacing between outer frame and inner blocks.',
   },
@@ -7305,7 +7305,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/ui/no-ai-design-slop/SKILL.md',
     name: 'no-ai-design-slop',
-    topics: ['visual', 'frontend', 'systems'],
+    topics: ['visual', 'systems'],
     description:
       'Prevent and remove generic AI-generated design defaults, incoherent visual choices, and established UI defects while creating, revising, or reviewing websites, apps, screenshots, mockups, and design code. Use as a passive quality gate during UI work or for an explicit anti-slop cleanup; preserve the chosen art direction instead of forcing a neutral redesign.',
   },
@@ -7318,7 +7318,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/number-details/SKILL.md',
     name: 'number-details',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description: 'Add decorative 01, 02, 03 numeric detail markers.',
   },
   {
@@ -7330,7 +7330,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/operational-enterprise-ai/SKILL.md',
     name: 'operational-enterprise-ai',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create or redesign enterprise AI, automation, security, and operations product pages that explain system boundaries, approvals, auditability, exceptions, and rollback. Use for dark cinematic heroes, hairline grids, metric pauses, expandable solution rows, case-study evidence, security proof, and qualified demo or waitlist handoffs.',
   },
@@ -7356,7 +7356,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/optimize-web-animations/SKILL.md',
     name: 'optimize-web-animations',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Profile, audit, and optimize frontend page performance with emphasis on animation work, memory-leak risks, long-session slowdowns, CSS animations, canvas/WebGL requestAnimationFrame loops, marquees, skeletons, GSAP/Three/Matter effects, timers, listeners, and observers. Use when the user asks to make animations performant, pause offscreen animations, look for memory leaks, profile pages that slow the computer over time, fix janky scrolling, reduce CPU/GPU use, or repeat the "only play in view" optimization on React/Vite/Next/frontend pages using Codex Browser.',
   },
@@ -7369,7 +7369,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/orange-clean-paper-saas/SKILL.md',
     name: 'orange-clean-paper-saas',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a clean paper-toned SaaS design system with warm neutrals, orange accent signals, rounded premium forms, and polished product illustration surfaces.',
   },
@@ -7382,7 +7382,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/paper-cinder-transition/SKILL.md',
     name: 'paper-cinder-transition',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       "Change between pages, chapters or scenes with a paper-burn transition, a ragged ember line that sweeps across the frame, chars the old page ahead of it and reveals the next scene live behind it, written as one WebGL composite pass over a frozen frame and a scissored live scene. Covers the front's silhouette, the luminous ember gradient with a beading gold thread, torn porous charcoal that is alpha-masked, baked noise, finite-difference slopes, the 0.75-scale live scene, sweep direction, timing, reduced motion and visibility pausing. Use for a burn transition, paper burn, cinder wipe, chapter change by fire, charring page reveal, burn-away section change, ember dissolve, or when a fade, slide or generic dissolve between scenes reads as cheap.",
   },
@@ -7395,7 +7395,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/performance-profiling/SKILL.md',
     name: 'performance-profiling',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Guide performance profiling for Apple platform apps with Instruments, Xcode diagnostics, and MetricKit. Use when investigating app hangs, stutters, high CPU, memory leaks, memory growth, OOM crashes, slow launch, battery drain, thermal issues, App Store performance readiness, or when adding os_signpost and measurement hooks.',
   },
@@ -7408,7 +7408,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/pointer-trail-emitter/SKILL.md',
     name: 'pointer-trail-emitter',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build a cursor trail whose spacing stays constant at any hand speed, by emitting motes per unit of distance travelled rather than on a timer, so a flick draws the same continuous ribbon as a crawl instead of breaking into scattered dots. Covers sub-segment placement, the ring-buffer ordering trap, the idle breath a distance emitter needs, anchoring the trail to the screen in a 3-D scene, scaling scatter against the plane it hangs on, coasting instead of stopping dead, touch and reduced-motion fallbacks, and why moving the emitter to a DOM overlay to raise its z-index costs more than it buys. Use for cursor wisps, pointer sparks, embers, magic trails, comet tails, plankton, dust, or any mote trail that must stay legible however fast the hand moves.',
   },
@@ -7421,7 +7421,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/product-proof-saas/SKILL.md',
     name: 'product-proof-saas',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create or redesign SaaS and AI product landing pages where a real workflow, interface, or deterministic demo is the central proof. Use for pale atmospheric shells, product UI in the hero, prompt-to-output stories, audience tabs, compact feature modules, honest pricing comparisons, and FAQ handoffs.',
   },
@@ -7434,7 +7434,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/publish-project-to-github/SKILL.md',
     name: 'publish-project-to-github',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Package a finished local project into an intentional GitHub repository, create a strong README and visual preview, push it safely, configure a public GitHub Pages URL when the project is compatible, and verify the deployed result. Use when a user asks to upload, publish, open-source, share, or turn a local HTML/CSS/JavaScript experiment or small web project into a documented GitHub repository with a live demo.',
   },
@@ -7447,7 +7447,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/reveal-hover-effect/SKILL.md',
     name: 'reveal-hover-effect',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build cursor-following spotlight reveals that expose a second aligned image through a soft radial mask. Use for hover-to-color, before-and-after, x-ray, material, texture, product-detail, and illustrated hero effects where a desaturated or embossed base image should remain visible while another treatment follows an eased pointer.',
   },
@@ -7460,7 +7460,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/scroll-progress-timeline/SKILL.md',
     name: 'scroll-progress-timeline',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Turn any ordered process into a data-driven vertical or horizontal scroll story with a base line, progress fill, active step states, responsive collapse, semantic fallback, and reduced-motion behavior. Use for onboarding, checkout, roadmaps, recipes, case studies, service processes, histories, or narratives where progress through the sequence should become visible while scrolling.',
   },
@@ -7473,7 +7473,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/scroll-scrubbed-visual-sequence/SKILL.md',
     name: 'scroll-scrubbed-visual-sequence',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Build reversible scroll-controlled visual transformations with a pinned or sticky stage, normalized progress, and video, image-sequence, canvas, SVG, or DOM renderers. Use for hero transformations, product assembly, interface state walkthroughs, object rotation, diagrams, or photo sequences that must move forward and backward with native scrolling.',
   },
@@ -7486,7 +7486,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/scroll-scrubbed-word-reveal/SKILL.md',
     name: 'scroll-scrubbed-word-reveal',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Reveal marked-up text word by word as scroll progress advances, while preserving semantic inline links, emphasis, responsive line wrapping, and reduced-motion readability. Use for headlines, quotes, manifestos, product statements, onboarding messages, or editorial passages where scrolling should pace comprehension rather than simulate typing.',
   },
@@ -7499,7 +7499,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/scroll-world-storytelling/SKILL.md',
     name: 'scroll-world-storytelling',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Turn an article, case study, brand narrative, product journey, or long-form story into a cinematic scroll-driven landing page using one of three renderers: scrubbed video, a real-time Three.js world, or semantic HTML/SVG data and typography. Use when the user asks for a scroll world, fly-through landing page, article-to-website transformation, animated planet, data scrollytelling, video-scrubbed page, connected visual journey, or story-led alternative to ordinary stacked sections.',
   },
@@ -7512,7 +7512,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/shaders-cursor-ripples/SKILL.md',
     name: 'shaders-cursor-ripples',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       "Add cursor-following fluid WebGPU distortion over an existing image with the Shaders library's ImageTexture and CursorRipples components. Use when a hero, gallery, or media panel needs a water-ripple mouse effect; when replacing a drifting CSS spotlight or flashlight reveal; or when a prompt says to borrow only the shader interaction from a Shaders.com reference while preserving the current brand, image, copy, and layout.",
   },
@@ -7538,7 +7538,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/skeuomorphic-ui/SKILL.md',
     name: 'skeuomorphic-ui',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create skeuomorphic web UI surfaces with layered gradients, stacked inner and outer shadows, reflective gradient borders, micro texture, and embossed text or icon details. Use when asked for pressed, carved, tactile, realistic, soft-plastic, soft-metal, or premium physical interface styling.',
   },
@@ -7551,7 +7551,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/solar-duotone-bold/SKILL.md',
     name: 'solar-duotone-bold',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description: 'Use Iconify Solar Duotone Bold icon style.',
   },
   {
@@ -7563,7 +7563,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/split-layout-technical/SKILL.md',
     name: 'split-layout-technical',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a technical split-screen design system with dual panels, fine frame lines, mono metadata, quiet editorial typography, and premium inset surfaces.',
   },
@@ -7576,7 +7576,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/staggered-word-reveal/SKILL.md',
     name: 'staggered-word-reveal',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create subtle editorial word-by-word text reveal animations where each word fades and rises into place once it enters the viewport. Use for premium portfolio headlines, hero copy, section intros, and short marketing text that needs a cinematic staggered reveal with IntersectionObserver or in-view detection.',
   },
@@ -7589,7 +7589,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/stitched-full-page-capture/SKILL.md',
     name: 'stitched-full-page-capture',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Capture or repair reliable full-page screenshots for lazy-loaded, scroll-animated, Framer, WebGL/canvas, or reveal-heavy web pages. Use when full-page screenshots are blank, gray, white, sparse, show a tiny content strip, disagree with a working scroll video, or when article evidence/section crops must be derived from a trustworthy full-page image.',
   },
@@ -7602,7 +7602,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/tech-green-dark-mode-modern/SKILL.md',
     name: 'tech-green-dark-mode-modern',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a modern dark-mode technical design system with matte-black surfaces, emerald signal accents, mono system labeling, framed dashboard cards, and restrained glow.',
   },
@@ -7615,7 +7615,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/technical-wireframe-info-layout/SKILL.md',
     name: 'technical-wireframe-info-layout',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a monochrome technical wireframe design system with exploded 3D structure, connector annotations, sparse information labels, and precise dark diagnostic framing.',
   },
@@ -7641,7 +7641,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/thinking-orbs/SKILL.md',
     name: 'thinking-orbs',
-    topics: ['react', 'visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'craft'],
     description:
       "Add accessible animated AI loading and agent-status indicators with the React thinking-orbs library. Use when a chat, copilot, voice, search, generation, or tool-running interface needs a semantic working, searching, solving, listening, composing, or shaping state; when replacing a generic spinner with an AI activity orb; or when implementing the library's size, theme, speed, pause, reduced-motion, and canvas behavior.",
   },
@@ -7654,7 +7654,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-landscape/SKILL.md',
     name: 'threejs-landscape',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Build a live Three.js landscape that stays quiet behind a subject — a noise heightfield on a polar grid so resolution follows the lens, ground coloured by slope and moisture rather than by texture, instanced GPU grass whose wind costs nothing on the CPU, scattered stones, a gradient sky dome, a star field you can actually see, and a time-of-day system that cross-fades instead of cutting. Use for hero backdrops, product stages, scroll worlds, or any scene where a building, object, or figure has to sit in a place rather than float on a gradient.',
   },
@@ -7667,7 +7667,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-towers/SKILL.md',
     name: 'threejs-towers',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Generate architecture procedurally in Three.js and film it assembling — a small geometry vocabulary that builds pagodas, castles, domes and spires from parameters instead of mesh files, hip roofs with flying eaves driven by a single profile function, and a clipping-plane build animation where everything below a rising line is finished work and scaffolding stands above it. Use for construction studies, architectural title sequences, procedural landmarks, or any hero object that should build itself rather than fade in.',
   },
@@ -7680,7 +7680,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-weather/SKILL.md',
     name: 'threejs-weather',
-    topics: ['threejs', 'visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'craft'],
     description:
       'Put weather into a Three.js scene that reads as weather — rain anchored inside the frustum, a storm that is the rain leaned on rather than a second system, lightning on its own light with thunder scheduled by distance, snow that blows up into blizzards and keeps settling until the ground goes white, wet ground with puddles and splashes, and looping ambience that has no seam. Use for scene atmosphere, seasonal states, hero backdrops, or any world where clear/rain/storm/snow needs to be a control the viewer can turn.',
   },
@@ -7706,7 +7706,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/unicorn-studio/SKILL.md',
     name: 'unicorn-studio',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Use when embedding and customizing Unicorn Studio interactive animations on the web (embed, responsive sizing, performance, layering with UI, fallbacks).',
   },
@@ -7732,7 +7732,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/vantajs/SKILL.md',
     name: 'vantajs',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Use when adding animated WebGL background effects with Vanta.js (setup, parameters, resizing, performance, integration in React/Next.js).',
   },
@@ -7745,7 +7745,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/video-to-superprompt/SKILL.md',
     name: 'video-to-superprompt',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Turn a reference video into a super detailed recreation or inspiration prompt. Use when the user provides, mentions, uploads, links, or points to a video and asks to analyze the design, UI, animations, transitions, scroll interactions, typography, colors, assets, WebGL/Three.js, storytelling, section-by-section behavior, or to create a prompt/article that recreates the page, app, interaction, or motion system.',
   },
@@ -7771,7 +7771,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/web-technique-to-skill/SKILL.md',
     name: 'web-technique-to-skill',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Turn a visual or interaction technique you already built into a reusable web-design skill, by isolating the one mechanism that makes it work while reproducing its approved reference exactly around that focus, and packaging it with a demo that proves both the mechanism and the visual fidelity. Covers finding the mechanism, naming the technique plainly, disclosing the verified runtime and renderer, auditing reference layers, carrying real numbers instead of adjectives, preserving owned staging, keeping expensive gotchas, declaring the boundary against neighbouring skills, and browser-verifying before claiming it works. Use when a page, canvas scene, shader, scroll effect, layout system, or hover interaction turned out well and should become a skill rather than staying in one project.',
   },
@@ -7784,7 +7784,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/webgl-3d-object/SKILL.md',
     name: 'webgl-3d-object',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a real 3D WebGL object with geometric mesh depth, physically based material, directional and ambient lighting, perspective camera, subtle rotation, and floating motion. Use when a page needs a faceted 3D hero object or product-like visual with real lighting instead of CSS transform tricks.',
   },
@@ -7797,7 +7797,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/webgl-laser/SKILL.md',
     name: 'webgl-laser',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Create a fixed full-screen WebGL laser background effect with a thin white-hot vertical core, restrained brand-colored halo, and soft smoky fog around the beam. Use only for laser background effects, not full page layout, copy, generic hero scenes, particles, or unrelated motion systems.',
   },
@@ -7810,7 +7810,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/workflow/workflow-progress-screenshots/SKILL.md',
     name: 'workflow-progress-screenshots',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Show the user real screenshots of the work as it progresses, without being asked. Capture the start, the key moment and the result of every visual change, send them as files with captions as soon as each is ready, and look at every image before sending it. Use on any task with a visible result (UI, pages, games, 3D, charts, motion), when the user says "show me", "screenshots", "keep giving me screenshots" or "where are the screenshots?", and before any report that claims a visual change works.',
   },
@@ -7823,7 +7823,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/workflow/workflow-score-to-target/SKILL.md',
     name: 'workflow-score-to-target',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Score work out of 10 against a clear rubric, then improve it round by round until every item reaches the target score the user named (for example "get it to 8 out of 10", "bring everything under 6 up to 6+"). Covers anchored rubrics, measurable criteria, independent or blind judging, before/after scorecards, and honest reporting of anything still short. Use whenever the user asks to score, rate, grade or judge something out of 10, names a target score, or asks "what would make this a 9?".',
   },
@@ -7836,7 +7836,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/workflow/workflow-ship-change/SKILL.md',
     name: 'workflow-ship-change',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Ship every change the way the user requires, with the guardrails. Take screenshots of the start, the key moment and the result; give the change its own changelog version with pictures; verify with tests; commit only your own files; merge with the latest main and push as a fast-forward; publish that exact main live; confirm each step; and report measured sizes, asking before any upload over 50 MB. Use at the end of every change (feature, fix, tweak, art, balance, polish) and whenever the user says "ship it", "commit", "push", "merge", "publish", "deploy", "go live" or "update the changelog". Project specifics (hosting, the changelog pipeline, merge conflicts) go in an optional local references/<project>.md next to this skill.',
   },
@@ -7849,7 +7849,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/workflow/workflow-threads-manager/SKILL.md',
     name: 'workflow-threads-manager',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Oversee the other Claude threads (sessions) working on the same project. Check what each is doing, confirm finished work is merged to main, has its changelog entry with screenshots, and is live, archive threads that are truly done, and restart or flag threads that were cut off. Use when the user says "check threads", "check new changes", "are the threads merged and pushed", "archive the done threads", or asks what the other sessions are up to. Project specifics (changelog format, live site, capture folders) go in an optional local references/<project>.md next to this skill.',
   },
@@ -7862,7 +7862,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/write-like-meng-on-x/SKILL.md',
     name: 'write-like-meng-on-x',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       "Write, rewrite, review, or continuously refine X/Twitter posts in Meng To's current voice using his deduplicated authored-post corpus, personal and product context, shared resources, and Content repo evidence. Use when asked to improve a tweet in Meng's tone, draft an original post, reply, thread, resource share, or quote post as Meng, check whether an angle repeats an earlier post, study Meng's writing style, ingest another 20-50 authored posts, or hone the reusable Meng X voice profile.",
   },
@@ -7875,7 +7875,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/x-bookmark-quote-posts/SKILL.md',
     name: 'x-bookmark-quote-posts',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       "Check a user's latest X/Twitter bookmarks and turn recent saved posts into source-backed quote-post drafts calibrated against the user's latest 100 authored posts. Use when asked to review X bookmarks, create quote posts from bookmarks, refresh a bookmark quote queue, run a bookmark quote automation, study a user's X voice, or write first-person quote posts from X sources.",
   },
@@ -7903,7 +7903,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/verify.md',
     ],
     name: 'stageshow',
-    topics: ['visual', 'motion', 'craft', 'frontend'],
+    topics: ['visual', 'motion', 'craft'],
     description:
       'Build faux product UI that looks like a real product, as a still illustration or an animated demo with a cursor. Browser and app windows, dashboards, phones, notifications, terminals, bento grids and cursor walkthroughs, framed, masked and cropped the way a marketing page, feature card or docs hero needs them. Use whenever someone wants a fake or mocked UI, a product demo or walkthrough animation, a hero or feature-card illustration of an app, a product shot in the style of a polished marketing site, or an animated cursor doing things in an interface, even if they never say "faux UI". React and plain CSS.',
   },
@@ -7914,7 +7914,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/superdesigndev/treg/main/skills/rea-growth/SKILL.md',
     githubUrl: 'https://github.com/superdesigndev/treg/blob/main/skills/rea-growth/SKILL.md',
     name: 'rea-growth',
-    topics: ['craft', 'tooling', 'frontend'],
+    topics: ['craft', 'tooling'],
     description:
       'Use when the user wants to know how a company gets its users, reverse engineer a competitor\'s growth or distribution, copy what a winning company does on each channel, or study a brand\'s content strategy (titles, thumbnails, covers, captions, graphics) on YouTube, TikTok, Instagram, X, LinkedIn or Reddit. Also for "how did X grow", "teardown of X\'s marketing", "what content works for X".',
   },
@@ -7945,7 +7945,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/webgl.md',
     ],
     name: 'reanimate',
-    topics: ['motion', 'visual', 'craft', 'frontend'],
+    topics: ['motion', 'visual', 'craft'],
     description:
       'Clone a section, widget, page or animation from any reference (a live website URL, a screen recording, an mp4/mov/webm, a gif, a Lottie file, a prototype export) frame by frame into the user\'s own codebase, then record the clone and verify it against the reference frame by frame, iterating until timing, easing, sequence and layout match. Use whenever the user wants to clone, copy, replicate, recreate, reverse-engineer, port or "steal" a hero, section, widget, marquee, carousel, hover effect, page transition, loader, scroll animation or interaction from a site or video, says "make it look/feel/move like this", "same animation as", "match this exactly", or hands over a gif/video and asks to build it, including when they also want to add their own content, colours or extra features on top, or only want part of the reference (one section, one widget, a few seconds). Covers canvas, WebGL, WebGPU and three.js / 3D scenes (shaders, particles, globes, glTF models) as well as CSS and JS motion. Pixel-level matching of fonts, colours and spacing is done only when they ask for it.',
   },
@@ -8013,7 +8013,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/workdir.md',
     ],
     name: 'oil-ui',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['visual', 'craft'],
     description:
       'Design, improve, and review interfaces for websites, apps, dashboards, and components: explore directions, generate side-by-side comparisons, and refine visual hierarchy against real screenshots. Delivers a comparison page, design notes, a comp, or a working interface when asked. Design judgment only. Hand off to oil-ui-pro when that skill is installed.',
   },
@@ -8131,7 +8131,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/verification.md',
     ],
     name: 'design-to-code',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       "Transforms screenshots, Figma frames, mockups, design images, and live public websites into high-fidelity, responsive, accessible, production-ready frontend code. Use when asked to recreate a website, turn an image into code, match a page, clone a design, build a Figma design, make it responsive, repair visual differences, or translate a visual reference into React, Next.js, Vue, Svelte, HTML/CSS, or an existing project's stack.",
   },
@@ -8168,7 +8168,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/INSANE0777/awwwards-skills/blob/main/skills/awwwards-design-md/SKILL.md',
     name: 'awwwards-design-md',
-    topics: ['systems', 'visual', 'frontend'],
+    topics: ['systems', 'visual'],
     description:
       "Create an evidence-backed DESIGN.md for any public website URL. Use when asked to extract a site's design system, colors, typography, spacing, radii, shadows, components, or to generate a design.md compatible with Google's design.md format. Composes the awwwards MCP inspection and capture tools.",
   },
@@ -8194,7 +8194,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/INSANE0777/awwwards-skills/blob/main/skills/awwwards-section-loop/SKILL.md',
     name: 'awwwards-section-loop',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['craft', 'visual'],
     description:
       'Use when recreating or rebuilding a multi-section page from a reference site, section by section. Teaches the loop from page structure to per-section capture, build, geometry gate, and lock, including when a page must be treated as one unit because it shares a WebGL canvas.',
   },
@@ -8206,7 +8206,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/INSANE0777/awwwards-skills/main/skills/recreate/SKILL.md',
     githubUrl: 'https://github.com/INSANE0777/awwwards-skills/blob/main/skills/recreate/SKILL.md',
     name: 'recreate',
-    topics: ['frontend', 'visual', 'craft'],
+    topics: ['visual', 'craft'],
     description:
       'Recreate a website from a link with the awwwards MCP. Use when the user says to recreate a site, clone a page, rebuild a URL, or gives a URL and asks to build it. Produces a hand-built implementation, checks it against the live site, then can convert it into a Vite, Astro, or Next project.',
   },
@@ -8219,7 +8219,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/INSANE0777/awwwards-skills/blob/main/skills/motion-authoring/SKILL.md',
     name: 'motion-authoring',
-    topics: ['motion', 'frontend', 'craft'],
+    topics: ['motion', 'craft'],
     description:
       'Use when a converted project needs its motion authored: turning a motion manifest and inert skeletons into real per-section motion with a parity check. Covers timeline topology, intent mapping, reduced motion, and the verification gate.',
   },
@@ -8248,7 +8248,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/universal.md',
     ],
     name: 'expo-ui',
-    topics: ['expo', 'react-native', 'frontend', 'systems'],
+    topics: ['expo', 'react-native', 'systems'],
     description:
       'Build native UI with @expo/ui: real SwiftUI on iOS and Jetpack Compose on Android. Use for sheets, pickers, sliders, toggles, menus and grouped form sections, with drop-in replacements for React Native community libraries.',
   },
@@ -8330,7 +8330,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dom/SKILL.md',
     githubUrl: 'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-dom/SKILL.md',
     name: 'expo-dom',
-    topics: ['expo', 'react-native', 'react', 'frontend'],
+    topics: ['expo', 'react-native', 'react'],
     description:
       'Use Expo DOM components to run web code in a webview on native and as-is on web, migrating web code to native incrementally.',
   },

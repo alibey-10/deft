@@ -12,7 +12,7 @@ function TopicsPage() {
   const { topicsWithSkills } = useDirectory()
   const groups = [
     { title: 'Design engineering', items: topicsWithSkills.filter((t) => t.isDesignCore) },
-    { title: 'Frontend & frameworks', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
+    { title: 'Frameworks & libraries', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
   ]
 
   return (

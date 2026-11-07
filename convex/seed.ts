@@ -5,7 +5,7 @@
 import { v } from 'convex/values'
 import { internal } from './_generated/api'
 import { internalMutation } from './_generated/server'
-import type { Id } from './_generated/dataModel'
+import type { Doc, Id } from './_generated/dataModel'
 import { vTopicSlug } from './validators'
 
 const vSeedAuthor = v.object({
@@ -200,5 +200,54 @@ export const setSkillTopics = internalMutation({
       counts.updated++
     }
     return counts
+  },
+})
+
+/**
+ * Strip a retired topic from every skill and discovery candidate, in batches. Run it on each
+ * deployment before removing the slug from `topicSlugs`, or the schema push fails validation.
+ * Skills left with no topics are logged and kept as they are, to be retagged by hand.
+ * Run: npx convex run seed:removeTopic '{"topic":"frontend"}'
+ */
+export const removeTopic = internalMutation({
+  args: {
+    topic: vTopicSlug,
+    table: v.optional(v.union(v.literal('skills'), v.literal('discoveryCandidates'))),
+    cursor: v.optional(v.union(v.string(), v.null())),
+  },
+  handler: async (ctx, { topic, table = 'skills', cursor }) => {
+    const { page, isDone, continueCursor } = await ctx.db
+      .query(table)
+      .paginate({ cursor: cursor ?? null, numItems: 100 })
+    for (const row of page) {
+      if (!row.topics.includes(topic)) continue
+      const topics = row.topics.filter((t) => t !== topic)
+      if (table === 'skills') {
+        const skill = row as Doc<'skills'>
+        if (topics.length === 0) {
+          console.warn(`Skill ${skill.rawUrl} would have no topics; left unchanged`)
+          continue
+        }
+        await ctx.db.patch('skills', skill._id, {
+          topics,
+          searchText: skillSearchText({ ...skill, topics }),
+          updatedAt: Date.now(),
+        })
+      } else {
+        await ctx.db.patch('discoveryCandidates', row._id as Id<'discoveryCandidates'>, { topics })
+      }
+    }
+    if (!isDone) {
+      await ctx.scheduler.runAfter(0, internal.seed.removeTopic, {
+        topic,
+        table,
+        cursor: continueCursor,
+      })
+    } else if (table === 'skills') {
+      await ctx.scheduler.runAfter(0, internal.seed.removeTopic, {
+        topic,
+        table: 'discoveryCandidates',
+      })
+    }
   },
 })
