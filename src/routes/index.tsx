@@ -5,6 +5,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { usePaginatedQuery } from 'convex/react'
 
 import { api } from '../../convex/_generated/api'
+import { HeroGrid } from '#/components/hero-grid.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
 import { useDirectory, type RegistrySkill } from '#/lib/directory.ts'
@@ -60,6 +61,7 @@ function Home() {
 
   return (
     <>
+      <HeroGrid />
       <Hero />
 
       <section aria-label="All skills" className="flex flex-col gap-6">
