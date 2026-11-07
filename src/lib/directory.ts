@@ -38,7 +38,7 @@ export type AuthorProfile = {
 export type Directory = {
   allSkills: RegistrySkill[]
   skillsByTopic: Map<TopicSlug, RegistrySkill[]>
-  /** Topics that have at least one skill, most populated first. */
+  /** Topics that have at least one skill, sorted alphabetically by label. */
   topicsWithSkills: Array<Topic & { count: number }>
   /** Authors sorted alphabetically, ignoring case. */
   authors: Author[]
@@ -50,6 +50,10 @@ export type Directory = {
 export const directoryQuery = convexQuery(api.directory.get, {})
 
 const byName = (a: RegistrySkill, b: RegistrySkill) => a.name.localeCompare(b.name)
+
+/** Case-insensitive, number-aware alphabetical order for directory listings. */
+const alphabetical = (a: string, b: string) =>
+  a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true })
 
 // The query result only changes identity when Convex pushes new data, so derive once per result.
 const built = new WeakMap<DirectoryData, Directory>()
@@ -72,7 +76,7 @@ export function buildDirectory(data: DirectoryData): Directory {
   const topicsWithSkills = topics
     .map((topic) => ({ ...topic, count: skillsByTopic.get(topic.slug)?.length ?? 0 }))
     .filter((topic) => topic.count > 0)
-    .sort((a, b) => b.count - a.count)
+    .sort((a, b) => alphabetical(a.label, b.label))
 
   const authorRows = new Map(data.authors.map((a) => [a.key, a]))
   // `repos` is missing while the Convex deployment predates it (see `convex/directory.ts`).
@@ -113,9 +117,7 @@ export function buildDirectory(data: DirectoryData): Directory {
     }
   }
 
-  const authors = [...authorMap.values()].sort((a, b) =>
-    a.name.localeCompare(b.name, 'en', { sensitivity: 'base', numeric: true }),
-  )
+  const authors = [...authorMap.values()].sort((a, b) => alphabetical(a.name, b.name))
   const skillByPath = new Map(allSkills.map((skill) => [skill.pathSlug.toLowerCase(), skill]))
 
   const directory: Directory = {
