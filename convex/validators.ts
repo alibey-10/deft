@@ -14,8 +14,7 @@ export const topicSlugs = [
   'typography',
   'color',
   '3d',
-  // Broader frontend
-  'frontend',
+  // Engineering practice (grouped under design engineering)
   'architecture',
   'frameworks',
   'shadcn-ui-development',

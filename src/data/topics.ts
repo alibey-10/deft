@@ -91,47 +91,41 @@ export const topicsBySlug = {
     description: 'Spatial interfaces, real-time graphics, and immersive UI scenes.',
     isDesignCore: true,
   },
-  frontend: {
-    slug: 'frontend',
-    label: 'Frontend',
-    description: 'General frontend implementation guidance and patterns.',
-    isDesignCore: false,
-  },
   architecture: {
     slug: 'architecture',
     label: 'Architecture',
     description: 'Project structure, composition patterns, and scalable code design.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   testing: {
     slug: 'testing',
     label: 'Testing',
     description: 'Reliability checks, QA flows, and regression prevention.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   debugging: {
     slug: 'debugging',
     label: 'Debugging',
     description: 'Root-cause analysis, instrumentation, and bug-fixing workflows.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   'code-quality': {
     slug: 'code-quality',
     label: 'Code quality',
     description: 'Maintainability reviews, abstraction cleanup, and deep code health work.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   tooling: {
     slug: 'tooling',
     label: 'Tooling',
     description: 'Build systems, CLI workflows, and developer productivity tools.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   video: {
     slug: 'video',
     label: 'Video',
     description: 'Video composition, storytelling, and timeline-based UI content.',
-    isDesignCore: false,
+    isDesignCore: true,
   },
   react: {
     slug: 'react',
@@ -189,9 +183,9 @@ export const topicsBySlug = {
   },
   frameworks: {
     slug: 'frameworks',
-    label: 'Frontend frameworks',
+    label: 'Other frameworks',
     description:
-      'Agent skills for frontend frameworks, including React, Next.js, Svelte, Nuxt, and React Router. Find guidance for components, routing, rendering performance, and framework integrations.',
+      'Agent skills for UI frameworks without their own topic, such as Svelte, Solid, and Angular.',
     isDesignCore: false,
   },
   'shadcn-ui-development': {

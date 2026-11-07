@@ -27,7 +27,7 @@ export function DirectorySidebar() {
   const { authors, topicsWithSkills } = useDirectory()
   const topicGroups = [
     { title: 'Design engineering', items: topicsWithSkills.filter((t) => t.isDesignCore) },
-    { title: 'Frontend & frameworks', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
+    { title: 'Frameworks & libraries', items: topicsWithSkills.filter((t) => !t.isDesignCore) },
   ]
 
   // Follow the route when navigating between topic and author pages.
