@@ -133,6 +133,12 @@ export const topicsBySlug = {
     description: 'Video composition, storytelling, and timeline-based UI content.',
     isDesignCore: false,
   },
+  react: {
+    slug: 'react',
+    label: 'React',
+    description: 'React components, hooks, rendering patterns, and React UI libraries.',
+    isDesignCore: false,
+  },
   nextjs: {
     slug: 'nextjs',
     label: 'Next.js',
@@ -155,6 +161,12 @@ export const topicsBySlug = {
     slug: 'react-native',
     label: 'React Native',
     description: 'Mobile app performance, profiling, and React Native optimization.',
+    isDesignCore: false,
+  },
+  expo: {
+    slug: 'expo',
+    label: 'Expo',
+    description: 'Expo apps: Expo Router navigation, native UI, animation, and design systems.',
     isDesignCore: false,
   },
   threejs: {

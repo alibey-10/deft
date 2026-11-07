@@ -84,17 +84,19 @@ const TOPIC_GUIDE: Record<TopicSlug, string> = {
   '3d': '3D on the web or in apps: WebGL, WebGPU, shaders',
   frontend: 'general frontend/UI engineering: HTML, CSS, components',
   architecture: 'frontend app architecture, state, routing',
-  frameworks: 'UI frameworks such as React, Svelte, Solid',
+  frameworks: 'UI frameworks without their own topic, such as Svelte, Solid, Angular',
   'shadcn-ui-development': 'shadcn/ui components',
   testing: 'testing UIs and components',
   debugging: 'debugging UI and rendering issues',
   'code-quality': 'frontend code quality',
   tooling: 'frontend build tools and dev tooling',
   video: 'programmatic video built from UI code',
+  react: 'React on the web: components, hooks, JSX, React libraries',
   nextjs: 'Next.js',
   nuxt: 'Nuxt',
   vue: 'Vue',
-  'react-native': 'React Native / Expo UI',
+  'react-native': 'React Native UI',
+  expo: 'Expo: Expo Router, Expo SDK modules, @expo/ui',
   threejs: 'Three.js / React Three Fiber',
   remotion: 'Remotion',
   swiftui: 'SwiftUI',
@@ -124,7 +126,7 @@ For each skill, decide whether it belongs in that directory. It belongs only if 
 
 It does NOT belong if it is mainly: AI image, video, audio or 3D-asset generation; photography or marketing creative; browser automation, scraping or end-to-end testing tools; app automation (Slack, Electron, Twitter…); general programming, data, backend, DevOps or cloud; repo tooling that isn't about UI (git hooks, linters, formatters, CI, package managers); writing, SEO or marketing copy; or a CLI/wrapper for running AI models. Topics like tooling, testing or code-quality can describe a UI skill but never make one on their own. Mentioning UI words in passing (e.g. "3D" in a list of capabilities) does not make a skill a UI skill.
 
-For skills that belong, pick 1 to ${MAX_TOPICS} topics, most specific first, only from this list:
+For skills that belong, pick 1 to ${MAX_TOPICS} topics, most specific first, only from this list. Add a framework topic (react, nextjs, vue, nuxt, react-native, expo, threejs, remotion, swiftui, shadcn-ui-development) whenever the skill is written for that framework, and never for a framework it only mentions in passing or sends elsewhere:
 ${Object.entries(TOPIC_GUIDE)
   .map(([slug, about]) => `- ${slug}: ${about}`)
   .join('\n')}

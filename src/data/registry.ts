@@ -540,7 +540,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md',
     files: ['AGENTS.md'],
     name: 'vercel-react-best-practices',
-    topics: ['frontend', 'performance', 'systems', 'frameworks'],
+    topics: ['react', 'nextjs', 'frontend', 'performance', 'systems', 'frameworks'],
     description:
       'Vercel React best practices for rendering performance, bundle efficiency, and scalable component architecture.',
   },
@@ -553,7 +553,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-framework-mode/SKILL.md',
     name: 'react-router-framework-mode',
-    topics: ['frontend', 'architecture', 'interaction', 'frameworks'],
+    topics: ['react', 'frontend', 'architecture', 'interaction', 'frameworks'],
     description:
       'React Router framework-mode patterns for loaders, actions, middleware, route modules, and full-stack rendering flows.',
   },
@@ -892,7 +892,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/slidevjs/slidev/main/skills/slidev/SKILL.md',
     githubUrl: 'https://github.com/slidevjs/slidev/blob/main/skills/slidev/SKILL.md',
     name: 'slidev',
-    topics: ['video', 'visual', 'frontend'],
+    topics: ['vue', 'video', 'visual', 'frontend'],
     description:
       'Create developer slide decks with Slidev using Markdown, Vue components, code highlighting, and animations.',
   },
@@ -950,7 +950,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/antfu/skills/blob/main/skills/vitepress/SKILL.md',
     files: ['GENERATION.md'],
     name: 'vitepress',
-    topics: ['nuxt', 'tooling', 'frontend'],
+    topics: ['vue', 'tooling', 'frontend'],
     description:
       'VitePress documentation site guidance for configuration, theming, and Markdown plus Vue content.',
   },
@@ -1113,7 +1113,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/millionco/skills/main/skills/budge/SKILL.md',
     githubUrl: 'https://github.com/millionco/skills/blob/main/skills/budge/SKILL.md',
     name: 'budge',
-    topics: ['visual', 'tooling', 'frontend'],
+    topics: ['nextjs', 'visual', 'tooling', 'frontend'],
     description:
       'Use when making single-property CSS or Tailwind visual changes in Next.js App Router projects. Presents a floating control widget for live tuning before persisting.',
   },
@@ -1125,7 +1125,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/millionco/react-doctor/main/skills/react-doctor/SKILL.md',
     githubUrl: 'https://github.com/millionco/react-doctor/blob/main/skills/react-doctor/SKILL.md',
     name: 'react-doctor',
-    topics: ['testing', 'performance', 'frontend'],
+    topics: ['react', 'testing', 'performance', 'frontend'],
     description:
       'Run React Doctor to detect regressions in security, performance, correctness, and architecture, with score-based quality checks.',
   },
@@ -1138,7 +1138,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/millionco/react-doctor/blob/main/skills/improve-react/SKILL.md',
     files: ['AUDIT.md', 'PLAN-TEMPLATE.md'],
     name: 'improve-react',
-    topics: ['code-quality', 'performance', 'architecture', 'frontend'],
+    topics: ['react', 'code-quality', 'performance', 'architecture', 'frontend'],
     description:
       "Survey a React codebase using React Doctor's findings, then produce prioritized audits and self-contained implementation plans without modifying source code.",
   },
@@ -1275,7 +1275,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/animate-expo/SKILL.md',
     files: ['RECIPES.md'],
     name: 'animate-expo',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['expo', 'react-native', 'motion', 'interaction', 'frontend'],
     description:
       'Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use animate.',
   },
@@ -1287,7 +1287,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/ask-sonner/SKILL.md',
     files: ['API.md'],
     name: 'ask-sonner',
-    topics: ['frontend', 'interaction', 'tooling'],
+    topics: ['react', 'frontend', 'interaction', 'tooling'],
     description:
       "Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and icons, positioning and multiple toasters. Use when working with Sonner or troubleshooting it — toasts that don't appear, appear twice, lose their styles, ignore Tailwind classes, sit behind a modal, or don't follow dark mode.",
   },
@@ -1299,7 +1299,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/emilkowalski/skills/main/skills/write-swift/SKILL.md',
     githubUrl: 'https://github.com/emilkowalski/skills/blob/main/skills/write-swift/SKILL.md',
     name: 'write-swift',
-    topics: ['frontend', 'code-quality', 'architecture'],
+    topics: ['swiftui', 'frontend', 'code-quality', 'architecture'],
     description:
       "How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (some vs any), API design, performance and ARC, Swift Testing, macros, and the modern language features agents don't know about yet. Use when writing, reviewing, or migrating Swift, or when a concurrency error, a hang, a data race, a retain cycle, or a performance problem needs fixing.",
   },
@@ -1832,7 +1832,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/build-primitive/SKILL.md',
     name: 'build-primitive',
-    topics: ['accessibility', 'interaction', 'systems', 'testing', 'frontend'],
+    topics: ['react', 'accessibility', 'interaction', 'systems', 'testing', 'frontend'],
     description:
       'Build foundational UI primitives from scratch with strong ARIA, keyboard, focus, and state handling.',
   },
@@ -2097,7 +2097,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-frameworks/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-frameworks/SKILL.md',
     name: 'gsap-frameworks',
-    topics: ['motion', 'frameworks', 'frontend'],
+    topics: ['vue', 'motion', 'frameworks', 'frontend'],
     description:
       'Official GSAP guidance for Vue, Nuxt, Svelte, and SvelteKit lifecycle setup, scoped selectors, and cleanup on unmount.',
   },
@@ -2134,7 +2134,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/greensock/gsap-skills/main/skills/gsap-react/SKILL.md',
     githubUrl: 'https://github.com/greensock/gsap-skills/blob/main/skills/gsap-react/SKILL.md',
     name: 'gsap-react',
-    topics: ['motion', 'frameworks', 'frontend'],
+    topics: ['react', 'motion', 'frameworks', 'frontend'],
     description:
       'Official GSAP guidance for React and Next.js with useGSAP, refs, gsap.context(), contextSafe callbacks, and SSR-safe cleanup.',
   },
@@ -2222,7 +2222,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/micro-interaction/SKILL.md',
     name: 'micro-interaction',
-    topics: ['interaction', 'motion', 'frontend'],
+    topics: ['react', 'interaction', 'motion', 'frontend'],
     description:
       'UI motion guidance for hover and press feedback, toggles, toasts, drawers, modals, list transitions, and shared-element interactions.',
   },
@@ -2235,7 +2235,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/iart-ai/web-animation-skills/blob/main/skills/page-transition-animation/SKILL.md',
     name: 'page-transition-animation',
-    topics: ['motion', 'interaction', 'frontend'],
+    topics: ['react', 'nextjs', 'motion', 'interaction', 'frontend'],
     description:
       'Page and route transition patterns using the View Transitions API and Framer Motion, including reliable Next.js App Router exits.',
   },
@@ -3069,7 +3069,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/antfu/design/main/skills/antfu-design/SKILL.md',
     githubUrl: 'https://github.com/antfu/design/blob/main/skills/antfu-design/SKILL.md',
     name: 'antfu-design',
-    topics: ['frontend', 'craft', 'visual'],
+    topics: ['vue', 'frontend', 'craft', 'visual'],
     description:
       'antfu-style design conventions, broadened. UnoCSS-first, class-based semantic tokens with dual light/dark for tooling and devtools UIs, plus design-read, anti-slop, and micro-interaction polish for landing pages and product surfaces. Use when building or refactoring any interface with UnoCSS.',
   },
@@ -3158,7 +3158,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/figma/mcp-server-guide/main/skills/figma-swiftui/SKILL.md',
     githubUrl: 'https://github.com/figma/mcp-server-guide/blob/main/skills/figma-swiftui/SKILL.md',
     name: 'figma-swiftui',
-    topics: ['visual', 'systems', 'frontend'],
+    topics: ['swiftui', 'visual', 'systems', 'frontend'],
     description:
       "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like 'implement this Figma design in SwiftUI', 'build this screen in Swift', 'push this SwiftUI view to Figma', 'mirror my Swift code in a Figma file', or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
   },
@@ -3512,7 +3512,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/millionco/skills/blob/main/skills/paper-to-code-components/SKILL.md',
     name: 'paper-to-code-components',
-    topics: ['systems', 'frontend', 'visual', 'shadcn-ui-development'],
+    topics: ['react', 'systems', 'frontend', 'visual', 'shadcn-ui-development'],
     description:
       'Use when implementing Paper MCP, Paper-to-code, design-to-code, Viewfinder, or Paper-exported JSX in React/Next.js apps with component candidates, tokens, and shadcn reuse.',
   },
@@ -3564,7 +3564,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-data-mode/SKILL.md',
     name: 'react-router-data-mode',
-    topics: ['frontend', 'frameworks', 'interaction'],
+    topics: ['react', 'frontend', 'frameworks', 'interaction'],
     description:
       'Build React applications using React Router data mode with createBrowserRouter, loaders, actions, Form, useFetcher, and pending or optimistic UI.',
   },
@@ -3577,7 +3577,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/remix-run/agent-skills/blob/main/skills/react-router-declarative-mode/SKILL.md',
     name: 'react-router-declarative-mode',
-    topics: ['frontend', 'frameworks', 'interaction'],
+    topics: ['react', 'frontend', 'frameworks', 'interaction'],
     description:
       'Build React applications using React Router declarative mode with BrowserRouter, Routes, Link, NavLink, and URL or search params without loaders or actions.',
   },
@@ -3613,7 +3613,7 @@ const registrySource: RegistrySourceSkill[] = [
       'wrapper-shapes.md',
     ],
     name: 'migrate-radix-to-base',
-    topics: ['systems', 'frontend', 'tooling', 'shadcn-ui-development'],
+    topics: ['react', 'systems', 'frontend', 'tooling', 'shadcn-ui-development'],
     description:
       'Migrate React projects and shadcn components from Radix UI to Base UI, handling route objects, consumer props, and progressive wrapper migration.',
   },
@@ -3733,7 +3733,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/humanlayer/skills/blob/main/plugins/narrow-react-prop-types/skills/narrow-react-prop-types/SKILL.md',
     name: 'narrow-react-prop-types',
-    topics: ['code-quality', 'frontend', 'testing'],
+    topics: ['react', 'code-quality', 'frontend', 'testing'],
     description:
       'Narrow React component prop types to match live code paths instead of widened story, mock, or test contracts.',
   },
@@ -3929,7 +3929,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/PrototyperAI/prototyper-ui/main/apps/docs/skill/SKILL.md',
     githubUrl: 'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/SKILL.md',
     name: 'prototyper-ui',
-    topics: ['frontend', 'systems', 'visual'],
+    topics: ['react', 'frontend', 'systems', 'visual'],
     description:
       'Prototyper UI component library (Tailwind CSS v4 + Base UI) for installing components, customizing themes, and using component documentation.',
   },
@@ -3942,7 +3942,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/PrototyperAI/prototyper-ui/blob/main/apps/docs/skill/create-component/SKILL.md',
     name: 'create-component',
-    topics: ['frontend', 'architecture', 'craft'],
+    topics: ['react', 'frontend', 'architecture', 'craft'],
     description:
       'Create new Prototyper UI components from scratch, including Base UI primitives, registry entries, examples, and MDX documentation.',
   },
@@ -4358,7 +4358,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/mickadesign/fluid-functionalism/blob/main/skills/fluid-functionalism/SKILL.md',
     name: 'fluid-functionalism',
-    topics: ['motion', 'interaction', 'frontend', 'visual'],
+    topics: ['react', 'shadcn-ui-development', 'motion', 'interaction', 'frontend', 'visual'],
     description:
       'Build React UIs with the Fluid Functionalism @fluid registry: animated components, shared spring motion, and hover highlights that glide between items without layout shift.',
   },
@@ -5149,7 +5149,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/embedded-captions/SKILL.md',
     name: 'embedded-captions',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Add captions or subtitles to an existing single-subject talking-head video without editing the footage. Use for plain verbatim captions, cinematic captions embedded behind the subject, VFX captions, “炸/特效/酷炫字幕,” or a named identity from the 35-style catalog. Route by visual identity, not by backend engine. The quiet `anchor` rail is the default; embed every word only when the user explicitly wants a fully cinematic treatment. The workflow runs locally end to end, including transcription and subject matting; split multi-shot footage before applying it.',
   },
@@ -5162,7 +5162,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/faceless-explainer/SKILL.md',
     name: 'faceless-explainer',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video: there is no site or footage to capture, so the visuals are invented per scene (typography, abstract graphics, diagrams, data-viz). Use for topic explainers, concept breakdowns, how-tos, listicles. Not a video built from a website (/product-launch-video — promo or tour). Unclear → /hyperframes.',
   },
@@ -5173,7 +5173,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/figma/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/figma/SKILL.md',
     name: 'figma',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Import Figma content into a HyperFrames composition — rendered assets, brand tokens, components, storyboard sections → reconstructed motion (frames read as states, not slides) (REST/CLI), connector-assisted motion when available, and shaders from a connector or native export. Use when the user pastes a figma.com link or asks to bring a Figma design, frame, logo, brand, or animation into a video/composition.',
   },
@@ -5186,7 +5186,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-animation/SKILL.md',
     name: 'hyperframes-animation',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). Also covers auditing an existing composition's choreography (animation map) and 24 named text-animation effects. HyperFrames-native: single paused timeline, seek-safe, deterministic.",
   },
@@ -5199,7 +5199,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-audio/SKILL.md',
     name: 'hyperframes-audio',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "Use when audio already placed in a HyperFrames composition needs to be mixed: fade-in/fade-out, crossfade, track gain or volume, volume automation, ducking, a music bed that fights a voiceover (voiceover carve), effects on a track (EQ, compressor, limiter, gate, saturation, delay, reverb, chorus, phaser, bitcrush), automation envelopes drawn on a track's volume or any effect parameter, or one submix bus carrying a chain, a fader and an automation clock for several tracks at once (`<hf-audio-group>`). Don't use for sourcing or generating audio — finding BGM, SFX, or making a voiceover is `/media-use`. Don't use for clip timing or track layout, which is `/hyperframes-core`.",
   },
@@ -5212,7 +5212,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-cli/SKILL.md',
     name: 'hyperframes-cli',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, check, snapshot, compare, grade-compare, preview, play, present, beats, keyframes, single or batch render, publish, cloud, cloudrun, feedback, lambda, doctor, browser, info, upgrade, skills, compositions, timeline, history, clean, docs, benchmark, telemetry, transcribe, auth, tts, and remove-background. Also use when diagnosing build or render failures. validate, inspect, and layout are deprecated aliases; use check. Covers local, HeyGen-hosted cloud, AWS Lambda, and Google Cloud Run rendering.',
   },
@@ -5225,7 +5225,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/SKILL.md',
     name: 'hyperframes-creative',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`.',
   },
@@ -5238,7 +5238,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-keyframes/SKILL.md',
     name: 'hyperframes-keyframes',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics. Don't use for broad scene strategy, brand design, media sourcing, captions, or general video planning.",
   },
@@ -5251,7 +5251,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-registry/SKILL.md',
     name: 'hyperframes-registry',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Search, install, and wire registry blocks and components into HyperFrames compositions. Use BEFORE hand-building any named visual — whenever a brief, a user, or a storyboard names a look, effect, treatment, or transition such as CRT scanlines, glitch, chromatic aberration, film grain, a shimmer sweep, a chart, a code or terminal window, a map, or a confetti burst — because roughly 400 hosted items already cover many of them and the search ranks all of them with nothing installed, no project, and no account. Also use when running hyperframes add or hyperframes catalog, installing one item or every block matching a tag, wiring an installed item into index.html, or working with hyperframes.json. Covers discovery, install locations, block sub-composition wiring, component snippet merging, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).',
   },
@@ -5264,7 +5264,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-studio/SKILL.md',
     name: 'hyperframes-studio',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Use when working with a person on a HyperFrames project in Studio: first, whether their message asks for a change at all (questions, loose ideas and "don\'t change anything" get an answer and a plan, not an edit); for a new film, the plan, storyboard and build order that the HyperFrames launch films follow; and how the timeline should be laid out so it reads well (one caption track, one element kind per track, every scene a sub-composition) and where captions and key content may sit (safe zones). Don\'t use for how to perform an individual edit (split, trim, retime, volume, copy, swap): that is `creator-editing-recipes.md` in `/hyperframes-core`.',
   },
@@ -5276,7 +5276,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/media-use/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/media-use/SKILL.md',
     name: 'media-use',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm|sfx` needs the heygen CLI. When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in.',
   },
@@ -5288,7 +5288,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/music-to-video/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/music-to-video/SKILL.md',
     name: 'music-to-video',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Turn a music track (an audio file, a video to pull audio from, or a track generated from a mood brief) into a beat-synced video — lyric video, slideshow, or kinetic promo. The music drives all pacing; any user-supplied images/videos are cut onto the same beat grid, and a complete video needs zero assets. Narrated pieces → the input-matched workflow (see /hyperframes). Unclear → /hyperframes.',
   },
@@ -5300,7 +5300,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/pr-to-video/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/pr-to-video/SKILL.md',
     name: 'pr-to-video',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "Turn a GitHub pull request (a PR URL, owner/repo#N, or 'this PR' in a checked-out repo) into a code-change explainer video — changelog, feature reveal, fix, or refactor walkthrough built from the diff, commits, and files: the input is a code change, not a website. Not a product promo (/product-launch-video) or a no-PR topic explainer (/faceless-explainer). Unclear → /hyperframes.",
   },
@@ -5313,7 +5313,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/product-launch-video/SKILL.md',
     name: 'product-launch-video',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Turn a product or marketing URL, pasted script, or brief into a product launch / promo video — SaaS promos, feature reveals, product demos, app and company launches. Use when the user wants to market, launch, promote, or reveal a product; the default for any commercial URL. Site tours / showcases of a website route here too — the brief carries the show-it-as-is intent. Unclear → /hyperframes.',
   },
@@ -5325,7 +5325,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/heygen-com/hyperframes/main/skills/slideshow/SKILL.md',
     githubUrl: 'https://github.com/heygen-com/hyperframes/blob/main/skills/slideshow/SKILL.md',
     name: 'slideshow',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "Author a HyperFrames slideshow — a presentation, pitch deck, or interactive deck with discrete slides, fragment reveals, branching, hotspot navigation, and built-in presenter mode with speaker notes; also converts an existing page into a deck. Output is a navigable deck, not a rendered MP4. If the user didn't explicitly ask for a slideshow, confirm before authoring. Unclear → /hyperframes.",
   },
@@ -5338,7 +5338,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/talking-head-recut/SKILL.md',
     name: 'talking-head-recut',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Package an existing talking-head / interview / podcast video with timed, designed GRAPHIC OVERLAY cards — kinetic titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture — synced to the transcript, on a 16:9 / 9:16 / 4:5 canvas of your choice; the clip plays untouched underneath. Trigger on "graphic overlays", "on-screen graphics", "package / dress up my video". Not plain subtitles (/embedded-captions). Unclear → /hyperframes.',
   },
@@ -5410,7 +5410,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/cloudai-x/threejs-skills/blob/main/skills/threejs-react-three-fiber/SKILL.md',
     name: 'threejs-react-three-fiber',
-    topics: ['threejs', '3d', 'frontend', 'performance'],
+    topics: ['react', 'threejs', '3d', 'frontend', 'performance'],
     description:
       'Building three.js scenes from React with React Three Fiber and drei: renderer setup, the scene graph as JSX, frame-loop, state and loading hooks, pointer events, and adaptive performance, on WebGL or with WebGPU and TSL. Use when writing React components that render three.js.',
   },
@@ -5423,7 +5423,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/captions-overlay/SKILL.md',
     name: 'captions-overlay',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "Overlay doctrine for captions in HyperFrames videos — the caption MODEL (drop / rail / embed) and the rule that captions are an OVERLAY composited on top of the film, never a reserved bottom band you shift content up to avoid. Load when adding captions/subtitles to a talking-head or launch video, when deciding whether a phrase should be dropped, ride the verbatim rail, or be promoted to a scarce embedded climax, when laying out a composition that will carry captions (do NOT reserve a keep-out band), or when centering a composition on the true frame center under captions. Applies ON TOP of the `/hyperframes` skill's references/captions.md.",
   },
@@ -5436,7 +5436,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/changelog-video/SKILL.md',
     name: 'changelog-video',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Turn a weekly changelog .md into a finished branded changelog video (square 1080, ~45-60s, Annie VO, animated brand background, mock-UI visualizations, lowkey captions). Use when the user provides a changelog/digest markdown and wants the weekly video, or says "changelog video". Self-contained — fonts, background, lexicon, and scripts ship in this skill.',
   },
@@ -5449,7 +5449,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/cut-the-curve/SKILL.md',
     name: 'cut-the-curve',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'The technique catalog: five velocity-matched SEAMS (zoom-through, INVERSE zoom-through, cut-the-curve, waterfall cut, rack-focus blur-cut) plus the two in-scene techniques — waterfall ENTRY (staggered arrival cascades for title cards / segment openers) and the nudge curve (slow-fast-slow three-phase group slides). Covers partial-travel (~12% of frame) velocity matching via mirrored power4 eases, the Z scale-sign rule, size-scaled blur (10px text / 18-20px full-frame), word-by-word staggered cuts, cascade pacing by element weight, and the 10/65/25 slide ratio. Read before authoring any transition, text-beat handoff, kinetic text entry, or group reposition. [depth, zoom, inverse-zoom, scale-sign, mirrored-zoom, rack-focus, pacing, velocity, cut-the-curve, waterfall, stagger, cascade, kinetic-text, title-card, segment-opener, nudge, slide, easing, group-motion, z-depth, motion-graphics, cinematic, transition, blur, directional-continuity]',
   },
@@ -5462,7 +5462,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/motion-doctrine/SKILL.md',
     name: 'motion-doctrine',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "GATEWAY — load FIRST before composing any HyperFrames animation or video. The high-level motion law that makes a multi-scene video feel like ONE continuous camera move instead of a stack of independently-animated slides. Covers the vector law (how you exit determines how you enter, incl. the Z scale-sign rule), the film's current, carrier elements, causal motion, the Seam Gate (build-gate enforcement), the ban on idle wobble (motion must PERFORM, not breathe), stillness-before-climax, and the sustained-motion routes. Routes to the low-level technique skills (cut-the-curve — the full catalog incl. waterfall entry + nudge curve, oversized-cursor, seam-craft). These rules SUPERSEDE generic / upstream motion guidance. [continuity, direction, vector, momentum, seam, transition, ease, performance, idle-motion, narrative-motion, film-grammar]",
   },
@@ -5475,7 +5475,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/oversized-cursor/SKILL.md',
     name: 'oversized-cursor',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       "House-style oversized macOS cursor technique for HyperFrames launch videos. Load whenever a scene involves cursors or a pointer-led action, when kicking off a UI scene, when igniting a morph/transition/typing run with a click, or when a scene reads as static, dead, or stale and needs a cheap high-yield source of motion to carry the viewer's eye and segment them out of the stale state. Covers cursor size/look (incl. brand-motif cursors), the off-screen entry law, tip-targeting and the click tap, click-ignites-the-next-beat, and exit / cross-scene handoff.",
   },
@@ -5488,7 +5488,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/.agents/skills/seam-craft/SKILL.md',
     name: 'seam-craft',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Render-correctness doctrine for scene-to-scene seams in HyperFrames launch videos — the prerequisites that make transitions composite correctly on the master timeline. Load when assembling the master timeline / index.html, when a white flash appears at a cut or crossfade seam (especially on dark films), when reasoning about why a transition opacity dip shows through, or when verifying the render-side mechanics of how overlapping scene wrappers blend. Covers the opaque stage-ground (#root background) white-flash guard and how the injector overlaps wrappers, holds final frames, ping-pongs tracks, and stamps lint-clean template code onto the master timeline. Does NOT contain the per-transition catalog — see the transition registry for individual transition entries.',
   },
@@ -5501,7 +5501,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/canopy-part-title/SKILL.md',
     name: 'canopy-part-title',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Leaves sweep through the frame and part to reveal the headline. HyperFrames block, 1920×1080, 12s, 11 variables.',
   },
@@ -5514,7 +5514,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/code-slice-hero/SKILL.md',
     name: 'code-slice-hero',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'A tiled headline surface flips cell by cell under a sweeping depth field to reveal the rear headline. HyperFrames block, 1920×1080, 8s, 18 variables.',
   },
@@ -5527,7 +5527,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/cuboid-carousel/SKILL.md',
     name: 'cuboid-carousel',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'A chain of bevelled cuboids rides a travelling wave as a content carousel. HyperFrames block, 1920×1080, 6.666666666666667s, 40 variables.',
   },
@@ -5540,7 +5540,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/frost-sequence-camera-orbit/SKILL.md',
     name: 'frost-sequence-camera-orbit',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'An orbiting camera follows an ice logo as it breaks apart, reforms into two text moments, and fades. HyperFrames block, 1920×1080, 22.5s, 216 variables.',
   },
@@ -5553,7 +5553,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/glass-shard-title/SKILL.md',
     name: 'glass-shard-title',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Glass shards fly in through fog and tile themselves into the headline. HyperFrames block, 1920×1080, 12.16s, 19 variables.',
   },
@@ -5566,7 +5566,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/orbit-card/SKILL.md',
     name: 'orbit-card',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'A single feature card orbits a dot sphere on approved Blender camera motion. HyperFrames block, 1920×1080, 10s, 4 variables.',
   },
@@ -5579,7 +5579,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/registry/blocks/wireframe-portal-title/SKILL.md',
     name: 'wireframe-portal-title',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'A wireframe portal bursts open, the title comes through, then its letters swap into a second phrase. HyperFrames block, 1920×1080, 8s, 9 variables.',
   },
@@ -5618,7 +5618,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl: 'https://github.com/rossark0/rossark-motion-skill/blob/main/SKILL.md',
     files: ['MOTION.md'],
     name: 'rossark-motion-skill',
-    topics: ['motion', 'craft', 'visual', 'frontend'],
+    topics: ['react-native', 'swiftui', 'motion', 'craft', 'visual', 'frontend'],
     description:
       'Bring anything drawn to life with calm, believable motion. It covers characters and creatures (gliding pupils, blinks, breathing, head tilts), full-body acting (landing, waving, leaning, levitating, kicking a ball), plants, fabric, fire, smoke, water, weather, lights, machines, vehicles, icons, logos, charts and whole scenes. Use it whenever someone asks to animate an illustration, an icon, a mascot or a scene, to make something "feel alive", to add idle motion, to turn a static drawing into a living one, or to recreate the motion of a reference video. Comes with a small motion engine and templates for React Native (react-native-svg + Reanimated) and SwiftUI (TimelineView + Canvas), tools that measure a reference video frame by frame, and offline rendering to video, in a phone frame too. The method also works on the web.',
   },
@@ -5727,7 +5727,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/react-component-performance/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/react-component-performance/SKILL.md',
     name: 'react-component-performance',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['react', 'performance', 'frontend', 'craft'],
     description:
       'Analyze and optimize React component performance issues (slow renders, re-render thrash, laggy lists, expensive computations). Use when asked to profile or improve a React component, reduce re-renders, or speed up UI updates in React apps.',
   },
@@ -5738,7 +5738,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-liquid-glass/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-liquid-glass/SKILL.md',
     name: 'swiftui-liquid-glass',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'frontend', 'craft'],
     description:
       'Implement, review, or improve SwiftUI features using the iOS 26+ Liquid Glass API. Use when asked to adopt Liquid Glass in new SwiftUI UI, refactor an existing feature to Liquid Glass, or review Liquid Glass usage for correctness, performance, and design alignment.',
   },
@@ -5750,7 +5750,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-performance-audit/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-performance-audit/SKILL.md',
     name: 'swiftui-performance-audit',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'frontend', 'craft'],
     description:
       'Audit and improve SwiftUI runtime performance from code review and architecture. Use for requests to diagnose slow rendering, janky scrolling, high CPU/memory usage, excessive view updates, or layout thrash in SwiftUI apps, and to provide guidance for user-run Instruments profiling when code review alone is insufficient.',
   },
@@ -5762,7 +5762,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/dimillian/skills/main/swiftui-view-refactor/SKILL.md',
     githubUrl: 'https://github.com/dimillian/skills/blob/main/swiftui-view-refactor/SKILL.md',
     name: 'swiftui-view-refactor',
-    topics: ['performance', 'frontend', 'craft'],
+    topics: ['swiftui', 'performance', 'frontend', 'craft'],
     description:
       'Refactor and review SwiftUI view files with strong defaults for small dedicated subviews, MV-over-MVVM data flow, stable view trees, explicit dependency injection, and correct Observation usage. Use when cleaning up a SwiftUI view, splitting long bodies, removing inline actions or side effects, reducing computed `some View` helpers, or standardizing `@Observable` and view model initialization patterns.',
   },
@@ -5787,7 +5787,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/heygen-com/hyperframes/blob/main/skills/reverse-any-video/SKILL.md',
     name: 'reverse-any-video',
-    topics: ['video', 'remotion', 'motion'],
+    topics: ['video', 'motion'],
     description:
       'Rebuild any video file as an editable HyperFrames project - motion graphics, talking heads, live action or AI-generated footage. Measure and watch it, rebuild every layer, then check the render against the original frame by frame. Use to reverse, recreate, replicate or copy a video.',
   },
@@ -5812,7 +5812,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-cloth-material/SKILL.md',
     name: '3d-cloth-material',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build convincing woven cloth in Three.js, with a thread-level weave normal map, sheen and anisotropic highlights, folds that never stretch the texture, hems with thickness, stitches, seams, frayed edges, fold occlusion, dye and wear variation, and light passing through thin fabric. Use for linen, silk, wool, canvas, curtains, banners, cloaks, tablecloths, tapestries or any 3D drape that currently looks like a plastic sheet, a stretched texture, or a flat coloured plane.',
   },
@@ -5825,7 +5825,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-falling-leaves/SKILL.md',
     name: '3d-falling-leaves',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build recognizable falling leaves in world space using instanced geometry, independent tumble, coupled sideways drift, shared wind, scene occlusion, and camera-aware recycling. Use for 3D autumn leaves or drifting foliage in Three.js and similar scenes; use falling-leaves for a 2D canvas overlay.',
   },
@@ -5877,7 +5877,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-metal-material/SKILL.md',
     name: '3d-metal-material',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build hyperrealistic PBR metal in Three.js: steel, brass, gold, copper and iron as true conductors (metalness 1, measured F0 tint, no albedo) with roughness-varied finishes (polished, brushed anisotropic, aged with patina and worn edges) lit by a dark HDR studio of real bright window cards prefiltered with PMREM. Use when metal looks like grey plastic, a dull blur, or a black hole; when blades, tools, rings, ingots, hardware or product metal need reflections with edges and structure; or when a finish needs scratches, streaks, fingerprints and bevels that catch light.',
   },
@@ -5890,7 +5890,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-orbit-inspect-demo/SKILL.md',
     name: '3d-orbit-inspect-demo',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Make a 3D object lean around on hover and open a full inspect view on click. Hover is a damped, bounded camera lean; click lifts the piece off its bench into the hand, where you drag to turn it, coast, dolly with wheel or pinch, and put it back with Esc, click-away or a Close button. Use for product, object, joinery and portfolio pieces in Three.js where a hover orbit and click-to-full-view must not fight each other; use webgl-3d-object for a floating hero mesh with no inspect mode, and 3d-virtual-tour for a camera path through a place.',
   },
@@ -5903,7 +5903,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-paper-material/SKILL.md',
     name: '3d-paper-material',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build a paper sheet in Three.js that reads as paper up close — washi, cotton rag or kraft with baked fibre and tooth relief, laid and chain lines, a torn deckle edge with frayed fibres, four-layer thickness, a rolled corner and crease, ink that wicks along the fibres, toasted aged edges, contact shadows and back-lit translucency. Use for a hung sheet, scroll, page, label, shoji pane or card that must survive a macro close-up, or when paper looks like a flat white plane, has ruler-straight edges, no thickness, or does not glow when lit from behind. Use 3d-wood-material, 3d-cloth-material or 3d-metal-material for those materials, and paper-cinder-transition for burning paper.',
   },
@@ -5941,7 +5941,7 @@ const registrySource: RegistrySourceSkill[] = [
       'https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/3d/3d-sky-rays/SKILL.md',
     githubUrl: 'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-sky-rays/SKILL.md',
     name: '3d-sky-rays',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Add sun shafts and crepuscular rays to a Three.js or equivalent 3D scene, using scene occlusion, a projected sun position, controlled foreground spill, and scalable post-processing. Use for rays of light from the sky, sunlight through trees or roofs, and golden-hour architectural scenes.',
   },
@@ -5954,7 +5954,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-ultra-realistic-water/SKILL.md',
     name: '3d-ultra-realistic-water',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       "Build an ultra-realistic open ocean in Three.js with a deep-water Gerstner spectrum shaded per pixel from analytic derivatives, each wave faded at its own pixel footprint, plus Fresnel sky-cube and planar reflections, subsurface light through the crests, HDR sun glitter, Jacobian lace foam, a Kelvin wake, hull foam, buoyancy queries and aerial perspective into the sky's horizon haze. Use for seas, oceans, sunset or daylight water, sun glitter paths, ship or boat scenes, wakes, coastal flyovers and any 3D scene with a moving camera and a water horizon. Includes the approved water from Pirate Ship Sunset as a reusable module and demo.",
   },
@@ -5967,7 +5967,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-underwater-god-rays/SKILL.md',
     name: '3d-underwater-god-rays',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Add volumetric underwater god rays to a Three.js scene, marching one drifting swell field along every view ray at half resolution so the light shafts converge on the sun, parallax with the camera and carry rippling caustic streaks, with a shimmering surface underside, a sun that wobbles through the ripples, and the same light dappling fish as they swim through the beams. Use for underwater scenes, oceans seen from below, aquariums, reefs, kelp forests, diving and shipwreck scenes, schools of fish, sunbeams or light shafts through water, caustics, "rays of light shining through the ocean", or watery ripples on a background. Includes a reusable module and the Blue Hour sardine-school demo.',
   },
@@ -5980,7 +5980,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-virtual-tour/SKILL.md',
     name: '3d-virtual-tour',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build guided and interactive virtual tours through a 3D environment with authored camera paths, room and floor-plan navigation, orbit inspection, smooth mode handoffs, and progressive loading. Use for architectural walkthroughs, real-estate tours, museums, showrooms, and explorable spaces built with Three.js or a similar renderer.',
   },
@@ -5993,7 +5993,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-wood-lighting-scorecard/SKILL.md',
     name: '3d-wood-lighting-scorecard',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Light carved wood in a dark room in three.js, with procedural grain and pores, one warm key through a window, soft shadows that touch, light shafts, background rays and dust, then score the render out of 10 on an anchored rubric with a runnable headless scorecard and iterate until each item reaches the target. Use for oiled timber, kumiko, joinery and workshop scenes; wood that reads flat, plastic or washed out; volumetrics that lift the blacks; "score this out of 10"; or "get the lighting to 8".',
   },
@@ -6006,7 +6006,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-wood-material/SKILL.md',
     name: '3d-wood-material',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build convincing timber for Three.js as one procedural MeshPhysicalMaterial with growth rings, cathedral figure, pores, medullary rays, checks, tool marks, end grain, and oil, wax, or lacquer finishes, so the grain follows the form and survives macro close-ups without image textures. Use for wood boards, benches, carved panels, tool handles, joinery, floors, and any request to make 3D wood look real, detailed, or less like a tiled photo or plastic.',
   },
@@ -6019,7 +6019,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/add-mouse-driven-orbit/SKILL.md',
     name: 'add-mouse-driven-orbit',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Add restrained mouse-driven orbit and parallax depth to a Three.js hero by damping one pointer target and splitting it across camera translation, look-at, and small object rotations. Use for passive cinematic 3D heroes, pointer-responsive scenes, organic model parallax, and interactive depth where OrbitControls would feel like a product viewer.',
   },
@@ -6149,7 +6149,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/author-game-levels/SKILL.md',
     name: 'author-game-levels',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Author or revise readable, flat-world Three.js game levels. Use for movement and camera routes, collision and navigation, encounter zones, landmarks, objectives, pickups, motivated lighting, visibility, deterministic level data, or desktop and mobile playthrough verification.',
   },
@@ -6175,7 +6175,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/beam-glow-states/SKILL.md',
     name: 'beam-glow-states',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'frontend', 'craft'],
     description:
       "Create React loading, processing, selected, current, focus, and pressed states with the border-beam package's animated edge glow. Use when a card, button, input, tab, option, task panel, or agent surface needs a restrained traveling or breathing beam; includes installation, imports, prop selection, state wiring, reduced motion, accessibility, and performance and layout guardrails.",
   },
@@ -6279,7 +6279,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-audio-feedback/SKILL.md',
     name: 'build-game-audio-feedback',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Design or implement responsive audio feedback for a Three.js or web game. Use for action sounds, combat layers, music states, spatial audio, mix priorities, mute controls, accessibility, mobile audio unlock, and audio performance.',
   },
@@ -6292,7 +6292,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-camera-controls/SKILL.md',
     name: 'build-game-camera-controls',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Implement or tune Three.js game cameras. Use for isometric framing, follow behavior, orbit/zoom limits, occlusion, lock-on, camera shake, touch camera controls, and camera regression tests.',
   },
@@ -6331,7 +6331,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-map-editor/SKILL.md',
     name: 'build-game-map-editor',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build, extend, or audit production-linked browser map editors for Three.js and isometric games. Use when Codex needs to create a private director view, derive a versioned editor document from authored placements, add outliner, layer, selection, drag, snap, inspector, or camera controls, expose enemy aggro, leash, or patrol overlays, implement local draft import, export, undo, and reset, secure an editor route with IP and password sessions, or validate and release a map editor without mutating live gameplay data.',
   },
@@ -6344,7 +6344,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-monster-system/SKILL.md',
     name: 'build-game-monster-system',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build, integrate, audit, or refactor rigged monsters for Three.js and web action games. Use for monster asset contracts, procedural or imported creature rigs, semantic joints and sockets, hurtboxes and attack volumes, combat animation states, enemy-runtime adapters, LODs, deterministic review fixtures, and validating that every monster follows one shared system.',
   },
@@ -6357,7 +6357,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-hybrid-game-assets/SKILL.md',
     name: 'build-hybrid-game-assets',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Plan, create, integrate, or audit a hybrid asset pipeline for a Three.js or web game. Use when choosing among imported meshes, procedural 3D geometry, AI-generated reference art, 2D UI media, sprites, VFX, and performance-ready runtime asset delivery.',
   },
@@ -6383,7 +6383,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-isometric-arpg/SKILL.md',
     name: 'build-isometric-arpg',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build or extend a playable isometric action RPG in Three.js, React, or similar web technology. Use for game-loop architecture, camera and movement, zones, combat integration, content data, progression, saves, or production-ready vertical slices.',
   },
@@ -6396,7 +6396,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-mobile-threejs-games/SKILL.md',
     name: 'build-mobile-threejs-games',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build, tune, or test a Three.js game for mobile web. Use for touch movement, action controls, target selection, touch inventory, safe areas, portrait/landscape layouts, responsive HUD, battery/performance budgets, and real mobile browser QA.',
   },
@@ -6422,7 +6422,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-threejs-enemy-systems/SKILL.md',
     name: 'build-threejs-enemy-systems',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build or refactor reusable, data-driven enemy archetype and moveset systems for Three.js action games. Use for enemy content schemas, model and rig conventions, combat move timing and contact contracts, runtime state boundaries, placeholder fallbacks, deterministic fixtures, or production playthrough validation.',
   },
@@ -6435,7 +6435,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-threejs-scroll-worlds/SKILL.md',
     name: 'build-threejs-scroll-worlds',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Build rich, scroll-controlled real-time Three.js experiences as one persistent 3D world whose camera, lighting, atmosphere, materials, objects, DOM story, and interactions evolve across authored chapters. Use for 3D scrollytelling, scroll-driven WebGL worlds, camera journeys, interactive portfolios, product stories, exhibitions, explainers, game or film microsites, spatial narratives, and multi-scene websites where native scroll should travel through one continuous place. Not limited to landing pages.',
   },
@@ -6448,7 +6448,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-vesperfall-review-assets/SKILL.md',
     name: 'build-vesperfall-review-assets',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build truthful Vesperfall asset-library review pairs from transparent PNG references and live Three.js, FBX, or img2threejs models. Use when adding a character, enemy, prop, or equipment asset to the Vesperfall catalog; creating a card-PNG plus inspector-model treatment; exposing an isolated model or moveset route; or standardizing provenance, grounding, tests, and Codex-browser validation for game art review.',
   },
@@ -6461,7 +6461,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-wireframe-scan-reveal/SKILL.md',
     name: 'build-wireframe-scan-reveal',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Reveal Three.js geometry with an expanding world-space scan whose wire cage leads the solid surface, then burns away. Use for wireframe scanning, radial mesh reveals, survey pulses, holographic assembly, topology intros, and 3D model entrances where a plain opacity wipe does not explain the form.',
   },
@@ -6552,7 +6552,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/create-game-vfx/SKILL.md',
     name: 'create-game-vfx',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Create readable, performance-safe Three.js game visual effects. Use for attacks, impacts, damage feedback, status effects, spell trails, particles, shaders, telegraphs, quality tiers, and reduced-motion alternatives.',
   },
@@ -6643,7 +6643,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/design-game-encounters/SKILL.md',
     name: 'design-game-encounters',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Design, implement, tune, or test Three.js action-game encounters. Use for arena layout, enemy composition, spawn pacing, objectives, boss phases, reward cadence, encounter fixtures, and difficulty validation.',
   },
@@ -6773,7 +6773,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-combat/fire-smoke-skill-vfx/SKILL.md',
     name: 'fire-smoke-skill-vfx',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build the effects of a fire skill as one visual language in Three.js. Flames that read as fire, not as orange fog or cones: ray-marched flame volumes whose turbulence rises with buoyancy (slow at the root, accelerating and stretching as it climbs) instead of scrolling, a temperature ramp from a white-hot core a little above the fuel through yellow and orange to deep red tips, broad brighter licks inside, walls of fire broken into clumps of separate tongues of very different heights with notches between them and licks that detach and go out, a fire whirl wound in helical sheets with a waist and a blue root; charcoal smoke drawn premultiplied over the frame and lit only by the fire (cauliflower billows for a burst, a thin streaked curtain off a grass-fire front, fibrous wisps off small fires, ragged hot cracks inside a burst\'s smoke); embers and sparks that drift on a curl field, cool from white through orange to red and fall as ash; heat haze as refraction; firelight shared with the world; a world-space heat map that makes the ground\'s needles smoulder as hairlines and its pockets breathe; and gentle ink impact frames limited to three flashes a second. Use for fire or flame skills, fireballs, fire waves or breath, rings of fire, fire tornadoes or whirls, burning ground, wildfire fronts, smoke columns, embers, smouldering aftermath, "fire and smoke", "realistic fire", "flame thrower", "inferno", "burning field" or "skill effects only". Includes a reusable module and a five-beat demo on a scanned CC0 burned-ground floor with failure-mode switches.',
   },
@@ -6890,7 +6890,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/globe-gl/SKILL.md',
     name: 'globe-gl',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Use when implementing globe.gl (Globe.GL) for 3D globe data visualization with WebGL/ThreeJS, including setup, data layers (points, arcs, polygons, labels), and integration patterns in plain HTML or React.',
   },
@@ -6903,7 +6903,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/globe-particles/SKILL.md',
     name: 'globe-particles',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Create a globe-like 3D particle visualization with a dense luminous spherical core and thinner orbital ring or flattened disc. Use when a design needs a premium planetary, orbital, synthesized data-globe effect rendered with real WebGL/Three.js particles, not generic starfields or full page layout changes.',
   },
@@ -6993,7 +6993,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-combat/ice-frost-skill-vfx/SKILL.md',
     name: 'ice-frost-skill-vfx',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build the effects of an ice and frost skill as one visual language in Three.js. Frost that grows like real frost, not a painted fern: a dendritic tree grown on the CPU from a seed point, stems racing outward with barbs and sub-barbs that compete for space in one time-ordered queue, side branches leaned toward their tips, baked into a distance field so the shader draws hairline feathers growing out from the seed with a bright tip, rime, crystal glints and a contact shadow. Faceted ice spikes built from half-spaces and ray-traced against their own planes (Snell, Fresnel, total internal reflection, Beer-Lambert blue, trapped bubbles, a fracture network, frosted edges) that erupt along the frost line, crack along visible planes and shatter into convex pieces that tumble, land on a face and rest, with snow lumps and ice chips settled into the crust. A low freezing mist marched as wind-stretched banks that churn in place and part around the ice, a blizzard column of powder on helical strands with a fibrous veil, glinting diamond dust, and a scanned snow floor with dunes, broken crust, a raking moon with self-shadow and two populations of glints. Use for ice or frost skills, frost novas, ice spikes or walls, glacial eruptions, shattering ice, blizzards, snow devils, freezing mist, frozen ground, "ice and frost", "frost creep", "ice shards", "realistic ice" or "skill effects only". Includes two reusable modules and a five-beat demo on a scanned CC0 snow floor with a failure-mode switch.',
   },
@@ -7201,7 +7201,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/codex/implement-fog-of-war/SKILL.md',
     name: 'implement-fog-of-war',
-    topics: ['visual', 'craft', 'frontend'],
+    topics: ['threejs', 'visual', 'craft', 'frontend'],
     description:
       'Implement, tune, debug, or validate soft wall-aware fog of war and gameplay perception in Three.js action games. Use for orthographic or isometric visibility masks, obstacle-aware line of sight, player and enemy vision ranges, hidden-enemy targeting rules, fog shader artifacts such as spokes or seams, mobile ray budgets, lifecycle and menu-state integration, and deterministic fog-of-war tests.',
   },
@@ -7240,7 +7240,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-combat/lightning-energy-skill-vfx/SKILL.md',
     name: 'lightning-energy-skill-vfx',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build the effects of a close-combat energy skill as one visual language in Three.js. Lightning that reads as lightning, dynamic but never in your face: trees of strips (trunk, forks of forks, hair-fine branchlets) with a fine white core in a violet-blue glow, each channel reaching out as a stepped leader, flaring as it connects, holding its shape and fading through an afterglow, one discharge at a time; a storm-cloud orb (a lit billow surface that churns in place, 10-15 plasma-globe arcs from a small white core to its inner wall, crawlers on the rim, a hairline fresnel); ground strikes that flash when the leader arrives, crawl along the stone\'s own cracks and reflect in wet stone (the demo\'s floor is a scanned CC0 texture); a torn black shadow with dry-brush edges that hangs off the orb and streams behind it, air bursts felt as refraction, orange sparks, fractured rocks that land or float in a storm domain, and impact frames that hold, invert in two-tone ink with tapered speed lines, shake and bend the lens, limited to three flashes a second. Use for anime or dark-fantasy skill effects, lightning or thunder fists, plasma or energy balls, charge-ups, dashes with shadow trails, ground strikes, storm or domain rings, ultimates, hit-stop, impact frames, negative flashes, screen shake, "black lightning", "thunderstorm fist", "realistic lightning", "afterimage" or "skill effects only". Includes a reusable module and a five-beat demo with failure-mode switches.',
   },
@@ -7253,7 +7253,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/liquid-metal-border/SKILL.md',
     name: 'liquid-metal-border',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'frontend', 'craft'],
     description:
       'Add and tune animated liquid-metal WebGL borders with the React `metal-fx` package. Use when buttons, icon controls, chips, tabs, cards, or selected surfaces need a metallic active, selected, hover, focus, or premium border; when implementing the MetalFx component from metal.jakubantalik.com; or when troubleshooting its presets, themes, strength, glow, reflections, sizing, radius, animation, accessibility, SSR, or performance.',
   },
@@ -7343,7 +7343,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/optimize-threejs-games/SKILL.md',
     name: 'optimize-threejs-games',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Profile, diagnose, and improve Three.js or WebGL game performance without regressing gameplay. Use for frame-time drops, CPU/GPU pressure, draw calls, texture and geometry budgets, animation loops, adaptive quality, mobile performance, and browser performance verification.',
   },
@@ -7499,7 +7499,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/scroll-world-storytelling/SKILL.md',
     name: 'scroll-world-storytelling',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Turn an article, case study, brand narrative, product journey, or long-form story into a cinematic scroll-driven landing page using one of three renderers: scrubbed video, a real-time Three.js world, or semantic HTML/SVG data and typography. Use when the user asks for a scroll world, fly-through landing page, article-to-website transformation, animated planet, data scrollytelling, video-scrubbed page, connected visual journey, or story-led alternative to ordinary stacked sections.',
   },
@@ -7525,7 +7525,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/ship-web-games/SKILL.md',
     name: 'ship-web-games',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Package, deploy, and verify a playable Three.js or web game. Use for release builds, asset delivery, private/public deployment, production smoke tests, browser proof, release notes, rollback readiness, and cleanup of temporary QA resources.',
   },
@@ -7641,7 +7641,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/thinking-orbs/SKILL.md',
     name: 'thinking-orbs',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['react', 'visual', 'frontend', 'craft'],
     description:
       "Add accessible animated AI loading and agent-status indicators with the React thinking-orbs library. Use when a chat, copilot, voice, search, generation, or tool-running interface needs a semantic working, searching, solving, listening, composing, or shaping state; when replacing a generic spinner with an AI activity orb; or when implementing the library's size, theme, speed, pause, reduced-motion, and canvas behavior.",
   },
@@ -7654,7 +7654,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-landscape/SKILL.md',
     name: 'threejs-landscape',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Build a live Three.js landscape that stays quiet behind a subject — a noise heightfield on a polar grid so resolution follows the lens, ground coloured by slope and moisture rather than by texture, instanced GPU grass whose wind costs nothing on the CPU, scattered stones, a gradient sky dome, a star field you can actually see, and a time-of-day system that cross-fades instead of cutting. Use for hero backdrops, product stages, scroll worlds, or any scene where a building, object, or figure has to sit in a place rather than float on a gradient.',
   },
@@ -7667,7 +7667,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-towers/SKILL.md',
     name: 'threejs-towers',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Generate architecture procedurally in Three.js and film it assembling — a small geometry vocabulary that builds pagodas, castles, domes and spires from parameters instead of mesh files, hip roofs with flying eaves driven by a single profile function, and a clipping-plane build animation where everything below a rising line is finished work and scaffolding stands above it. Use for construction studies, architectural title sequences, procedural landmarks, or any hero object that should build itself rather than fade in.',
   },
@@ -7680,7 +7680,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs-weather/SKILL.md',
     name: 'threejs-weather',
-    topics: ['visual', 'frontend', 'craft'],
+    topics: ['threejs', 'visual', 'frontend', 'craft'],
     description:
       'Put weather into a Three.js scene that reads as weather — rain anchored inside the frustum, a storm that is the rain leaned on rather than a second system, lightning on its own light with thunder scheduled by distance, snow that blows up into blizzards and keeps settling until the ground goes white, wet ground with puddles and splashes, and looping ambience that has no seam. Use for scene atmosphere, seasonal states, hero backdrops, or any world where clear/rain/storm/snow needs to be a control the viewer can turn.',
   },
@@ -7758,7 +7758,7 @@ const registrySource: RegistrySourceSkill[] = [
     githubUrl:
       'https://github.com/MengTo/Skills/blob/main/agent-skills/game-combat/water-crystal-skill-vfx/SKILL.md',
     name: 'water-crystal-skill-vfx',
-    topics: ['visual', 'craft', 'interaction'],
+    topics: ['threejs', 'visual', 'craft', 'interaction'],
     description:
       'Build the effects of a water and crystal skill as one visual language in Three.js. Water that reads as clear water, never a teal fill or a textured ball. A ray-marched water orb whose surface swells, rings and deforms in place: it refracts the frame behind it with an inverted horizon, has a silver rim and sharp highlights, and shows a faint caustic web on its far wall. Streams wound up from tide pools as uneven beaded ropes with silver edges, drips and shed drops. A lash that unspools from the orb, whips and pours into a pool under a torn, lopsided splash crown of aerated white water with spikes breaking into drops. Analytic ripple rings and rain on the pools. Crystals traced against their own half-space planes (Snell, Fresnel, total internal reflection, exit dispersion, Beer–Lambert, fracture discs, a white-hot root glow and a resonance band that climbs the stone), growing out of the water in a draining veil, then shattering into Voronoi shards that fall, tumble and rest with real contact on a heightfield. Caustics on the pool floor, and a moonlit tidal rock flat: rock banks traced from target images onto a world grid, flat mirror pools, a moon-glitter column of micro-facet glints, and a moon disc with maria. Use for water or ice-crystal skills, water orbs or bubbles, water whips, jets or tentacles, splash impacts, tide pools, rain, crystal growth or eruption, crystal resonance, shattering glass or quartz, caustics, wet-stone night scenes, moon reflections on water, "water and crystal", "hydro", "clear water VFX", "crystal shatter" or "skill effects only". Includes a reusable module and a five-beat demo on a scanned CC0 low-tide floor with failure-mode switches.',
   },
@@ -8092,7 +8092,7 @@ const registrySource: RegistrySourceSkill[] = [
       'references/simulator-loop.md',
     ],
     name: 'appllama-app-design-skill',
-    topics: ['visual', 'interaction', 'react-native'],
+    topics: ['expo', 'react-native', 'visual', 'interaction'],
     description:
       'Build native-feeling, benchmark-quality mobile app screens (Expo / React Native). Use when designing or implementing any mobile UI — screens, flows, onboarding, paywalls, tab bars, sheets, settings, empty states — or when polishing motion, navigation, typography, dark mode, or perceived performance. Enforces Apple HIG fidelity, semantic colors, native controls, anti-slop discipline, navigation semantics, purposeful Reanimated motion, a full-motion simulator-verified iteration loop, and a study-real-apps-first workflow.',
   },
@@ -8142,7 +8142,7 @@ const registrySource: RegistrySourceSkill[] = [
     rawUrl: 'https://raw.githubusercontent.com/JDhruv14/ascii-diorama/main/SKILL.md',
     githubUrl: 'https://github.com/JDhruv14/ascii-diorama/blob/main/SKILL.md',
     name: 'ascii-diorama',
-    topics: ['3d', 'visual', 'craft'],
+    topics: ['threejs', '3d', 'visual', 'craft'],
     description:
       'Build tilt-shift ASCII miniatures, which are small, dense, living 3D worlds in Three.js drawn entirely as coloured monospace characters and seen from high above with the top and bottom of the view blurred like a scale model. Use when someone asks for an ASCII scene, ASCII shader or renderer, glyph-rendered or text-mode 3D, an ASCII diorama or miniature, a tilt-shift ASCII effect, or a dense little world in this style. The result is a live web page that animates and loops.',
   },
@@ -8233,6 +8233,125 @@ const registrySource: RegistrySourceSkill[] = [
     topics: ['visual', 'craft', 'systems'],
     description:
       'Run a structured interface-design critique with the Shift Nudge method over the Shift Nudge MCP server. Use when a user asks for design feedback, a UI review, or a crit of a screen, and you have access to the Shift Nudge MCP connection.',
+  },
+  {
+    slug: 'expo-ui',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-ui/SKILL.md',
+    githubUrl: 'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-ui/SKILL.md',
+    files: [
+      'references/drop-in-replacements.md',
+      'references/jetpack-compose.md',
+      'references/swift-ui.md',
+      'references/universal.md',
+    ],
+    name: 'expo-ui',
+    topics: ['expo', 'react-native', 'frontend', 'systems'],
+    description:
+      'Build native UI with @expo/ui: real SwiftUI on iOS and Jetpack Compose on Android. Use for sheets, pickers, sliders, toggles, menus and grouped form sections, with drop-in replacements for React Native community libraries.',
+  },
+  {
+    slug: 'expo-native-ui',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-native-ui/SKILL.md',
+    githubUrl:
+      'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-native-ui/SKILL.md',
+    files: [
+      'references/controls.md',
+      'references/gradients.md',
+      'references/icons.md',
+      'references/media.md',
+      'references/storage.md',
+      'references/visual-effects.md',
+      'references/webgpu-three.md',
+    ],
+    name: 'expo-native-ui',
+    topics: ['expo', 'react-native', 'visual', 'craft'],
+    description:
+      'Build native-feeling Expo screens: Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients and responsive layout.',
+  },
+  {
+    slug: 'expo-design-system',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-design-system/SKILL.md',
+    githubUrl:
+      'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-design-system/SKILL.md',
+    files: ['references/audit.md', 'references/native-slop.md'],
+    name: 'expo-design-system',
+    topics: ['expo', 'systems', 'react-native', 'visual'],
+    description:
+      'Build and maintain a design system inside an Expo app: design tokens, component variant conventions, extending NativeWind, Tamagui, Restyle or Unistyles, fixing apps that look AI-generated, and auditing for design-system drift.',
+  },
+  {
+    slug: 'expo-animation',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-animation/SKILL.md',
+    githubUrl:
+      'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-animation/SKILL.md',
+    files: ['RECIPES.md'],
+    name: 'expo-animation',
+    topics: ['expo', 'react-native', 'motion', 'interaction'],
+    description:
+      'Build animations in React Native and Expo with Reanimated, Gesture Handler, Expo Router and expo-haptics: which thread, which properties, spring or timing, gesture hand-off, and fixing motion that stutters on device.',
+  },
+  {
+    slug: 'expo-router',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-router/SKILL.md',
+    githubUrl: 'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-router/SKILL.md',
+    files: [
+      'references/form-sheet.md',
+      'references/route-structure.md',
+      'references/search.md',
+      'references/tabs.md',
+      'references/toolbar-and-headers.md',
+      'references/zoom-transitions.md',
+    ],
+    name: 'expo-router',
+    topics: ['expo', 'react-native', 'architecture', 'interaction'],
+    description:
+      'Navigation and routing with Expo Router: file-based and dynamic routes, Link previews and context menus, native Stack, modals and form sheets, NativeTabs, headers, toolbars and search bars.',
+  },
+  {
+    slug: 'expo-dom',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-dom/SKILL.md',
+    githubUrl: 'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-dom/SKILL.md',
+    name: 'expo-dom',
+    topics: ['expo', 'react-native', 'react', 'frontend'],
+    description:
+      'Use Expo DOM components to run web code in a webview on native and as-is on web, migrating web code to native incrementally.',
+  },
+  {
+    slug: 'expo-web-to-native',
+    user: 'expo',
+    repo: 'skills',
+    rawUrl:
+      'https://raw.githubusercontent.com/expo/skills/main/plugins/expo/skills/expo-web-to-native/SKILL.md',
+    githubUrl:
+      'https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-web-to-native/SKILL.md',
+    files: [
+      'references/false-friends.md',
+      'references/native-patterns.md',
+      'references/run-as-goal.md',
+      'references/verify-on-device.md',
+    ],
+    name: 'expo-web-to-native',
+    topics: ['expo', 'react-native', 'react', 'architecture'],
+    description:
+      'Migrate a web React app (Next.js, Vite, CRA) to a native iOS and Android app with Expo, mapping web idioms like the DOM, CSS, React Router and localStorage to native.',
   },
 ]
 

@@ -25,10 +25,12 @@ export const topicSlugs = [
   'tooling',
   'video',
   // Framework-specific topics
+  'react',
   'nextjs',
   'nuxt',
   'vue',
   'react-native',
+  'expo',
   'threejs',
   'remotion',
   'swiftui',
