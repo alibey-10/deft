@@ -3,6 +3,7 @@ import { HugeiconsIcon } from '@hugeicons/react'
 import { NewTwitterIcon, SparklesIcon } from '@hugeicons/core-free-icons'
 
 import { CommandPalette } from '#/components/command-palette.tsx'
+import { SubmitSkillDialog } from '#/components/submit-skill-dialog.tsx'
 import { buttonVariants } from '#/components/ui/button.tsx'
 import { ThemeToggle } from '#/components/ui/theme-toggle.tsx'
 import { useTheme } from '#/hooks/use-theme.ts'
@@ -40,6 +41,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <SubmitSkillDialog />
           <Link
             to="/ask"
             aria-label="Ask AI"

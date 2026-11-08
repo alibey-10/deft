@@ -25,29 +25,23 @@ import {
   type GithubRepo,
   type ScanError,
 } from './github'
+import { classify } from './classifier'
 import { githubUrlFor, rawUrlFor, repoKey } from './githubUrls'
 import {
-  CLASSIFIER_MODEL,
-  CLASSIFIER_SCHEMA,
-  CLASSIFIER_SYSTEM,
   CLASSIFY_BATCH,
   TRENDING_URL,
   canonicalSkillPaths,
-  classifierUserMessage,
   fileKey,
   isPopular,
   parseTrendingSkills,
-  parseVerdicts,
   skillExcerpt,
   skillFiles,
   skillFingerprint,
   slugFromPath,
-  type ClassifyInput,
   type Verdict,
 } from './skillDiscoveryRules'
 
 const FIRECRAWL_SCRAPE = 'https://api.firecrawl.dev/v2/scrape'
-const OPENROUTER_CHAT = 'https://openrouter.ai/api/v1/chat/completions'
 const CONCURRENCY = 6
 const CLASSIFY_CONCURRENCY = 4
 /** SKILL.md files read per run. Files over the budget are picked up by the next run. */
@@ -82,46 +76,6 @@ async function scrapeHtml(url: string, apiKey: string) {
 }
 
 const message = (error: unknown) => (error instanceof Error ? error.message : String(error))
-
-/** One model request for a batch of skills. Throws on HTTP or shape errors so the caller can retry. */
-async function classify(items: ClassifyInput[], apiKey: string): Promise<Map<string, Verdict>> {
-  const response = await fetch(OPENROUTER_CHAT, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      'X-Title': 'Skilly skill discovery',
-    },
-    body: JSON.stringify({
-      model: CLASSIFIER_MODEL,
-      temperature: 0,
-      reasoning: { enabled: false },
-      messages: [
-        { role: 'system', content: CLASSIFIER_SYSTEM },
-        { role: 'user', content: classifierUserMessage(items) },
-      ],
-      response_format: {
-        type: 'json_schema',
-        json_schema: { name: 'skill_verdicts', strict: true, schema: CLASSIFIER_SCHEMA },
-      },
-      // Only route to providers that honour the schema.
-      provider: { require_parameters: true },
-    }),
-  })
-  if (!response.ok) throw new Error(`OpenRouter: ${await describe(response)}`)
-  const body = (await response.json()) as {
-    choices?: Array<{ message?: { content?: string } }>
-    error?: { message?: string }
-  }
-  const content = body.choices?.[0]?.message?.content
-  if (!content) throw new Error(`OpenRouter: ${body.error?.message ?? 'empty answer'}`)
-  const verdicts = parseVerdicts(
-    content,
-    items.map((i) => i.id),
-  )
-  if (!verdicts.size) throw new Error('OpenRouter: answer had no usable verdicts')
-  return verdicts
-}
 
 export const discover = internalAction({
   args: { runId: v.id('discoveryRuns') },

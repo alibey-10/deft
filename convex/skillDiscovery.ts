@@ -136,7 +136,7 @@ const vResult = v.object({
   stars: v.number(),
 })
 
-const vAuthor = v.object({
+export const vAuthor = v.object({
   login: v.string(),
   profileUrl: v.string(),
   avatarUrl: v.string(),
@@ -151,7 +151,7 @@ const vAuthor = v.object({
  * `<user>/<slug>`, then `<user>/<repo>/<slug>`, then numbered, as the registry does on collision.
  * Null when every option is taken.
  */
-async function freePathSlug(ctx: MutationCtx, user: string, repo: string, slug: string) {
+export async function freePathSlug(ctx: MutationCtx, user: string, repo: string, slug: string) {
   const options = [`${user}/${slug}`, `${user}/${repo}/${slug}`]
   for (let n = 2; options.length < 12; n++) options.push(`${user}/${repo}/${slug}-${n}`)
   for (const pathSlug of options) {
@@ -165,7 +165,7 @@ async function freePathSlug(ctx: MutationCtx, user: string, repo: string, slug: 
 }
 
 /** The author row for `login`, created from its GitHub profile (or a bare one) if new. */
-async function ensureAuthor(
+export async function ensureAuthor(
   ctx: MutationCtx,
   login: string,
   profiles: Map<string, Infer<typeof vAuthor>>,

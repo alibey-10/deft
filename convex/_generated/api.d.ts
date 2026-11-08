@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as classifier from "../classifier.js";
 import type * as crons from "../crons.js";
 import type * as directory from "../directory.js";
 import type * as github from "../github.js";
@@ -18,6 +19,7 @@ import type * as skillDiscoveryNode from "../skillDiscoveryNode.js";
 import type * as skillDiscoveryRules from "../skillDiscoveryRules.js";
 import type * as skillScan from "../skillScan.js";
 import type * as skillScanNode from "../skillScanNode.js";
+import type * as submissions from "../submissions.js";
 import type * as validators from "../validators.js";
 
 import type {
@@ -27,6 +29,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  classifier: typeof classifier;
   crons: typeof crons;
   directory: typeof directory;
   github: typeof github;
@@ -37,6 +40,7 @@ declare const fullApi: ApiFromModules<{
   skillDiscoveryRules: typeof skillDiscoveryRules;
   skillScan: typeof skillScan;
   skillScanNode: typeof skillScanNode;
+  submissions: typeof submissions;
   validators: typeof validators;
 }>;
 
