@@ -10,6 +10,13 @@ import { topicLabel, useDirectory, type RegistrySkill } from '#/lib/directory.ts
 
 const compact = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })
 const full = new Intl.NumberFormat('en')
+// UTC so the server and the browser render the same day.
+const dateFormat = new Intl.DateTimeFormat('en', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'UTC',
+})
 
 const authorLinkClass =
   'relative z-10 flex min-w-0 items-center gap-1.5 transition-colors hover:text-foreground'
@@ -47,53 +54,62 @@ export function SkillCard({
       <p className="line-clamp-2 max-w-[72ch] leading-relaxed text-muted-foreground">
         {skill.description}
       </p>
-      {meta === 'topics' ? (
-        <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
-          {skill.topics.map((topic) => (
-            <Badge
-              key={topic}
-              variant="outline"
-              className="relative z-10"
-              render={<Link to="/topics/$topic" params={{ topic }} />}
-            >
-              {topicLabel(topic)}
-            </Badge>
-          ))}
-        </div>
-      ) : (
-        <div className="mt-auto flex min-w-0 items-center gap-2 pt-1 text-xs text-muted-foreground">
-          {author ? (
-            <AuthorHoverLink author={author} className={authorLinkClass}>
-              <AuthorAvatar author={author} size="xs" />
-              <span className="truncate">{author.name}</span>
-            </AuthorHoverLink>
-          ) : (
-            <Link
-              to="/authors/$author"
-              params={{ author: skill.sourceKey }}
-              className={authorLinkClass}
-            >
-              <span className="truncate">{skill.user}</span>
-            </Link>
-          )}
-          {skill.stars !== undefined && (
-            <>
-              <span aria-hidden>·</span>
-              <a
-                href={`https://github.com/${skill.user}/${skill.repo}`}
-                target="_blank"
-                rel="noreferrer"
-                title={`${full.format(skill.stars)} stars on ${skill.user}/${skill.repo}`}
-                aria-label={`${full.format(skill.stars)} GitHub stars`}
-                className="relative z-10 flex shrink-0 items-center gap-1 tabular-nums transition-colors hover:text-foreground"
+      <div className="mt-auto flex min-w-0 items-center gap-3 pt-1 text-xs text-muted-foreground">
+        {meta === 'topics' ? (
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1.5">
+            {skill.topics.map((topic) => (
+              <Badge
+                key={topic}
+                variant="outline"
+                className="relative z-10"
+                render={<Link to="/topics/$topic" params={{ topic }} />}
               >
-                <HugeiconsIcon icon={StarIcon} aria-hidden className="size-3.5" />
-                {compact.format(skill.stars)}
-              </a>
-            </>
-          )}
-        </div>
-      )}
+                {topicLabel(topic)}
+              </Badge>
+            ))}
+          </div>
+        ) : (
+          <div className="flex min-w-0 flex-1 items-center gap-2">
+            {author ? (
+              <AuthorHoverLink author={author} className={authorLinkClass}>
+                <AuthorAvatar author={author} size="xs" />
+                <span className="truncate">{author.name}</span>
+              </AuthorHoverLink>
+            ) : (
+              <Link
+                to="/authors/$author"
+                params={{ author: skill.sourceKey }}
+                className={authorLinkClass}
+              >
+                <span className="truncate">{skill.user}</span>
+              </Link>
+            )}
+            {skill.stars !== undefined && (
+              <>
+                <span aria-hidden>·</span>
+                <a
+                  href={`https://github.com/${skill.user}/${skill.repo}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={`${full.format(skill.stars)} stars on ${skill.user}/${skill.repo}`}
+                  aria-label={`${full.format(skill.stars)} GitHub stars`}
+                  className="relative z-10 flex shrink-0 items-center gap-1 tabular-nums transition-colors hover:text-foreground"
+                >
+                  <HugeiconsIcon icon={StarIcon} aria-hidden className="size-3.5" />
+                  {compact.format(skill.stars)}
+                </a>
+              </>
+            )}
+          </div>
+        )}
+        <time
+          dateTime={new Date(skill.addedAt).toISOString()}
+          title="First seen in the directory"
+          className="shrink-0 tabular-nums"
+        >
+          {dateFormat.format(skill.addedAt)}
+        </time>
+      </div>
     </article>
   )
 }
