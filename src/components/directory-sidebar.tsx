@@ -54,7 +54,7 @@ export function DirectorySidebar() {
         onValueChange={(value) => setTab(value as SidebarTab)}
         className="min-h-0 flex-1"
       >
-        <TabsList className="w-full">
+        <TabsList variant="ghost" className="w-full">
           <TabsTrigger value="topics">Topics</TabsTrigger>
           <TabsTrigger value="authors">Authors</TabsTrigger>
         </TabsList>
