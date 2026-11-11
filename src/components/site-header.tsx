@@ -25,8 +25,8 @@ export function SiteHeader() {
           to="/"
           className="flex items-center gap-2 text-[1.0625rem] font-semibold tracking-[-0.02em] [font-stretch:92%]"
         >
-          <SkillyMark />
-          Skilly
+          <DeftMark />
+          Deft
         </Link>
         <div className="flex items-center gap-1.5 sm:gap-2">
           <nav className="flex items-center text-sm lg:hidden">
@@ -74,7 +74,7 @@ export function SiteHeader() {
 }
 
 /** A spec dimension bracket: the logo's take on a designer's redline measurement. */
-function SkillyMark() {
+function DeftMark() {
   return (
     <svg
       viewBox="0 0 16 16"

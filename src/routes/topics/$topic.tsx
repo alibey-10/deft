@@ -16,7 +16,7 @@ export const Route = createFileRoute('/topics/$topic')({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.topic.label} UI skills · Skilly` },
+          { title: `${loaderData.topic.label} UI skills · Deft` },
           { name: 'description', content: loaderData.topic.description },
         ]
       : [],

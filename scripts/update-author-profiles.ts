@@ -45,7 +45,7 @@ async function gh<T>(path: string): Promise<T | null> {
   const response = await fetch(`https://api.github.com/${path}`, {
     headers: {
       Accept: 'application/vnd.github+json',
-      'User-Agent': 'skilly-author-profiles',
+      'User-Agent': 'deft-author-profiles',
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
   })

@@ -61,7 +61,7 @@ export const Route = createFileRoute('/ask')({
   loader: async () => ({ isAdmin: await getIsAdminServerFn() }),
   head: () => ({
     meta: [
-      { title: 'Ask · Skilly' },
+      { title: 'Ask · Deft' },
       { name: 'description', content: 'Ask an AI assistant which UI skills fit your task.' },
     ],
   }),
@@ -170,7 +170,7 @@ function AskPage() {
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] [font-stretch:90%]">
-            Ask Skilly
+            Ask Deft
           </h1>
           <p className="text-sm text-muted-foreground">
             Describe what you're building and get matching UI skills from the directory.

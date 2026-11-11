@@ -11,7 +11,7 @@ import { adminSignInServerFn, getIsAdminServerFn } from '#/lib/admin.ts'
 export const Route = createFileRoute('/admin/login')({
   loader: async () => ({ isAdmin: await getIsAdminServerFn() }),
   head: () => ({
-    meta: [{ title: 'Admin sign in · Skilly' }, { name: 'robots', content: 'noindex' }],
+    meta: [{ title: 'Admin sign in · Deft' }, { name: 'robots', content: 'noindex' }],
   }),
   component: AdminLoginPage,
 })

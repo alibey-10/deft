@@ -25,7 +25,7 @@ export async function classify(
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
-      'X-Title': 'Skilly skill discovery',
+      'X-Title': 'Deft skill discovery',
     },
     body: JSON.stringify({
       model: CLASSIFIER_MODEL,
