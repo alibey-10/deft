@@ -31,7 +31,7 @@ async function fetchRepo(
   const response = await fetch(`https://api.github.com/repos/${user}/${repo}`, {
     headers: {
       Accept: 'application/vnd.github+json',
-      'User-Agent': 'skilly-repo-stars',
+      'User-Agent': 'deft-repo-stars',
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
   })

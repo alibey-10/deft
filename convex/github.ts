@@ -44,7 +44,7 @@ export function githubFetch(url: string, token: string, init?: RequestInit) {
     ...init,
     headers: {
       Accept: 'application/vnd.github+json',
-      'User-Agent': 'skilly-skill-scan',
+      'User-Agent': 'deft-skill-scan',
       Authorization: `Bearer ${token}`,
     },
   }).then((response) => {

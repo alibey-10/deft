@@ -7,7 +7,7 @@ import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/authors/')({
-  head: () => ({ meta: [{ title: 'Authors · Skilly' }] }),
+  head: () => ({ meta: [{ title: 'Authors · Deft' }] }),
   component: AuthorsPage,
 })
 

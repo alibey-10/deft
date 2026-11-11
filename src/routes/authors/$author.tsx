@@ -19,7 +19,7 @@ export const Route = createFileRoute('/authors/$author')({
     return { authorKey: author.key, authorName: author.name }
   },
   head: ({ loaderData }) => ({
-    meta: loaderData ? [{ title: `UI skills by ${loaderData.authorName} · Skilly` }] : [],
+    meta: loaderData ? [{ title: `UI skills by ${loaderData.authorName} · Deft` }] : [],
   }),
   component: AuthorPage,
 })

@@ -15,7 +15,7 @@ type Submission = NonNullable<Awaited<ReturnType<typeof listPendingServerFn>>>[n
 export const Route = createFileRoute('/admin/submissions')({
   loader: () => listPendingServerFn(),
   head: () => ({
-    meta: [{ title: 'Submissions · Skilly' }, { name: 'robots', content: 'noindex' }],
+    meta: [{ title: 'Submissions · Deft' }, { name: 'robots', content: 'noindex' }],
   }),
   component: SubmissionsPage,
 })

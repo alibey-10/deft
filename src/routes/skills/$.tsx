@@ -39,10 +39,7 @@ export const Route = createFileRoute('/skills/$')({
     if (!loaderData) return {}
     const { name, user, description } = loaderData.meta
     return {
-      meta: [
-        { title: `${name} by ${user} · Skilly` },
-        { name: 'description', content: description },
-      ],
+      meta: [{ title: `${name} by ${user} · Deft` }, { name: 'description', content: description }],
     }
   },
   component: SkillPage,

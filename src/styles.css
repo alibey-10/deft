@@ -12,7 +12,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Redline: Skilly's palette borrows from design-spec markup. Blue-slate ink on cool paper, with
+ * Redline: Deft's palette borrows from design-spec markup. Blue-slate ink on cool paper, with
  * the magenta-red of a designer's redlines reserved for annotation, focus and active states.
  */
 :root {

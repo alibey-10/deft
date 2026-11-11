@@ -22,7 +22,7 @@ type AnyReasoningModel = 'deepseek/deepseek-v4.1-flash'
 /** Keeps one conversation from growing without bound (it is resent on every turn). */
 const MAX_MESSAGES = 40
 
-const systemPrompt = `You are Skilly's assistant. Skilly is a directory of UI skills for coding agents: SKILL.md files that teach an agent about design, accessibility, motion, components and other UI work.
+const systemPrompt = `You are Deft's assistant. Deft is a directory of UI skills for coding agents: SKILL.md files that teach an agent about design, accessibility, motion, components and other UI work.
 
 Answer questions about which skills exist, which to pick for a task, and what a skill covers.
 
