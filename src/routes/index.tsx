@@ -1,14 +1,16 @@
 import { useEffect, useRef } from 'react'
 import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 import { usePaginatedQuery } from 'convex/react'
 
 import { api } from '../../convex/_generated/api'
-import { HeroGrid } from '#/components/hero-grid.tsx'
+import { AuthorAvatar } from '#/components/author-avatar.tsx'
+import { AuthorHoverLink } from '#/components/author-hover-card.tsx'
+import { PageIntro } from '#/components/site-header.tsx'
 import { SkillGrid } from '#/components/skill-card.tsx'
 import { SkillSearch, validateSkillSearch } from '#/components/skill-search.tsx'
-import { useDirectory, type RegistrySkill } from '#/lib/directory.ts'
+import { useDirectory, type Author, type RegistrySkill } from '#/lib/directory.ts'
 
 const PAGE_SIZE = 20
 const count = new Intl.NumberFormat('en')
@@ -61,8 +63,7 @@ function Home() {
 
   return (
     <>
-      <HeroGrid />
-      <Hero />
+      <Intro />
 
       <section aria-label="All skills" className="flex flex-col gap-6">
         <SkillSearch
@@ -84,29 +85,50 @@ function Home() {
   )
 }
 
-/**
- * The headline carries a spec redline, the way a designer marks up a handoff file. Its label is
- * the measurement that matters here: how much taste the directory holds.
- */
-function Hero() {
-  const { allSkills, authors } = useDirectory()
+const FEATURED_AUTHORS = 8
+/** Always shown in the intro's author row, after the most-starred authors. */
+const PINNED_AUTHORS = ['emilkowalski']
+/** Never shown in the intro's author row, whatever their stars. */
+const UNFEATURED_AUTHORS = ['addyosmani']
+const topStars = (author: Author) => Math.max(0, ...author.skills.map((skill) => skill.stars ?? 0))
+
+/** Says what the directory is for and who wrote what's in it, then gets out of the way. */
+function Intro() {
+  const { authors, getAuthor } = useDirectory()
+  const pinned = PINNED_AUTHORS.map(getAuthor).filter((author) => author !== undefined)
+  // Mostly the authors whose repos have the most GitHub stars: names a visitor is likely to know.
+  const featured = [
+    ...authors
+      .filter((a) => !PINNED_AUTHORS.includes(a.key) && !UNFEATURED_AUTHORS.includes(a.key))
+      .sort((a, b) => topStars(b) - topStars(a))
+      .slice(0, FEATURED_AUTHORS - pinned.length),
+    ...pinned,
+  ]
+
   return (
-    <header className="flex flex-col gap-6 pt-2 pb-12">
-      <div className="w-fit max-w-full">
-        <div className="redline-dimension mb-3 text-xs font-medium tabular-nums">
-          <span>
-            {count.format(allSkills.length)} skills from {count.format(authors.length)} authors
-          </span>
-        </div>
-        <h1 className="text-[clamp(2.75rem,6.5vw,4.5rem)] leading-[1] font-semibold tracking-[-0.022em] text-balance [font-stretch:88%]">
-          Give your agent better taste
-        </h1>
+    <PageIntro
+      title="UI skills for coding agents"
+      description="End AI slop with skills that teach your agent interface craft."
+    >
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+        <ul aria-label="Featured authors" className="flex items-center gap-1.5">
+          {featured.map((author) => (
+            <li key={author.key}>
+              <AuthorHoverLink author={author} className="block rounded-full">
+                <AuthorAvatar author={author} size="md" />
+                <span className="sr-only">{author.name}</span>
+              </AuthorHoverLink>
+            </li>
+          ))}
+        </ul>
+        <Link
+          to="/authors"
+          className="text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+        >
+          All {count.format(authors.length)} authors
+        </Link>
       </div>
-      <p className="max-w-[58ch] text-[1.0625rem] leading-relaxed text-pretty text-muted-foreground">
-        Skills that teach coding agents to ship polished interfaces, from typography and motion to
-        accessibility and design systems. Works with Claude Code, Cursor, Codex, and more.
-      </p>
-    </header>
+    </PageIntro>
   )
 }
 
