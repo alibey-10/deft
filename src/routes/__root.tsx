@@ -49,6 +49,11 @@ export const Route = createRootRouteWithContext<{
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: '/favicon.svg',
+      },
     ],
   }),
   shellComponent: RootDocument,
@@ -59,7 +64,7 @@ function NotFound() {
   return (
     <div className="flex flex-col items-center gap-3 py-24 text-center">
       <h1 className="text-2xl font-semibold">Not found</h1>
-      <p className="text-muted-foreground">That topic, author, or page doesn't exist.</p>
+      <p className="text-muted-foreground">That topic, author, or page doesn’t exist.</p>
       <Link to="/" className="text-sm underline underline-offset-4">
         Back to all skills
       </Link>

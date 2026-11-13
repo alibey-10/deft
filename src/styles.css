@@ -1,3 +1,11 @@
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: full
+ * paper: oklch(98.5% 0.002 248) · accent: oklch(59.2% 0.219 11) · display: Instrument Sans · body: Instrument Sans
+ * nav: kept shell, a top bar over the directory sidebar; the sections get their own row below lg · signature: the index of skills, each entry under a top rule · states: loading, loading more, empty
+ * axes: light/grotesk-sans/chromatic-red · posture: Restrained · contrast: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S3 R5 V3 · weakest: S, a plain title could head any directory; the live skill and author counts in the one sentence are what make it this one. Cut the WebGL grid and the animated dimension bracket to earn R */
+/* Hallmark · reworded "Give your agent better taste" to "UI skills for coding agents" · the owner asked for plainer wording; 58 names the 26-word paragraph, now one sentence */
+/* Hallmark · dismissed 56 · the second sticky element is the TanStack devtools button, which only exists in development */
+/* Hallmark · dismissed 73 · each index entry stretches its title link over the whole entry on purpose; the link is transparent and the description stays readable beneath it */
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -43,7 +51,8 @@
   --accent-foreground: var(--ink);
   --destructive: #c8321f;
   --border: var(--rule);
-  --input: #d6dae2;
+  /* Field edges: 3:1 against paper and card, so an empty field is still findable. */
+  --input: #868d9e;
   --ring: var(--redline);
   --chart-1: #e0245e;
   --chart-2: #1c2030;
@@ -77,7 +86,7 @@
   --muted: #232733;
   --accent: #232733;
   --destructive: #ff6b57;
-  --input: #343a48;
+  --input: #636a7b;
   --chart-2: #e6e8ee;
   --chart-3: #9ba2b3;
   --chart-4: #5b6273;
@@ -133,6 +142,11 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -149,63 +163,10 @@
   html {
     @apply font-sans;
     font-feature-settings: 'ss01';
+    scrollbar-color: var(--input) var(--background);
   }
   ::selection {
     background: color-mix(in oklab, var(--redline) 22%, transparent);
-  }
-}
-
-/*
- * A spec dimension line: end ticks, a rule between them and a label sitting on the rule.
- * Drawn once on load, outward from the label.
- */
-.redline-dimension {
-  color: var(--redline);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  height: 0.75rem;
-}
-.redline-dimension::before,
-.redline-dimension::after {
-  content: '';
-  flex: 1;
-  height: 0.75rem;
-  background:
-    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
-    linear-gradient(currentColor, currentColor) left / 1px 100% no-repeat;
-  animation: redline-draw 700ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms both;
-}
-.redline-dimension::before {
-  transform-origin: right center;
-}
-.redline-dimension::after {
-  background:
-    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
-    linear-gradient(currentColor, currentColor) right / 1px 100% no-repeat;
-  transform-origin: left center;
-}
-.redline-dimension > span {
-  color: var(--redline-ink);
-  animation: redline-label 400ms ease-out both;
-}
-
-@keyframes redline-draw {
-  from {
-    transform: scaleX(0);
-  }
-}
-@keyframes redline-label {
-  from {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .redline-dimension::before,
-  .redline-dimension::after,
-  .redline-dimension > span {
-    animation: none;
   }
 }
 
