@@ -19,28 +19,12 @@ export function SiteHeader() {
   const themeLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
 
   return (
-    <header className="sticky top-0 z-20 border-b bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b bg-background">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-[1.0625rem] font-semibold tracking-[-0.02em] [font-stretch:92%]"
-        >
-          <DeftMark />
-          Deft
+        <Link to="/" aria-label="Deft, home" className="-mx-1 rounded-sm px-1 py-2">
+          <DeftLogo />
         </Link>
         <div className="flex items-center gap-1.5 sm:gap-2">
-          <nav className="flex items-center text-sm lg:hidden">
-            {nav.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                activeOptions={{ exact: item.to === '/' }}
-                className="rounded-md px-2 py-1.5 text-muted-foreground hover:text-foreground data-[status=active]:font-medium data-[status=active]:text-foreground"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
           <Link
             to="/docs/mcp"
             className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'max-sm:hidden' })}
@@ -75,23 +59,39 @@ export function SiteHeader() {
           />
         </div>
       </div>
+      {/* Below `lg` the sidebar is hidden, so the sections get a row of their own. */}
+      <nav className="mx-auto flex h-10 max-w-7xl items-center gap-1 border-t px-2 text-sm lg:hidden">
+        {nav.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            activeOptions={{ exact: item.to === '/' }}
+            className="rounded-md px-2 py-1.5 text-muted-foreground hover:text-foreground data-[status=active]:font-medium data-[status=active]:text-foreground"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   )
 }
 
-/** A spec dimension bracket: the logo's take on a designer's redline measurement. */
-function DeftMark() {
+/**
+ * The wordmark, drawn rather than typeset: one stroke weight, and a single crossbar shared by
+ * the f and the t. `public/logo.svg` is the same drawing as a standalone file.
+ */
+function DeftLogo() {
   return (
     <svg
-      viewBox="0 0 16 16"
+      viewBox="0 2 48.5 20"
       aria-hidden
-      className="size-4 text-redline"
+      className="h-[1.125rem] w-auto"
       fill="none"
       stroke="currentColor"
-      strokeWidth={1.5}
+      strokeWidth={2.4}
     >
-      <path d="M1.75 3v10M14.25 3v10M1.75 8h12.5" />
-      <path d="M4.5 5.5 1.75 8l2.75 2.5M11.5 5.5 14.25 8l-2.75 2.5" strokeLinejoin="round" />
+      <circle cx="7" cy="15" r="5" />
+      <path d="M12 4v16M17.2 15H27a5 5 0 1 0-1.17 3.21M33.5 20V8a4 4 0 0 1 4-4h1M42.5 5.5V16a4 4 0 0 0 4 4h1.2M30.3 10h17" />
     </svg>
   )
 }
