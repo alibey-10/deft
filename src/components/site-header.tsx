@@ -25,6 +25,12 @@ export function SiteHeader() {
           <DeftLogo />
         </Link>
         <div className="flex items-center gap-1.5 sm:gap-2">
+          <Link
+            to="/docs/mcp"
+            className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'max-sm:hidden' })}
+          >
+            MCP
+          </Link>
           <SubmitSkillDialog />
           <Link
             to="/ask"
