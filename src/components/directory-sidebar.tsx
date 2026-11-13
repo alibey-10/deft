@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
+import { HotkeyHint } from '#/components/site-header.tsx'
 import { SkillSearch } from '#/components/skill-search.tsx'
 import { ScrollArea } from '#/components/ui/scroll-area.tsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/ui/tabs.tsx'
+import { SIDEBAR_FILTER_ID } from '#/hooks/use-nav-hotkeys.ts'
 import { useDirectory } from '#/lib/directory.ts'
 
 type SidebarTab = 'topics' | 'authors'
@@ -55,11 +57,18 @@ export function DirectorySidebar() {
         className="min-h-0 flex-1"
       >
         <TabsList variant="ghost" className="w-full">
-          <TabsTrigger value="topics">Topics</TabsTrigger>
-          <TabsTrigger value="authors">Authors</TabsTrigger>
+          <TabsTrigger value="topics" aria-keyshortcuts="T">
+            <HotkeyHint keyName="T" />
+            Topics
+          </TabsTrigger>
+          <TabsTrigger value="authors" aria-keyshortcuts="A">
+            <HotkeyHint keyName="A" />
+            Authors
+          </TabsTrigger>
         </TabsList>
 
         <SkillSearch
+          id={SIDEBAR_FILTER_ID}
           value={query}
           onChange={setQuery}
           placeholder={tab === 'topics' ? 'Filter topics…' : 'Filter authors…'}
