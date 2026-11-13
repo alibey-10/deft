@@ -18,6 +18,9 @@ import { directoryQuery } from '#/lib/directory.ts'
 import { getThemeServerFn, type Theme } from '#/lib/theme.ts'
 import appCss from '../styles.css?url'
 
+const SITE_URL = 'https://usedeft.dev'
+const OG_IMAGE_URL = `${SITE_URL}/og.png`
+
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
 }>()({
@@ -44,6 +47,28 @@ export const Route = createRootRouteWithContext<{
         name: 'description',
         content: 'Browse UI skills for coding agents by topic or by author.',
       },
+      // Open Graph / X (Twitter) cards. Crawlers need absolute image URLs.
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Deft' },
+      { property: 'og:url', content: SITE_URL },
+      { property: 'og:title', content: 'Deft · UI skills directory' },
+      {
+        property: 'og:description',
+        content: 'End AI slop with skills that teach your agent interface craft.',
+      },
+      { property: 'og:image', content: OG_IMAGE_URL },
+      { property: 'og:image:type', content: 'image/png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: 'Deft — UI Skills Directory with built-in AI assistant' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Deft · UI skills directory' },
+      {
+        name: 'twitter:description',
+        content: 'End AI slop with skills that teach your agent interface craft.',
+      },
+      { name: 'twitter:image', content: OG_IMAGE_URL },
+      { name: 'twitter:image:alt', content: 'Deft — UI Skills Directory with built-in AI assistant' },
     ],
     links: [
       {
