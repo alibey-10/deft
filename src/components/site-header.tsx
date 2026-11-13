@@ -10,8 +10,8 @@ import { useTheme } from '#/hooks/use-theme.ts'
 
 const nav = [
   { to: '/', label: 'Skills' },
-  { to: '/topics', label: 'Topics' },
-  { to: '/authors', label: 'Authors' },
+  { to: '/topics', label: 'Topics', hotkey: 'T' },
+  { to: '/authors', label: 'Authors', hotkey: 'A' },
 ] as const
 
 export function SiteHeader() {
@@ -68,11 +68,21 @@ export function SiteHeader() {
             activeOptions={{ exact: item.to === '/' }}
             className="rounded-md px-2 py-1.5 text-muted-foreground hover:text-foreground data-[status=active]:font-medium data-[status=active]:text-foreground"
           >
+            {'hotkey' in item && <HotkeyHint keyName={item.hotkey} />}
             {item.label}
           </Link>
         ))}
       </nav>
     </header>
+  )
+}
+
+/** A bracketed key hint, e.g. `[T]`, shown before a nav label. Hidden on touch-only widths. */
+export function HotkeyHint({ keyName }: { keyName: string }) {
+  return (
+    <kbd className="mr-1.5 font-mono text-xs text-muted-foreground/70 max-sm:hidden" aria-hidden>
+      [{keyName}]
+    </kbd>
   )
 }
 

@@ -15,7 +15,9 @@ export function SkillSearch({
   onChange,
   placeholder = 'Search skills…',
   className,
+  id,
 }: {
+  id?: string
   value: string
   onChange: (value: string) => void
   placeholder?: string
@@ -30,11 +32,16 @@ export function SkillSearch({
       </InputGroupAddon>
       <InputGroupInput
         ref={inputRef}
+        id={id}
         type="search"
         aria-label={placeholder.replace(/…$/, '')}
         placeholder={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
+        // Escape leaves the field, so single-key hotkeys (T, A, D) work again.
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') event.currentTarget.blur()
+        }}
         className="[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
       />
       {value && (

@@ -12,6 +12,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import { DirectorySidebar } from '#/components/directory-sidebar.tsx'
 import { SiteHeader } from '#/components/site-header.tsx'
+import { NavHotkeys } from '#/hooks/use-nav-hotkeys.ts'
 import { ThemeHotkey } from '#/hooks/use-theme.ts'
 import { directoryQuery } from '#/lib/directory.ts'
 import { getThemeServerFn, type Theme } from '#/lib/theme.ts'
@@ -86,6 +87,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeHotkey />
+        <NavHotkeys />
         <SiteHeader />
         <div className="mx-auto flex max-w-7xl gap-8 px-4">
           <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-64 shrink-0 py-6 lg:block">
