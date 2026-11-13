@@ -107,7 +107,7 @@ function Intro() {
 
   return (
     <PageIntro
-      title="UI skills for coding agents"
+      title="Agent skills for tasteful UI"
       description="End AI slop with skills that teach your agent interface craft."
     >
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
