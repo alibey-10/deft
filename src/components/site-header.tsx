@@ -41,6 +41,12 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <Link
+            to="/docs/mcp"
+            className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'max-sm:hidden' })}
+          >
+            MCP
+          </Link>
           <SubmitSkillDialog />
           <Link
             to="/ask"

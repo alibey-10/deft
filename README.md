@@ -14,3 +14,23 @@ Add a shadcn component:
 ```bash
 pnpm dlx shadcn@latest add button
 ```
+
+## MCP server
+
+The site serves a public, read-only MCP server at `/mcp` (Streamable HTTP, no auth), so any agent
+or editor can search and read Deft's skills. Tools: `search_skills`, `get_skill`, `list_topics`,
+`browse_topic`. Code lives in `src/lib/mcp/`.
+
+```bash
+# Claude Code
+claude mcp add --transport http deft https://<your-domain>/mcp
+```
+
+Cursor / VS Code / Windsurf (`mcp.json`):
+
+```json
+{ "mcpServers": { "deft": { "url": "https://<your-domain>/mcp" } } }
+```
+
+Locally, use `http://localhost:3000/mcp` while `bun run dev` is running. Inspect it with
+`npx @modelcontextprotocol/inspector`.
