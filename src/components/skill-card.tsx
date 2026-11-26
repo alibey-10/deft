@@ -1,11 +1,12 @@
 import { cn } from 'cn'
 import { Link } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { StarIcon } from '@hugeicons/core-free-icons'
+import { ArrowRight02Icon, SparklesIcon, StarIcon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { AuthorHoverLink } from '#/components/author-hover-card.tsx'
 import { Badge } from '#/components/ui/badge.tsx'
+import { buttonVariants } from '#/components/ui/button.tsx'
 import { topicLabel, useDirectory, type RegistrySkill } from '#/lib/directory.ts'
 
 const compact = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })
@@ -118,13 +119,33 @@ export function SkillGrid({
   skills,
   columns = 2,
   meta,
+  query,
 }: {
   skills: RegistrySkill[]
   columns?: 1 | 2
   meta?: SkillCardMeta
+  query?: string
 }) {
   if (skills.length === 0) {
-    return <p className="py-12 text-center text-muted-foreground">No skills match your search.</p>
+    const trimmed = query?.trim()
+    if (!trimmed) {
+      return <p className="py-12 text-center text-muted-foreground">No skills match your search.</p>
+    }
+    return (
+      <div className="flex flex-col items-center gap-4 border-t py-12 text-center">
+        <div className="flex max-w-sm flex-col gap-1">
+          <p className="text-sm font-medium text-foreground">No skills match “{trimmed}”.</p>
+          <p className="text-sm text-muted-foreground">
+            Ask Deft searches by intent and synonyms instead.
+          </p>
+        </div>
+        <Link to="/ask" search={{ q: trimmed }} className={buttonVariants({ variant: 'default' })}>
+          <HugeiconsIcon icon={SparklesIcon} data-icon="inline-start" aria-hidden />
+          Ask Deft
+          <HugeiconsIcon icon={ArrowRight02Icon} data-icon="inline-end" aria-hidden />
+        </Link>
+      </div>
+    )
   }
   return (
     <ul className={cn('grid gap-x-10', columns === 2 && 'sm:grid-cols-2')}>

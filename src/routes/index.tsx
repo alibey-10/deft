@@ -74,7 +74,7 @@ function Home() {
           }
         />
         <div aria-busy={loading || status === 'LoadingMore'} className="flex flex-col gap-4">
-          <SkillGrid skills={shown ?? []} />
+          <SkillGrid skills={shown ?? []} query={q} />
           <div ref={sentinel} aria-hidden />
           {status === 'LoadingMore' && (
             <p className="py-4 text-center text-sm text-muted-foreground">Loading more skills…</p>

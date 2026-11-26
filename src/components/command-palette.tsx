@@ -1,8 +1,8 @@
-import { useEffect, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react'
+import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { defaultFilter } from 'cmdk'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { Search01Icon, SparklesIcon, Tag01Icon } from '@hugeicons/core-free-icons'
+import { ArrowRight02Icon, Search01Icon, SparklesIcon, Tag01Icon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { Button } from '#/components/ui/button.tsx'
@@ -49,8 +49,13 @@ export function CommandPalette() {
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
   const [tab, setTab] = useState<Tab>('skills')
+  const skipFinalFocus = useRef(false)
   const navigate = useNavigate()
   const { allSkills, authors, topicsWithSkills } = useDirectory()
+
+  useEffect(() => {
+    if (open) skipFinalFocus.current = false
+  }, [open])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -69,6 +74,7 @@ export function CommandPalette() {
   }
 
   const go = (to: () => void) => {
+    skipFinalFocus.current = true
     onOpenChange(false)
     to()
   }
@@ -77,7 +83,10 @@ export function CommandPalette() {
     skill.name,
     [skill.user, skill.repo, ...skill.topics.map(topicLabel)],
   ])
-  const searching = search.trim() !== ''
+  const trimmedSearch = search.trim()
+  const searching = trimmedSearch !== ''
+  const emptySkillSearch = tab === 'skills' && searching && skillResults.length === 0
+  const askDeft = () => go(() => navigate({ to: '/ask', search: { q: trimmedSearch } }))
   // Newest additions to the directory (approval time, see `convex/directory.ts`).
   const recentSkills = [...allSkills].sort((a, b) => b.addedAt - a.addedAt).slice(0, RECENT_SKILLS)
   const authorResults = rank(authors, search, (author) => [author.name, author.repos])
@@ -101,12 +110,24 @@ export function CommandPalette() {
   ))
 
   // Tab / Shift+Tab cycles the tabs without leaving the search field.
+  // Enter on an empty Skills search hands the query off to Ask Deft.
   const onKeyDown = (event: ReactKeyboardEvent) => {
-    if (event.key !== 'Tab') return
-    event.preventDefault()
-    const index = TABS.findIndex((t) => t.value === tab)
-    const step = event.shiftKey ? -1 : 1
-    setTab(TABS[(index + step + TABS.length) % TABS.length].value)
+    if (event.key === 'Tab') {
+      event.preventDefault()
+      const index = TABS.findIndex((t) => t.value === tab)
+      const step = event.shiftKey ? -1 : 1
+      setTab(TABS[(index + step + TABS.length) % TABS.length].value)
+      return
+    }
+    if (
+      event.key === 'Enter' &&
+      emptySkillSearch &&
+      !event.nativeEvent.isComposing &&
+      !event.defaultPrevented
+    ) {
+      event.preventDefault()
+      askDeft()
+    }
   }
 
   return (
@@ -131,6 +152,7 @@ export function CommandPalette() {
         title="Search"
         description="Search skills, authors and topics"
         className="sm:max-w-2xl"
+        finalFocus={() => !skipFinalFocus.current}
       >
         {/* Filtering happens above so each tab can show its match count. */}
         <Command shouldFilter={false} onKeyDown={onKeyDown}>
@@ -160,7 +182,27 @@ export function CommandPalette() {
           {/* Keyed by tab so the highlight resets to the first result on switch. */}
           <CommandList key={tab} className="mx-1">
             <CommandEmpty>
-              No {tab} match “{search.trim()}”.
+              {tab === 'skills' && searching ? (
+                <div className="flex flex-col items-center gap-3.5 py-2 text-center">
+                  <div className="flex flex-col gap-1">
+                    <p className="font-medium text-foreground">
+                      No skills match “{trimmedSearch}”.
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Ask Deft searches by intent and synonyms instead.
+                    </p>
+                  </div>
+                  <Button size="sm" onClick={askDeft}>
+                    <HugeiconsIcon icon={SparklesIcon} data-icon="inline-start" aria-hidden />
+                    Ask Deft
+                    <HugeiconsIcon icon={ArrowRight02Icon} data-icon="inline-end" aria-hidden />
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  No {tab} match “{trimmedSearch}”.
+                </>
+              )}
             </CommandEmpty>
 
             {tab === 'skills' &&
@@ -206,6 +248,12 @@ export function CommandPalette() {
           </CommandList>
 
           <div className="mx-1 mt-2 flex items-center gap-4 border-t px-3 pt-3 pb-1 text-xs text-muted-foreground">
+            {emptySkillSearch && (
+              <span className="flex items-center gap-1.5">
+                Ask Deft
+                <kbd className="rounded border px-1 font-sans">Enter</kbd>
+              </span>
+            )}
             <span className="flex items-center gap-1.5">
               Switch tab
               <kbd className="rounded border px-1 font-sans">Tab</kbd>
