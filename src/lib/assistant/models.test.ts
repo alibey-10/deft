@@ -12,6 +12,11 @@ describe('assistant models', () => {
   it('keeps the default model as a preset', () => {
     expect(isPresetModel(DEFAULT_MODEL)).toBe(true)
     expect(MODEL_ID_PATTERN.test(DEFAULT_MODEL)).toBe(true)
+    expect(MODEL_PRESETS.find((m) => m.id === DEFAULT_MODEL)).toMatchObject({
+      id: DEFAULT_MODEL,
+      label: 'DeepSeek V4.1 Flash',
+      description: 'Default',
+    })
   })
 
   it('offers Qwen3.8 Flash in place of the removed GPT preset', () => {
