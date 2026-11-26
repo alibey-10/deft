@@ -81,6 +81,14 @@ export const Route = createRootRouteWithContext<{
         href: '/favicon.svg',
       },
     ],
+    scripts: [
+      // Ahrefs Web Analytics
+      {
+        src: 'https://analytics.ahrefs.com/analytics.js',
+        'data-key': 'PUSk2/bhhpbGTSkQY9QFCg',
+        async: true,
+      },
+    ],
   }),
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
