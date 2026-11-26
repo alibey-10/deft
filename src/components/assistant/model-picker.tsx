@@ -60,23 +60,35 @@ export function ModelPicker({
       <DropdownMenu>
         <DropdownMenuTrigger render={<InputGroupButton size="xs" aria-label="Choose model" />}>
           {modelLabel(value)}
-          <HugeiconsIcon icon={ArrowDown01Icon} strokeWidth={2} data-icon="inline-end" />
+          <HugeiconsIcon
+            icon={ArrowDown01Icon}
+            strokeWidth={2}
+            data-icon="inline-end"
+            className="transition-transform duration-150 group-aria-expanded/button:rotate-180"
+          />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-64">
+        <DropdownMenuContent side="top" sideOffset={8} align="start" className="w-64">
           <DropdownMenuGroup>
             <DropdownMenuLabel>Model</DropdownMenuLabel>
             <DropdownMenuRadioGroup value={value} onValueChange={(v) => onValueChange(String(v))}>
               {MODEL_PRESETS.map((model) => (
                 <DropdownMenuRadioItem key={model.id} value={model.id}>
-                  <div className="flex flex-col">
-                    <span>{model.label}</span>
-                    <span className="text-xs text-muted-foreground">{model.description}</span>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="leading-snug font-medium">{model.label}</span>
+                    <span className="text-xs leading-snug text-muted-foreground">
+                      {model.description}
+                    </span>
                   </div>
                 </DropdownMenuRadioItem>
               ))}
               {isCustom && (
                 <DropdownMenuRadioItem value={value}>
-                  <span className="truncate font-mono text-xs">{value}</span>
+                  <div className="flex min-w-0 flex-col gap-0.5">
+                    <span className="truncate font-mono text-xs leading-snug">{value}</span>
+                    <span className="text-xs leading-snug text-muted-foreground">
+                      Custom OpenRouter model
+                    </span>
+                  </div>
                 </DropdownMenuRadioItem>
               )}
             </DropdownMenuRadioGroup>
@@ -167,7 +179,7 @@ function CustomModelDialog({
                 onBlur={() => setTouched(true)}
               />
               {invalid ? (
-                <FieldError>Use the provider/model format, e.g. openai/gpt-5.5.</FieldError>
+                <FieldError>Use the provider/model format, e.g. qwen/qwen3.8-flash.</FieldError>
               ) : (
                 <FieldDescription>Find ids at openrouter.ai/models.</FieldDescription>
               )}

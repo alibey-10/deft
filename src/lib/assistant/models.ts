@@ -9,7 +9,7 @@ export type ModelPreset = { id: string; label: string; description: string }
 
 export const MODEL_PRESETS: ModelPreset[] = [
   { id: DEFAULT_MODEL, label: 'DeepSeek V4.1 Flash', description: 'Default · fast and cheap' },
-  { id: 'openai/gpt-6.1-terra', label: 'GPT-6.1 Terra', description: 'OpenAI' },
+  { id: 'qwen/qwen3.8-flash', label: 'Qwen3.8 Flash', description: 'Alibaba' },
   { id: 'moonshotai/kimi-k2.6', label: 'Kimi K2.6', description: 'Moonshot AI' },
 ]
 
