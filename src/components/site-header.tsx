@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { HugeiconsIcon } from '@hugeicons/react'
-import { NewTwitterIcon, SparklesIcon } from '@hugeicons/core-free-icons'
+import { GithubIcon, NewTwitterIcon, SparklesIcon } from '@hugeicons/core-free-icons'
 
 import { CommandPalette } from '#/components/command-palette.tsx'
 import { SubmitSkillDialog } from '#/components/submit-skill-dialog.tsx'
@@ -41,6 +41,16 @@ export function SiteHeader() {
             <span className="max-sm:hidden">Ask AI</span>
           </Link>
           <CommandPalette />
+          <a
+            href="https://github.com/alibey-10/deft"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Deft on GitHub"
+            title="Deft on GitHub"
+            className={buttonVariants({ variant: 'ghost', size: 'icon' })}
+          >
+            <HugeiconsIcon icon={GithubIcon} aria-hidden />
+          </a>
           <a
             href="https://x.com/alibey_10"
             target="_blank"
