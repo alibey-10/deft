@@ -58,6 +58,10 @@ import { toBlocks, type MessageBlock } from '#/lib/assistant/blocks.ts'
 import { DEFAULT_MODEL, isPresetModel, MODEL_ID_PATTERN } from '#/lib/assistant/models.ts'
 
 export const Route = createFileRoute('/ask')({
+  validateSearch: (search: Record<string, unknown>): { q?: string } => {
+    const q = typeof search.q === 'string' ? search.q.trim() : ''
+    return q ? { q } : {}
+  },
   loader: async () => ({ isAdmin: await getIsAdminServerFn() }),
   head: () => ({
     meta: [
@@ -116,7 +120,12 @@ const chatPersistence: ChatClientPersistence = {
 
 function AskPage() {
   const { isAdmin } = Route.useLoaderData()
+  const { q } = Route.useSearch()
+  const navigate = Route.useNavigate()
   const [model, setModel] = useModel(isAdmin)
+  const [draft, setDraft] = useState(q ?? '')
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const shouldFocusInput = useRef(Boolean(q))
   const [threadId, setThreadId] = useState(() => crypto.randomUUID())
   // The SSE adapter only reports "HTTP error! status: …", so keep the route's own message.
   const [serverError, setServerError] = useState<string>()
@@ -124,6 +133,26 @@ function AskPage() {
   // Timed from the question, since one reply can span several requests (one per tool round).
   const [durations, setDurations] = useState<Record<string, number>>({})
   const turnStart = useRef(0)
+
+  useEffect(() => {
+    if (!q) return
+    setDraft(q)
+    shouldFocusInput.current = true
+    void navigate({ search: {}, replace: true })
+  }, [q, navigate])
+
+  // Focus after `?q=` is stripped from the URL so that navigation does not cancel the frame.
+  useEffect(() => {
+    if (!shouldFocusInput.current || q) return
+    shouldFocusInput.current = false
+    const frame = requestAnimationFrame(() => {
+      const el = textareaRef.current
+      if (!el) return
+      el.focus()
+      el.setSelectionRange(el.value.length, el.value.length)
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [q])
 
   const { messages, sendMessage, isLoading, isHydrating, error, stop, reload, clear } = useChat({
     connection: fetchServerSentEvents('/api/chat', {
@@ -262,6 +291,9 @@ function AskPage() {
       )}
 
       <PromptForm
+        value={draft}
+        onValueChange={setDraft}
+        textareaRef={textareaRef}
         isLoading={isLoading}
         onSubmit={ask}
         onStop={stop}
@@ -404,23 +436,28 @@ function AssistantReply({
 }
 
 function PromptForm({
+  value,
+  onValueChange,
+  textareaRef,
   isLoading,
   onSubmit,
   onStop,
   footer,
 }: {
+  value: string
+  onValueChange: (value: string) => void
+  textareaRef?: React.Ref<HTMLTextAreaElement>
   isLoading: boolean
   onSubmit: (text: string) => void
   onStop: () => void
   footer?: React.ReactNode
 }) {
-  const [input, setInput] = useState('')
-  const text = input.trim()
+  const text = value.trim()
 
   const submit = () => {
     if (!text || isLoading) return
     onSubmit(text)
-    setInput('')
+    onValueChange('')
   }
 
   return (
@@ -432,12 +469,13 @@ function PromptForm({
     >
       <InputGroup>
         <InputGroupTextarea
+          ref={textareaRef}
           aria-label="Ask about UI skills"
           placeholder="Ask about UI skills…"
-          value={input}
+          value={value}
           rows={1}
           className="max-h-48"
-          onChange={(event) => setInput(event.target.value)}
+          onChange={(event) => onValueChange(event.target.value)}
           onKeyDown={(event) => {
             if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
               event.preventDefault()
