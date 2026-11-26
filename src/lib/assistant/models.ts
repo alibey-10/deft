@@ -8,7 +8,7 @@ export const DEFAULT_MODEL = 'deepseek/deepseek-v4.1-flash-1017'
 export type ModelPreset = { id: string; label: string; description: string }
 
 export const MODEL_PRESETS: ModelPreset[] = [
-  { id: DEFAULT_MODEL, label: 'DeepSeek V4.1 Flash', description: 'Default' },
+  { id: DEFAULT_MODEL, label: 'DeepSeek V4.1 Flash', description: 'DeepSeek' },
   { id: 'qwen/qwen3.8-flash', label: 'Qwen3.8 Flash', description: 'Alibaba' },
   { id: 'moonshotai/kimi-k2.6', label: 'Kimi K2.6', description: 'Moonshot AI' },
 ]

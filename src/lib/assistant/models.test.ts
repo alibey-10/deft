@@ -15,7 +15,7 @@ describe('assistant models', () => {
     expect(MODEL_PRESETS.find((m) => m.id === DEFAULT_MODEL)).toMatchObject({
       id: DEFAULT_MODEL,
       label: 'DeepSeek V4.1 Flash',
-      description: 'Default',
+      description: 'DeepSeek',
     })
   })
 
