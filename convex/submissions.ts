@@ -8,6 +8,11 @@
  * `AUTO_APPROVE_STARS`+ stars go straight into the directory; the rest are stored as `pending`
  * for an admin to approve (assigning author and page path, as discovery does) or reject.
  *
+ * `submit` is gated by a shared server `secret` (checked against `SUBMIT_TOKEN`, falling back to
+ * `ADMIN_TOKEN`) and rate-limited per hashed `clientKey` and globally via `@convex-dev/rate-limiter`,
+ * so browsers must call through the site's server function (`submitSkillServerFn`) and cannot bypass
+ * rate limits by hitting Convex directly.
+ *
  * Review functions take `secret`, compared with ADMIN_TOKEN in the deployment env; the site's
  * server functions pass the Worker's ADMIN_TOKEN after checking the admin cookie, so the token
  * never reaches the browser. Needs `npx convex env set ADMIN_TOKEN <same value as the Worker>`
@@ -44,6 +49,7 @@ import {
   rawUrlFor,
   repoKey,
 } from './githubUrls'
+import { rateLimiter } from './rateLimits'
 import { skillSearchText } from './seed'
 import { ensureAuthor, freePathSlug, vAuthor } from './skillDiscovery'
 import { classify } from './classifier'
@@ -111,6 +117,7 @@ const vSubmitResult = v.union(
       v.literal('file-not-found'),
       v.literal('no-frontmatter'),
       v.literal('not-ui'),
+      v.literal('rate-limited'),
       v.literal('busy'),
       /** The classifier couldn't be reached; nothing was stored. */
       v.literal('unavailable'),
@@ -216,11 +223,23 @@ export const findExisting = internalQuery({
  * `MAX_FOLDER_SKILLS`), skipping ones already known, missing frontmatter, or not about UI.
  */
 export const submit = action({
-  args: { url: v.string() },
+  args: { url: v.string(), secret: v.string(), clientKey: v.string() },
   returns: vSubmitResult,
   handler: async (ctx, args): Promise<SubmitResult> => {
+    assertSubmitSecret(args.secret)
+    const clientKey = normalizeClientKey(args.clientKey)
+
     const pasted = args.url.length <= 2000 ? parseSkillUrl(args.url) : null
     if (!pasted) return { ok: false, error: 'invalid-url' }
+
+    const allowed = await checkSubmitRateLimits(
+      (name, key) =>
+        name === 'submitPerIp'
+          ? rateLimiter.limit(ctx, 'submitPerIp', { key })
+          : rateLimiter.limit(ctx, 'submitGlobal'),
+      clientKey,
+    )
+    if (!allowed) return { ok: false, error: 'rate-limited' }
 
     const token = process.env.GITHUB_TOKEN
     if (!token) throw new Error('GITHUB_TOKEN is not set on this deployment')
@@ -468,13 +487,51 @@ export const insert = internalMutation({
   },
 })
 
+/** Constant-time string comparison to avoid short-circuiting on the first mismatched character. */
+export function constantTimeEqual(a: string, b: string) {
+  if (a.length !== b.length) return false
+  let diff = 0
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i)
+  return diff === 0
+}
+
+/** Verifies `secret` against `expected` in constant time, failing closed if `expected` is unset. */
+export function assertSecret(secret: string, expected: string | undefined) {
+  if (!expected || !constantTimeEqual(secret, expected)) throw new ConvexError('Not authorized')
+}
+
+/** Verifies the server submission `secret` against `SUBMIT_TOKEN` (falling back to `ADMIN_TOKEN`). */
+export function assertSubmitSecret(
+  secret: string,
+  env: { SUBMIT_TOKEN?: string; ADMIN_TOKEN?: string } = process.env,
+) {
+  assertSecret(secret, env.SUBMIT_TOKEN || env.ADMIN_TOKEN)
+}
+
+/** Validates and trims a non-PII `clientKey` (hashed IP) passed from the server function. */
+export function normalizeClientKey(raw: string) {
+  const key = raw.trim()
+  if (!key || key.length > 128) throw new ConvexError('Invalid client key')
+  return key
+}
+
+/**
+ * Enforces the per-IP limit before the global limit so one abusive IP cannot exhaust global quota
+ * for other callers.
+ */
+export async function checkSubmitRateLimits(
+  limitFn: (name: 'submitPerIp' | 'submitGlobal', key?: string) => Promise<{ ok: boolean }>,
+  clientKey: string,
+) {
+  const perIp = await limitFn('submitPerIp', clientKey)
+  if (!perIp.ok) return false
+  const global = await limitFn('submitGlobal')
+  return global.ok
+}
+
 /** Constant-time check of `secret` against ADMIN_TOKEN. */
 function requireAdmin(secret: string) {
-  const expected = process.env.ADMIN_TOKEN
-  if (!expected || expected.length !== secret.length) throw new ConvexError('Not authorized')
-  let diff = 0
-  for (let i = 0; i < secret.length; i++) diff |= secret.charCodeAt(i) ^ expected.charCodeAt(i)
-  if (diff !== 0) throw new ConvexError('Not authorized')
+  assertSecret(secret, process.env.ADMIN_TOKEN)
 }
 
 /** Submissions waiting for review, oldest first. */

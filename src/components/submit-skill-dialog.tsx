@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
-import { useAction } from 'convex/react'
-import type { FunctionReturnType } from 'convex/server'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { PlusSignIcon, Tick02Icon } from '@hugeicons/core-free-icons'
 
@@ -21,9 +19,9 @@ import { Field, FieldError, FieldGroup, FieldLabel } from '#/components/ui/field
 import { Input } from '#/components/ui/input.tsx'
 import { Spinner } from '#/components/ui/spinner.tsx'
 import { topicBySlug } from '#/data/topics.ts'
-import { api } from '../../convex/_generated/api'
+import { submitSkillServerFn } from '#/lib/submissions.ts'
 
-type Result = FunctionReturnType<typeof api.submissions.submit>
+type Result = Awaited<ReturnType<typeof submitSkillServerFn>>
 type Failure = Extract<Result, { ok: false }>
 type Success = Extract<Result, { ok: true }>
 type Skipped = Success['skipped'][number]
@@ -38,7 +36,6 @@ const urlErrors: Partial<Record<Failure['error'], string>> = {
 
 /** The header's "Submit" button and the dialog it opens. */
 export function SubmitSkillDialog() {
-  const submitSkill = useAction(api.submissions.submit)
   const [open, setOpen] = useState(false)
   const [url, setUrl] = useState('')
   const [pending, setPending] = useState(false)
@@ -55,7 +52,7 @@ export function SubmitSkillDialog() {
     setPending(true)
     setFailure(null)
     try {
-      const result = await submitSkill({ url })
+      const result = await submitSkillServerFn({ data: { url } })
       if (result.ok) setSubmitted(result)
       else setFailure(result)
     } catch {
@@ -172,16 +169,27 @@ function SubmitAlert({
   failure: Failure | 'unexpected'
   onNavigate: () => void
 }) {
-  if (failure === 'unexpected' || failure.error === 'busy' || failure.error === 'unavailable')
+  if (
+    failure === 'unexpected' ||
+    failure.error === 'rate-limited' ||
+    failure.error === 'busy' ||
+    failure.error === 'unavailable'
+  )
     return (
       <Alert variant="destructive">
-        <AlertTitle>Couldn’t submit right now</AlertTitle>
+        <AlertTitle>
+          {failure !== 'unexpected' && failure.error === 'rate-limited'
+            ? 'Too many submissions'
+            : 'Couldn’t submit right now'}
+        </AlertTitle>
         <AlertDescription>
           {failure === 'unexpected'
             ? 'Something went wrong on our side. Try again in a moment.'
-            : failure.error === 'busy'
-              ? 'GitHub is limiting our requests. Try again in a few minutes.'
-              : 'We couldn’t analyze the skill just now. Try again in a moment.'}
+            : failure.error === 'rate-limited'
+              ? 'Too many submissions right now. Please wait a few minutes and try again.'
+              : failure.error === 'busy'
+                ? 'GitHub is limiting our requests. Try again in a few minutes.'
+                : 'We couldn’t analyze the skill just now. Try again in a moment.'}
         </AlertDescription>
       </Alert>
     )
