@@ -12,6 +12,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import { DirectorySidebar } from '#/components/directory-sidebar.tsx'
 import { SiteHeader } from '#/components/site-header.tsx'
+import { WebMcpTools } from '#/components/webmcp-tools.tsx'
 import { NavHotkeys } from '#/hooks/use-nav-hotkeys.ts'
 import { ThemeHotkey } from '#/hooks/use-theme.ts'
 import { directoryQuery } from '#/lib/directory.ts'
@@ -60,7 +61,10 @@ export const Route = createRootRouteWithContext<{
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: 'Deft — UI Skills Directory with built-in AI assistant' },
+      {
+        property: 'og:image:alt',
+        content: 'Deft — UI Skills Directory with built-in AI assistant',
+      },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Deft · UI skills directory' },
       {
@@ -68,7 +72,10 @@ export const Route = createRootRouteWithContext<{
         content: 'End AI slop with skills that teach your agent interface craft.',
       },
       { name: 'twitter:image', content: OG_IMAGE_URL },
-      { name: 'twitter:image:alt', content: 'Deft — UI Skills Directory with built-in AI assistant' },
+      {
+        name: 'twitter:image:alt',
+        content: 'Deft — UI Skills Directory with built-in AI assistant',
+      },
     ],
     links: [
       {
@@ -121,6 +128,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <ThemeHotkey />
         <NavHotkeys />
+        <WebMcpTools />
         <SiteHeader />
         <div className="mx-auto flex max-w-7xl gap-8 px-4">
           <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-64 shrink-0 py-6 lg:block">

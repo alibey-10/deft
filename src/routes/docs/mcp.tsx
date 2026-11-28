@@ -52,6 +52,15 @@ const tools = [
   { name: 'browse_topic', description: 'Lists the skills in one topic, most-starred first.' },
 ]
 
+const browserTools = [
+  {
+    name: 'get_current_page',
+    description: 'Says which skill, topic or author the user has open.',
+  },
+  { name: 'open_skill', description: 'Opens a skill’s page, or one of its reference files.' },
+  { name: 'open_topic', description: 'Opens the list of skills in a topic.' },
+]
+
 function McpPage() {
   const { url } = Route.useLoaderData()
 
@@ -118,22 +127,28 @@ function McpPage() {
           <InstallCommand command="npx skills add https://github.com/<user>/<repo> --skill <name>" />
         </Section>
 
+        <Section title="In the browser (WebMCP)">
+          <p className="text-muted-foreground">
+            Every Deft page also registers these tools with{' '}
+            <a
+              href="https://webmachinelearning.github.io/webmcp/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-foreground underline decoration-redline/60 underline-offset-4 hover:decoration-redline"
+            >
+              WebMCP
+            </a>
+            , so an agent built into your browser can use them on the open tab with nothing to
+            install. It adds three that drive the tab:
+          </p>
+          <ToolList tools={browserTools} />
+          <Note>
+            WebMCP is experimental. Browsers without it skip this step and the site works as usual.
+          </Note>
+        </Section>
+
         <Section title="Tools">
-          <dl className="flex flex-col">
-            {tools.map((tool) => (
-              <div
-                key={tool.name}
-                className="grid gap-1 border-t py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
-              >
-                <dt>
-                  <code className="font-mono text-sm font-medium">{tool.name}</code>
-                </dt>
-                <dd className="text-sm leading-relaxed text-muted-foreground">
-                  {tool.description}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <ToolList tools={tools} />
         </Section>
       </div>
     </article>
@@ -341,5 +356,23 @@ function Code({ children }: { children: React.ReactNode }) {
     <code className="rounded bg-muted px-1 py-0.5 font-mono text-[0.8125rem] text-foreground">
       {children}
     </code>
+  )
+}
+
+function ToolList({ tools }: { tools: { name: string; description: string }[] }) {
+  return (
+    <dl className="flex flex-col">
+      {tools.map((tool) => (
+        <div
+          key={tool.name}
+          className="grid gap-1 border-t py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
+        >
+          <dt>
+            <code className="font-mono text-sm font-medium">{tool.name}</code>
+          </dt>
+          <dd className="text-sm leading-relaxed text-muted-foreground">{tool.description}</dd>
+        </div>
+      ))}
+    </dl>
   )
 }

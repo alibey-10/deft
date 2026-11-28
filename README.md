@@ -34,3 +34,11 @@ Cursor / VS Code / Windsurf (`mcp.json`):
 
 Locally, use `http://localhost:3000/mcp` while `bun run dev` is running. Inspect it with
 `npx @modelcontextprotocol/inspector`.
+
+### WebMCP
+
+Every page also registers the same tools in the browser through [WebMCP](https://webmachinelearning.github.io/webmcp/)
+(`document.modelContext`, falling back to `navigator.modelContext`), plus `get_current_page`,
+`open_skill` and `open_topic` to drive the open tab. The schemas come from `/mcp`'s `tools/list`
+and calls are forwarded to `tools/call`, so both surfaces stay in sync. Code lives in
+`src/lib/webmcp.ts` and `src/components/webmcp-tools.tsx`; it does nothing when the API is missing.
