@@ -1,9 +1,12 @@
+import { HugeiconsIcon } from '@hugeicons/react'
+import { Clock01Icon, StarIcon } from '@hugeicons/core-free-icons'
+
 import { Tabs, TabsList, TabsTrigger } from '#/components/ui/tabs.tsx'
 import type { RegistrySkill } from '#/lib/directory.ts'
 
 export const skillSorts = [
-  { value: 'recent', label: 'Recently added' },
-  { value: 'stars', label: 'Most stars' },
+  { value: 'recent', label: 'Recently added', icon: Clock01Icon },
+  { value: 'stars', label: 'Most stars', icon: StarIcon },
 ] as const
 
 export type SkillSort = (typeof skillSorts)[number]['value']
@@ -37,6 +40,7 @@ export function SkillSortTabs({
       <TabsList aria-label="Sort skills">
         {skillSorts.map((sort) => (
           <TabsTrigger key={sort.value} value={sort.value}>
+            <HugeiconsIcon icon={sort.icon} data-icon="inline-start" aria-hidden />
             {sort.label}
           </TabsTrigger>
         ))}
