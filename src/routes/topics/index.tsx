@@ -4,7 +4,7 @@ import { PageIntro } from '#/components/site-header.tsx'
 import { useDirectory } from '#/lib/directory.ts'
 
 export const Route = createFileRoute('/topics/')({
-  head: () => ({ meta: [{ title: 'Topics · Deft' }] }),
+  head: () => ({ meta: [{ title: 'Topics - Deft' }] }),
   component: TopicsPage,
 })
 
