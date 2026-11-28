@@ -42,7 +42,7 @@ export const Route = createRootRouteWithContext<{
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Deft · UI skills directory',
+        title: 'Deft - UI skills directory',
       },
       {
         name: 'description',
@@ -52,7 +52,7 @@ export const Route = createRootRouteWithContext<{
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Deft' },
       { property: 'og:url', content: SITE_URL },
-      { property: 'og:title', content: 'Deft · UI skills directory' },
+      { property: 'og:title', content: 'Deft - UI skills directory' },
       {
         property: 'og:description',
         content: 'End AI slop with skills that teach your agent interface craft.',
@@ -66,7 +66,7 @@ export const Route = createRootRouteWithContext<{
         content: 'Deft — UI Skills Directory with built-in AI assistant',
       },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Deft · UI skills directory' },
+      { name: 'twitter:title', content: 'Deft - UI skills directory' },
       {
         name: 'twitter:description',
         content: 'End AI slop with skills that teach your agent interface craft.',

@@ -65,7 +65,7 @@ export const Route = createFileRoute('/ask')({
   loader: async () => ({ isAdmin: await getIsAdminServerFn() }),
   head: () => ({
     meta: [
-      { title: 'Ask · Deft' },
+      { title: 'Ask - Deft' },
       { name: 'description', content: 'Ask an AI assistant which UI skills fit your task.' },
     ],
   }),

@@ -18,7 +18,7 @@ const getMcpUrl = createServerFn({ method: 'GET' }).handler(() =>
 export const Route = createFileRoute('/docs/mcp')({
   head: () => ({
     meta: [
-      { title: 'MCP · Deft' },
+      { title: 'MCP - Deft' },
       {
         name: 'description',
         content:

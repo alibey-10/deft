@@ -24,7 +24,7 @@ export const Route = createFileRoute('/admin/skills-update-report')({
     await context.queryClient.ensureQueryData(reportQuery(deps.run))
   },
   head: () => ({
-    meta: [{ title: 'Skills update report · Deft' }, { name: 'robots', content: 'noindex' }],
+    meta: [{ title: 'Skills update report - Deft' }, { name: 'robots', content: 'noindex' }],
   }),
   component: ReportPage,
 })
