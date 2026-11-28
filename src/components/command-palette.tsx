@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { defaultFilter } from 'cmdk'
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowRight02Icon, Search01Icon, SparklesIcon, Tag01Icon } from '@hugeicons/core-free-icons'
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
+import { HighlightedText } from '#/components/highlighted-text.tsx'
 import { Button } from '#/components/ui/button.tsx'
 import {
   Command,
@@ -18,6 +18,7 @@ import {
 } from '#/components/ui/command.tsx'
 import { Tabs, TabsList, TabsTrigger } from '#/components/ui/tabs.tsx'
 import { topicLabel, useDirectory } from '#/lib/directory.ts'
+import { createSearchMatcher, type SearchableEntry } from '#/lib/highlight-text.ts'
 
 const TABS = [
   { value: 'skills', label: 'Skills' },
@@ -31,14 +32,12 @@ type Tab = (typeof TABS)[number]['value']
 const RECENT_SKILLS = 20
 
 /** Keeps the entries that match `search`, best match first (all of them, unsorted, when empty). */
-function rank<T>(entries: T[], search: string, text: (entry: T) => [string, string[]?]): T[] {
+function rank<T>(entries: T[], search: string, toEntry: (entry: T) => SearchableEntry): T[] {
   const query = search.trim()
   if (!query) return entries
+  const scoreEntry = createSearchMatcher(query)
   return entries
-    .map((entry) => {
-      const [value, keywords] = text(entry)
-      return { entry, score: defaultFilter(value, query, keywords) }
-    })
+    .map((entry) => ({ entry, score: scoreEntry(toEntry(entry)) }))
     .filter((match) => match.score > 0)
     .sort((a, b) => b.score - a.score)
     .map((match) => match.entry)
@@ -79,18 +78,26 @@ export function CommandPalette() {
     to()
   }
 
-  const skillResults = rank(allSkills, search, (skill) => [
-    skill.name,
-    [skill.user, skill.repo, ...skill.topics.map(topicLabel)],
-  ])
+  const skillResults = rank(allSkills, search, (skill) => ({
+    value: skill.name,
+    keywords: [skill.user, skill.repo, ...skill.topics.map(topicLabel)],
+    description: skill.description,
+  }))
   const trimmedSearch = search.trim()
   const searching = trimmedSearch !== ''
   const emptySkillSearch = tab === 'skills' && searching && skillResults.length === 0
   const askDeft = () => go(() => navigate({ to: '/ask', search: { q: trimmedSearch } }))
   // Newest additions to the directory (approval time, see `convex/directory.ts`).
   const recentSkills = [...allSkills].sort((a, b) => b.addedAt - a.addedAt).slice(0, RECENT_SKILLS)
-  const authorResults = rank(authors, search, (author) => [author.name, author.repos])
-  const topicResults = rank(topicsWithSkills, search, (topic) => [topic.label, [topic.slug]])
+  const authorResults = rank(authors, search, (author) => ({
+    value: author.name,
+    keywords: author.repos,
+  }))
+  const topicResults = rank(topicsWithSkills, search, (topic) => ({
+    value: topic.label,
+    keywords: [topic.slug],
+    description: topic.description,
+  }))
   const counts: Record<Tab, number> = {
     skills: skillResults.length,
     authors: authorResults.length,
@@ -101,11 +108,24 @@ export function CommandPalette() {
     <CommandItem
       key={skill.pathSlug}
       value={`skill ${skill.pathSlug}`}
+      className="items-start"
       onSelect={() => go(() => navigate({ to: '/skills/$', params: { _splat: skill.pathSlug } }))}
     >
-      <HugeiconsIcon icon={SparklesIcon} aria-hidden />
-      <span className="truncate">{skill.name}</span>
-      <CommandShortcut variant="meta">{skill.user}</CommandShortcut>
+      <HugeiconsIcon icon={SparklesIcon} className="mt-0.5" aria-hidden />
+      <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+        <div className="flex items-center gap-2">
+          <span className="truncate font-medium">{skill.name}</span>
+          <CommandShortcut variant="meta">{skill.user}</CommandShortcut>
+        </div>
+        <p className="line-clamp-1 text-xs text-muted-foreground">
+          <HighlightedText
+            text={skill.description}
+            query={trimmedSearch}
+            windowAfter={45}
+            leadChars={22}
+          />
+        </p>
+      </div>
     </CommandItem>
   ))
 
@@ -234,15 +254,28 @@ export function CommandPalette() {
                 <CommandItem
                   key={topic.slug}
                   value={`topic ${topic.slug}`}
+                  className="items-start"
                   onSelect={() =>
                     go(() => navigate({ to: '/topics/$topic', params: { topic: topic.slug } }))
                   }
                 >
-                  <HugeiconsIcon icon={Tag01Icon} aria-hidden />
-                  <span className="truncate">{topic.label}</span>
-                  <CommandShortcut variant="meta">
-                    {topic.count} {topic.count === 1 ? 'skill' : 'skills'}
-                  </CommandShortcut>
+                  <HugeiconsIcon icon={Tag01Icon} className="mt-0.5" aria-hidden />
+                  <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+                    <div className="flex items-center gap-2">
+                      <span className="truncate font-medium">{topic.label}</span>
+                      <CommandShortcut variant="meta">
+                        {topic.count} {topic.count === 1 ? 'skill' : 'skills'}
+                      </CommandShortcut>
+                    </div>
+                    <p className="line-clamp-1 text-xs text-muted-foreground">
+                      <HighlightedText
+                        text={topic.description}
+                        query={trimmedSearch}
+                        windowAfter={45}
+                        leadChars={22}
+                      />
+                    </p>
+                  </div>
                 </CommandItem>
               ))}
           </CommandList>

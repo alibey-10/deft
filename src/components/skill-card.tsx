@@ -5,6 +5,7 @@ import { ArrowRight02Icon, SparklesIcon, StarIcon } from '@hugeicons/core-free-i
 
 import { AuthorAvatar } from '#/components/author-avatar.tsx'
 import { AuthorHoverLink } from '#/components/author-hover-card.tsx'
+import { HighlightedText } from '#/components/highlighted-text.tsx'
 import { Badge } from '#/components/ui/badge.tsx'
 import { buttonVariants } from '#/components/ui/button.tsx'
 import { topicLabel, useDirectory, type RegistrySkill } from '#/lib/directory.ts'
@@ -35,9 +36,11 @@ export type SkillCardMeta = 'source' | 'topics'
 export function SkillCard({
   skill,
   meta = 'source',
+  query,
 }: {
   skill: RegistrySkill
   meta?: SkillCardMeta
+  query?: string
 }) {
   const author = useDirectory().getAuthor(skill.sourceKey)
 
@@ -53,7 +56,7 @@ export function SkillCard({
         </Link>
       </h3>
       <p className="line-clamp-2 max-w-[72ch] leading-relaxed text-muted-foreground">
-        {skill.description}
+        <HighlightedText text={skill.description} query={query} />
       </p>
       <div className="mt-auto flex min-w-0 items-center gap-3 pt-1 text-xs text-muted-foreground">
         {meta === 'topics' ? (
@@ -151,7 +154,7 @@ export function SkillGrid({
     <ul className={cn('grid gap-x-10', columns === 2 && 'sm:grid-cols-2')}>
       {skills.map((skill) => (
         <li key={skill.pathSlug}>
-          <SkillCard skill={skill} meta={meta} />
+          <SkillCard skill={skill} meta={meta} query={query} />
         </li>
       ))}
     </ul>
