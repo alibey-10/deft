@@ -3,9 +3,34 @@ import { z } from 'zod'
 
 import { isAdminRequest } from '#/lib/admin.server.ts'
 import { getConvex } from '#/lib/skill-source.server.ts'
+import { getSubmitClientKey, getSubmitSecret } from '#/lib/submissions.server.ts'
 import { api } from '../../convex/_generated/api'
 import type { Id } from '../../convex/_generated/dataModel'
 import { topicSlugs } from '../../convex/validators.ts'
+
+const submitInput = z.object({
+  url: z.string().min(1).max(2000),
+})
+
+/**
+ * Submits a skill URL through the Worker so Convex can verify the shared server secret and
+ * enforce per-IP and global rate limits on a hashed client IP.
+ *
+ * Requires `SUBMIT_TOKEN` or `ADMIN_TOKEN` to match between the Worker (or `.env.local` in
+ * local dev) and the Convex deployment, matching `listPendingServerFn` / `reviewSubmissionServerFn`.
+ */
+export const submitSkillServerFn = createServerFn({ method: 'POST' })
+  .validator((data: z.input<typeof submitInput>) => submitInput.parse(data))
+  .handler(async ({ data }) => {
+    const secret = getSubmitSecret()
+    if (!secret) throw new Error('Submissions are not configured (set SUBMIT_TOKEN or ADMIN_TOKEN)')
+    const clientKey = await getSubmitClientKey(secret)
+    return getConvex().action(api.submissions.submit, {
+      url: data.url,
+      secret,
+      clientKey,
+    })
+  })
 
 /**
  * Review of submitted skills. Convex has no accounts, so these server functions check the admin

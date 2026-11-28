@@ -13,6 +13,7 @@ import type * as crons from "../crons.js";
 import type * as directory from "../directory.js";
 import type * as github from "../github.js";
 import type * as githubUrls from "../githubUrls.js";
+import type * as rateLimits from "../rateLimits.js";
 import type * as seed from "../seed.js";
 import type * as skillDiscovery from "../skillDiscovery.js";
 import type * as skillDiscoveryNode from "../skillDiscoveryNode.js";
@@ -34,6 +35,7 @@ declare const fullApi: ApiFromModules<{
   directory: typeof directory;
   github: typeof github;
   githubUrls: typeof githubUrls;
+  rateLimits: typeof rateLimits;
   seed: typeof seed;
   skillDiscovery: typeof skillDiscovery;
   skillDiscoveryNode: typeof skillDiscoveryNode;
@@ -70,4 +72,6 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {};
+export declare const components: {
+  rateLimiter: import("@convex-dev/rate-limiter/_generated/component.js").ComponentApi<"rateLimiter">;
+};
