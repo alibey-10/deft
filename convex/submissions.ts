@@ -33,8 +33,17 @@ import {
   getUser,
   isSkillFile,
   readFrontmatter,
+  type Tree,
 } from './github'
-import { githubUrlFor, parseRawUrl, parseSkillUrl, rawUrlFor, repoKey } from './githubUrls'
+import {
+  githubUrlFor,
+  isExpectedGithubUrl,
+  isExpectedRawUrl,
+  parseRawUrl,
+  parseSkillUrl,
+  rawUrlFor,
+  repoKey,
+} from './githubUrls'
 import { skillSearchText } from './seed'
 import { ensureAuthor, freePathSlug, vAuthor } from './skillDiscovery'
 import { classify } from './classifier'
@@ -123,6 +132,22 @@ const vCandidate = v.object({
   topics: v.array(vTopicSlug),
 })
 type Candidate = Infer<typeof vCandidate>
+
+/** Auto-approve only when the repo is popular and its GitHub tree lookup succeeded. */
+export const shouldAutoApprove = (stars: number, treeKind: Tree['kind']) =>
+  stars >= AUTO_APPROVE_STARS && treeKind === 'ok'
+
+/** Defense-in-depth verification that candidate URLs belong to `candidate.owner/candidate.repo`. */
+export function assertValidCandidateUrls(
+  candidate: Pick<Candidate, 'owner' | 'repo' | 'rawUrl' | 'githubUrl'>,
+) {
+  if (
+    !isExpectedRawUrl(candidate.rawUrl, candidate.owner, candidate.repo) ||
+    !isExpectedGithubUrl(candidate.githubUrl, candidate.owner, candidate.repo)
+  ) {
+    throw new ConvexError('Invalid skill URL')
+  }
+}
 
 /** The error for a single-skill link whose skill was skipped. */
 const skippedError = (skip: Skipped): SubmitResult =>
@@ -220,10 +245,28 @@ export const submit = action({
           ).slice(0, MAX_FOLDER_SKILLS)
       if (!paths.length) return { ok: false, error: 'file-not-found' }
 
+      const targets = paths.map((path) => {
+        const encoded = encodePath({ ...parts, path })
+        return {
+          path,
+          rawUrl: rawUrlFor(encoded),
+          githubUrl: githubUrlFor(encoded),
+        }
+      })
+      if (
+        targets.some(
+          ({ rawUrl, githubUrl }) =>
+            !isExpectedRawUrl(rawUrl, parts.owner, parts.repo) ||
+            !isExpectedGithubUrl(githubUrl, parts.owner, parts.repo),
+        )
+      ) {
+        return { ok: false, error: 'invalid-url' }
+      }
+
       const skipped: Skipped[] = []
       const read: Array<{ candidate: Omit<Candidate, 'topics'>; body: string }> = []
       let notFound = false
-      await eachLimited(paths, READ_CONCURRENCY, async (path) => {
+      await eachLimited(targets, READ_CONCURRENCY, async ({ path, rawUrl, githubUrl }) => {
         const slug = slugFromPath(path, parts.repo)
         const existing = await ctx.runQuery(internal.submissions.findExisting, {
           owner: parts.owner,
@@ -234,8 +277,6 @@ export const submit = action({
           skipped.push({ name: existing.name, reason: 'exists', existing })
           return
         }
-        const encoded = encodePath({ ...parts, path })
-        const rawUrl = rawUrlFor(encoded)
         const response = await fetch(rawUrl)
         if (response.status === 404) {
           notFound = true
@@ -255,7 +296,7 @@ export const submit = action({
             repo: parts.repo,
             path,
             rawUrl,
-            githubUrl: githubUrlFor(encoded),
+            githubUrl,
             name,
             description,
             files: tree.kind === 'ok' ? skillFiles(path, tree.blobs) : [],
@@ -290,7 +331,7 @@ export const submit = action({
       // Keep the folder's order so the result reads like the repo.
       candidates.sort((a, b) => a.path.localeCompare(b.path))
       // Popular repos skip review; their author gets a GitHub profile like discovered ones do.
-      const autoApprove = info.stargazers_count >= AUTO_APPROVE_STARS
+      const autoApprove = shouldAutoApprove(info.stargazers_count, tree.kind)
       const author =
         autoApprove && candidates.length
           ? await getUser(parts.owner, token).catch((error: unknown) => {
@@ -361,6 +402,7 @@ export const insert = internalMutation({
     const added: Added[] = []
     const skipped: Skipped[] = []
     for (const candidate of skills) {
+      assertValidCandidateUrls(candidate)
       // Checked again here: two people can submit the same skill at once.
       const sameFile = await findSameFile(ctx, candidate.owner, candidate.repo, candidate.path)
       const copy = sameFile ? null : await findCopy(ctx, candidate.name, candidate.description)
